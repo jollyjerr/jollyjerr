@@ -4,6 +4,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        "blue-jerr": "#3B82F6",
+      },
       fontFamily: {
         Raleway: [
           "Raleway",

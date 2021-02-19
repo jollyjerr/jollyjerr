@@ -1,22 +1,31 @@
-import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import HeroToBodyWave from "../assets/herotobodywave.svg";
+import Layout from "../components/layout";
+import ProfilePhoto from "../components/profilePhoto";
+import React from "react";
+import SEO from "../components/seo";
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div className="mt-20">
+      <section className="pl-14">
+        <h1 className="text-5xl font-bold">
+          I <span className="underline">build </span>
+          <span className="underline">software</span>.
+        </h1>
+      </section>
+      <section className="relative">
+        <HeroToBodyWave className="w-full" />
+      </section>
+      <article className="bg-blue-jerr min-h-screen">
+        <section className="grid grid-cols-2">
+          <div className="w-2/3">
+            <ProfilePhoto />
+          </div>
+        </section>
+      </article>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
