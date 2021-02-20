@@ -4,13 +4,13 @@
         <style>
             .cls-1 {
                 font-size: 51px;
-                fill: #231f20;
+                fill: #1F2937;
                 font-family: Raleway-Regular, Raleway;
             }
 
             .cls-2 {
                 fill: none;
-                stroke: #231f20;
+                stroke: #1F2937;
                 stroke-miterlimit: 10;
                 stroke-width: 2px;
             }

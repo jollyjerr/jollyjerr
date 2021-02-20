@@ -11,7 +11,7 @@ import Navdrop from "../components/navdrop";
 import React from "react";
 
 const Navbar = () => (
-  <nav className="h-24 container mx-auto pt-6 relative flex space-x-4 text-xl">
+  <nav className="h-24 container mx-auto pt-6 relative flex space-x-4 text-xl text-gray-800">
     <div>
       <Link to="/">
         <Logo style={{ width: "62.3px" }} />
@@ -44,16 +44,16 @@ const Navbar = () => (
     </section>
     <section className="flex items-end h-full absolute right-4 bottom-0 space-x-2">
       <a href="https://github.com/jollyjerr" target="blank">
-        <LogoGithub width="19px" />
+        <LogoGithub width="19px" color="#1F2937" />
       </a>
       <a href="https://www.linkedin.com/in/jeremiahtabb/" target="blank">
-        <LogoLinkedin width="19px" />
+        <LogoLinkedin width="19px" color="#1F2937" />
       </a>
       <a href="https://twitter.com/JerrTabb" target="blank">
-        <LogoTwitter width="19px" />
+        <LogoTwitter width="19px" color="#1F2937" />
       </a>
       <a href="https://medium.com/@jollyjerr" target="blank">
-        <LogoMedium width="19px" />
+        <LogoMedium width="19px" color="#1F2937" />
       </a>
     </section>
   </nav>

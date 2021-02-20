@@ -32,7 +32,7 @@ const navdrop = ({ title, items }) => {
             >
               <Menu.Items
                 static
-                className="absolute left-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
+                className="absolute left-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none z-20"
               >
                 <div className="py-1">
                   {items.map((i) => (
