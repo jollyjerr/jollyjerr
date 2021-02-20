@@ -26,6 +26,12 @@ module.exports = {
           '"Noto Color Emoji"',
         ],
       },
+      gridTemplateColumns: {
+        18: "repeat(18, minmax(0, 1fr))",
+      },
+      gridColumn: {
+        "span-13": "span 13 / span 13",
+      },
     },
   },
   variants: {
