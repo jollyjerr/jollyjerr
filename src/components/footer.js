@@ -26,23 +26,47 @@ const Footer = () => {
       <section className="col-span-7 mt-auto w-1/5 mb-6">
         <h3 className="text-lg font-bold mb-3">{"Let's Connect"}</h3>
         <div className="grid grid-cols-6">
-          <a href="https://github.com/jollyjerr" target="blank">
-            <LogoGithub width="32px" height="32px" />
+          <a
+            href="https://github.com/jollyjerr"
+            target="blank"
+            className="w-min"
+          >
+            <LogoGithub width="32px" height="32px" title="Link to Github" />
           </a>
-          <a href="https://www.linkedin.com/in/jeremiahtabb/" target="blank">
-            <LogoLinkedin width="32px" height="32px" />
+          <a
+            href="https://www.linkedin.com/in/jeremiahtabb/"
+            target="blank"
+            className="w-min"
+          >
+            <LogoLinkedin width="32px" height="32px" title="Link to LinkedIn" />
           </a>
-          <a href="https://twitter.com/JerrTabb" target="blank">
-            <LogoTwitter width="32px" height="32px" />
+          <a
+            href="https://twitter.com/JerrTabb"
+            target="blank"
+            className="w-min"
+          >
+            <LogoTwitter width="32px" height="32px" title="Link to Twitter" />
           </a>
-          <a href="https://medium.com/@jollyjerr" target="blank">
-            <LogoMedium width="32px" height="32px" />
+          <a
+            href="https://medium.com/@jollyjerr"
+            target="blank"
+            className="w-min"
+          >
+            <LogoMedium width="32px" height="32px" title="Link to Medium" />
           </a>
-          <a href="https://www.instagram.com/jollyjerr/" target="blank">
-            <LogoInstagram width="32px" height="32px" />
+          <a
+            href="https://www.instagram.com/jollyjerr/"
+            target="blank"
+            className="w-min"
+          >
+            <LogoInstagram
+              width="32px"
+              height="32px"
+              title="Link to Instagram"
+            />
           </a>
-          <button onClick={oops}>
-            <MailUnread width="32px" height="32px" />
+          <button onClick={oops} className="w-min">
+            <MailUnread width="32px" height="32px" title="Open email form" />
           </button>
         </div>
       </section>
