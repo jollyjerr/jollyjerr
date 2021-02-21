@@ -44,16 +44,32 @@ const Navbar = () => (
     </section>
     <section className="flex items-end h-full absolute right-4 bottom-0 space-x-2">
       <a href="https://github.com/jollyjerr" target="blank">
-        <LogoGithub width="19px" color="#1F2937" />
+        <LogoGithub
+          title="Link to my github account"
+          width="19px"
+          color="#1F2937"
+        />
       </a>
       <a href="https://www.linkedin.com/in/jeremiahtabb/" target="blank">
-        <LogoLinkedin width="19px" color="#1F2937" />
+        <LogoLinkedin
+          title="Link to my linkedin account"
+          width="19px"
+          color="#1F2937"
+        />
       </a>
       <a href="https://twitter.com/JerrTabb" target="blank">
-        <LogoTwitter width="19px" color="#1F2937" />
+        <LogoTwitter
+          title="Link to my twitter account"
+          width="19px"
+          color="#1F2937"
+        />
       </a>
       <a href="https://medium.com/@jollyjerr" target="blank">
-        <LogoMedium width="19px" color="#1F2937" />
+        <LogoMedium
+          title="Link to my medium account"
+          width="19px"
+          color="#1F2937"
+        />
       </a>
     </section>
   </nav>
