@@ -8,7 +8,7 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 600) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -20,7 +20,12 @@ const Image = () => {
     return <div>Picture not found! :(</div>;
   }
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+  return (
+    <Img
+      className="rounded-xl"
+      fluid={data.placeholderImage.childImageSharp.fluid}
+    />
+  );
 };
 
 export default Image;
