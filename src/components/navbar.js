@@ -11,7 +11,7 @@ import Navdrop from "../components/navdrop";
 import React from "react";
 
 const Navbar = () => (
-  <nav className="h-24 container mx-auto pt-6 relative flex space-x-4 text-xl text-gray-800">
+  <nav className="h-24 container mx-auto pt-6 relative md:flex hidden space-x-4 text-xl text-gray-800">
     <div>
       <Link to="/">
         <Logo style={{ width: "62.3px" }} />
