@@ -1,4 +1,7 @@
 [build]
 publish = "public"
-command = "yarn build"
-functions = "netlify/functions"
+command = "make build"
+functions = "functions"
+
+[build.environment]
+GO_IMPORT_PATH = "https://github.com/jollyjerr/jollyjerr"
