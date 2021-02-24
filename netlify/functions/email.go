@@ -9,7 +9,7 @@ import (
 	gomail "gopkg.in/mail.v2"
 )
 
-func handler(request events.APIGatewayProxyRequest) {
+func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	m := gomail.NewMessage()
 
 	m.SetHeader("From", os.Getenv("EMAIL_FROM"))
@@ -23,6 +23,11 @@ func handler(request events.APIGatewayProxyRequest) {
 		fmt.Println(err)
 		panic(err)
 	}
+
+	return &events.APIGatewayProxyResponse{
+		StatusCode: 200,
+		Body:       "Complete",
+	}, nil
 }
 
 func main() {
