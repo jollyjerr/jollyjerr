@@ -21,22 +21,30 @@ const Navbar = () => (
       <Navdrop
         title="About"
         items={[
-          { title: "tldr", linkTo: "/" },
-          { title: "Full bio", linkTo: "/" },
+          { title: "TLDR", linkTo: "/tldr" },
+          { title: "Full bio", linkTo: "/about-me" },
         ]}
       />
       <Navdrop
         title="Projects"
         items={[
-          { title: "Cryptofu", linkTo: "/" },
-          { title: "Other stuff", linkTo: "/" },
+          { title: "Open source", linkTo: "/projects" },
+          { title: "Personal", linkTo: "/projects" },
         ]}
       />
       <Navdrop
         title="Music"
         items={[
-          { title: "Bandcamp", linkTo: "/", external: true },
-          { title: "Soundcloud", linkTo: "/", external: true },
+          {
+            title: "Bandcamp",
+            linkTo: "https://jeremiahtabb.bandcamp.com/",
+            external: true,
+          },
+          {
+            title: "Soundcloud",
+            linkTo: "https://soundcloud.com/jeremiah-tabb-802138204",
+            external: true,
+          },
         ]}
       />
       <button className="font-semibold">Blog</button>
