@@ -65,8 +65,12 @@ const Footer = () => {
               title="Link to Instagram"
             />
           </a>
-          <button onClick={oops} className="w-min">
+          <button onClick={oops} className="w-min relative">
             <MailUnread width="32px" height="32px" title="Open email form" />
+            <div className="absolute -top-96 w-56 mb-20 ml-10 h-80 origin-bottom-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none z-20">
+              yo dog
+              <form action=""></form>
+            </div>
           </button>
         </div>
       </section>

@@ -12,7 +12,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <div className="md:mt-20 pt-8 md:pt-0 text-gray-900 pb-20 md:pb-0">
       <section className="md:pl-14">
-        <div className="text-5xl font-bold flex ml-8 cursor-default h-24">
+        <div className="text-5xl font-bold flex ml-8 cursor-default h-24 w-full p-2">
           I{"  "}
           <Flip
             terms={[
@@ -22,7 +22,7 @@ const IndexPage = () => (
               "like jazz.",
             ]}
             interval={2000}
-            className="ml-4 underline w-full max-w-max"
+            className="ml-4 underline w-full"
           />
         </div>
       </section>
@@ -37,7 +37,7 @@ const IndexPage = () => (
               width="75px"
             />
           </button>
-          <h2 className="ml-2 text-2xl">Check out my work</h2>
+          <h2 className="ml-2 text-2xl">Jump to my work</h2>
         </div>
       </section>
       <article className="bg-blue-jerr -mt-1 md:-mt-0">
