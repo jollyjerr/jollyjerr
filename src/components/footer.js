@@ -11,16 +11,27 @@ import {
 import React from "react";
 
 const Footer = () => {
+  const [email, setEmail] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [isEmail, setIsEmail] = React.useState(false);
+
   const scrollToTop = () =>
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth",
     });
-  const oops = () =>
-    window.alert(
-      "Oops! 🙈 My email form is not ready yet! You can email me at tabbjeremiah@gmail.com",
-    );
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("https://jtabb.dev/.netlify/functions/email", {
+      method: "POST",
+      body: JSON.stringify({ email, message }),
+    })
+      .catch(alert)
+      .finally(() => setIsEmail(false));
+  };
+
   return (
     <footer className="relative hidden md:flex container mx-auto  text-xl text-gray-800 h-36">
       <section className="col-span-7 mt-auto w-1/5 mb-6">
@@ -65,13 +76,36 @@ const Footer = () => {
               title="Link to Instagram"
             />
           </a>
-          <button onClick={oops} className="w-min relative">
-            <MailUnread width="32px" height="32px" title="Open email form" />
-            <div className="absolute -top-96 w-56 mb-20 ml-10 h-80 origin-bottom-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none z-20">
-              yo dog
-              <form action=""></form>
-            </div>
-          </button>
+          <div className="relative">
+            <button className="w-min" onClick={() => setIsEmail(true)}>
+              <MailUnread width="32px" height="32px" title="Open email form" />
+            </button>
+            {isEmail && (
+              <div className="absolute -top-96 mb-20 ml-10 p-6 origin-bottom-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none z-20">
+                <form onSubmit={handleSubmit}>
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <label htmlFor="message">Message</label>
+                  <textarea
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="resize-none"
+                    cols="30"
+                    rows="10"
+                    id="message"
+                    name="message"
+                  />
+                  <button type="submit">Send</button>
+                </form>
+              </div>
+            )}
+          </div>
         </div>
       </section>
       <section className="absolute right-0 bottom-3">
