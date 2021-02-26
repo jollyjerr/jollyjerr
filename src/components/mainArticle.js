@@ -2,9 +2,15 @@ import ProfilePhoto from "../components/profilePhoto";
 import React from "react";
 
 const MainArticle = () => {
-  // const [climbs, setClimbs] = React.useState([]);
+  const [climbs, setClimbs] = React.useState([]);
 
-  // console.log(climbs);
+  React.useEffect(() => {
+    fetch("https://jtabb.dev/.netlify/functions/climbs")
+      .then((res) => setClimbs(JSON.parse(res).items))
+      .catch(console.error);
+  });
+
+  console.log(climbs);
 
   return (
     <>
@@ -34,9 +40,9 @@ const MainArticle = () => {
       </section>
       <section className="text-center w-full mt-16 text-gray-100">
         <h2 className="underline text-4xl font-bold">Latest climbs</h2>
-        {/* {climbs.map((c, i) => (
-          <div key={i}>Hello</div>
-        ))} */}
+        {climbs.map((c, i) => (
+          <div key={i}>{c.title}</div>
+        ))}
       </section>
     </>
   );
