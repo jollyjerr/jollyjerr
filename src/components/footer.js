@@ -8,12 +8,14 @@ import {
   MailUnread,
 } from "react-ionicons";
 
+import ClickAwayListener from "react-click-away-listener";
 import React from "react";
 
 const Footer = () => {
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [isEmail, setIsEmail] = React.useState(false);
+  const [isSuccess, setIsSuccess] = React.useState(false);
 
   const scrollToTop = () =>
     window.scrollTo({
@@ -24,12 +26,25 @@ const Footer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://jtabb.dev/.netlify/functions/email", {
-      method: "POST",
-      body: JSON.stringify({ email, message }),
-    })
-      .catch(alert)
-      .finally(() => setIsEmail(false));
+    // fetch("https://jtabb.dev/.netlify/functions/email", { // once I figure out why gmail hates me
+    //   method: "POST",
+    //   body: JSON.stringify({ email, message }),
+    // })
+    //   .catch(alert)
+    //   .finally(() => setIsEmail(false));
+    setIsSuccess(true);
+    handleClose();
+  };
+
+  const handleClose = () => {
+    setEmail("");
+    setMessage("");
+    setIsEmail(false);
+    if (isSuccess) {
+      setTimeout(() => {
+        setIsSuccess(false);
+      }, 400);
+    }
   };
 
   return (
@@ -76,36 +91,49 @@ const Footer = () => {
               title="Link to Instagram"
             />
           </a>
-          <div className="relative">
-            <button className="w-min" onClick={() => setIsEmail(true)}>
-              <MailUnread width="32px" height="32px" title="Open email form" />
-            </button>
-            {isEmail && (
-              <div className="absolute -top-96 mb-20 ml-10 p-6 origin-bottom-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none z-20">
-                <form onSubmit={handleSubmit}>
-                  <label htmlFor="email">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <label htmlFor="message">Message</label>
-                  <textarea
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    className="resize-none"
-                    cols="30"
-                    rows="10"
-                    id="message"
-                    name="message"
-                  />
-                  <button type="submit">Send</button>
-                </form>
-              </div>
-            )}
-          </div>
+          <ClickAwayListener onClickAway={handleClose}>
+            <div className="relative">
+              <button className="w-min" onClick={() => setIsEmail(true)}>
+                <MailUnread
+                  width="32px"
+                  height="32px"
+                  title="Open email form"
+                  color={isSuccess ? "#059669" : "#111827"}
+                />
+              </button>
+              {isEmail && (
+                <div className="absolute -top-96 mb-20 ml-10 p-6 origin-bottom-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none z-20">
+                  <form onSubmit={handleSubmit}>
+                    <label htmlFor="email" className="block">
+                      Email
+                    </label>
+                    <input
+                      className="w-full border-2 pl-2"
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      autoFocus
+                    />
+                    <label htmlFor="message" className="block">
+                      Message
+                    </label>
+                    <textarea
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      className="resize-none border-2 p-2"
+                      cols="30"
+                      rows="7"
+                      id="message"
+                      name="message"
+                    />
+                    <button type="submit">Send</button>
+                  </form>
+                </div>
+              )}
+            </div>
+          </ClickAwayListener>
         </div>
       </section>
       <section className="absolute right-0 bottom-3">
