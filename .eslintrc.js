@@ -4,10 +4,10 @@ module.exports = {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
   },
-  extends: `react-app`,
   env: {
     browser: true,
     es6: true,
+    node: true,
   },
   extends: [
     "eslint:recommended",
@@ -24,4 +24,4 @@ module.exports = {
   },
   plugins: ["react", "prettier"],
   rules: {},
-}
+};

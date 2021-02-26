@@ -1,16 +1,30 @@
 import ProfilePhoto from "../components/profilePhoto";
 import React from "react";
+import devClimbs from "../assets/devClimbs.json";
 
 const MainArticle = () => {
   const [climbs, setClimbs] = React.useState([]);
 
-  React.useEffect(() => {
-    fetch("https://jtabb.dev/.netlify/functions/climbs")
-      .then((res) => setClimbs(JSON.parse(res).items))
-      .catch(console.error);
-  });
+  const getClimbData = () => {
+    if (process.env.NODE_ENV === "production") {
+      fetch("https://jtabb.dev/.netlify/functions/climbs")
+        .then((res) => res.json())
+        .then((json) => setClimbs(json.items))
+        .catch(console.error);
+    } else {
+      setClimbs([
+        devClimbs.items[0],
+        devClimbs.items[1],
+        devClimbs.items[3],
+        devClimbs.items[4],
+        devClimbs.items[5],
+      ]);
+    }
+  };
 
-  console.log(climbs);
+  React.useEffect(() => {
+    getClimbData();
+  }, []);
 
   return (
     <>
@@ -41,7 +55,7 @@ const MainArticle = () => {
       <section className="text-center w-full mt-16 text-gray-100">
         <h2 className="underline text-4xl font-bold">Latest climbs</h2>
         {climbs.map((c, i) => (
-          <div key={i}>{c.title}</div>
+          <div key={i} dangerouslySetInnerHTML={{ __html: c.description }} />
         ))}
       </section>
     </>
