@@ -50,7 +50,9 @@ const Footer = () => {
   return (
     <footer className="relative hidden md:flex container mx-auto  text-xl text-gray-800 h-36">
       <section className="col-span-7 mt-auto w-1/5 mb-6">
-        <h3 className="text-lg font-bold mb-3">{"Let's Connect"}</h3>
+        <h3 className="text-lg font-bold mb-3 font-Montserrat">
+          {"Let's Connect"}
+        </h3>
         <div className="grid grid-cols-6">
           <a
             href="https://github.com/jollyjerr"
@@ -141,7 +143,7 @@ const Footer = () => {
           <button onClick={scrollToTop}>
             <ArrowUpCircle width="56px" height="56px" />
           </button>
-          <h4>Back to top</h4>
+          <h4 className="font-Montserrat">Back to top</h4>
         </div>
       </section>
     </footer>

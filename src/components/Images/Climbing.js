@@ -3,10 +3,10 @@ import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import React from "react";
 
-const Image = () => {
+const Climbing = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "climbing.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 600) {
             ...GatsbyImageSharpFluid
@@ -15,17 +15,16 @@ const Image = () => {
       }
     }
   `);
-
   if (!data?.placeholderImage?.childImageSharp?.fluid) {
     return <div>Picture not found! :(</div>;
   }
-
   return (
     <Img
       className="rounded-xl"
       fluid={data.placeholderImage.childImageSharp.fluid}
+      alt={"A picture of me climbing in the sawtooth range!"}
     />
   );
 };
 
-export default Image;
+export default Climbing;
