@@ -18,12 +18,12 @@ const MobileFooter = () => {
           </Link>
         </div>
         <div className="w-full h-full flex items-center">
-          <Link className="m-auto" to="/about-me">
+          <Link className="m-auto" to="/blog">
             <Newspaper width="32px" height="32px" />
           </Link>
         </div>
         <div className="w-full h-full flex items-center">
-          <Link className="m-auto" to="/">
+          <Link className="m-auto" to="/about-me">
             <Wifi width="32px" height="32px" />
           </Link>
         </div>

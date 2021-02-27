@@ -1,0 +1,11 @@
+.blog-post-content h1 {
+        @apply text-6xl;
+}
+
+.blog-post-content blockquote {
+    @apply text-gray-600 italic font-Montserrat ml-3
+}
+
+.blog-post-content img {
+    @apply w-1/3 m-auto
+}

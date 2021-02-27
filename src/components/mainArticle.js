@@ -1,10 +1,30 @@
+import { Link, graphql, useStaticQuery } from "gatsby";
+
 import Climbing from "./Images/Climbing";
-import { Link } from "gatsby";
 import ProfilePhoto from "./Images/ProfilePhoto";
 import React from "react";
 import WorkWithCats from "./Images/WorkWithCats";
 
 const MainArticle = () => {
+  const {
+    allMarkdownRemark: { edges: blogPosts },
+  } = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        edges {
+          node {
+            excerpt(pruneLength: 250)
+            id
+            frontmatter {
+              title
+              date(formatString: "MMMM DD, YYYY")
+              slug
+            }
+          }
+        }
+      }
+    }
+  `);
   return (
     <>
       <section className="grid md:grid-cols-2 ">
@@ -17,6 +37,10 @@ const MainArticle = () => {
             I am a full-stack engineer with a passion for turning complicated
             ideas into slick applications.
           </p>
+          <p className="text-red-700">
+            This website is in very early development and is not ready for the
+            public eye! Click around if you want, but everything will break!
+          </p>
         </div>
       </section>
       <section className="text-center w-full mt-16 text-gray-100">
@@ -24,9 +48,25 @@ const MainArticle = () => {
           What’s new?
         </h2>
         <div className="grid md:grid-cols-3 p-2 mt-6">
-          <div className="w-3/4 m-auto h-72 bg-gray-100"></div>
-          <div className="w-3/4 m-auto h-72 bg-gray-100"></div>
-          <div className="w-3/4 m-auto h-72 bg-gray-100"></div>
+          {blogPosts &&
+            blogPosts
+              .slice(0, 3)
+              .filter((post) => post.node.frontmatter.title.length > 0)
+              .map(({ node: post }) => (
+                <div
+                  className="w-3/4 m-auto h-72 bg-gray-100 text-gray-900"
+                  key={post.id}
+                >
+                  {" "}
+                  <h1>
+                    <Link to={post.frontmatter.slug}>
+                      {post.frontmatter.title}
+                    </Link>
+                  </h1>
+                  <h2>{post.frontmatter.date}</h2>
+                  <p>{post.excerpt}</p>
+                </div>
+              ))}
         </div>
       </section>
       <section className="text-center w-full mt-16 text-gray-100">
@@ -72,7 +112,7 @@ const MainArticle = () => {
           <div className="w-full p-2 md:p-0 md:w-2/3 ml-auto mr-auto">
             <Climbing />
           </div>
-          <div className="text-left w-3/4 mr-auto space-y-4 text-2xl">
+          <div className="text-left w-3/4 mr-auto space-y-4 text-2xl pl-3 md:pl-0">
             <p>I live and work in Boulder, CO</p>
             <p>
               If I am not coding, you can find my climbing rocks all around the

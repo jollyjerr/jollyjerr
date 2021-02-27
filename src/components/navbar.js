@@ -47,8 +47,12 @@ const Navbar = () => (
           },
         ]}
       />
-      <button className="font-semibold">Blog</button>
-      <button className="font-semibold">Resume</button>
+      <Link to="/blog">
+        <button className="font-semibold">Blog</button>
+      </Link>
+      <Link to="/resume">
+        <button className="font-semibold">Resume</button>
+      </Link>
     </section>
     <section className="flex items-end h-full absolute right-4 bottom-0 space-x-2">
       <a href="https://github.com/jollyjerr" target="blank">
