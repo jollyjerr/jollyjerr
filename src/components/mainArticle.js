@@ -36,7 +36,8 @@ const MainArticle = () => {
   return (
     <>
       <section className="grid md:grid-cols-2 ">
-        <div className="w-full p-2 md:p-0 md:w-2/3 ml-auto mr-auto mt-3 md:mt-20">
+        <div className=" p-2 md:p-0 w-2/3 ml-auto mr-auto my-16 md:mt-20 relative">
+          <div className="absolute shadow-xl transform rotate-33 bg-orange-jerr w-full h-full" />
           <ProfilePhoto />
         </div>
         <div className="w-full md:w-2/3 mr-auto mt-2 p-2 md:p-0 md:mt-20 text-gray-100 text-4xl text-center md:text-left">
@@ -48,10 +49,13 @@ const MainArticle = () => {
           </p>
         </div>
       </section>
-      <section className="text-center w-full mt-16 text-gray-100">
-        <h2 className="underline text-5xl font-bold font-Montserrat">
-          What’s new?
-        </h2>
+      <section className="text-center w-full mt-12 md:mt-36 text-gray-100">
+        <div className="m-auto w-11/12 md:w-1/2 space-y-4">
+          <h2 className="text-4xl md:text-6xl font-bold font-Montserrat">
+            What’s New?
+          </h2>
+          <hr className="bg-gray-700 border-none h-1" />
+        </div>
         <div className="grid md:grid-cols-3 p-2 mt-6">
           {blogPosts &&
             blogPosts
@@ -78,7 +82,7 @@ const MainArticle = () => {
                       </h1>
                       <h2 className="text-gray-700">{post.frontmatter.date}</h2>
                     </section>
-                    <hr className="bg-gray-700 border-none h-px hidden md:block mb-3" />
+                    <hr className="bg-gray-700 border-none h-px mb-3" />
                     <p>{post.excerpt}</p>
                   </Link>
                 </div>
@@ -86,43 +90,43 @@ const MainArticle = () => {
         </div>
       </section>
       <section className="text-center w-full mt-10 text-gray-100">
-        <h2 className="underline text-5xl font-bold font-Montserrat">
-          My work
-        </h2>
-        <div className="mt-6">
-          <div className="p-2 md:p-0 md:w-1/2 ml-auto mr-auto">
+        <div className="m-auto w-11/12 md:w-1/2  space-y-4">
+          <h2 className="text-4xl md:text-6xl font-bold font-Montserrat">
+            My Work
+          </h2>
+          <hr className="bg-gray-700 border-none h-1" />
+        </div>
+        <div className="mt-10">
+          <div className="p-2 md:p-0 md:w-1/2 ml-auto mx-auto relative my-16">
+            <div className="absolute shadow-xl transform -rotate-12 bg-orange-jerr w-full h-full" />
             <WorkWithCats />
           </div>
-          <div className="text-center w-full p-3 md:p-8 ml-auto space-y-4 text-2xl">
+          <div className="text-center w-full md:w-4/6 p-3 md:p-8 mx-auto space-y-4 text-2xl">
             <p>
-              Most of my time is spent understanding problems and creating
-              effective solutions using whatever tools necessary.
+              Most of my time is spent understanding problems and building
+              solutions using whatever tools necessary. I love writing client
+              facing interfaces with React.js and Vue.js. For server side work,
+              I love Node.js, Golang and Python.
             </p>
-            <h6 className="font-Montserrat">Frontend</h6>
-            <p>
-              I love building client facing interfaces with React.js and Vue.js.
-            </p>
-            <h6 className="font-Montserrat">Backend</h6>
-            <p>For server side work, I love Node.js, Golang and Python.</p>
-            <h6 className="font-Montserrat text-4xl text-gray-900">Example</h6>
             <p>
               This website is built with Gatsby.js and Tailwindcss with some
-              supporting lambda functions written in Golang!{" "}
-              <a
-                href="https://github.com/jollyjerr/jollyjerr"
-                target="blank"
-                className="underline"
-              >
-                Check it out!
-              </a>
+              supporting lambda functions written in Golang!
             </p>
+            <a href="https://github.com/jollyjerr/jollyjerr" target="blank">
+              <button className="rounded-xl bg-orange-jerr p-3 hover:bg-yellow-800 hover:shadow-lg my-8">
+                Check it out!
+              </button>
+            </a>
           </div>
         </div>
       </section>
-      <section className="text-center w-full mt-16 text-gray-100">
-        <h2 className="underline text-5xl font-bold font-Montserrat">
-          My life
-        </h2>
+      <section className="text-center w-full mt-8 text-gray-100">
+        <div className="m-auto w-1/2 space-y-4">
+          <h2 className="text-4xl md:text-6xl font-bold font-Montserrat">
+            My Life
+          </h2>
+          <hr className="bg-gray-700 border-none h-1" />
+        </div>
         <div className="grid md:grid-cols-2 mt-6">
           <div className="md:text-left text-center w-full md:w-3/4 ml-auto space-y-6 text-2xl pl-3 md:pl-0">
             <p>I live and work in Boulder, CO</p>
@@ -131,12 +135,13 @@ const MainArticle = () => {
               US or at home learning a new skill.
             </p>
             <Link to="about-me">
-              <button className="rounded-xl bg-yellow-700 p-3 hover:bg-yellow-800 hover:shadow-lg my-8">
+              <button className="rounded-xl bg-orange-jerr p-3 hover:bg-yellow-800 hover:shadow-lg my-8">
                 Read my full bio
               </button>
             </Link>
           </div>
-          <div className="w-full p-2 md:p-0 md:w-2/3 ml-auto mr-auto">
+          <div className="w-full p-2 md:p-0 md:w-2/3 ml-auto mr-auto relative my-16">
+            <div className="absolute shadow-xl transform rotate-12 bg-orange-jerr w-full h-full" />
             <Climbing />
           </div>
         </div>

@@ -41,6 +41,7 @@ const navdrop = ({ title, items }) => {
                         i.external ? (
                           <a
                             href={i.linkTo}
+                            target="blank"
                             className={`${
                               active
                                 ? "bg-gray-100 text-gray-900"

@@ -4,8 +4,13 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      rotate: {
+        33: "33deg",
+        133: "133deg",
+      },
       colors: {
         "blue-jerr": "#3B82F6",
+        "orange-jerr": "#b45309df",
       },
       fontFamily: {
         Montserrat: [
