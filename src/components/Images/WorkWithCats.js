@@ -8,7 +8,7 @@ const WorkWithCats = () => {
     query {
       placeholderImage: file(relativePath: { eq: "work.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 600) {
+          fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -20,7 +20,7 @@ const WorkWithCats = () => {
   }
   return (
     <Img
-      className="rounded-xl"
+      className="rounded-xl shadow-lg"
       fluid={data.placeholderImage.childImageSharp.fluid}
       alt={"A picture of my cats and some code!"}
     />

@@ -1,11 +1,11 @@
-import { Code, CodeSlash, Home, Newspaper, Wifi } from "react-ionicons";
+import { CodeSlash, Home, Newspaper, Wifi } from "react-ionicons";
 
 import { Link } from "gatsby";
 import React from "react";
 
 const MobileFooter = () => {
   return (
-    <footer className="fixed bottom-1 md:hidden z-20 w-full h-14">
+    <footer className="fixed bottom-4 md:hidden z-20 w-screen h-20">
       <div className="grid grid-cols-4 w-11/12 m-auto h-full bg-gray-100 rounded-xl shadow-inner border-gray-400">
         <div className="w-full h-full flex items-center">
           <Link className="m-auto" to="/">

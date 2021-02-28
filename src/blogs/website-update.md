@@ -2,6 +2,7 @@
 slug: "/blog/website-update"
 date: "2020-02-26"
 title: "Website update!"
+featuredImage: ../images/begin-mug.jpg
 ---
 
 # This is a title

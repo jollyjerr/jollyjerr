@@ -13,7 +13,7 @@ const IndexPage = () => (
     <SEO title="Jeremiah Tabb" />
     <div className="md:mt-20 pt-8 md:pt-0 text-gray-900 pb-20 md:pb-0">
       <section className="md:pl-14">
-        <div className="text-5xl font-bold flex ml-8 cursor-default h-24 w-full p-2 font-Montserrat">
+        <div className="md:text-5xl text-4xl font-bold flex md:ml-8 cursor-default h-24 w-full p-2 font-Montserrat">
           I{"  "}
           <Flip
             terms={[

@@ -39,7 +39,7 @@ const Flip = ({ terms, className, deg }) => {
     >
       <a.div
         style={{ opacity: opacity.interpolate((o) => 1 - o * 2), transform }}
-        className="absolute inset-0 underline"
+        className="absolute inset-0 underline w-full"
       >
         {texts.card1}
       </a.div>

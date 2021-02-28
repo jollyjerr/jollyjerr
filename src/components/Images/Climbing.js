@@ -20,7 +20,7 @@ const Climbing = () => {
   }
   return (
     <Img
-      className="rounded-xl"
+      className="rounded-xl shadow-lg"
       fluid={data.placeholderImage.childImageSharp.fluid}
       alt={"A picture of me climbing in the sawtooth range!"}
     />
