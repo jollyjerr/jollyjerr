@@ -10,7 +10,9 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import React from "react";
-import profile from "../images/profile.jpg";
+import pimgurl from "../images/profile.jpg";
+
+const profile = "https://jtabb.dev" + pimgurl;
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(

@@ -26,14 +26,25 @@ const Footer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // fetch("https://jtabb.dev/.netlify/functions/email", { // once I figure out why gmail hates me
-    //   method: "POST",
-    //   body: JSON.stringify({ email, message }),
-    // })
-    //   .catch(alert)
-    //   .finally(() => setIsEmail(false));
-    setIsSuccess(true);
-    handleClose();
+    const submission = `
+    ${email}
+
+    ${message}
+    `;
+    fetch("https://jtabb.dev/.netlify/functions/email", {
+      method: "POST",
+      body: submission,
+      headers: {
+        "Content-Type": "text/plain",
+      },
+    })
+      .catch(() =>
+        alert(
+          "Oops! Looks like email is not working right now. Feel free to send me an email at tabbjeremiah@gmail.com until I can fix it!",
+        ),
+      )
+      .then(() => setIsSuccess(true))
+      .finally(handleClose);
   };
 
   const handleClose = () => {
