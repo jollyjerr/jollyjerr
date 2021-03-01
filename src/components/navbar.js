@@ -21,15 +21,16 @@ const Navbar = () => (
       <Navdrop
         title="About"
         items={[
-          { title: "TLDR", linkTo: "/tldr" },
-          { title: "Full bio", linkTo: "/about-me" },
+          { title: "My Story", linkTo: "/about-me" },
+          { title: "Resume", linkTo: "/resume" },
         ]}
       />
       <Navdrop
         title="Projects"
         items={[
-          { title: "Open source", linkTo: "/projects" },
+          { title: "Open Source", linkTo: "/projects" },
           { title: "Personal", linkTo: "/projects" },
+          { title: "Hire Me", linkTo: "/" },
         ]}
       />
       <Navdrop
@@ -49,9 +50,6 @@ const Navbar = () => (
       />
       <Link to="/blog">
         <button className="font-semibold">Blog</button>
-      </Link>
-      <Link to="/resume">
-        <button className="font-semibold">Resume</button>
       </Link>
     </section>
     <section className="flex items-end h-full absolute right-4 bottom-0 space-x-2">
