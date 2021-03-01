@@ -9,7 +9,7 @@ const blog = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <Layout>
-      <SEO title="Blog | Jeremiah Tabb" />
+      <SEO title="Blog" />
       <div className="text-3xl md:hidden font-Montserrat pl-20">
         <h1>Blog</h1>
       </div>

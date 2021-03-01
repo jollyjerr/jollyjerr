@@ -1,5 +1,6 @@
 // import Document from "../assets/resume.svg";
 import Layout from "../components/layout";
+import { Link } from "gatsby";
 import React from "react";
 import SEO from "../components/seo";
 
@@ -15,6 +16,11 @@ const resume = () => {
         <button className="rounded-xl bg-orange-jerr p-3 hover:bg-yellow-800 hover:shadow-lg my-8">
           Download a copy!
         </button>
+        <Link to="/climbing-live-feed">
+          <button className="rounded-xl bg-blue-jerr p-3 hover:bg-blue-800 hover:shadow-lg my-8 float-right">
+            Check out my climbing resume!
+          </button>
+        </Link>
         {/* <Document /> */}
         <p>
           I am working on revamping my resume right now - come back soon to

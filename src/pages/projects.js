@@ -5,7 +5,7 @@ import SEO from "../components/seo";
 const projects = () => {
   return (
     <Layout>
-      <SEO title="Projects" />
+      <SEO title="Software Engineering Projects" />
       <div>Projects</div>
     </Layout>
   );
