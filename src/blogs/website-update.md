@@ -1,40 +1,24 @@
 ---
 slug: "/blog/website-update"
-date: "2020-02-26"
+date: "2021-03-07"
 title: "Website update!"
 featuredImage: ../images/begin-mug.jpg
 ---
 
-# This is a title
+# Welcome to my new website
 
-> This is a quote
+For a long time, I have used a very simple single page application for my personal website that simply existed to link to other resources.
+This worked great! I was able to spend very little time on custom code for my personal website and could spend more time writing content for Medium or thinking of my next clever tweet.
 
-Cornhole offal try-hard woke helvetica. Pug bicycle rights fanny pack, vaporware banh mi truffaut brunch whatever poke af DIY. Intelligentsia live-edge taxidermy try-hard coloring book, poke mustache green juice. Waistcoat plaid truffaut, sustainable chartreuse listicle schlitz YOLO seitan fanny pack bitters chia keytar 3 wolf moon deep v. Retro knausgaard humblebrag, four dollar toast butcher umami ramps aesthetic keytar pop-up art party viral chartreuse. Ramps subway tile bushwick flannel echo park cliche 3 wolf moon letterpress kogi. Listicle kitsch normcore pinterest viral cred.
+But recently it started to bother me that I spent so much time coding for other people and would not be bothered to spend a few days of work just working on _my_ image.
 
-Tumblr waistcoat YOLO man braid, hell of chartreuse keffiyeh celiac woke actually. 8-bit pitchfork beard paleo af echo park, put a bird on it VHS. Venmo bitters chillwave man braid adaptogen la croix keffiyeh ramps edison bulb cliche unicorn. Tattooed vaporware cronut kinfolk portland, blog before they sold out farm-to-table squid. Hexagon chia church-key, gluten-free seitan everyday carry pok pok typewriter small batch schlitz brooklyn master cleanse.
+So, welcome to my new website! Obviously it is a work in progress and has a long way to go, but over the next few months you can expect to see it come into shape and really start looking good.
 
-Copper mug occupy green juice sartorial. Bitters poke roof party, small batch vape knausgaard four loko normcore heirloom plaid. Aesthetic deep v paleo kickstarter snackwave kombucha vinyl. Af umami plaid, vape twee narwhal chia.
+My priorities:
 
-![bgird](https://science.sciencemag.org/content/355/6321/121/F1.large.jpg)
+- Reach a "minimal viable product" soon
+- Add dark mode
+- Write out some of the blogs I have been wanting to write for the past year
+- Add a comment system to my blog posts
 
-```tsx
-import React from "react";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-
-/* Components */
-import { Quill, ErrorBoundary } from "../../../components";
-
-/* Types */
-import { Permissions, ILoan } from "@fintive/types";
-import TransactionSourcesTable from "../tables/3.1TransactionSourcesTable";
-import Typography from "@material-ui/core/Typography";
-import { SectionProps } from "../LoanDetails";
-import { MutateOptions } from "react-query";
-import { useAuth0 } from "@auth0/auth0-react";
-
-const TransactionSourcesUses = ({ loan, loanMutation }: SectionProps) => {
-  const { TransactionSources__Notes } = useStyles();
-  const { getAccessTokenSilently } = useAuth0();
-
- //...
-```
+Anyway - thanks for visiting my website, and I hope you will join me as I work to better my online image and provide valuable content for developers and composers!

@@ -30,7 +30,7 @@ const Navbar = () => (
         items={[
           { title: "Open Source", linkTo: "/projects" },
           { title: "Personal", linkTo: "/projects" },
-          { title: "Hire Me", linkTo: "/" },
+          // { title: "Hire Me", linkTo: "/" },
         ]}
       />
       <Navdrop
