@@ -17,10 +17,11 @@ export default function Template({
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <div className="blog-post-container">
-        <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
+      <div className="blog-post-container md:w-3/4 m-auto mt-3">
+        <div className="p-3">
+          <h1 className="text-5xl font-Montserrat">{frontmatter.title}</h1>
+          <h2 className="text-gray-600">{frontmatter.date}</h2>
+          <hr />
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
