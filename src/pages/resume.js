@@ -9,11 +9,12 @@ const resume = () => {
   return (
     <Layout>
       <SEO title="Resume" />
-      <div className="text-3xl md:hidden font-Montserrat pl-20">
-        <h1>Resume</h1>
+      <div className="bg-blue-jerr transform rotate-12 m-auto h-32 p-8 w-1/3 shadow-xl mt-60">
+        <h1 className="text-center transform -rotate-12 font-Montserrat text-gray-100 lg:text-6xl text-2xl">
+          Resume
+        </h1>
       </div>
-      {/* <div className="bg-blue-jerr md:p-12 w-5/6 mx-auto md:block hidden"> */}
-      <div className="md:w-1/2 w-11/12 mx-auto md:my-16 mt-6 h-screen">
+      <div className="md:w-1/2 w-11/12 mx-auto md:my-32 mt-6">
         <a href={ResumePDF} download>
           <button className="rounded-xl bg-orange-jerr p-3 hover:bg-yellow-800 hover:shadow-lg my-8">
             Download a copy!
@@ -24,13 +25,7 @@ const resume = () => {
             Check out my climbing resume!
           </button>
         </Link>
-        {/* <Document /> */}
-        <p>
-          I am working on revamping my resume right now - come back soon to
-          check it out!
-        </p>
       </div>
-      {/* </div> */}
     </Layout>
   );
 };
