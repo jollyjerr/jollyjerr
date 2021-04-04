@@ -38,7 +38,7 @@ const Flip = ({ terms, className, deg }) => {
       // onClick={handleClick}
     >
       <a.div
-        style={{ opacity: opacity.interpolate((o) => 1 - o * 2), transform }}
+        style={{ opacity: opacity.to((o) => 1 - o * 2), transform }}
         className="absolute inset-0 underline w-full"
       >
         {texts.card1}
@@ -46,7 +46,7 @@ const Flip = ({ terms, className, deg }) => {
       <a.div
         style={{
           opacity,
-          transform: transform.interpolate((t) => `${t} rotateX(180deg)`),
+          transform: transform.to((t) => `${t} rotateX(180deg)`),
         }}
       >
         {texts.card2}
