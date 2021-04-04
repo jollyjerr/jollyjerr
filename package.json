@@ -51,6 +51,11 @@
     "typescript": "^4.2.3",
     "webpack": "^5.30.0"
   },
+  "resolutions": {
+    "graphql": "^15.4.0",
+    "graphql-compose": "^7.25.0",
+    "webpack": "^5.24.2"
+  },
   "keywords": [
     "gatsby"
   ],
