@@ -1,8 +1,8 @@
-import Layout from "../components/layout";
+import Layout from "../../components/layout";
 import React from "react";
-import SEO from "../components/seo";
+import SEO from "../../components/seo";
 
-const projects = () => {
+const Personal = () => {
   return (
     <Layout>
       <SEO title="Software Engineering Projects" />
@@ -23,4 +23,4 @@ const projects = () => {
   );
 };
 
-export default projects;
+export default Personal;

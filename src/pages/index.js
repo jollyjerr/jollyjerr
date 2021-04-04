@@ -11,7 +11,7 @@ import SEO from "../components/seo";
 const IndexPage = () => (
   <Layout>
     <SEO title="Jeremiah Tabb" />
-    <div className="md:mt-20 pt-8 md:pt-0 text-gray-900 pb-20 md:pb-0">
+    <div className="md:mt-20 pt-8 md:pt-0 text-gray-900 dark:text-green-100 pb-20 md:pb-0">
       <section className="md:pl-14">
         <div className="md:text-5xl text-4xl font-bold flex md:ml-8 cursor-default h-24 w-full p-2 font-Montserrat">
           I{"  "}
@@ -20,7 +20,13 @@ const IndexPage = () => (
               "build software.",
               "write music.",
               "love React.",
-              "like jazz.",
+              // "like jazz.",
+              // "climb rocks.",
+              // "really like Golang.",
+              // "prefer flask over django.",
+              // "love to ski.",
+              // "use spaCy to parse text.",
+              // "like to bike.",
             ]}
             interval={2000}
             className="ml-4 underline w-full"
@@ -30,7 +36,7 @@ const IndexPage = () => (
       <section className="relative">
         <HeroToBodyWave className="w-full" />
         <div className="text-gray-100 hidden md:block absolute z-10 ml-auto mr-auto -right-1/3 left-0 w-56 top-1/3">
-          <Link to="/projects">
+          <Link to="/projects/opensource">
             <button>
               <ArrowForwardCircle
                 title="Button: Check out my work."

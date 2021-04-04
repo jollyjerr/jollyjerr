@@ -8,10 +8,11 @@ import {
 import { Link } from "gatsby";
 import Logo from "../assets/logo.svg";
 import Navdrop from "../components/navdrop";
+import PropTypes from "prop-types";
 import React from "react";
 
-const Navbar = () => (
-  <nav className="h-24 container mx-auto pt-6 relative md:flex hidden space-x-4 text-xl text-gray-800">
+const Navbar = ({ darkMode, setDarkMode }) => (
+  <nav className="h-24 container mx-auto pt-6 relative md:flex hidden space-x-4 text-xl text-gray-800 dark:text-gray-100">
     <div>
       <Link to="/">
         <Logo style={{ width: "62.3px" }} />
@@ -28,8 +29,8 @@ const Navbar = () => (
       <Navdrop
         title="Projects"
         items={[
-          { title: "Open Source", linkTo: "/projects" },
-          { title: "Personal", linkTo: "/projects" },
+          { title: "Open Source", linkTo: "/projects/opensource" },
+          { title: "Personal", linkTo: "/projects/personal" },
           // { title: "Hire Me", linkTo: "/" },
         ]}
       />
@@ -81,8 +82,29 @@ const Navbar = () => (
           color="#1F2937"
         />
       </a>
+      {/* <div
+        className="flex justify-between items-center cursor-pointer"
+        onClick={() => setDarkMode(!darkMode)}
+      >
+        <div
+          className={`w-16 h-10 flex items-center bg-gray-300 rounded-full p-1 duration-300 ease-in-out ${
+            darkMode && "bg-gray-700"
+          }`}
+        >
+          <div
+            className={`bg-white w-8 h-8 rounded-full shadow-md transform duration-300 ease-in-out ${
+              darkMode && "translate-x-6"
+            }`}
+          ></div>
+        </div>
+      </div> */}
     </section>
   </nav>
 );
+
+Navbar.propTypes = {
+  darkMode: PropTypes.bool,
+  setDarkMode: PropTypes.func,
+};
 
 export default Navbar;
