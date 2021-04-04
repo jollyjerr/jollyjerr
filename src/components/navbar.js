@@ -82,7 +82,7 @@ const Navbar = ({ darkMode, setDarkMode }) => (
           color="#1F2937"
         />
       </a>
-      <div
+      {/* <div
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setDarkMode(!darkMode)}
       >
@@ -97,7 +97,7 @@ const Navbar = ({ darkMode, setDarkMode }) => (
             }`}
           ></div>
         </div>
-      </div>
+      </div> */}
     </section>
   </nav>
 );

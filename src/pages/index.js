@@ -20,13 +20,13 @@ const IndexPage = () => (
               "build software.",
               "write music.",
               "love React.",
-              "like jazz.",
-              "climb rocks.",
-              "really like Golang.",
-              "prefer flask over django.",
-              "love to ski.",
-              "use spaCy to parse text.",
-              "like to bike.",
+              // "like jazz.",
+              // "climb rocks.",
+              // "really like Golang.",
+              // "prefer flask over django.",
+              // "love to ski.",
+              // "use spaCy to parse text.",
+              // "like to bike.",
             ]}
             interval={2000}
             className="ml-4 underline w-full"
