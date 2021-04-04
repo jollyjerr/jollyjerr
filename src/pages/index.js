@@ -21,6 +21,12 @@ const IndexPage = () => (
               "write music.",
               "love React.",
               "like jazz.",
+              "climb rocks.",
+              "really like Golang.",
+              "prefer flask over django.",
+              "love to ski.",
+              "use spaCy to parse text.",
+              "like to bike.",
             ]}
             interval={2000}
             className="ml-4 underline w-full"
@@ -30,7 +36,7 @@ const IndexPage = () => (
       <section className="relative">
         <HeroToBodyWave className="w-full" />
         <div className="text-gray-100 hidden md:block absolute z-10 ml-auto mr-auto -right-1/3 left-0 w-56 top-1/3">
-          <Link to="/projects">
+          <Link to="/projects/opensource">
             <button>
               <ArrowForwardCircle
                 title="Button: Check out my work."
