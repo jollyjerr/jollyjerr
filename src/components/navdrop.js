@@ -17,6 +17,7 @@ const navdrop = ({ title, items }) => {
                 <ChevronDown
                   cssClasses={`inline ${open ? "transform rotate-180" : ""}`}
                   width="14px"
+                  color="currentColor"
                 />
               </Menu.Button>
             </span>

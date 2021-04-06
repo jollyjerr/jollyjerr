@@ -16,10 +16,12 @@ export default function Template({
   const { frontmatter, html } = markdownRemark;
   return (
     <Layout>
-      <SEO title={frontmatter.title} />
+      <SEO title={frontmatter.title + " | Jeremiah Tabb"} />
       <div className="blog-post-container md:w-3/4 m-auto mt-3">
         <div className="p-3">
-          <h1 className="text-5xl font-Montserrat">{frontmatter.title}</h1>
+          <h1 className="text-5xl font-Montserrat dark:text-gray-100">
+            {frontmatter.title}
+          </h1>
           <h2 className="text-gray-600">{frontmatter.date}</h2>
           <hr />
           <div

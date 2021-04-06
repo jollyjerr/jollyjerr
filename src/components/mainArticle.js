@@ -42,7 +42,7 @@ const MainArticle = () => {
         </div>
         <div className="w-full md:w-2/3 mr-auto mt-2 p-2 md:p-0 md:mt-20 text-gray-100 text-4xl text-center md:text-left">
           <p className="mb-6 font-Montserrat">👋 Welcome!</p>
-          <hr className="bg-gray-700 border-none h-1 hidden md:block" />
+          <hr className="bg-gray-700 dark:bg-gray-900 border-none h-1 hidden md:block" />
           <p className="text-2xl mt-6">
             I am a full-stack engineer with a passion for turning complicated
             ideas into slick applications.
@@ -63,7 +63,7 @@ const MainArticle = () => {
               .filter((post) => post.node.frontmatter.title.length > 0)
               .map(({ node: post }) => (
                 <div
-                  className="w-3/4 m-auto bg-gray-100 text-gray-900 rounded-xl p-6 text-left hover:shadow-2xl mb-6 md:mb-0"
+                  className="w-3/4 m-auto bg-gray-100 text-gray-900 dark:bg-gray-600 dark:text-gray-100 rounded-xl p-6 text-left hover:shadow-2xl mb-6 md:mb-0"
                   key={post.id}
                 >
                   <Link to={post.frontmatter.slug}>
@@ -80,7 +80,9 @@ const MainArticle = () => {
                       <h1 className="text-3xl font-Montserrat">
                         {post.frontmatter.title}
                       </h1>
-                      <h2 className="text-gray-700">{post.frontmatter.date}</h2>
+                      <h2 className="text-gray-700 dark:text-gray-400">
+                        {post.frontmatter.date}
+                      </h2>
                     </section>
                     <hr className="bg-gray-700 border-none h-px mb-3" />
                     <p>{post.excerpt}</p>

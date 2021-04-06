@@ -59,7 +59,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative hidden md:flex container mx-auto text-xl text-gray-800 h-36">
+    <footer className="relative hidden md:flex container mx-auto text-xl text-gray-800 dark:text-gray-100 h-36">
       <section className="col-span-7 mt-auto w-1/5 mb-6">
         <h3 className="text-lg font-bold mb-3 font-Montserrat">
           {"Let's Connect"}
@@ -70,28 +70,48 @@ const Footer = () => {
             target="blank"
             className="w-min"
           >
-            <LogoGithub width="32px" height="32px" title="Link to Github" />
+            <LogoGithub
+              width="32px"
+              height="32px"
+              title="Link to Github"
+              color="currentColor"
+            />
           </a>
           <a
             href="https://www.linkedin.com/in/jeremiahtabb/"
             target="blank"
             className="w-min"
           >
-            <LogoLinkedin width="32px" height="32px" title="Link to LinkedIn" />
+            <LogoLinkedin
+              width="32px"
+              height="32px"
+              title="Link to LinkedIn"
+              color="currentColor"
+            />
           </a>
           <a
             href="https://twitter.com/JerrTabb"
             target="blank"
             className="w-min"
           >
-            <LogoTwitter width="32px" height="32px" title="Link to Twitter" />
+            <LogoTwitter
+              width="32px"
+              height="32px"
+              title="Link to Twitter"
+              color="currentColor"
+            />
           </a>
           <a
             href="https://medium.com/@jollyjerr"
             target="blank"
             className="w-min"
           >
-            <LogoMedium width="32px" height="32px" title="Link to Medium" />
+            <LogoMedium
+              width="32px"
+              height="32px"
+              title="Link to Medium"
+              color="currentColor"
+            />
           </a>
           <a
             href="https://www.instagram.com/jollyjerr/"
@@ -102,6 +122,7 @@ const Footer = () => {
               width="32px"
               height="32px"
               title="Link to Instagram"
+              color="currentColor"
             />
           </a>
           <ClickAwayListener onClickAway={handleClose}>
@@ -111,7 +132,7 @@ const Footer = () => {
                   width="32px"
                   height="32px"
                   title="Open email form"
-                  color={isSuccess ? "#059669" : "#111827"}
+                  color={isSuccess ? "#059669" : "currentColor"}
                 />
               </button>
               {isEmail && (
@@ -152,7 +173,7 @@ const Footer = () => {
       <section className="absolute right-0 bottom-3">
         <div className="text-left">
           <button onClick={scrollToTop}>
-            <ArrowUpCircle width="56px" height="56px" />
+            <ArrowUpCircle width="56px" height="56px" color="currentColor" />
           </button>
           <h4 className="font-Montserrat">Back to top</h4>
         </div>

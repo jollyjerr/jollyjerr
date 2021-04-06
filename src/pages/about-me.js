@@ -8,7 +8,7 @@ const AboutMe = () => {
   return (
     <Layout>
       <SEO title="About Me | Jeremiah Tabb" />
-      <div className="relative mt-16 text-gray-900">
+      <div className="relative mt-16 text-gray-900 dark:text-gray-300">
         <div className="bg-blue-jerr transform rotate-12 m-auto h-32 p-8 w-1/3 shadow-xl">
           <h1 className="text-center transform -rotate-12 font-Montserrat text-gray-100 lg:text-6xl text-2xl">
             About me

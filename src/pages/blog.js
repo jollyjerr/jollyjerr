@@ -19,7 +19,7 @@ const blog = ({ data }) => {
           .map(({ node: post }) => {
             return (
               <div
-                className="w-3/4 m-auto bg-gray-100 text-gray-900 rounded-xl p-6 text-left hover:bg-blue-jerr hover:text-gray-100 mb-6 md:mb-0"
+                className="w-3/4 m-auto bg-gray-100 text-gray-900 dark:bg-gray-600 dark:text-gray-100 rounded-xl p-6 text-left hover:bg-blue-jerr hover:text-gray-100 mb-6 md:mb-0"
                 key={post.id}
               >
                 <Link to={post.frontmatter.slug}>
