@@ -1,5 +1,5 @@
 <svg class="w-full" viewBox="0 0 1200 212" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd"
         d="M0 0L50 36C100 72 200 144 300 180C400 216 500 216 600 204C700 192 800 168 900 162C1000 156 1100 168 1150 174L1200 180V0H1150C1100 0 1000 0 900 0C800 0 700 0 600 0C500 0 400 0 300 0C200 0 100 0 50 0H0Z"
-        fill="#3B82F6" />
+        fill="currentColor" />
 </svg>

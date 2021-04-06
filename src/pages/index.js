@@ -20,9 +20,9 @@ const IndexPage = () => (
               "build software.",
               "write music.",
               "love React.",
-              // "like jazz.",
+              "like jazz.",
               // "climb rocks.",
-              // "really like Golang.",
+              "really like Golang.",
               // "prefer flask over django.",
               // "love to ski.",
               // "use spaCy to parse text.",
@@ -34,7 +34,9 @@ const IndexPage = () => (
         </div>
       </section>
       <section className="relative">
-        <HeroToBodyWave className="w-full" />
+        <div className="text-blue-jerr dark:text-gray-700">
+          <HeroToBodyWave className="w-full" />
+        </div>
         <div className="text-gray-100 hidden md:block absolute z-10 ml-auto mr-auto -right-1/3 left-0 w-56 top-1/3">
           <Link to="/projects/opensource">
             <button>
@@ -49,10 +51,12 @@ const IndexPage = () => (
           <h2 className="ml-2 font-Montserrat">Jump to my work</h2>
         </div>
       </section>
-      <article className="bg-blue-jerr -mt-1 md:-mt-0">
+      <article className="bg-blue-jerr dark:bg-gray-700 -mt-1 md:-mt-0">
         <MainArticle />
       </article>
-      <BodyToFooterWave className="w-full" />
+      <div className="text-blue-jerr dark:text-gray-700">
+        <BodyToFooterWave className="w-full" />
+      </div>
     </div>
   </Layout>
 );

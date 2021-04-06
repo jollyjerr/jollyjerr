@@ -58,31 +58,31 @@ const Navbar = ({ darkMode, setDarkMode }) => (
         <LogoGithub
           title="Link to my github account"
           width="19px"
-          color="#1F2937"
+          color="currentColor"
         />
       </a>
       <a href="https://www.linkedin.com/in/jeremiahtabb/" target="blank">
         <LogoLinkedin
           title="Link to my linkedin account"
           width="19px"
-          color="#1F2937"
+          color="currentColor"
         />
       </a>
       <a href="https://twitter.com/JerrTabb" target="blank">
         <LogoTwitter
           title="Link to my twitter account"
           width="19px"
-          color="#1F2937"
+          color="currentColor"
         />
       </a>
       <a href="https://medium.com/@jollyjerr" target="blank">
         <LogoMedium
           title="Link to my medium account"
           width="19px"
-          color="#1F2937"
+          color="currentColor"
         />
       </a>
-      {/* <div
+      <div
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setDarkMode(!darkMode)}
       >
@@ -97,7 +97,7 @@ const Navbar = ({ darkMode, setDarkMode }) => (
             }`}
           ></div>
         </div>
-      </div> */}
+      </div>
     </section>
   </nav>
 );
