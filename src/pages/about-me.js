@@ -20,16 +20,16 @@ const AboutMe = () => {
             <hr className="bg-gray-900 border-none h-1 mb-3" />
             <div className="space-y-6">
               <p>
-                I spend the majority of my time building data-driven
+                I spend the majority of my time building data-driven/iot
                 applications with the awesome team at{" "}
                 <a
-                  href="https://soseintelworks.com"
+                  href="https://smartrent.com"
                   className="text-blue-jerr underline"
                 >
-                  Sose Intelworks
+                  SmartRent
                 </a>
-                . I also work as a full-time engineer for other projects -
-                building modern web applications with a variety of technologies.
+                . I also work as an engineer for other projects - building
+                modern web applications with a variety of technologies.
               </p>
               <p>
                 Previously, I have worked on computational linguistics pipelines
