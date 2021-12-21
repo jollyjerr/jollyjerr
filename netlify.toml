@@ -1,7 +1,0 @@
-[build]
-publish = "public"
-command = "make build"
-functions = "public_functions"
-
-[build.environment]
-GO_IMPORT_PATH = "https://github.com/jollyjerr/jollyjerr"
