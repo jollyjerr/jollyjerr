@@ -1,3 +1,3 @@
-<nav class="py-10">
-  <h1 class="text-4xl font-bold">Jeremiah Tabb</h1>
+<nav class="text-center lg:text-left lg:flex">
+  <h1 class="text-3xl font-bold">Jeremiah Tabb</h1>
 </nav>
