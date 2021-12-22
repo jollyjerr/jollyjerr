@@ -3,7 +3,9 @@
   export let image: { src: string; alt: string };
 </script>
 
-<section class="lg:px-12 px-4 py-6 lg:text-left text-center space-y-6">
+<section
+  class="lg:px-12 px-4 pt-6 lg:pb-6 pb-32 lg:text-left text-center space-y-6"
+>
   <h2 class="text-center font-bold text-2xl text-gray-600 underline">
     {title}
   </h2>
