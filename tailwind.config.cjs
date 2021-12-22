@@ -21,6 +21,16 @@ module.exports = {
         ]
       }
     },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '0.3rem',
+        sm: '0.4rem',
+        lg: '0.5rem',
+        xl: '0.75rem',
+        '2xl': '1rem',
+      },
+    }
   },
   plugins: [],
 };
