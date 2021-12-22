@@ -1,7 +1,7 @@
 <script>
   import '../app.css';
   import Nav from '../components/nav.svelte';
-  import Social from '/images/social.jpg';
+  import Social from '../images/social.jpg';
 </script>
 
 <svelte:head>

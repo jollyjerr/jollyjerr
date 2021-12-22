@@ -1,7 +1,7 @@
 <script>
   import Link from '../components/link.svelte';
   import Page from '../components/page.svelte';
-  import Climbing from '/images/climbing.jpg';
+  import Climbing from '../images/climbing.jpg';
 </script>
 
 <Page

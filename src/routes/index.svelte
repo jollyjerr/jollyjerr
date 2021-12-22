@@ -1,6 +1,6 @@
 <script>
   import Page from '../components/page.svelte';
-  import Profile from '/images/profile.jpg';
+  import Profile from '../images/profile.jpg';
 </script>
 
 <Page

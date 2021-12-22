@@ -1,7 +1,7 @@
 <script>
   import Link from '../components/link.svelte';
   import Page from '../components/page.svelte';
-  import Work from '/images/work.jpg';
+  import Work from '../images/work.jpg';
 </script>
 
 <Page
