@@ -1,15 +1,7 @@
-<nav>
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/settings">Settings</a>
-</nav>
+<script>
+  import '../app.css';
+</script>
 
-<main class="min-h-screen bg-gray-700">
+<main class="min-h-screen bg-gray-900 text-white font-body">
   <slot />
 </main>
-
-<style global lang="postcss">
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-</style>
