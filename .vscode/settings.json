@@ -1,13 +1,16 @@
 {
-  "editor.formatOnSave": true,
-  "[javascript]": {
-    "editor.formatOnSave": false
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
   },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "css.validate": false,
-  "editor.quickSuggestions": {
-    "strings": true
-  }
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true
 }
