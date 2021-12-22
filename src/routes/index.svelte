@@ -16,13 +16,12 @@
     slick applications.
   </p>
   <p class="text-xl">
-    Most of my time is spent understanding problems and building solutions using
-    whatever tools necessary. I love writing client facing interfaces with
-    React, Vue and Svelte. For server side work, I love Node.js, Golang, Python
-    and Elixir.
+    I build solutions using whatever tools necessary. I love writing client
+    facing interfaces with React, Vue and Svelte. For server side work, I love
+    Node.js, Golang, Python and Elixir.
   </p>
   <p class="text-xl">
-    I live and work in Boulder, CO. If I am not coding, you can find my climbing
+    I live and work in Boulder, CO. If I am not coding, you can find me climbing
     rocks all around the US or at home learning a new skill.
   </p>
 </Page>

@@ -15,12 +15,12 @@
   <p class="text-xl">
     I spend the majority of my time building data-driven/iot applications with
     the awesome team at <Link href="https://smartrent.com/">SmartRent</Link>. I
-    also work as an engineer for other projects - building modern web
-    applications with a variety of technologies.
+    also work as an engineer for other projects - building modern applications
+    with a variety of technologies.
   </p>
   <p class="text-xl">
     Previously, I have worked on computational linguistics pipelines to
-    transform the unstructured medical text into meaningful datapoints to assist
+    transform unstructured medical text into meaningful datapoints to assist
     with patient tracking and diagnosis. I have also spent time building custom
     functionality into the Microsoft Dynamics application suite.
   </p>
