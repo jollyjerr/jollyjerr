@@ -3,7 +3,9 @@
   import Logo from '../../images/favicon.png';
 </script>
 
-<nav class="relative flex items-center justify-center w-full lg:my-6 my-12">
+<nav
+  class="flex items-center justify-center w-full lg:py-6 py-12 fixed z-50 bg-gray-900 bg-opacity-95 border-b border-gray-600"
+>
   <a href="/" class="absolute lg:left-24 left-3">
     <h1 class="text-3xl font-bold border-b-2 border-primary whitespace-nowrap">
       Jeremiah Tabb

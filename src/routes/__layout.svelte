@@ -31,7 +31,7 @@
 
 <main class="min-h-screen overflow-x-hidden bg-gray-900 text-white font-body">
   <Nav />
-  <div class="lg:px-24 px-3">
+  <div class="lg:px-24 px-3 lg:mt-20 mt-36">
     <slot />
     <Footer />
   </div>
