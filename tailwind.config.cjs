@@ -3,16 +3,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: '#258ED0',
         gray: {
-          600: '#f5f5e9',
-          700: '#873f49',
-          800: '#0b1c47',
-          900: '#040a18'
+          600: '#88898d',
+          700: '#6b6c71',
+          800: '#3e3f46',
+          900: '#1f2028'
         }
       },
       fontFamily: {
         body: [
-          'OpenSans',
+          'Roboto',
           'Arial',
           'sans-serif',
           'Apple Color Emoji',

@@ -29,9 +29,7 @@
   <meta name="twitter:image:alt" content="Jeremiah Tabb" />
 </svelte:head>
 
-<main
-  class="min-h-screen overflow-x-hidden bg-gray-900 text-gray-600 font-body"
->
+<main class="min-h-screen overflow-x-hidden bg-gray-900 text-white font-body">
   <Nav />
   <div class="lg:px-24 px-3">
     <slot />

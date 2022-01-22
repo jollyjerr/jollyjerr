@@ -3,11 +3,9 @@
   import Logo from '../../images/favicon.png';
 </script>
 
-<nav class="relative flex items-center justify-center w-full my-9">
+<nav class="relative flex items-center justify-center w-full lg:my-6 my-12">
   <a href="/" class="absolute lg:left-24 left-3">
-    <h1
-      class="text-3xl font-bold border-b-2 border-gray-800 whitespace-nowrap p-1"
-    >
+    <h1 class="text-3xl font-bold border-b-2 border-primary whitespace-nowrap">
       Jeremiah Tabb
     </h1>
   </a>
@@ -17,7 +15,7 @@
     <NavButton title="Contact" to="/contact" />
   </ul>
   <div
-    class="rounded-full p-2 grid place-items-center bg-gray-800 absolute lg:right-24 right-3"
+    class="rounded-full p-2 grid place-items-center bg-primary absolute lg:right-24 right-3"
   >
     <img src={Logo} alt="My logo, a small cartoon of me." class="w-10" />
   </div>
