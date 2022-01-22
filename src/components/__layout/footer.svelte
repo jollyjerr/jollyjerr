@@ -1,4 +1,4 @@
-<footer class="p-8">
+<footer class="py-8">
   <hr class="w-full border-b border-gray-800" />
   <section class="grid lg:grid-cols-2 p-6">
     <div>
