@@ -40,7 +40,7 @@
       <img
         class="w-full aspect-square object-cover rounded"
         src={Summit}
-        alt="Me standing on top of The Elephant's Perch in the Sawtooth range of Idaho, US"
+        alt="Me standing on top of The Elephant's Perch in the Sawtooth range of Idaho, US."
       />
       <div
         class="absolute inset-0 w-full h-full bg-transparent bg-gradient-to-r from-gray-800 via-transparent pointer-events-none"
