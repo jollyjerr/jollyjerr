@@ -13,6 +13,7 @@
         ? 'border-opacity-100 border-primary'
         : 'hover:border-opacity-100 opacity-60 hover:opacity-100 border-gray-800'
     }`}
+    tabindex="0"
   >
     {title}
   </li>

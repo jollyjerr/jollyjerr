@@ -15,7 +15,7 @@
     <NavButton title="Contact" to="/contact" />
   </ul>
   <div
-    class="rounded-full p-2 grid place-items-center bg-primary absolute lg:right-24 right-3"
+    class="rounded-full p-2 grid place-items-center border border-primary bg-gray-800 hover:bg-primary cursor-pointer absolute lg:right-24 right-3 transform duration-150"
   >
     <img src={Logo} alt="My logo, a small cartoon of me." class="w-10" />
   </div>
