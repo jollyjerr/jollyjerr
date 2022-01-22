@@ -34,6 +34,7 @@
     {/if}
   </div>
 </section>
+
 <section class="rounded bg-gray-800 grid lg:grid-cols-2">
   <div class="grid place-items-center py-12">
     <div class="relative w-5/6">
@@ -79,5 +80,11 @@
         >
       </a>
     </div>
+  </div>
+</section>
+
+<section class="py-20">
+  <div class="lg:text-right text-center">
+    <h2 class="lg:text-6xl text-4xl border-b border-primary">Recent Posts</h2>
   </div>
 </section>
