@@ -1,6 +1,6 @@
 <script>
   import '../app.css';
-  import Nav from '../components/nav.svelte';
+  import Nav from '../components/__layout/nav.svelte';
   import Social from '../images/social.jpg';
 </script>
 
@@ -29,12 +29,8 @@
 </svelte:head>
 
 <main class="min-h-screen overflow-x-hidden bg-gray-900 text-white font-body">
-  <div class="lg:container lg:grid grid-cols-8 pt-6">
-    <div class="col-span-1">
-      <Nav />
-    </div>
-    <div class="col-span-7">
-      <slot />
-    </div>
+  <Nav />
+  <div class="container">
+    <slot />
   </div>
 </main>

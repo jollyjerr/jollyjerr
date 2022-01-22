@@ -1,6 +1,6 @@
 <script>
-  import Link from '../components/link.svelte';
-  import Page from '../components/page.svelte';
+  import Link from '../components/common/link.svelte';
+  import Page from '../components/common/page.svelte';
   import Climbing from '../images/climbing.jpg';
 </script>
 

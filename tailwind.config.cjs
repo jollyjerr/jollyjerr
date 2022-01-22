@@ -4,10 +4,10 @@ module.exports = {
     extend: {
       colors: {
         gray: {
-          600: '#626369',
-          700: '#4c4d53',
-          800: '#35363E',
-          900: '#1f2028'
+          600: '#BBE1FA',
+          700: '#3282B8',
+          800: '#0F4C75',
+          900: '#1B262C'
         }
       },
       fontFamily: {
@@ -24,11 +24,8 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '0.3rem',
-        sm: '0.4rem',
-        lg: '0.5rem',
-        xl: '0.75rem',
-        '2xl': '1rem',
+        DEFAULT: '2.25rem',
+        lg: '6rem',
       },
     }
   },
