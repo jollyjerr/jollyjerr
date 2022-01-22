@@ -1,6 +1,7 @@
 <script>
   import '../app.css';
   import Nav from '../components/__layout/nav.svelte';
+  import Footer from '../components/__layout/footer.svelte';
   import Social from '../images/social.jpg';
 </script>
 
@@ -28,9 +29,12 @@
   <meta name="twitter:image:alt" content="Jeremiah Tabb" />
 </svelte:head>
 
-<main class="min-h-screen overflow-x-hidden bg-gray-900 text-white font-body">
+<main
+  class="min-h-screen overflow-x-hidden bg-gray-900 text-gray-600 font-body"
+>
   <Nav />
-  <div class="container">
+  <div class="lg:px-24 px-3">
     <slot />
+    <Footer />
   </div>
 </main>

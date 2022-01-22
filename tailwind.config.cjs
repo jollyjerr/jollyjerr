@@ -4,10 +4,10 @@ module.exports = {
     extend: {
       colors: {
         gray: {
-          600: '#BBE1FA',
-          700: '#3282B8',
-          800: '#0F4C75',
-          900: '#1B262C'
+          600: '#f5f5e9',
+          700: '#873f49',
+          800: '#0b1c47',
+          900: '#040a18'
         }
       },
       fontFamily: {
@@ -20,13 +20,6 @@ module.exports = {
           'Segoe UI Symbol',
         ]
       }
-    },
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '2.25rem',
-        lg: '6rem',
-      },
     }
   },
   plugins: [],
