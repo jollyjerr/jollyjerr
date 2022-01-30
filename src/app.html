@@ -8,16 +8,14 @@
       // Load theme from localstorage -- https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
       const dc = ['dark', 'bg-black'];
       if (
-        localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
+        localStorage.theme === 'light'
       ) {
         dc.forEach((c) => {
-          document.documentElement.classList.add(c);
+          document.documentElement.classList.remove(c);
         });
       } else {
         dc.forEach((c) => {
-          document.documentElement.classList.remove(c);
+          document.documentElement.classList.add(c);
         });
       }
     </script>
