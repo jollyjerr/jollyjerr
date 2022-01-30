@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class',
   content: ['./src/**/*.{html,svelte}'],
   theme: {
     extend: {
@@ -9,8 +10,8 @@ module.exports = {
           600: '#88898d',
           700: '#6b6c71',
           800: '#3e3f46',
-          900: '#1f2028'
-        }
+          900: '#1f2028',
+        },
       },
       fontFamily: {
         body: [
@@ -20,9 +21,9 @@ module.exports = {
           'Apple Color Emoji',
           'Segoe UI Emoji',
           'Segoe UI Symbol',
-        ]
-      }
-    }
+        ],
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 };

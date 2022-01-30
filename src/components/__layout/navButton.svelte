@@ -7,11 +7,11 @@
 
 <a href={to}>
   <li
-    class={`border-opacity-0 border-b-2 transform duration-150 px-5 outline-none focus-visible:ring-1 focus-visible:opacity-100 ring-0 ring-gray-700 font-bold w-32 text-center ${
+    class={`w-32 transform border-b-2 border-opacity-0 px-5 text-center font-bold outline-none ring-0 ring-gray-700 duration-150 focus-visible:opacity-100 focus-visible:ring-1 ${
       // @ts-ignore
       $page.url.pathname.includes(to)
-        ? 'border-opacity-100 border-primary'
-        : 'hover:border-opacity-100 opacity-60 hover:opacity-100 border-gray-800'
+        ? 'border-primary border-opacity-100'
+        : 'border-gray-800 opacity-60 hover:border-opacity-100 hover:opacity-100'
     }`}
     tabindex="0"
   >

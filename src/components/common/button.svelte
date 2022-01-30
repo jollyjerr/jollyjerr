@@ -1,4 +1,4 @@
 <button
-  class="w-40 block rounded-full bg-gray-800 p-4 text-lg hover:bg-primary transform duration-150 focus-visible:ring ring-gray-600 outline-none"
+  class="block w-40 transform rounded-full bg-gray-800 p-2 text-lg outline-none ring-gray-600 duration-150 hover:bg-primary focus-visible:ring lg:p-4"
   ><slot /></button
 >

@@ -4,9 +4,26 @@
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      // Load theme from localstorage -- https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
+      const dc = ['dark', 'bg-black'];
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        dc.forEach((c) => {
+          document.documentElement.classList.add(c);
+        });
+      } else {
+        dc.forEach((c) => {
+          document.documentElement.classList.remove(c);
+        });
+      }
+    </script>
     %svelte.head%
   </head>
-  <body style="background-color: black;">
+  <body>
     <div id="svelte">%svelte.body%</div>
   </body>
 </html>
