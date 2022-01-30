@@ -9,21 +9,21 @@
 </script>
 
 <nav
-  class="fixed z-20 flex w-full items-center justify-center border-b border-gray-800 border-opacity-50 dark:bg-gray-900 bg-white bg-opacity-95 py-8 lg:py-4"
+  class="fixed z-20 flex w-full items-center justify-center border-b border-gray-800 border-opacity-50 bg-white bg-opacity-95 py-8 dark:bg-gray-900 dark:bg-opacity-95 lg:py-4"
 >
   <a href="/" class="absolute left-3 lg:left-24">
     <h1 class="whitespace-nowrap border-b-2 border-primary text-3xl font-bold">
       Jeremiah Tabb
     </h1>
   </a>
-  <ul class="hidden text-xl lg:flex">
+  <ul class="hidden gap-2 text-xl lg:flex">
     <NavButton title="Blog" to="/blog" />
     <NavButton title="About" to="/about" />
     <NavButton title="Contact" to="/contact" />
   </ul>
   <div
     on:click={changeScheme}
-    class="absolute right-3 grid transform cursor-pointer place-items-center rounded-full border border-primary dark:bg-gray-800 bg-gray-200 p-2 duration-150 hover:bg-primary dark:hover:bg-primary lg:right-24"
+    class="absolute right-3 grid transform cursor-pointer place-items-center rounded-full border border-primary bg-gray-200 p-2 duration-150 hover:bg-primary dark:bg-gray-800 dark:hover:bg-primary lg:right-24"
   >
     <img src={Logo} alt="My logo, a small cartoon of me." class="w-8" />
   </div>

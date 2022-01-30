@@ -7,7 +7,7 @@
 
 <a href={to}>
   <li
-    class={`w-32 transform border-b-2 border-opacity-0 px-5 text-center font-bold outline-none ring-0 ring-gray-700 duration-150 focus-visible:opacity-100 focus-visible:ring-1 ${
+    class={`w-28 transform border-b-2 border-opacity-0 px-5 text-center text-base outline-none ring-0 ring-gray-700 duration-150 focus-visible:opacity-100 focus-visible:ring-1 ${
       // @ts-ignore
       $page.url.pathname.includes(to)
         ? 'border-primary border-opacity-100'

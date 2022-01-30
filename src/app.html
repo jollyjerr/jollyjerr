@@ -7,9 +7,7 @@
     <script>
       // Load theme from localstorage -- https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
       const dc = ['dark', 'bg-black'];
-      if (
-        localStorage.theme === 'light'
-      ) {
+      if (localStorage.theme === 'light') {
         dc.forEach((c) => {
           document.documentElement.classList.remove(c);
         });
