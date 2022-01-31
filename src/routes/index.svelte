@@ -1,12 +1,13 @@
 <script lang="ts">
+  import { format } from 'date-fns';
   import Button from '../components/common/button.svelte';
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import Summit from '../images/summit.jpg';
   import Head from '../components/common/head.svelte';
+  import { featuredBlogs } from './blog/.data';
 
   let visible = false;
-
   onMount(() => {
     visible = true;
   });
@@ -73,5 +74,27 @@
     <div class="text-center lg:text-right">
       <h2 class="text-3xl lg:text-5xl">Recent Posts</h2>
     </div>
+    <section
+      class="flex w-full flex-col items-center gap-6 py-6 lg:flex-row lg:py-12"
+    >
+      {#each featuredBlogs as { slug, title, image, date, readTime }}
+        <a
+          href={`/blog/${slug}`}
+          class="block w-full transform rounded bg-gray-200 py-6 px-2 ring-primary duration-200 hover:ring-2 focus-visible:ring-2 dark:bg-gray-800"
+        >
+          <div class="mx-auto max-w-xl space-y-4 lg:max-w-sm">
+            <img
+              src={image}
+              alt={title}
+              class="aspect-square w-full rounded object-cover"
+            />
+            <div class="text-sm">
+              {format(new Date(date), 'MMMM do, yyyy')} - {readTime} min read
+            </div>
+            <div class="text-3xl font-bold">{title}</div>
+          </div>
+        </a>
+      {/each}
+    </section>
   </section>
 </div>
