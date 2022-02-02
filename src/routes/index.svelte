@@ -5,7 +5,7 @@
   import { fade } from 'svelte/transition';
   import Summit from '../images/summit.jpg';
   import Head from '../components/common/head.svelte';
-  import { featuredBlogs } from './blog/.data';
+  import { featuredBlogs } from '../blogs';
 
   let visible = false;
   onMount(() => {
