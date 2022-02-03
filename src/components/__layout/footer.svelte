@@ -8,7 +8,7 @@
 
 <footer class="py-8">
   <hr class="w-full border-b border-gray-800" />
-  <section class="grid p-6 lg:grid-cols-2 space-y-6">
+  <section class="grid space-y-6 p-6 lg:grid-cols-2">
     <div>
       <p class="text-sm">
         <span class="text-lg font-bold">Jeremiah Tabb</span> <br /> Software
