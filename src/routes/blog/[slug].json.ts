@@ -1,4 +1,5 @@
 import { parse } from '$lib/blog/server/parse';
+import type { Post } from '$lib/blog/shared/types';
 import { notFound } from '$lib/shared/response';
 
 export function get({ params }) {
@@ -14,6 +15,6 @@ export function get({ params }) {
 		body: {
 			html,
 			metadata
-		}
+		} as Post
 	};
 }
