@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@sveltejs/adapter-auto': next
   '@sveltejs/kit': next
+  '@types/showdown': ^1.9.4
   '@typescript-eslint/eslint-plugin': ^5.10.1
   '@typescript-eslint/parser': ^5.10.1
   autoprefixer: ^10.4.4
@@ -12,6 +13,7 @@ specifiers:
   postcss: ^8.4.12
   prettier: ^2.5.1
   prettier-plugin-svelte: ^2.5.0
+  showdown: ^2.0.3
   svelte: ^3.44.0
   svelte-check: ^2.2.6
   svelte-preprocess: ^4.10.1
@@ -19,9 +21,13 @@ specifiers:
   tslib: ^2.3.1
   typescript: ~4.6.2
 
+dependencies:
+  showdown: 2.0.3
+
 devDependencies:
   '@sveltejs/adapter-auto': 1.0.0-next.34
   '@sveltejs/kit': 1.0.0-next.308_svelte@3.46.6
+  '@types/showdown': 1.9.4
   '@typescript-eslint/eslint-plugin': 5.18.0_93fd1b55dafbdf76506419beaedce909
   '@typescript-eslint/parser': 5.18.0_eslint@7.32.0+typescript@4.6.3
   autoprefixer: 10.4.4_postcss@8.4.12
@@ -215,6 +221,10 @@ packages:
     resolution: {integrity: sha512-BPdoIt1lfJ6B7rw35ncdwBZrAssjcwzI5LByIrYs+tpXlj/CAkuVdRsgZDdP4lq5EjyWzwxZCqAoFyHKFwp32g==}
     dependencies:
       '@types/node': 17.0.23
+    dev: true
+
+  /@types/showdown/1.9.4:
+    resolution: {integrity: sha512-50ehC3IAijfkvoNqmQ+VL73S7orOxmAK8ljQAFBv8o7G66lAZyxQj1L3BAv2dD86myLXI+sgKP1kcxAaxW356w==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.18.0_93fd1b55dafbdf76506419beaedce909:
@@ -561,6 +571,11 @@ packages:
   /color-name/1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
+
+  /commander/9.1.0:
+    resolution: {integrity: sha512-i0/MaqBtdbnJ4XQs4Pmyb+oFQl+q0lsAmokVUH92SlSw4fkeAcG3bVon+Qt7hmtF+u3Het6o4VgrcY3qAoEB6w==}
+    engines: {node: ^12.20.0 || >=14}
+    dev: false
 
   /concat-map/0.0.1:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
@@ -1702,6 +1717,13 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
     dev: true
+
+  /showdown/2.0.3:
+    resolution: {integrity: sha512-jHytkv5c5YFTAOYIIaTT1zLL/aC+7C1FiP0CIGQozhHnnFSbor1oYkaNqWFL6CpB3zJNPPSxJrAlsHgzN14knQ==}
+    hasBin: true
+    dependencies:
+      commander: 9.1.0
+    dev: false
 
   /slash/3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
