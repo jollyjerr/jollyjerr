@@ -1,6 +1,6 @@
 import { parse } from '$lib/blog/server/parse';
-import type { Post } from '$lib/blog/shared/types';
-import { notFound } from '$lib/shared/response';
+import type { Post } from '$lib/blog/common/types';
+import { notFound } from '$lib/shared/server/response';
 
 export function get({ params }) {
 	const { slug } = params;

@@ -1,4 +1,4 @@
-import { logger } from '$lib/shared/logger';
+import { logger } from '$lib/shared/common/logger';
 import * as fs from 'fs';
 import Showdown from 'showdown';
 import type { Metadata } from 'showdown';

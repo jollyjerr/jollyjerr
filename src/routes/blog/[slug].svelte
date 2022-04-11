@@ -1,12 +1,13 @@
 <script context="module" lang="ts">
-	import type { Post } from '$lib/blog/shared/types';
+	import type { Post } from '$lib/blog/common/types';
 
 	/** @type {import('./[slug]').Load} */
 	export async function load({ params: { slug }, fetch }) {
-		const post: Post = await fetch(`/blog/${slug}.json`).then((response) => response.json());
+		const response = await fetch(`/blog/${slug}.json`);
 		return {
+			status: response.status,
 			props: {
-				post
+				post: response.ok && (await response.json())
 			}
 		};
 	}
