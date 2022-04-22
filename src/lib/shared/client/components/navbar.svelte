@@ -5,7 +5,7 @@
 </script>
 
 <nav class="mb-8 lg:text-left text-center inline-flex items-end w-full justify-between">
-	<h1 class="text-2xl font-bold focus-visible:underline">{title}</h1>
+	<h1 class="text-2xl font-bold focus-visible:underline pointer-events-none">{title}</h1>
 	<ul class="space-x-6 hidden lg:block">
 		<NavbarLink title="home" href="/" />
 		<NavbarLink title="blog" href="/blog" />
