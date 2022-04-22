@@ -2,6 +2,8 @@
 	import '$lib/shared/client/global.css';
 </script>
 
-<main class="min-h-screen overflow-x-hidden bg-background text-primary">
-	<slot />
+<main class="min-h-screen overflow-x-hidden bg-primary-8 text-primary-1 font-common">
+	<div class="container mx-auto lg:py-8 py-3 px-3">
+		<slot />
+	</div>
 </main>

@@ -1,10 +1,6 @@
 <script>
-	import MeImg from './me.jpg';
+	import Navbar from '$lib/shared/client/components/navbar.svelte';
 </script>
 
-<div class="grid grid-cols-2">
-	<div class="bg-background">
-		<h1>Jeremiah Tabb</h1>
-	</div>
-	<img class="from-background bg-gradient-to-r" src={MeImg} alt="me" />
-</div>
+<Navbar />
+<h1 class="text-4xl">Hello world</h1>
