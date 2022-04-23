@@ -1,5 +1,5 @@
 ---
-title: Dev
+title: Dev1
 subtitle: This is a dev blog
 date: April 7, 2022
 tags: technology,stuff,draft

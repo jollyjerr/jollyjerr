@@ -9,7 +9,7 @@ export interface PostMetadata {
 	date: string;
 	tags: string[];
 	/** only 1 featured post allowed */
-	featured: boolean;
+	featured: string;
 	image: string;
 	slug: string;
 }
