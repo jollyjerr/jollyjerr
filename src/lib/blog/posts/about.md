@@ -1,8 +1,10 @@
 ---
-title: About
-subtitle: Who is Jeremiah Tabb
+title: About me
+subtitle: Who is Jeremiah Tabb?
 date: April 22, 2022
 tags: story, technology, life
+featured: true
+image: /social.jpg
 ---
 
 # About me

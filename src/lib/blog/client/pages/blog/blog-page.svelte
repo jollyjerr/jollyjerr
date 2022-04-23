@@ -1,7 +1,10 @@
 <script lang="ts">
-	import type { Post, PostMetadata } from '$lib/blog/common/types';
+	import type { PostMetadata } from '$lib/blog/common/types';
+	import FeaturedPost from './featured-post.svelte';
 
 	export let posts: PostMetadata[];
 
-	console.log(posts);
+	const featuredPost = posts.find((post) => post.featured);
 </script>
+
+<FeaturedPost post={featuredPost} />

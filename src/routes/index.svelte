@@ -11,7 +11,7 @@
 </script>
 
 <script lang="ts">
-	import type { Post, PostMetadata } from '$lib/blog/common/types';
+	import type { PostMetadata } from '$lib/blog/common/types';
 	import BlogPage from '$lib/blog/client/pages/blog/blog-page.svelte';
 	import Head from '$lib/seo/components/head.svelte';
 	import Navbar from '$lib/shared/client/components/navbar/navbar.svelte';
