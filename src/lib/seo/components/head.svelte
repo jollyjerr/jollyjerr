@@ -2,8 +2,8 @@
 	import SocialImg from '$lib/seo/assets/social.jpg';
 
 	export let image = SocialImg;
-	export let title = 'Jeremiah Tabb';
-	export let description = 'Software Engineer';
+	export let title = 'Jeremiah Tabb | Software Engineer';
+	export let description = 'Learn about stuff!';
 	export let url = 'https://jtabb.dev';
 </script>
 

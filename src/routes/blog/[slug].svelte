@@ -15,8 +15,12 @@
 
 <script lang="ts">
 	import PostPage from '$lib/blog/client/pages/post/post.svelte';
+	import Head from '$lib/seo/components/head.svelte';
+	import Navbar from '$lib/shared/client/components/navbar/navbar.svelte';
 
 	export let post: Post;
 </script>
 
+<Head />
+<Navbar selected="blog" />
 <PostPage {post} />
