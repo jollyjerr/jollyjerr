@@ -20,6 +20,6 @@
 	export let post: Post;
 </script>
 
-<Head />
+<Head title={post.metadata.title} description={post.metadata.subtitle} />
 <Navbar selected="blog" />
 <PostPage {post} />

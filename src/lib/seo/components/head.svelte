@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Jeremiah Tabb</title>
+	<title>{title}</title>
 	<meta name="theme-color" content="#1f2028" />
 	<meta name="description" content={description} />
 	<meta name="subject" content={title} />

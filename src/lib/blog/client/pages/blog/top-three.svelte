@@ -17,13 +17,13 @@
 			class="max-w-2xl mx-auto group rounded lg:p-6 p-2 transform duration-200 hover:bg-primary-3 hover:bg-opacity-10"
 		>
 			<a href={`/blog/${post.slug}`} class="flex justify-between">
-				<span class="space-y-2">
+				<span>
 					<a
 						href={`/blog/${post.slug}`}
 						class="text-2xl font-bold transform duration-200 group-hover:text-primary-2"
 						>{post.title}</a
 					>
-					<p class="text-lg">{post.subtitle}</p>
+					<p class="text-lg mt-3">{post.subtitle}</p>
 					<ul class="flex gap-2 text-primary-4">
 						{#each post.tags as tag}
 							<li class="text-sm">#{tag}</li>

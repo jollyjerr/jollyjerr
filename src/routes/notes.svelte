@@ -3,5 +3,5 @@
 	import Navbar from '$lib/shared/client/components/navbar/navbar.svelte';
 </script>
 
-<Head />
+<Head title="Notes" />
 <Navbar selected="notes" title="Notes" />

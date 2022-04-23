@@ -1,6 +1,6 @@
 module.exports = {
     content: ['./src/**/*.{html,svelte}'],
-    plugins: [require('@tailwindcss/typography')],
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
     theme: {
         colors: {
             primary: {

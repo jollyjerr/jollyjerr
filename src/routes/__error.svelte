@@ -16,6 +16,6 @@
 	export let title;
 </script>
 
-<Head />
+<Head title="Error" />
 <Navbar selected={null} title="Error" />
 <h1>{title}</h1>
