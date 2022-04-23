@@ -1,4 +1,5 @@
 <script>
+	import Socials from '$lib/shared/client/components/socials.svelte';
 	import '$lib/shared/client/global.css';
 </script>
 
@@ -6,4 +7,5 @@
 	<div class="container mx-auto lg:py-8 py-3 px-3">
 		<slot />
 	</div>
+	<Socials />
 </main>
