@@ -5,9 +5,9 @@
 	const topThree = posts.filter((post) => post.featured !== 'true');
 </script>
 
-<ul class="w-full space-y-12">
+<ul class="w-full space-y-12 lg:bg-primary-8 bg-primary-7 rounded">
 	{#each topThree as post}
-		<li class="max-w-2xl mx-auto hover:bg-primary-6 rounded p-6 transform duration-200">
+		<li class="max-w-2xl mx-auto hover:bg-primary-6 rounded lg:p-6 p-2 transform duration-200">
 			<a href={`/blog/${post.slug}`} class="flex justify-between">
 				<span>
 					<a href={`/blog/${post.slug}`} class="text-2xl font-bold">{post.title}</a>
@@ -16,7 +16,7 @@
 				<img
 					src={post.image}
 					alt={post.title}
-					class="object-cover aspect-video w-1/2 pl-28 rounded"
+					class="object-cover aspect-video w-1/2 lg:pl-24 pl-12 rounded"
 				/>
 			</a>
 		</li>
