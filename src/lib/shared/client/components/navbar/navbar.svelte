@@ -18,7 +18,8 @@
 		<img src={IconImg} alt="My emoji - A small 8 bit character" class="w-12" />
 		<a
 			href={selected ? selectedToLink[selected] : '/'}
-			class="text-3xl font-bold pointer-events-auto hover:text-primary-2">{title}</a
+			class="text-3xl font-bold pointer-events-auto hover:text-primary-2 transform duration-200"
+			>{title}</a
 		>
 	</div>
 	<ul class="space-x-6 hidden lg:block">
