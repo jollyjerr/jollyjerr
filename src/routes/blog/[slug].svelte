@@ -1,6 +1,4 @@
 <script context="module" lang="ts">
-	import type { Post } from '$lib/blog/common/types';
-
 	/** @type {import('./[slug]').Load} */
 	export async function load({ params: { slug }, fetch }) {
 		const response = await fetch(`/blog/${slug}.json`);
@@ -14,6 +12,7 @@
 </script>
 
 <script lang="ts">
+	import type { Post } from '$lib/blog/common/types';
 	import PostPage from '$lib/blog/client/pages/post/post.svelte';
 	import Head from '$lib/seo/components/head.svelte';
 	import Navbar from '$lib/shared/client/components/navbar/navbar.svelte';
