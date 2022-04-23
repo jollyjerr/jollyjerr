@@ -7,4 +7,11 @@
 	const featuredPost = posts.find((post) => post.featured);
 </script>
 
-<FeaturedPost post={featuredPost} />
+<article>
+	<div class="grid lg:grid-cols-6 space-y-6">
+		<section class="col-span-4">
+			<FeaturedPost post={featuredPost} />
+		</section>
+		<section />
+	</div>
+</article>

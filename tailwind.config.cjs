@@ -13,15 +13,12 @@ module.exports = {
                 7: '#00232a',
                 8: '#001215',
             },
-            neutral: {
-                1: '#a7a7ad',
-                2: '#666570',
-                3: '#3a3947',
-                4: '#242333',
-            }
         },
         fontFamily: {
             common: ['Inter', 'sans-serif']
+        },
+        borderRadius: {
+            DEFAULT: '12px'
         }
     }
 };

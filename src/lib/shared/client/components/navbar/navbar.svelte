@@ -3,10 +3,10 @@
 	import IconImg from './icon.png';
 
 	export let title: string = 'Blog';
-	export let selected: 'blog' | 'notes' | 'about' | 'contact';
+	export let selected: 'blog' | 'notes' | 'about' | 'contact' | null;
 </script>
 
-<nav class="mb-8 lg:text-left text-center inline-flex items-end w-full justify-between">
+<nav class="mb-10 lg:text-left text-center inline-flex items-end w-full justify-between">
 	<div class="inline-flex items-end gap-2 pointer-events-none">
 		<img src={IconImg} alt="My emoji - A small 8 bit character" class="w-12" />
 		<h1 class="text-3xl font-bold">{title}</h1>

@@ -4,4 +4,4 @@
 </script>
 
 <Head />
-<Navbar selected="notes" />
+<Navbar selected="notes" title="Notes" />

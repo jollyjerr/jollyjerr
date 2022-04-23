@@ -4,4 +4,4 @@
 </script>
 
 <Head />
-<Navbar selected="contact" />
+<Navbar selected="contact" title="Contact" />

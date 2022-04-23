@@ -10,7 +10,12 @@
 </script>
 
 <script>
+	import Head from '$lib/seo/components/head.svelte';
+	import Navbar from '$lib/shared/client/components/navbar/navbar.svelte';
+
 	export let title;
 </script>
 
+<Head />
+<Navbar selected={null} title="Error" />
 <h1>{title}</h1>

@@ -4,4 +4,4 @@
 </script>
 
 <Head />
-<Navbar selected="about" />
+<Navbar selected="about" title="About" />
