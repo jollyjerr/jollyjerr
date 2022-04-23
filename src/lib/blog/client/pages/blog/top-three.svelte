@@ -5,7 +5,13 @@
 	const topThree = posts.filter((post) => post.featured !== 'true');
 </script>
 
-<ul class="w-full space-y-12 lg:bg-primary-8 bg-primary-7 rounded">
+<svelte:head>
+	{#each topThree as post}
+		<link rel="preload" as="image" href={post.image} />
+	{/each}
+</svelte:head>
+
+<ul class="w-full lg:space-y-12 space-y-2 lg:bg-primary-8 bg-primary-7 rounded">
 	{#each topThree as post}
 		<li class="max-w-2xl mx-auto hover:bg-primary-6 rounded lg:p-6 p-2 transform duration-200">
 			<a href={`/blog/${post.slug}`} class="flex justify-between">

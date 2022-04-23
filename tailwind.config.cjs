@@ -1,6 +1,6 @@
 module.exports = {
     content: ['./src/**/*.{html,svelte}'],
-    plugins: [],
+    plugins: [require('@tailwindcss/typography')],
     theme: {
         colors: {
             primary: {
@@ -19,6 +19,6 @@ module.exports = {
         },
         borderRadius: {
             DEFAULT: '12px'
-        }
+        },
     }
 };

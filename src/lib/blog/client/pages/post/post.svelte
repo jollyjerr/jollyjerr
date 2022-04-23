@@ -5,6 +5,7 @@
 </script>
 
 <div>
-	<h1>{post.metadata.title}</h1>
-	{@html post.html}
+	<article class="prose prose-invert mx-auto max-w-4xl prose-headings:text-primary-3">
+		{@html post.html}
+	</article>
 </div>
