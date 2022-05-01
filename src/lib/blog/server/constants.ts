@@ -1,1 +1,1 @@
-export const pathToBlogs = 'src/lib/blog/posts';
+export const pathToBlogs = 'static/posts';
