@@ -1,5 +1,4 @@
 <script lang="ts">
-	import NavbarLink from './navbar-link.svelte';
 	import IconImg from './icon.png';
 	import MobileLinks from './mobile-links.svelte';
 	import DesktopLinks from './desktop-links.svelte';
