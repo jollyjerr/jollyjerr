@@ -1,10 +1,9 @@
 import { pathToBlogs } from '$lib/blog/server/constants';
-import fs from 'fs';
+import { readdirSync } from 'fs';
 import { getPost } from '$lib/blog/server/model';
 
 export function get() {
-	const posts = fs
-		.readdirSync(pathToBlogs)
+	const posts = readdirSync(pathToBlogs)
 		.map((file) => {
 			const filename = file.split('.')[0];
 			const { metadata } = getPost(filename);

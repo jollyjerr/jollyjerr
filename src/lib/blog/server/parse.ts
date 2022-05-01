@@ -1,11 +1,11 @@
 import { logger } from '$lib/shared/common/logger';
-import * as fs from 'fs';
-import Showdown from 'showdown';
+import { readFileSync } from 'fs';
+import { Converter } from 'showdown';
 import type { Metadata } from 'showdown';
 
 export function parse(filepath: string) {
 	try {
-		const text = fs.readFileSync(filepath, { encoding: 'utf8' });
+		const text = readFileSync(filepath, { encoding: 'utf8' });
 		return convertMarkdownToPost(text);
 	} catch (error) {
 		logger.error(error);
@@ -17,7 +17,7 @@ export function parse(filepath: string) {
 }
 
 function convertMarkdownToPost(text: string) {
-	const converter = new Showdown.Converter({ metadata: true });
+	const converter = new Converter({ metadata: true });
 
 	const html = converter.makeHtml(text);
 	const metadata = converter.getMetadata();
