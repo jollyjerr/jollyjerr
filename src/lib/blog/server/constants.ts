@@ -1,1 +1,1 @@
-export const pathToBlogs = process.env.VERCEL ? 'posts' : 'static/posts';
+export const pathToBlogs = 'static/posts';
