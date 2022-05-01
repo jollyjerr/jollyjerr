@@ -1,27 +1,24 @@
-<script>
-  import Page from '../components/page.svelte';
-  import Profile from '../images/profile.jpg';
+<script context="module" lang="ts">
+	export async function load({ fetch }) {
+		const response = await fetch('/blog.json');
+		return {
+			status: response.status,
+			props: {
+				posts: response.ok && (await response.json()).posts
+			}
+		};
+	}
 </script>
 
-<Page
-  title="About"
-  image={{
-    src: Profile,
-    alt: 'Me',
-  }}
->
-  <h3 class="text-2xl">👋 Welcome!</h3>
-  <p class="text-xl">
-    I am a full-stack engineer with a passion for turning complicated ideas into
-    slick applications.
-  </p>
-  <p class="text-xl">
-    I build solutions using whatever tools necessary. I love writing client
-    facing interfaces with React, Vue and Svelte. For server side work, I love
-    Node.js, Golang, Python and Elixir.
-  </p>
-  <p class="text-xl">
-    I live and work in Boulder, CO. If I am not coding, you can find me climbing
-    rocks all around the US or at home learning a new skill.
-  </p>
-</Page>
+<script lang="ts">
+	import type { PostMetadata } from '$lib/blog/common/types';
+	import BlogPage from '$lib/blog/client/pages/blog/blog-page.svelte';
+	import Head from '$lib/seo/components/head.svelte';
+	import Navbar from '$lib/shared/client/components/navbar/navbar.svelte';
+
+	export let posts: PostMetadata[];
+</script>
+
+<Head />
+<Navbar selected="blog" />
+<BlogPage {posts} />
