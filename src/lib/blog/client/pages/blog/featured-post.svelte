@@ -8,7 +8,7 @@
 	<link rel="preload" as="image" href={post.image} />
 </svelte:head>
 
-<div class="max-w-xl group">
+<div class="lg:max-w-xl group">
 	<a href={`/blog/${post.slug}`}>
 		<img src={post.image} alt={post.title} class="rounded aspect-square w-full object-cover" />
 		<ul class="flex items-center gap-6 text-primary-4 font-bold py-4">
