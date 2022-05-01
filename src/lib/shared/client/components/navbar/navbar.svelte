@@ -1,9 +1,12 @@
 <script lang="ts">
 	import NavbarLink from './navbar-link.svelte';
 	import IconImg from './icon.png';
+	import MobileLinks from './mobile-links.svelte';
+	import DesktopLinks from './desktop-links.svelte';
+	import type { Tab } from './types';
 
 	export let title: string = 'Blog';
-	export let selected: 'blog' | 'notes' | 'about' | 'contact' | null;
+	export let selected: Tab;
 
 	const selectedToLink = {
 		blog: '/',
@@ -22,10 +25,6 @@
 			>{title}</a
 		>
 	</div>
-	<ul class="space-x-6 hidden lg:block">
-		<NavbarLink selected={selected === 'blog'} title="blog" href="/" />
-		<NavbarLink selected={selected === 'notes'} title="notes" href="/notes" />
-		<NavbarLink selected={selected === 'about'} title="about" href="/about" />
-		<NavbarLink selected={selected === 'contact'} title="contact" href="/contact" />
-	</ul>
+	<DesktopLinks {selected} />
+	<MobileLinks {selected} />
 </nav>
