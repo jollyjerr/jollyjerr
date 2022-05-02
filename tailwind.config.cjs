@@ -13,6 +13,9 @@ module.exports = {
                 7: '#00232a',
                 8: '#001215',
             },
+            danger: "#ff6666",
+            warning: "#ffb34d",
+            success: "#6cc6d"
         },
         fontFamily: {
             common: ['Inter', 'sans-serif']

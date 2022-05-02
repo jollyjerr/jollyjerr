@@ -1,29 +1,11 @@
-<form
-	action="https://formsubmit.co/jollyjerr+website@gmail.com"
-	method="POST"
-	class="text-primary-1"
->
-	<input
-		class="bg-primary-7 rounded focus:outline- border-none focus:ring-2 focus:ring-primary-5"
-		type="text"
-		name="name"
-		placeholder="name"
-		required
-	/>
-	<input
-		class="bg-primary-7 rounded focus:outline- border-none focus:ring-2 focus:ring-primary-5"
-		type="email"
-		name="email"
-		placeholder="email"
-		required
-	/>
-	<textarea
-		class="bg-primary-7 resize-none rounded focus:outline- border-none focus:ring-2 focus:ring-primary-5"
-		name="message"
-		placeholder="message"
-		cols="30"
-		rows="10"
-		required
-	/>
-	<button type="submit">Send</button>
-</form>
+<script>
+	import ContactForm from './contact-form.svelte';
+</script>
+
+<div class="lg:space-y-6 space-y-12 grid lg:grid-cols-2 lg:p-8">
+	<div class="space-y-5 lg:text-left text-center">
+		<h2 class="text-5xl">Questions or comments?</h2>
+		<p class="text-2xl">Send me an email here -></p>
+	</div>
+	<ContactForm />
+</div>
