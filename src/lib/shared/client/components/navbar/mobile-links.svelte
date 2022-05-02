@@ -2,7 +2,6 @@
 	import NavbarLink from './navbar-link.svelte';
 	import type { Tab } from './types';
 	export let selected: Tab;
-	import { fade } from 'svelte/transition';
 
 	let open = false;
 	function toggleOpen() {
@@ -39,7 +38,6 @@
 {#if open}
 	<section
 		class="fixed top-0 left-0 z-10 w-full h-full bg-gradient-to-bl from-primary-6 via-primary-6 to-transparent"
-		transition:fade
 	>
 		<ul class="flex flex-col pt-12 gap-2 items-end pr-24">
 			<NavbarLink selected={selected === 'blog'} title="blog" href="/" />
