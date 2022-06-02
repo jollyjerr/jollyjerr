@@ -2,7 +2,7 @@
 title: About me
 subtitle: Who is Jeremiah Tabb?
 date: April 22, 2022
-tags: story,technology,life
+tags: story,life
 featured: true
 image: https://ik.imagekit.io/jollyjerr/jtabb_dev/bio_1IlfPnvkGY?ik-sdk-version=javascript-1.4.3&updatedAt=1654130170565&tr=w-1080%2Ch-566%2Cfo-auto
 ---
