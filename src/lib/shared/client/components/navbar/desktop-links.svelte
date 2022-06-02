@@ -6,7 +6,6 @@
 
 <ul class="space-x-6 hidden lg:block">
 	<NavbarLink selected={selected === 'blog'} title="blog" href="/" />
-	<NavbarLink selected={selected === 'notes'} title="notes" href="/notes" />
 	<NavbarLink selected={selected === 'about'} title="about" href="/about" />
 	<NavbarLink selected={selected === 'contact'} title="contact" href="/contact" />
 </ul>

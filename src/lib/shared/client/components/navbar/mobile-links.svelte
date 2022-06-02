@@ -41,7 +41,6 @@
 	>
 		<ul class="flex flex-col pt-12 gap-2 items-end pr-24">
 			<NavbarLink selected={selected === 'blog'} title="blog" href="/" />
-			<NavbarLink selected={selected === 'notes'} title="notes" href="/notes" />
 			<NavbarLink selected={selected === 'about'} title="about" href="/about" />
 			<NavbarLink selected={selected === 'contact'} title="contact" href="/contact" />
 		</ul>
