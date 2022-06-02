@@ -3,18 +3,18 @@ import { notFound } from '$lib/shared/server/response';
 import { getPost } from '$lib/blog/server/model';
 
 export function get({ params }) {
-	const { slug } = params;
+  const { slug } = params;
 
-	const { html, metadata } = getPost(slug);
+  const { html, metadata } = getPost(slug);
 
-	if (!html || !metadata) {
-		return notFound;
-	}
+  if (!html || !metadata) {
+    return notFound;
+  }
 
-	return {
-		body: {
-			html,
-			metadata
-		} as Post
-	};
+  return {
+    body: {
+      html,
+      metadata
+    } as Post
+  };
 }

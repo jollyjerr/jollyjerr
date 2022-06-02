@@ -1,7 +1,7 @@
 <script>
-	import ContactPage from '$lib/contact/contact-page.svelte';
-	import Head from '$lib/seo/components/head.svelte';
-	import Navbar from '$lib/shared/client/components/navbar/navbar.svelte';
+  import ContactPage from '$lib/contact/contact-page.svelte';
+  import Head from '$lib/seo/components/head.svelte';
+  import Navbar from '$lib/shared/client/components/navbar/navbar.svelte';
 </script>
 
 <Head title="Contact" />

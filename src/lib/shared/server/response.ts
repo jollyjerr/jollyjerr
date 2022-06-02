@@ -1,6 +1,6 @@
 export const notFound = {
-	status: 404,
-	body: {
-		message: 'Not found'
-	}
+  status: 404,
+  body: {
+    message: 'Not found'
+  }
 };

@@ -15,10 +15,10 @@ This is a dev blog
 
 ```tsx
 const Something = ({ props }: Stuff) => {
-	return (
-		<>
-			<HelloWorld {...props} />
-		</>
-	);
+  return (
+    <>
+      <HelloWorld {...props} />
+    </>
+  );
 };
 ```
