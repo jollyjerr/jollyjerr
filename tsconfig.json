@@ -1,7 +1,7 @@
 {
-	"extends": "./.svelte-kit/tsconfig.json",
-	"compilerOptions": {
-		"allowSyntheticDefaultImports": true,
-		"module": "ES2022"
-	}
+  "extends": "./.svelte-kit/tsconfig.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "module": "ES2022"
+  }
 }
