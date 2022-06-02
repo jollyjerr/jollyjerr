@@ -4,7 +4,7 @@
 	import DesktopLinks from './desktop-links.svelte';
 	import type { Tab } from './types';
 
-	export let title: string = 'Blog';
+	export let title = 'Blog';
 	export let selected: Tab;
 </script>
 

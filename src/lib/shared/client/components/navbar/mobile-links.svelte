@@ -1,6 +1,5 @@
 <script lang="ts">
 	import CommonLinks from './common-links.svelte';
-	import NavbarLink from './navbar-link.svelte';
 	import type { Tab } from './types';
 	export let selected: Tab;
 

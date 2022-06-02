@@ -14,11 +14,11 @@ This is a dev blog
 ## Code block
 
 ```tsx
-const Something = ({props}: Stuff) => {
-    return (
-        <>
-            <HelloWorld {...props} />
-        </>
-    )
-}
+const Something = ({ props }: Stuff) => {
+	return (
+		<>
+			<HelloWorld {...props} />
+		</>
+	);
+};
 ```

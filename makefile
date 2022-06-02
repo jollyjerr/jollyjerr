@@ -24,3 +24,6 @@ lint:
 
 format:
 	pnpm format
+	
+ci:
+	make install && make typecheck && make format && make lint && make build
