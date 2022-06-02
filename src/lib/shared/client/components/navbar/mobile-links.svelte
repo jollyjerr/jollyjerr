@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CommonLinks from './common-links.svelte';
 	import NavbarLink from './navbar-link.svelte';
 	import type { Tab } from './types';
 	export let selected: Tab;
@@ -40,10 +41,7 @@
 		class="fixed top-0 left-0 z-10 w-full h-full bg-gradient-to-bl from-primary-6 via-primary-6 to-transparent"
 	>
 		<ul class="flex flex-col pt-12 gap-2 items-end pr-24">
-			<NavbarLink selected={selected === 'blog'} title="blog" href="/" />
-			<NavbarLink selected={selected === 'notes'} title="notes" href="/notes" />
-			<NavbarLink selected={selected === 'about'} title="about" href="/about" />
-			<NavbarLink selected={selected === 'contact'} title="contact" href="/contact" />
+			<CommonLinks {selected} />
 		</ul>
 	</section>
 {/if}
