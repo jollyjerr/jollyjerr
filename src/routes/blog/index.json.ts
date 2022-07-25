@@ -2,7 +2,7 @@ import { pathToBlogs } from '$lib/blog/server/constants';
 import { readdirSync } from 'fs';
 import { getPost } from '$lib/blog/server/model';
 
-export function get() {
+export function GET() {
   const posts = readdirSync(pathToBlogs)
     .map((file) => {
       const filename = file.split('.')[0];
