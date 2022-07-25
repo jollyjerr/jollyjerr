@@ -2,7 +2,7 @@ import type { Post } from '$lib/blog/common/types';
 import { notFound } from '$lib/shared/server/response';
 import { getPost } from '$lib/blog/server/model';
 
-export function get({ params }) {
+export function GET({ params }) {
   const { slug } = params;
 
   const { html, metadata } = getPost(slug);
