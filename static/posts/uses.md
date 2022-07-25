@@ -18,7 +18,7 @@ I only use a single monitor so that I can stay focused. This Monitor is epic!
 
 - [Logitech g915 tkl](https://www.logitechg.com/en-us/products/gaming-keyboards/g915-tkl-wireless.html)
 
-I believe your keyboard is the most important piece of technology at your desk... especially if you use vim :). This keyboard is perfect in every way.
+I believe your keyboard is the most important piece of technology at your desk... especially if you use vim :).
 
 - [Bose 700 headphones](https://www.bose.com/en_us/products/headphones/noise_cancelling_headphones/noise-cancelling-headphones-700.html)
 - Some desk I found at Costco
@@ -27,7 +27,10 @@ I believe your keyboard is the most important piece of technology at your desk..
 ## Software
 
 - Editor: [neovim](https://neovim.io/)
-- IDE: [vscode](https://code.visualstudio.com/) with the [vscode neovim plugin](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
+
+Check out my [config](https://github.com/jollyjerr/dotfiles)
+
+- Terminal: [kitty](https://sw.kovidgoyal.net/kitty/)
 - Browser: [Firefox developer edition](https://www.mozilla.org/en-US/firefox/developer/)
 - [GitHub](https://github.com/)
 - I love the native calendar and email apps on mac as well
