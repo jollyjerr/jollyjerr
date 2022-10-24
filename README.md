@@ -1,4 +1,4 @@
-### Hi, I'm Jer 👋🏻
+### Hi, I'm Jerr 👋🏻
 
 I love building performant software across the stack.
 
