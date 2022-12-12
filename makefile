@@ -17,7 +17,7 @@ prepare:
 	pnpm prepare
 
 typecheck:
-	pnpm typecheck
+	pnpm check
 
 lint:
 	pnpm lint
@@ -26,4 +26,4 @@ format:
 	pnpm format
 	
 ci:
-	make install && make typecheck && make format && make lint && make build
+	make install && make typecheck && make lint && make build

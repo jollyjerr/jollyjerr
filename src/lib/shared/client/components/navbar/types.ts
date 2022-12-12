@@ -1,1 +1,1 @@
-export type Tab = 'blog' | 'notes' | 'contact' | null;
+export type Tab = 'blog' | 'notes' | 'contact' | 'about' | null;
