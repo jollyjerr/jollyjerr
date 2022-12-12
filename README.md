@@ -7,11 +7,11 @@ My goal is to build straightforward, reliable systems so we can all go enjoy lif
 
 ### 🔧 Languages / Tools
 
-![Python](https://img.shields.io/badge/-Python-05122A?style=flat&logo=python&logoColor=B54009)
+![Python](https://img.shields.io/badge/-Python-05122A?style=flat&logo=python)
 ![Rust](https://img.shields.io/badge/-Rust-05122A?style=flat&logo=rust&logoColor=B54009)
 ![Golang](https://img.shields.io/badge/-Go-05122A?style=flat&logo=go)
 ![Typescript](https://img.shields.io/badge/-Typescript-05122A?style=flat&logo=typescript&logoColor=2D79C7)
-![Elixir](https://img.shields.io/badge/-Elixir-05122A?style=flat&logo=elixir)
+![Elixir](https://img.shields.io/badge/-Elixir-05122A?style=flat&logo=elixir&logoColor=purple)
 ![Lua](https://img.shields.io/badge/-Lua-05122A?style=flat&logo=lua&logoColor=0062cc)
 ![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)
 ![Svelte](https://img.shields.io/badge/-Svelte-05122A?style=flat&logo=svelte)
