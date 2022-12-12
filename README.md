@@ -3,7 +3,11 @@
 I am a programmer interested in building scalable web and mobile apps, reliable development tooling, and human-centered software projects.
 My goal is to build straightforward, reliable systems so we can all go enjoy life and have fun.
 
-> ![https://jtabb.dev](https://icons.iconarchive.com/icons/treetog/i/128/Internet-Document-icon.png) | ![https://www.linkedin.com/in/jeremiahtabb](https://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/256/Linked-In-icon.png)
+![https://www.linkedin.com/in/jeremiahtabb](https://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/256/Linked-In-icon.png)
+
+<a href="https://jtabb.dev">
+    <img src="https://icons.iconarchive.com/icons/treetog/i/128/Internet-Document-icon.png" width="36" />
+</a>
 
 ### 🔧 Languages / Tools
 
