@@ -1,4 +1,4 @@
-### Hey, I'm Jeremiah Tabb
+### Hey, I'm Jeremiah Tabb <img src="./static/favicon.png" width="42" />
 
 I am a programmer interested in building scalable web and mobile apps, reliable development tooling, and human-centered software projects.
 My goal is to build straightforward, reliable systems so we can all go enjoy life and have fun.
