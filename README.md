@@ -1,7 +1,7 @@
 ### Hey, I'm Jeremiah Tabb <img src="./static/favicon.png" width="42" />
 
-I am a programmer interested in building scalable web and mobile apps, reliable development tooling, and human-centered software projects.
-My goal is to build straightforward, reliable systems so we can all go enjoy life and have fun.
+I am a programmer interested in building scalable web and mobile apps, blazingly fast development tooling, and human-centered software projects.
+My goal is to write straightforward, reliable systems so we can all go enjoy life and have fun.
 
 <a href="https://jtabb.dev">
     <img src="https://icons.iconarchive.com/icons/treetog/i/128/Internet-Document-icon.png" width="36" />
