@@ -2,10 +2,12 @@
 	import Head from '$lib/seo/components/head.svelte';
 	import Navbar from '$lib/shared/client/components/navbar/navbar.svelte';
 
-    import type {PageData} from './$types';
+	import type { PageData } from './$types';
 
-    export let data: PageData;
-    export const notes = data.notes;
+	export let data: PageData;
+	export const notes = data.notes;
+
+	console.log(notes);
 </script>
 
 <Head title="Notes" />

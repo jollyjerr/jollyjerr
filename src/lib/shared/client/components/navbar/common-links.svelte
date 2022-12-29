@@ -6,9 +6,5 @@
 </script>
 
 <NavbarLink selected={selected === 'blog'} title="blog" href="/" />
-<NavbarLink
-	selected={selected === 'notes'}
-	title="notes"
-    href="/notes"
-/>
+<NavbarLink selected={selected === 'notes'} title="notes" href="/notes" />
 <NavbarLink selected={selected === 'contact'} title="contact" href="/contact" />
