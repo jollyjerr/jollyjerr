@@ -5,8 +5,7 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	export const notes = data.notes;
-
+	export let notes = data.notes;
 	console.log(notes);
 </script>
 
