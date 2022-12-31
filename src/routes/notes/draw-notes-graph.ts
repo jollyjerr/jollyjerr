@@ -68,14 +68,14 @@ type GraphResources = ReturnType<typeof initialize_graph_resources>;
 function create_simulation({ nodes, width, height, links }: GraphResources) {
 	return d3
 		.forceSimulation(nodes)
-		.force('charge', d3.forceManyBody().strength(-200))
-		.force('center', d3.forceCenter(width / 2, height / 2).strength(1.08))
+		.force('charge', d3.forceManyBody().strength(-400))
+		.force('center', d3.forceCenter(width / 2, height / 2).strength(0.28))
 		.force(
 			'link',
 			d3
 				.forceLink(links)
 				.id((l) => (l as SimulationNode).id)
-				.strength(0.04)
+				.strength(0.06)
 		);
 }
 
