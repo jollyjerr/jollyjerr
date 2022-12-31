@@ -50,26 +50,20 @@
 			)
 			.on('tick', handle_tick);
 
-		const linkObjects = root
-			.append('g')
-			.attr('stroke', '#01586a')
-			.attr('stroke-width', 1.5)
-			.selectAll('line')
-			.data(links)
-			.join('line');
+		const linkObjects = root.append('g').selectAll('line').data(links).join('line');
 
 		const nodeObjects = root
 			.append('g')
-			.attr('fill', '#01b0d3')
-			.attr('stroke', '#018da9')
 			.selectAll('circle')
 			.data(nodes)
 			.join('circle')
 			.attr('r', (n) => Math.max(n.linkCount * 4, 8))
 			.attr('title', (n) => n.name);
 
-		// root.call(d3.zoom().on('zoom', handle_zoom));
+		const canvas = d3.select(rootDomNode).attr('width', width).attr('height', height);
+		const canvasContext = canvas.node()?.getContext('2d');
 
+		let transform = d3.zoomIdentity;
 		function handle_tick() {
 			nodeObjects.attr('cx', (n) => n.x || 0).attr('cy', (n) => n.y || 0);
 			linkObjects
@@ -77,35 +71,32 @@
 				.attr('y1', (l) => l.source.y || 0)
 				.attr('x2', (l) => l.target.x || 0)
 				.attr('y2', (l) => l.target.y || 0);
-		}
 
-		const canvas = d3.select(rootDomNode).attr('width', width).attr('height', height);
-		const canvasContext = canvas.node()?.getContext('2d');
-
-		canvas.call(d3.zoom().scaleExtent([1, 8]).on('zoom', handle_zoom));
-		function handle_zoom({ transform }: { transform: { k: number; x: number; y: number } }) {
 			if (!canvasContext) return;
 
-			// canvasContext.save();
-			// canvasContext.clearRect(0, 0, Number(canvas.attr('width')), Number(canvas.attr('height')));
-			// canvasContext.translate(transform.x, transform.y);
-			// canvasContext.scale(transform.k, transform.k);
-            
-            nodeObjects.attr('cx', n => n.x + transform.x);
+			canvasContext.save();
+			canvasContext.clearRect(0, 0, Number(canvas.attr('width')), Number(canvas.attr('height')));
+			canvasContext.translate(transform.x, transform.y);
+			canvasContext.scale(transform.k, transform.k);
 
-			//
-			// canvasContext.restore();
-		}
+			linkObjects.each(function (link) {
+				if (link.source.x && link.source.y && link.target.x && link.target.y) {
+					canvasContext.beginPath();
+					canvasContext.strokeStyle = '#01586a';
 
-		function draw_canvas() {
-			if (!canvasContext) return;
+					canvasContext.moveTo(link.source.x, link.source.y);
+					canvasContext.lineTo(link.target.x, link.target.y);
 
-            canvasContext.clearRect(0, 0, Number(canvas.attr('width')), Number(canvas.attr('height')));
+					canvasContext.stroke();
+					canvasContext.closePath();
+				}
+			});
 
-			nodeObjects.each(function () {
+			nodeObjects.each(function (n) {
 				const node = d3.select(this);
 
 				canvasContext.beginPath();
+
 				canvasContext.fillStyle = '#01b0d3';
 				canvasContext.arc(
 					Number(node.attr('cx')),
@@ -114,11 +105,29 @@
 					0,
 					Math.PI * 2
 				);
-				canvasContext.fill();
-				canvasContext.closePath();
+
+				if (n.x && n.y) {
+					canvasContext.fill();
+					canvasContext.closePath();
+
+					canvasContext.beginPath();
+					canvasContext.fillStyle = '#fff';
+					canvasContext.fillText(n.name.split('.md')[0], n.x, n.y);
+					canvasContext.fill();
+					canvasContext.closePath();
+				}
 			});
+
+			canvasContext.restore();
 		}
-		// d3.timer(draw_canvas);
+
+		canvas.call(
+			d3.zoom<HTMLCanvasElement, unknown>().scaleExtent([0.8, 16]).on('zoom', handle_zoom)
+		);
+		function handle_zoom(e: { transform: d3.ZoomTransform }) {
+			transform = e.transform;
+			handle_tick();
+		}
 	});
 </script>
 
