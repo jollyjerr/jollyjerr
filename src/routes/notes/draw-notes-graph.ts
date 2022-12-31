@@ -49,8 +49,14 @@ function initialize_graph_resources(notes: NotesGraph, canvasElement: HTMLCanvas
 
 	const root = d3.create('svg');
 
-	const canvas = d3.select(canvasElement).attr('width', width).attr('height', height);
+	const deviceScale = window.devicePixelRatio;
+	const canvas = d3
+		.select(canvasElement)
+		.attr('width', width * deviceScale)
+		.attr('height', height * deviceScale);
 	const canvasContext = canvas.node()?.getContext('2d');
+
+	canvasContext?.scale(deviceScale, deviceScale);
 
 	return {
 		nodes,
@@ -87,7 +93,7 @@ function create_graph_selections({ root, links, nodes }: GraphResources) {
 		.selectAll('circle')
 		.data(nodes)
 		.join('circle')
-		.attr('r', (n) => Math.max(n.linkCount * 4, 8))
+		.attr('r', (n) => (n.linkCount || 1) * 3.8)
 		.attr('title', (n) => n.name);
 
 	return { linkObjects, nodeObjects };
