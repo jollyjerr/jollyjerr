@@ -9,6 +9,7 @@
 	export let data: PageData;
 	let notes = data.notes;
 
+	let rootDomNode: HTMLCanvasElement;
 	onMount(() => {
 		const width = window.innerWidth;
 		const height = window.innerHeight;
@@ -35,16 +36,7 @@
 			target: SimulationNode;
 		})[];
 
-		const container = d3
-			.select('main')
-			.append('div')
-			.attr('style', 'position: absolute; top: 0; width: 100%; height: 100%; z-index: -1;');
-
-		const root = container
-			.insert('svg')
-			.attr('viewBox', [0, 0, width, height])
-			.attr('style', 'width: 100%; height: 100%; background-color: #001215;')
-			.attr('pointer-events', 'all');
+		const root = d3.create('svg');
 
 		d3.forceSimulation(nodes)
 			.force('charge', d3.forceManyBody().strength(-200))
@@ -76,7 +68,7 @@
 			.attr('r', (n) => Math.max(n.linkCount * 4, 8))
 			.attr('title', (n) => n.name);
 
-		root.call(d3.zoom<SVGSVGElement, unknown>().on('zoom', handle_zoom));
+		// root.call(d3.zoom().on('zoom', handle_zoom));
 
 		function handle_tick() {
 			nodeObjects.attr('cx', (n) => n.x || 0).attr('cy', (n) => n.y || 0);
@@ -87,12 +79,49 @@
 				.attr('y2', (l) => l.target.y || 0);
 		}
 
-		function handle_zoom({ transform }: { transform: string }) {
-			nodeObjects.attr('transform', transform);
-			linkObjects.attr('transform', transform);
+		const canvas = d3.select(rootDomNode).attr('width', width).attr('height', height);
+		const canvasContext = canvas.node()?.getContext('2d');
+
+		canvas.call(d3.zoom().scaleExtent([1, 8]).on('zoom', handle_zoom));
+		function handle_zoom({ transform }: { transform: { k: number; x: number; y: number } }) {
+			if (!canvasContext) return;
+
+			// canvasContext.save();
+			// canvasContext.clearRect(0, 0, Number(canvas.attr('width')), Number(canvas.attr('height')));
+			// canvasContext.translate(transform.x, transform.y);
+			// canvasContext.scale(transform.k, transform.k);
+            
+            nodeObjects.attr('cx', n => n.x + transform.x);
+
+			//
+			// canvasContext.restore();
 		}
+
+		function draw_canvas() {
+			if (!canvasContext) return;
+
+            canvasContext.clearRect(0, 0, Number(canvas.attr('width')), Number(canvas.attr('height')));
+
+			nodeObjects.each(function () {
+				const node = d3.select(this);
+
+				canvasContext.beginPath();
+				canvasContext.fillStyle = '#01b0d3';
+				canvasContext.arc(
+					Number(node.attr('cx')),
+					Number(node.attr('cy')),
+					Number(node.attr('r')),
+					0,
+					Math.PI * 2
+				);
+				canvasContext.fill();
+				canvasContext.closePath();
+			});
+		}
+		// d3.timer(draw_canvas);
 	});
 </script>
 
 <Head title="Notes" />
+<canvas bind:this={rootDomNode} class="w-full h-full absolute top-0 left-0" />
 <Navbar selected="notes" title="Notes" />
