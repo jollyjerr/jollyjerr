@@ -1,6 +1,7 @@
 import type { PageServerLoad } from './$types';
 import fs from 'fs';
 import readline from 'node:readline';
+import type { NotesGraph } from '$lib/notes/types';
 
 const path_to_notes = 'knowledge';
 
@@ -14,74 +15,79 @@ export const load: PageServerLoad = async () => {
 const hidden_files = /^\./;
 const link_content = /\]\((.*?)\)/g;
 
-type NotesGraph = {
-	nodes: {
-		id: string;
-		name: string;
-		linkCount: number;
-	}[];
-	links: {
-		source: string;
-		target: string;
-	}[];
-};
-
 async function build_graph(
 	path: string,
 	graph: NotesGraph = { nodes: [], links: [] }
 ): Promise<NotesGraph> {
 	const dir = await fs.promises.opendir(path);
+
 	for await (const dirent of dir) {
-		if (hidden_files.test(dirent.name)) continue;
-
-		const direntPath = `${path}/${dirent.name}`;
-		if (dirent.isDirectory()) await build_graph(direntPath, graph);
-		if (dirent.isFile()) {
-			let linkCount = 0;
-
-			const fileStream = fs.createReadStream(direntPath);
-			const lines = readline.createInterface({ input: fileStream });
-			for await (const line of lines) {
-				const links = line.match(link_content);
-				if (links) {
-					for (const link of links) {
-						const path = link_content.exec(link)?.at(1);
-						if (path && !path.includes('://') && path.includes('.md')) {
-							linkCount++;
-
-							const linkPath = path.split('/');
-							const filePath = direntPath.split('/');
-
-							filePath.pop();
-
-							for (const direction of linkPath) {
-								switch (direction) {
-									case '.':
-										break;
-									case '..':
-										filePath.pop();
-										break;
-									default:
-										filePath.push(direction);
-								}
-							}
-
-							graph.links.push({
-								source: direntPath,
-								target: filePath.join('/')
-							});
-						}
-					}
-				}
-			}
-
-			graph.nodes.push({
-				id: direntPath,
-				name: dirent.name,
-				linkCount
-			});
-		}
+		await add_dirent_to_graph(path, dirent, graph);
 	}
 
 	return graph;
+}
+
+async function add_dirent_to_graph(path: string, dirent: fs.Dirent, graph: NotesGraph) {
+	if (hidden_files.test(dirent.name)) return;
+
+	const direntPath = `${path}/${dirent.name}`;
+
+	if (dirent.isDirectory()) {
+		await build_graph(direntPath, graph);
+	} else if (dirent.isFile()) {
+		const linkCount = await add_links_to_graph(direntPath, graph);
+		graph.nodes.push({
+			id: direntPath,
+			name: dirent.name,
+			linkCount
+		});
+	}
+}
+
+async function add_links_to_graph(filePath: string, graph: NotesGraph): Promise<number> {
+	let linkCount = 0;
+
+	const fileStream = fs.createReadStream(filePath);
+	const lines = readline.createInterface({ input: fileStream });
+
+	for await (const line of lines) {
+		const links = line.match(link_content) || [];
+
+		for (const link of links) {
+			const path = link_content.exec(link)?.at(1);
+
+			if (is_valid_link_path(path)) {
+				linkCount++;
+
+				const linkDirections = path.split('/');
+				const pathToTargetFile = filePath.split('/');
+
+				pathToTargetFile.pop();
+
+				for (const direction of linkDirections) {
+					switch (direction) {
+						case '.':
+							break;
+						case '..':
+							pathToTargetFile.pop();
+							break;
+						default:
+							pathToTargetFile.push(direction);
+					}
+				}
+
+				graph.links.push({
+					source: filePath,
+					target: pathToTargetFile.join('/')
+				});
+			}
+		}
+	}
+
+	return linkCount;
+}
+
+function is_valid_link_path(path: string | undefined): path is string {
+	return !!(path && !path.includes('://') && path.includes('.md'));
 }

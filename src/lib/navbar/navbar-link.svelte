@@ -7,7 +7,7 @@
 
 <a
 	{target}
-	class={`duration-200 focus-visible:underline lg:text-lg text-3xl ${
+	class={`duration-200 focus-visible:underline lg:text-lg text-3xl relative z-10 ${
 		selected ? 'text-primary-4' : 'hover:text-primary-2'
 	}`}
 	{href}>{title}</a
