@@ -8,10 +8,16 @@ export function drawNotesGraph(notes: NotesGraph, canvasElement: HTMLCanvasEleme
 	const simulation = create_simulation(resources);
 	const graphSelections = create_graph_selections(resources);
 
-	// handle user pan and zoom
 	let zoomTransformState = d3.zoomIdentity;
 	resources.canvas.call(
-		d3.zoom<HTMLCanvasElement, unknown>().scaleExtent([0.8, 16]).on('zoom', handle_zoom)
+		d3
+			.zoom<HTMLCanvasElement, unknown>()
+			.extent([
+				[0, 0],
+				[resources.width, resources.height]
+			])
+			.scaleExtent([0.4, 16])
+			.on('zoom', handle_zoom)
 	);
 	function handle_zoom(e: { transform: d3.ZoomTransform }) {
 		zoomTransformState = e.transform;
