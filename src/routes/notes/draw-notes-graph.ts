@@ -95,6 +95,7 @@ function create_graph_selections({ root, links, nodes }: GraphResources) {
 
 type GraphSelections = ReturnType<typeof create_graph_selections>;
 
+const node_title_padding = 12;
 function handle_tick(
 	{ canvasContext, canvas }: GraphResources,
 	{ nodeObjects, linkObjects }: GraphSelections,
@@ -128,26 +129,24 @@ function handle_tick(
 	});
 
 	nodeObjects.each(function (n) {
-		const node = d3.select(this);
-
-		canvasContext.beginPath();
-
-		canvasContext.fillStyle = '#01b0d3';
-		canvasContext.arc(
-			Number(node.attr('cx')),
-			Number(node.attr('cy')),
-			Number(node.attr('r')),
-			0,
-			Math.PI * 2
-		);
-
 		if (n.x && n.y) {
+			const radius = Number(d3.select(this).attr('r'));
+
+			canvasContext.beginPath();
+			canvasContext.fillStyle = '#01b0d3';
+			canvasContext.arc(n.x, n.y, radius, 0, Math.PI * 2);
 			canvasContext.fill();
 			canvasContext.closePath();
 
+			const name = n.name.split('.md')[0];
+
 			canvasContext.beginPath();
 			canvasContext.fillStyle = '#fff';
-			canvasContext.fillText(n.name.split('.md')[0], n.x, n.y);
+			canvasContext.fillText(
+				name,
+				n.x - canvasContext.measureText(name).width / 2,
+				n.y + radius + node_title_padding
+			);
 			canvasContext.fill();
 			canvasContext.closePath();
 		}
