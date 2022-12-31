@@ -99,7 +99,7 @@ function create_graph_selections({ root, links, nodes }: GraphResources) {
 		.selectAll('circle')
 		.data(nodes)
 		.join('circle')
-		.attr('r', (n) => (n.linkCount || 1) * 3.8)
+		.attr('r', (n) => (n.linkCount || 1) ** 0.9)
 		.attr('title', (n) => n.name);
 
 	return { linkObjects, nodeObjects };
