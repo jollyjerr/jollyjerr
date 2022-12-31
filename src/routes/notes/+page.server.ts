@@ -18,6 +18,7 @@ type NotesGraph = {
 	nodes: {
 		id: string;
 		name: string;
+		linkCount: number;
 	}[];
 	links: {
 		source: string;
@@ -36,10 +37,7 @@ async function build_graph(
 		const direntPath = `${path}/${dirent.name}`;
 		if (dirent.isDirectory()) await build_graph(direntPath, graph);
 		if (dirent.isFile()) {
-			graph.nodes.push({
-				id: direntPath,
-				name: dirent.name
-			});
+			let linkCount = 0;
 
 			const fileStream = fs.createReadStream(direntPath);
 			const lines = readline.createInterface({ input: fileStream });
@@ -49,6 +47,8 @@ async function build_graph(
 					for (const link of links) {
 						const path = link_content.exec(link)?.at(1);
 						if (path && !path.includes('://') && path.includes('.md')) {
+							linkCount++;
+
 							const linkPath = path.split('/');
 							const filePath = direntPath.split('/');
 
@@ -74,6 +74,12 @@ async function build_graph(
 					}
 				}
 			}
+
+			graph.nodes.push({
+				id: direntPath,
+				name: dirent.name,
+				linkCount
+			});
 		}
 	}
 
