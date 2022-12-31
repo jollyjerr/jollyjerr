@@ -1,5 +1,5 @@
 <script>
-	import Socials from '$lib/shared/client/components/socials.svelte';
+	import Socials from './socials.svelte';
 	import '../app.css';
 </script>
 

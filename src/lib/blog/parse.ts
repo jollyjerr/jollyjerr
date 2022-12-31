@@ -1,4 +1,4 @@
-import { logger } from '$lib/shared/common/logger';
+import { logger } from '$lib/logger';
 import { readFileSync } from 'fs';
 import Showdown from 'showdown';
 import type { Metadata } from 'showdown';
@@ -6,7 +6,7 @@ import type { Metadata } from 'showdown';
 export function parse(filepath: string) {
 	try {
 		const text = readFileSync(filepath, { encoding: 'utf8' });
-		return convertMarkdownToPost(text);
+		return convert_markdown_to_post(text);
 	} catch (error) {
 		logger.error(error);
 		return {
@@ -16,7 +16,7 @@ export function parse(filepath: string) {
 	}
 }
 
-function convertMarkdownToPost(text: string) {
+function convert_markdown_to_post(text: string) {
 	const converter = new Showdown.Converter({ metadata: true });
 
 	const html = converter.makeHtml(text);
@@ -24,10 +24,10 @@ function convertMarkdownToPost(text: string) {
 
 	return {
 		html,
-		metadata: formatMetadata(metadata as Metadata)
+		metadata: format_metadata(metadata as Metadata)
 	};
 }
 
-function formatMetadata(metadata: Metadata) {
+function format_metadata(metadata: Metadata) {
 	return { ...metadata, tags: metadata.tags ? metadata.tags.split(',') : [] };
 }

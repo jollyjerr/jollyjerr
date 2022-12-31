@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Post } from '$lib/blog/common/types';
-	import CoverPhoto from '$lib/shared/client/components/cover-photo.svelte';
+	import type { Post } from '$lib/blog/types';
+	import CoverPhoto from './cover-photo.svelte';
 
 	export let post: Post;
 </script>

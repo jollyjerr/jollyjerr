@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PostMetadata } from '$lib/blog/common/types';
+	import type { PostMetadata } from '$lib/blog/types';
 
 	export let post: PostMetadata | undefined;
 </script>
