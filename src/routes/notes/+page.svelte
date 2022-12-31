@@ -13,6 +13,7 @@
 		const width = window.innerWidth;
 		const height = window.innerHeight;
 
+		type SimulationNode = d3.SimulationNodeDatum & typeof notes.nodes[0];
 		const emptyNodeDatum = {
 			index: undefined,
 			x: undefined,
@@ -22,14 +23,28 @@
 			fx: undefined,
 			fy: undefined
 		};
-		const nodes = d3.map(notes.nodes, (n) => ({ ...n, ...emptyNodeDatum }));
-		const links = d3.map(notes.links, (l) => ({ ...l, ...emptyNodeDatum }));
+		const nodes = d3.map(notes.nodes, (n) => ({
+			...n,
+			...emptyNodeDatum
+		})) as SimulationNode[];
+		const links = d3.map(notes.links, (l) => ({
+			...l,
+			...emptyNodeDatum
+		})) as unknown as (d3.SimulationNodeDatum & {
+			source: SimulationNode;
+			target: SimulationNode;
+		})[];
 
-		const container = d3.select('main').append('div');
-		container.attr('style', 'position: absolute; top: 0; width: 100%; height: 100%; z-index: -1;');
+		const container = d3
+			.select('main')
+			.append('div')
+			.attr('style', 'position: absolute; top: 0; width: 100%; height: 100%; z-index: -1;');
 
-		const root = container.insert('svg').attr('viewBox', [0, 0, width, height]);
-		root.attr('style', 'width: 100%; height: 100%; background-color: #001215;');
+		const root = container
+			.insert('svg')
+			.attr('viewBox', [0, 0, width, height])
+			.attr('style', 'width: 100%; height: 100%; background-color: #001215;')
+			.attr('pointer-events', 'all');
 
 		d3.forceSimulation(nodes)
 			.force('charge', d3.forceManyBody().strength(-200))
@@ -38,10 +53,18 @@
 				'link',
 				d3
 					.forceLink(links)
-					.id((l) => (l as { id: string }).id)
+					.id((l) => (l as SimulationNode).id)
 					.strength(0.04)
 			)
 			.on('tick', handle_tick);
+
+		const linkObjects = root
+			.append('g')
+			.attr('stroke', '#01586a')
+			.attr('stroke-width', 1.5)
+			.selectAll('line')
+			.data(links)
+			.join('line');
 
 		const nodeObjects = root
 			.append('g')
@@ -53,21 +76,20 @@
 			.attr('r', (n) => Math.max(n.linkCount * 4, 8))
 			.attr('title', (n) => n.name);
 
-		const linkObjects = root
-			.append('g')
-			.attr('stroke', '#fff')
-			.attr('stroke-width', 1.5)
-			.selectAll('line')
-			.data(links)
-			.join('line');
+		root.call(d3.zoom<SVGSVGElement, unknown>().on('zoom', handle_zoom));
 
 		function handle_tick() {
 			nodeObjects.attr('cx', (n) => n.x || 0).attr('cy', (n) => n.y || 0);
 			linkObjects
-				.attr('x1', (l) => l.source.x)
-				.attr('y1', (l) => l.source.y)
-				.attr('x2', (l) => l.target.x)
-				.attr('y2', (l) => l.target.y);
+				.attr('x1', (l) => l.source.x || 0)
+				.attr('y1', (l) => l.source.y || 0)
+				.attr('x2', (l) => l.target.x || 0)
+				.attr('y2', (l) => l.target.y || 0);
+		}
+
+		function handle_zoom({ transform }: { transform: string }) {
+			nodeObjects.attr('transform', transform);
+			linkObjects.attr('transform', transform);
 		}
 	});
 </script>
