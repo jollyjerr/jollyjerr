@@ -1,1 +1,1 @@
-export const pathToNotes = 'static/knowledge';
+export const pathToNotes = 'knowledge';
