@@ -1,5 +1,6 @@
 import type { NotesGraph } from '$lib/notes/types';
 import * as d3 from 'd3';
+import colors from '$lib/colors.module.css';
 
 type SimulationNode = d3.SimulationNodeDatum & NotesGraph['nodes'][0];
 
@@ -25,6 +26,11 @@ export function drawNotesGraph(notes: NotesGraph, canvasElement: HTMLCanvasEleme
 	}
 
 	simulation.on('tick', () => handle_tick(resources, graphSelections, zoomTransformState));
+	resources.canvas.on('click', ({ layerX, layerY }: { layerX: number; layerY: number }) => {
+        if (!resources.canvasContext) return;
+
+        console.log(resources.canvasContext.getImageData(layerX, layerY, 1, 1).data)
+	});
 }
 
 const empty_node_datum = {
@@ -56,13 +62,22 @@ function initialize_graph_resources(notes: NotesGraph, canvasElement: HTMLCanvas
 	const root = d3.create('svg');
 
 	const deviceScale = window.devicePixelRatio;
+
 	const canvas = d3
 		.select(canvasElement)
 		.attr('width', width * deviceScale)
 		.attr('height', height * deviceScale);
 	const canvasContext = canvas.node()?.getContext('2d');
-
 	canvasContext?.scale(deviceScale, deviceScale);
+
+	const clickMapCanvas = d3
+		.create('canvas')
+		.attr('width', width * deviceScale)
+		.attr('height', height * deviceScale);
+	const clickMapContext = clickMapCanvas.node()?.getContext('2d');
+	clickMapContext?.scale(deviceScale, deviceScale);
+
+	const nodeColors = generate_unique_node_colors(nodes.length);
 
 	return {
 		nodes,
@@ -71,7 +86,10 @@ function initialize_graph_resources(notes: NotesGraph, canvasElement: HTMLCanvas
 		height,
 		root,
 		canvas,
-		canvasContext
+		canvasContext,
+		clickMapCanvas,
+		clickMapContext,
+		nodeColors
 	};
 }
 
@@ -99,7 +117,7 @@ function create_graph_selections({ root, links, nodes }: GraphResources) {
 		.selectAll('circle')
 		.data(nodes)
 		.join('circle')
-		.attr('r', (n) => 4 + (n.linkCount || 1) ** 0.6)
+		.attr('r', (n) => 4 + (n.linkCount || 1) ** 0.95)
 		.attr('title', (n) => n.name);
 
 	return { linkObjects, nodeObjects };
@@ -109,20 +127,48 @@ type GraphSelections = ReturnType<typeof create_graph_selections>;
 
 const node_title_padding = 12;
 function handle_tick(
-	{ canvasContext, canvas }: GraphResources,
-	{ nodeObjects, linkObjects }: GraphSelections,
+	{ canvasContext, canvas, clickMapCanvas, clickMapContext, nodeColors }: GraphResources,
+	selections: GraphSelections,
 	transform: d3.ZoomTransform
 ) {
-	nodeObjects.attr('cx', (n) => n.x || 0).attr('cy', (n) => n.y || 0);
-	linkObjects
+	if (!canvasContext) return;
+
+	selections.nodeObjects.attr('cx', (n) => n.x || 0).attr('cy', (n) => n.y || 0);
+	selections.linkObjects
 		.attr('x1', (l) => l.source.x || 0)
 		.attr('y1', (l) => l.source.y || 0)
 		.attr('x2', (l) => l.target.x || 0)
 		.attr('y2', (l) => l.target.y || 0);
 
-	if (!canvasContext) return;
+	draw_canvas({ canvas, canvasContext, selections, transform });
 
+	if (!clickMapContext) return;
+	draw_canvas({
+		canvas: clickMapCanvas,
+		canvasContext: clickMapContext,
+		selections,
+		transform,
+		nodeColor: nodeColors
+	});
+}
+
+type DrawCanvasArgs = {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any -- d3 types here are silly
+	canvas: d3.Selection<HTMLCanvasElement, any, any, any>;
+	canvasContext: CanvasRenderingContext2D;
+	selections: GraphSelections;
+	transform: d3.ZoomTransform;
+	nodeColor?: string | string[];
+};
+function draw_canvas({
+	canvas,
+	canvasContext,
+	selections: { nodeObjects, linkObjects },
+	transform,
+	nodeColor = colors.primary4
+}: DrawCanvasArgs) {
 	canvasContext.save();
+
 	canvasContext.clearRect(0, 0, Number(canvas.attr('width')), Number(canvas.attr('height')));
 	canvasContext.translate(transform.x, transform.y);
 	canvasContext.scale(transform.k, transform.k);
@@ -130,7 +176,7 @@ function handle_tick(
 	linkObjects.each(function (link) {
 		if (link.source.x && link.source.y && link.target.x && link.target.y) {
 			canvasContext.beginPath();
-			canvasContext.strokeStyle = '#01586a';
+			canvasContext.strokeStyle = colors.primary6;
 
 			canvasContext.moveTo(link.source.x, link.source.y);
 			canvasContext.lineTo(link.target.x, link.target.y);
@@ -140,12 +186,15 @@ function handle_tick(
 		}
 	});
 
-	nodeObjects.each(function (n) {
+	const mapColorToNode = !(typeof nodeColor === 'string');
+	const nodeColorMap: Record<string, SimulationNode> = {};
+	nodeObjects.each(function (n, i) {
 		if (n.x && n.y) {
 			const radius = Number(d3.select(this).attr('r'));
+			const nodeFill = typeof nodeColor === 'string' ? nodeColor : nodeColor[i];
 
 			canvasContext.beginPath();
-			canvasContext.fillStyle = '#01b0d3';
+			canvasContext.fillStyle = nodeFill;
 			canvasContext.arc(n.x, n.y, radius, 0, Math.PI * 2);
 			canvasContext.fill();
 			canvasContext.closePath();
@@ -153,7 +202,7 @@ function handle_tick(
 			const name = n.name.split('.md')[0];
 
 			canvasContext.beginPath();
-			canvasContext.fillStyle = '#fff';
+			canvasContext.fillStyle = colors.primary1;
 			canvasContext.fillText(
 				name,
 				n.x - canvasContext.measureText(name).width / 2,
@@ -161,8 +210,25 @@ function handle_tick(
 			);
 			canvasContext.fill();
 			canvasContext.closePath();
+
+			if (mapColorToNode) {
+				nodeColorMap[nodeFill] = n;
+			}
 		}
 	});
 
 	canvasContext.restore();
+
+	return nodeColorMap;
+}
+
+function generate_unique_node_colors(nodeCount: number) {
+	// https://stackoverflow.com/questions/15804149/rgb-color-permutation/15804183#15804183
+	return [...Array(nodeCount).keys()].map((i) =>
+		rgb_array_to_style([(i + 1) & 0xff, ((i + 1) & 0xff00) >> 8, ((i + 1) & 0xff0000) >> 16])
+	);
+}
+
+function rgb_array_to_style(rgbArray: number[]) {
+	return `"rgb("${rgbArray.join(',')}")"`;
 }
