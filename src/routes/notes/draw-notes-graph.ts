@@ -4,32 +4,28 @@ import colors from '$lib/colors.module.css';
 
 type SimulationNode = d3.SimulationNodeDatum & NotesGraph['nodes'][0];
 
+let ZOOM_TRANSFORM = d3.zoomIdentity;
+
 export function drawNotesGraph(notes: NotesGraph, canvasElement: HTMLCanvasElement) {
 	const resources = initialize_graph_resources(notes, canvasElement);
-	const simulation = create_simulation(resources);
 	const graphSelections = create_graph_selections(resources);
+	const simulation = create_simulation(resources, graphSelections);
 
-	let zoomTransformState = d3.zoomIdentity;
-	resources.canvas.call(
-		d3
-			.zoom<HTMLCanvasElement, unknown>()
-			.extent([
-				[0, 0],
-				[resources.width, resources.height]
-			])
-			.scaleExtent([0.4, 16])
-			.on('zoom', handle_zoom)
-	);
-	function handle_zoom(e: { transform: d3.ZoomTransform }) {
-		zoomTransformState = e.transform;
-		handle_tick(resources, graphSelections, zoomTransformState);
-	}
-
-	simulation.on('tick', () => handle_tick(resources, graphSelections, zoomTransformState));
+	simulation.on('tick', () => handle_tick(resources, graphSelections));
 	resources.canvas.on('click', ({ layerX, layerY }: { layerX: number; layerY: number }) => {
-        if (!resources.canvasContext) return;
+		if (!resources.clickMapContext) return;
 
-        console.log(resources.canvasContext.getImageData(layerX, layerY, 1, 1).data)
+		const colorToNode = draw_canvas({
+			canvas: resources.clickMapCanvas,
+			canvasContext: resources.clickMapContext,
+			selections: graphSelections,
+			nodeColor: resources.nodeColors
+		});
+		const clickedColor = rgb_array_to_style(
+			Array.from(resources.clickMapContext.getImageData(layerX, layerY, 1, 1).data)
+		);
+		const node = colorToNode[clickedColor];
+		console.log(node.name);
 	});
 }
 
@@ -70,12 +66,8 @@ function initialize_graph_resources(notes: NotesGraph, canvasElement: HTMLCanvas
 	const canvasContext = canvas.node()?.getContext('2d');
 	canvasContext?.scale(deviceScale, deviceScale);
 
-	const clickMapCanvas = d3
-		.create('canvas')
-		.attr('width', width * deviceScale)
-		.attr('height', height * deviceScale);
+	const clickMapCanvas = d3.create('canvas').attr('width', width).attr('height', height);
 	const clickMapContext = clickMapCanvas.node()?.getContext('2d');
-	clickMapContext?.scale(deviceScale, deviceScale);
 
 	const nodeColors = generate_unique_node_colors(nodes.length);
 
@@ -95,7 +87,23 @@ function initialize_graph_resources(notes: NotesGraph, canvasElement: HTMLCanvas
 
 type GraphResources = ReturnType<typeof initialize_graph_resources>;
 
-function create_simulation({ nodes, width, height, links }: GraphResources) {
+function create_simulation(resources: GraphResources, graphSelections: GraphSelections) {
+	const { nodes, width, height, links, canvas } = resources;
+
+	canvas.call(
+		d3
+			.zoom<HTMLCanvasElement, unknown>()
+			.extent([
+				[0, 0],
+				[width, height]
+			])
+			.scaleExtent([0.4, 16])
+			.on('zoom', (e: { transform: d3.ZoomTransform }) => {
+				ZOOM_TRANSFORM = e.transform;
+				handle_tick(resources, graphSelections);
+			})
+	);
+
 	return d3
 		.forceSimulation(nodes)
 		.force('charge', d3.forceManyBody().strength(-400))
@@ -126,11 +134,7 @@ function create_graph_selections({ root, links, nodes }: GraphResources) {
 type GraphSelections = ReturnType<typeof create_graph_selections>;
 
 const node_title_padding = 12;
-function handle_tick(
-	{ canvasContext, canvas, clickMapCanvas, clickMapContext, nodeColors }: GraphResources,
-	selections: GraphSelections,
-	transform: d3.ZoomTransform
-) {
+function handle_tick({ canvasContext, canvas }: GraphResources, selections: GraphSelections) {
 	if (!canvasContext) return;
 
 	selections.nodeObjects.attr('cx', (n) => n.x || 0).attr('cy', (n) => n.y || 0);
@@ -140,16 +144,7 @@ function handle_tick(
 		.attr('x2', (l) => l.target.x || 0)
 		.attr('y2', (l) => l.target.y || 0);
 
-	draw_canvas({ canvas, canvasContext, selections, transform });
-
-	if (!clickMapContext) return;
-	draw_canvas({
-		canvas: clickMapCanvas,
-		canvasContext: clickMapContext,
-		selections,
-		transform,
-		nodeColor: nodeColors
-	});
+	draw_canvas({ canvas, canvasContext, selections });
 }
 
 type DrawCanvasArgs = {
@@ -157,21 +152,19 @@ type DrawCanvasArgs = {
 	canvas: d3.Selection<HTMLCanvasElement, any, any, any>;
 	canvasContext: CanvasRenderingContext2D;
 	selections: GraphSelections;
-	transform: d3.ZoomTransform;
 	nodeColor?: string | string[];
 };
 function draw_canvas({
 	canvas,
 	canvasContext,
 	selections: { nodeObjects, linkObjects },
-	transform,
 	nodeColor = colors.primary4
 }: DrawCanvasArgs) {
 	canvasContext.save();
 
 	canvasContext.clearRect(0, 0, Number(canvas.attr('width')), Number(canvas.attr('height')));
-	canvasContext.translate(transform.x, transform.y);
-	canvasContext.scale(transform.k, transform.k);
+	canvasContext.translate(ZOOM_TRANSFORM.x, ZOOM_TRANSFORM.y);
+	canvasContext.scale(ZOOM_TRANSFORM.k, ZOOM_TRANSFORM.k);
 
 	linkObjects.each(function (link) {
 		if (link.source.x && link.source.y && link.target.x && link.target.y) {
@@ -230,5 +223,5 @@ function generate_unique_node_colors(nodeCount: number) {
 }
 
 function rgb_array_to_style(rgbArray: number[]) {
-	return `"rgb("${rgbArray.join(',')}")"`;
+	return `rgb(${rgbArray.slice(0, 3).join(',')})`;
 }
