@@ -41,7 +41,7 @@ async function add_dirent_to_graph(path: string, dirent: fs.Dirent, graph: Notes
 		graph.nodes.push({
 			id: direntPath,
 			name: dirent.name,
-			slug: direntPath.split(`${path_to_notes}/`)[1].split(md_file)[0],
+			slug: direntPath.split(`${path_to_notes}/`)[1],
 			linkCount
 		});
 	}

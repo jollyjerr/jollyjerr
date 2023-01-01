@@ -1,14 +1,19 @@
 import type { Post } from '$lib/blog/types';
+import { parseMarkdownFile } from '$lib/markdown/parse';
+import type { Metadata } from 'showdown';
 import { pathToBlogs } from './constants';
-import { parse } from './parse';
 
 export const getPost = (slug: string) => {
-	const { html, metadata } = parse(pathToBlogs + `/${slug}.md`);
+	const { html, metadata } = parseMarkdownFile(pathToBlogs + `/${slug}.md`);
 	return {
 		html,
 		metadata: {
-			...metadata,
+			...(metadata ? format_metadata(metadata) : {}),
 			slug
 		}
 	} as Post;
 };
+
+function format_metadata(metadata: Metadata) {
+	return { ...metadata, tags: metadata.tags ? metadata.tags.split(',') : [] };
+}

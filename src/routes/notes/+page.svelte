@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Head from '$lib/head/head.svelte';
 	import Navbar from '$lib/navbar/navbar.svelte';
-    import {goto} from '$app/navigation';
+	import { goto } from '$app/navigation';
 
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
@@ -13,7 +13,7 @@
 
 	onMount(() => {
 		drawNotesGraph(notes, canvas, (note) => {
-			goto(`/notes/${note.slug}`)
+			goto(`/notes/${note.slug}`);
 		});
 	});
 </script>
