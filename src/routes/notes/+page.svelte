@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Head from '$lib/head/head.svelte';
 	import Navbar from '$lib/navbar/navbar.svelte';
+    import {goto} from '$app/navigation';
 
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
@@ -11,8 +12,8 @@
 	let canvas: HTMLCanvasElement;
 
 	onMount(() => {
-		drawNotesGraph(notes, canvas, (node) => {
-			console.log(node.name);
+		drawNotesGraph(notes, canvas, (note) => {
+			goto(`/notes/${note.slug}`)
 		});
 	});
 </script>

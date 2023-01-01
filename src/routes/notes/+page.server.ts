@@ -4,6 +4,7 @@ import readline from 'node:readline';
 import type { NotesGraph } from '$lib/notes/types';
 
 const path_to_notes = 'knowledge';
+const md_file = '.md';
 
 export const load: PageServerLoad = async () => {
 	const graph = await build_graph(path_to_notes);
@@ -40,6 +41,7 @@ async function add_dirent_to_graph(path: string, dirent: fs.Dirent, graph: Notes
 		graph.nodes.push({
 			id: direntPath,
 			name: dirent.name,
+			slug: direntPath.split(`${path_to_notes}/`)[1].split(md_file)[0],
 			linkCount
 		});
 	}
@@ -89,5 +91,5 @@ async function add_links_to_graph(filePath: string, graph: NotesGraph): Promise<
 }
 
 function is_valid_link_path(path: string | undefined): path is string {
-	return !!(path && !path.includes('://') && path.includes('.md'));
+	return !!(path && !path.includes('://') && path.includes(md_file));
 }
