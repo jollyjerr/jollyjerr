@@ -1,0 +1,3 @@
+[submodule "static/knowledge"]
+	path = static/knowledge
+	url = https://github.com/jollyjerr/knowledge.git
