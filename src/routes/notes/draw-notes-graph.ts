@@ -3,30 +3,24 @@ import * as d3 from 'd3';
 import colors from '$lib/colors.module.css';
 
 type SimulationNode = d3.SimulationNodeDatum & NotesGraph['nodes'][0];
+type NodeClickCallback<TReturn = void> = (node: SimulationNode) => TReturn;
+type NodeClickEvent = { layerX: number; layerY: number };
 
 let ZOOM_TRANSFORM = d3.zoomIdentity;
 
-export function drawNotesGraph(notes: NotesGraph, canvasElement: HTMLCanvasElement) {
+export function drawNotesGraph(
+	notes: NotesGraph,
+	canvasElement: HTMLCanvasElement,
+	onNodeClick?: NodeClickCallback
+) {
 	const resources = initialize_graph_resources(notes, canvasElement);
 	const graphSelections = create_graph_selections(resources);
 	const simulation = create_simulation(resources, graphSelections);
 
 	simulation.on('tick', () => handle_tick(resources, graphSelections));
-	resources.canvas.on('click', ({ layerX, layerY }: { layerX: number; layerY: number }) => {
-		if (!resources.clickMapContext) return;
-
-		const colorToNode = draw_canvas({
-			canvas: resources.clickMapCanvas,
-			canvasContext: resources.clickMapContext,
-			selections: graphSelections,
-			nodeColor: resources.nodeColors
-		});
-		const clickedColor = rgb_array_to_style(
-			Array.from(resources.clickMapContext.getImageData(layerX, layerY, 1, 1).data)
-		);
-		const node = colorToNode[clickedColor];
-		console.log(node.name);
-	});
+	resources.canvas.on('click', (event: NodeClickEvent) =>
+		handle_click(event, resources, graphSelections, onNodeClick)
+	);
 }
 
 const empty_node_datum = {
@@ -145,6 +139,29 @@ function handle_tick({ canvasContext, canvas }: GraphResources, selections: Grap
 		.attr('y2', (l) => l.target.y || 0);
 
 	draw_canvas({ canvas, canvasContext, selections });
+}
+
+function handle_click(
+	{ layerX, layerY }: NodeClickEvent,
+	{ clickMapCanvas, clickMapContext, nodeColors }: GraphResources,
+	selections: GraphSelections,
+	onNodeClick?: NodeClickCallback
+) {
+	if (!clickMapContext || typeof onNodeClick !== 'function') return;
+
+	const colorToNode = draw_canvas({
+		canvas: clickMapCanvas,
+		canvasContext: clickMapContext,
+		selections: selections,
+		nodeColor: nodeColors
+	});
+	const node = colorToNode[
+		rgb_array_to_style(Array.from(clickMapContext.getImageData(layerX, layerY, 1, 1).data))
+	] as SimulationNode | undefined;
+
+	if (node) {
+		onNodeClick(node);
+	}
 }
 
 type DrawCanvasArgs = {

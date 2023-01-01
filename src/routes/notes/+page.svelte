@@ -11,7 +11,9 @@
 	let canvas: HTMLCanvasElement;
 
 	onMount(() => {
-		drawNotesGraph(notes, canvas);
+		drawNotesGraph(notes, canvas, (node) => {
+			console.log(node.name);
+		});
 	});
 </script>
 
