@@ -3,10 +3,16 @@
 	import MarkdownPage from '$lib/markdown/markdown-page.svelte';
 	import Navbar from '$lib/navbar/navbar.svelte';
 	import type { PageData } from './$types';
+	import { onMount } from 'svelte';
 
 	export let data: PageData;
-
 	const { note } = data;
+
+	onMount(() => {
+		// hack for internal relative routes
+		// https://kit.svelte.dev/docs/link-options#data-sveltekit-reload
+		document.querySelectorAll('a').forEach((n) => n.setAttribute('rel', 'external'));
+	});
 </script>
 
 <Head title={note.title} description={`Learn about ${note.title}`} />

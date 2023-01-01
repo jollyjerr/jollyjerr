@@ -2,12 +2,12 @@ import type { PageServerLoad } from './$types';
 import fs from 'fs';
 import readline from 'node:readline';
 import type { NotesGraph } from '$lib/notes/types';
+import { pathToNotes } from '$lib/notes/constants';
 
-const path_to_notes = 'knowledge';
 const md_file = '.md';
 
 export const load: PageServerLoad = async () => {
-	const graph = await build_graph(path_to_notes);
+	const graph = await build_graph(pathToNotes);
 	return {
 		notes: graph
 	};
@@ -41,7 +41,7 @@ async function add_dirent_to_graph(path: string, dirent: fs.Dirent, graph: Notes
 		graph.nodes.push({
 			id: direntPath,
 			name: dirent.name,
-			slug: direntPath.split(`${path_to_notes}/`)[1],
+			slug: direntPath.split(`${pathToNotes}/`)[1],
 			linkCount
 		});
 	}
