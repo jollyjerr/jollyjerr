@@ -1,0 +1,5 @@
+:export {
+	primary1: theme('colors.primary.1');
+	primary4: theme('colors.primary.4');
+	primary6: theme('colors.primary.6');
+}

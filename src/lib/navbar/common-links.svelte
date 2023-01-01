@@ -6,10 +6,5 @@
 </script>
 
 <NavbarLink selected={selected === 'blog'} title="blog" href="/" />
-<NavbarLink
-	selected={selected === 'notes'}
-	title="notes"
-	href="https://github.com/jollyjerr/knowledge"
-	target="_blank"
-/>
+<NavbarLink selected={selected === 'notes'} title="notes" href="/notes" />
 <NavbarLink selected={selected === 'contact'} title="contact" href="/contact" />

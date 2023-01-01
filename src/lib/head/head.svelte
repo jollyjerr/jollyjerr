@@ -1,5 +1,5 @@
 <script>
-	import SocialImg from '$lib/seo/assets/social.jpg';
+	import SocialImg from '$lib/head/social.jpg';
 
 	export let image = SocialImg;
 	export let title = 'Jeremiah Tabb | Software Engineer';
