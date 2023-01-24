@@ -13,6 +13,8 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@mindgraph/types": "^0.1.0",
+		"@mindgraph/read": "^0.1.0",
 		"@sveltejs/adapter-auto": "1.0.0",
 		"@sveltejs/kit": "1.0.1",
 		"@tailwindcss/forms": "^0.5.3",
@@ -38,6 +40,6 @@
 		"vite": "^4.0.3"
 	},
 	"dependencies": {
-		"d3": "^7.8.0"
+		"@mindgraph/draw": "^0.2.0"
 	}
 }

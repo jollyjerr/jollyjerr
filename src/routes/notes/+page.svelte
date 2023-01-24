@@ -1,20 +1,35 @@
 <script lang="ts">
+	import { draw } from '@mindgraph/draw';
 	import Head from '$lib/head/head.svelte';
 	import Navbar from '$lib/navbar/navbar.svelte';
 	import { goto } from '$app/navigation';
+	import colors from '$lib/colors.module.css';
 
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
-	import { drawNotesGraph } from './draw-notes-graph';
+	import { pathToNotes } from '$lib/notes/constants';
 
 	export let data: PageData;
 	let notes = data.notes;
 	let nodes = notes.nodes;
 	let canvas: HTMLCanvasElement;
 
+	function getNodeSlug(id: string) {
+		return id.split(`${pathToNotes}/`)[1];
+	}
+
 	onMount(() => {
-		drawNotesGraph(notes, canvas, (note) => {
-			goto(`/notes/${note.slug}`);
+		draw({
+			data: notes,
+			canvasElement: canvas,
+			style: {
+				nodeColor: colors.primary4,
+				linkColor: colors.primary6,
+				titleColor: colors.primary1
+			},
+			onNodeClick: (node) => {
+				goto(`/notes/${getNodeSlug(node.id)}`);
+			}
 		});
 	});
 </script>
@@ -25,5 +40,5 @@
 
 <!-- hack to get prerendering to work - TODO: do this another way -->
 {#each nodes as note}
-	<a href={`/notes/${note.slug}`} class="hidden">{note.name}</a>
+	<a href={`/notes/${getNodeSlug(note.id)}`} class="hidden">{note.name}</a>
 {/each}
