@@ -25,8 +25,13 @@
 			style: {
 				nodeColor: colors.primary4,
 				linkColor: colors.primary6,
-				titleColor: colors.primary1
+				titleColor: colors.primary1,
+                activeLinkColor: colors.primary5,
+                activeNodeColor: colors.primary3
 			},
+            simulationConfig: {
+                chargeStrength: -175,
+            },
 			onNodeClick: (node) => {
 				goto(`/notes/${getNodeSlug(node.id)}`);
 			}
