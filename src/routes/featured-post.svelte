@@ -14,7 +14,7 @@
 	<div class="lg:max-w-xl bg-primary-7 hover:bg-primary-6 rounded transform duration-200 w-full">
 		<a href={`/blog/${post.slug}`} class="block p-8">
 			<img
-                src={post.image}
+				src={post.image}
 				alt={post.title}
 				class="rounded aspect-square w-full object-cover drop-shadow-sm"
 			/>
