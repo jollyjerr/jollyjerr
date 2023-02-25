@@ -1,7 +1,7 @@
 ### Hey, I'm Jeremiah Tabb <img src="./static/favicon.png" width="42" />
 
 I am a programmer interested in building scalable web and mobile apps, blazingly fast development tooling, and human-centered software projects.
-My goal is to write straightforward, reliable systems so we can all go enjoy life and have fun.
+I also [climb rocks](https://www.instagram.com/jollyjerr/), [blog](https://www.jtabb.dev/), and occasionally [compose music](https://jeremiahtabb.bandcamp.com/).
 
 <a href="https://jtabb.dev">
     <img src="https://icons.iconarchive.com/icons/treetog/i/128/Internet-Document-icon.png" width="36" />
@@ -11,7 +11,7 @@ My goal is to write straightforward, reliable systems so we can all go enjoy lif
     <img src="https://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/256/Linked-In-icon.png" width="36" />
 </a>
 
-### 🔧 Languages / Tools
+#### Languages / Tools
 
 ![Python](https://img.shields.io/badge/-Python-05122A?style=flat&logo=python)
 ![Rust](https://img.shields.io/badge/-Rust-05122A?style=flat&logo=rust&logoColor=B54009)

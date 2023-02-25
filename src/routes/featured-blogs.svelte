@@ -10,10 +10,10 @@
 
 <article>
 	<div class="grid lg:grid-cols-6 space-y-6 lg:space-y-0 mb-10 gap-2">
-		<section class="col-span-3">
+		<section class="col-span-3 flex justify-center">
 			<FeaturedPost post={featuredPost} />
 		</section>
-		<section class="col-span-3">
+		<section class="col-span-3 flex justify-center">
 			<TopThree {posts} />
 		</section>
 	</div>

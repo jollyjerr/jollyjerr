@@ -26,7 +26,7 @@
 	/>
 	<button
 		type="submit"
-		class="block ml-auto bg-primary-3 p-3 rounded text-primary-8 hover:bg-primary-2 active:bg-primary-5 focus-visible:ring-2 focus-visible:ring-primary-5 border-none outline-none"
+		class="block bg-primary-3 p-3 rounded text-primary-8 hover:bg-primary-2 active:bg-primary-5 focus-visible:ring-2 focus-visible:ring-primary-5 border-none outline-none"
 		>Send</button
 	>
 </form>
