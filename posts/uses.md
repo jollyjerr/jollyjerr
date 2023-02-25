@@ -4,7 +4,7 @@ subtitle: Check out the tools and technology I use
 date: June 1, 2022
 tags: technology
 featured: false
-image: https://ik.imagekit.io/jollyjerr/jtabb_dev/Screen_Shot_2022-06-01_at_7.31.30_PM_eTz8T_6NJ.png?ik-sdk-version=javascript-1.4.3&updatedAt=1654133511113&tr=w-1080%2Ch-566%2Cfo-auto
+image: https://ik.imagekit.io/jollyjerr/jtabb_dev/Screenshot_2023-02-25_at_12.26.37_PM_wYb-gQDe4.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677353245269&tr=w-1080%2Ch-1080%2Cfo-auto
 ---
 
 # What I Use
