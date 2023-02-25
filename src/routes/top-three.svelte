@@ -16,7 +16,7 @@
 	<ul class="w-full lg:space-y-12 space-y-2 py-2">
 		{#each topThree as post}
 			<li class="max-w-2xl mx-auto rounded transform duration-200 hover:bg-primary-6 bg-primary-7">
-				<a href={`/blog/${post.slug}`} class="flex justify-between p-6">
+				<a href={`/blog/${post.slug}`} class="block p-6">
 					<div class="h-full">
 						<a href={`/blog/${post.slug}`} class="text-2xl font-bold">{post.title}</a>
 						<p class="text-lg">{post.subtitle}</p>
