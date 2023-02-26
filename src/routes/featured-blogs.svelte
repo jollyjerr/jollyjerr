@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PostMetadata } from '$lib/blog/types';
 	import FeaturedPost from './featured-post.svelte';
-	import TopThree from './top-three.svelte';
+	import LatestPosts from './latest-posts.svelte';
 
 	export let posts: PostMetadata[];
 
@@ -14,7 +14,7 @@
 			<FeaturedPost post={featuredPost} />
 		</section>
 		<section class="col-span-3 flex justify-center">
-			<TopThree {posts} />
+			<LatestPosts {posts} />
 		</section>
 	</div>
 	<div class="w-full h-1 bg-gradient-to-r from-primary-8 via-primary-2 to-primary-8" />
