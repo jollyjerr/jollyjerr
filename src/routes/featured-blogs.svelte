@@ -17,5 +17,4 @@
 			<LatestPosts {posts} />
 		</section>
 	</div>
-	<div class="w-full h-1 bg-gradient-to-r from-primary-8 via-primary-2 to-primary-8" />
 </article>

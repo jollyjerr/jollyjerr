@@ -2,9 +2,7 @@
 	import type { PostMetadata } from '$lib/blog/types';
 
 	export let posts: PostMetadata[];
-	const latestPosts = posts
-		.filter((post) => post.featured !== 'true')
-		.slice(0, 6);
+	const latestPosts = posts.filter((post) => post.featured !== 'true').slice(0, 5);
 </script>
 
 <div class="lg:max-w-xl w-full">
