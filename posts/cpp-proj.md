@@ -11,7 +11,7 @@ image: https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0
 
 > C++ Project Setup and Tooling (For JavaScript Devs)
 
-Diving into the c++ world (from a background in higher level languages and modern languages like rust) I was surprised by how different the development tooling ecosystem is. 
+Diving into the c++ world (from a background in higher level languages and modern languages like rust) I was surprised by how different the development tooling ecosystem is.
 I found a few good resources around, but no articles that quickly walked me through getting a project set up with external libraries. Here is the speedy quick start article I wish I would have found:
 
 ## Install Dependencies

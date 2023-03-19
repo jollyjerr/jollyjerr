@@ -36,4 +36,3 @@ There is a lot of great stuff in this world. Sometimes it can be hard to find re
 3. [Invisible Cities - Italo Calvino](https://www.goodreads.com/book/show/49605492-invisible-cities)
 4. [Native Son - Richard Wright](https://www.goodreads.com/book/show/15622.Native_Son)
 5. [The Hate U Give - Angie Thomas](https://www.goodreads.com/book/show/36862147-the-hate-u-give)
-
