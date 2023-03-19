@@ -1,13 +1,15 @@
 ---
 title: What I use
 subtitle: Check out the tools and technology I use
-date: June 1, 2022
+date: 2022-06-01
 tags: technology
 featured: false
 image: https://ik.imagekit.io/jollyjerr/jtabb_dev/Screenshot_2023-02-25_at_12.26.37_PM_wYb-gQDe4.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677353245269&tr=w-1080%2Ch-1080%2Cfo-auto
 ---
 
 # What I Use
+
+> Check out the tools and technology I use
 
 ## Workstation
 
@@ -17,9 +19,6 @@ image: https://ik.imagekit.io/jollyjerr/jtabb_dev/Screenshot_2023-02-25_at_12.26
 I only use a single monitor so that I can stay focused. This Monitor is epic!
 
 - [Logitech g915 tkl](https://www.logitechg.com/en-us/products/gaming-keyboards/g915-tkl-wireless.html)
-
-I believe your keyboard is the most important piece of technology at your desk... especially if you use vim :).
-
 - [Bose 700 headphones](https://www.bose.com/en_us/products/headphones/noise_cancelling_headphones/noise-cancelling-headphones-700.html)
 - Some desk I found at Costco
 - Some chair I found at Office Max

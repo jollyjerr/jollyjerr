@@ -12,4 +12,5 @@ export interface PostMetadata {
 	featured: string;
 	image: string;
 	slug: string;
+	draft?: boolean;
 }

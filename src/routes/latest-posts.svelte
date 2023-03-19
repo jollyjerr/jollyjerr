@@ -2,19 +2,13 @@
 	import type { PostMetadata } from '$lib/blog/types';
 
 	export let posts: PostMetadata[];
-	const topThree = posts.filter((post) => post.featured !== 'true').slice(0, 2);
+	const latestPosts = posts.filter((post) => post.featured !== 'true').slice(0, 5);
 </script>
-
-<svelte:head>
-	{#each topThree as post}
-		<link rel="preload" as="image" href={post.image} />
-	{/each}
-</svelte:head>
 
 <div class="lg:max-w-xl w-full">
 	<h1 class="w-full text-center text-3xl py-4 bg-primary-7 rounded font-bold">Latest Posts</h1>
-	<ul class="w-full lg:space-y-12 space-y-2 py-2">
-		{#each topThree as post}
+	<ul class="w-full space-y-2 py-2">
+		{#each latestPosts as post}
 			<li class="max-w-2xl mx-auto rounded transform duration-200 hover:bg-primary-6 bg-primary-7">
 				<a href={`/blog/${post.slug}`} class="block p-6">
 					<div class="h-full">

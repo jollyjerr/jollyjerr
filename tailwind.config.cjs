@@ -18,7 +18,7 @@ module.exports = {
 			success: '#6cc6d'
 		},
 		fontFamily: {
-			common: ['Inter', 'sans-serif']
+			common: ['Arial', 'sans-serif']
 		},
 		borderRadius: {
 			DEFAULT: '12px'
