@@ -140,7 +140,7 @@ mkdir libs
 git submodule add https://github.com/glfw/glfw.git libs/glfw
 ```
 
-Now you can use CMake to handle linking and building your external library.
+Now you can use CMake to handle linking and building your external library. I'm using [glfw](https://www.glfw.org/) as an example here.
 
 ```txt
 # Add this to CMakeLists.txt
@@ -195,4 +195,3 @@ make configure && make build && make run
 ```
 
 That is all for now! I'll circle back and add test runner setup soon. Until next time!
-
