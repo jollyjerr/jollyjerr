@@ -37,26 +37,3 @@ There is a lot of great stuff in this world. Sometimes it can be hard to find re
 4. [Native Son - Richard Wright](https://www.goodreads.com/book/show/15622.Native_Son)
 5. [The Hate U Give - Angie Thomas](https://www.goodreads.com/book/show/36862147-the-hate-u-give)
 
-## Albums
-
-1.
-2.
-3.
-4.
-5.
-
-## Movies
-
-1.
-2.
-3.
-4.
-5.
-
-## Programming Languages
-
-1.
-2.
-3.
-4.
-5.
