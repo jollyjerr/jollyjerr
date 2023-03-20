@@ -9,6 +9,17 @@
 
 		%sveltekit.head%
 	</head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S1L51Y8S2D"></script>
+	<script>
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+
+		window.dataLayer = window.dataLayer || [];
+
+		gtag('js', new Date());
+		gtag('config', 'G-S1L51Y8S2D');
+	</script>
 	<body data-sveltekit-preload-data="hover" class="bg-primary-8">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
