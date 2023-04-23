@@ -16,5 +16,5 @@ const get_posts_metadata = () =>
 			const { metadata } = getPost(filename);
 			return metadata;
 		})
-		.filter((post) => !post.draft)
+		.filter((post) => post.draft === 'false')
 		.sort((post1, post2) => new Date(post2.date).getTime() - new Date(post1.date).getTime());
