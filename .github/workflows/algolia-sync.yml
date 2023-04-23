@@ -2,7 +2,7 @@ name: Algolia Sync
 
 on:
   push:
-    branches: [main]
+    branches: [main, feat/search]
 
 jobs:
   run:
