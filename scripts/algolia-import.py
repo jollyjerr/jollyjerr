@@ -32,3 +32,5 @@ notes = list(map(lambda title: {'objectID': title, 'title': ' '.join(title.split
 
 blogs_index.save_objects(blogs)
 notes_index.save_objects(notes)
+
+print('done! 🎉')

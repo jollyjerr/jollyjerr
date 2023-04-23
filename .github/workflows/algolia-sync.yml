@@ -2,7 +2,7 @@ name: Algolia Sync
 
 on:
   push:
-    branches: [main, feat/search]
+    branches: [main]
 
 env:
   ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
