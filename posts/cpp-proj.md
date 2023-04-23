@@ -5,6 +5,7 @@ date: 2023-03-18
 tags: c++
 featured: false
 image: https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWljcm9jaGlwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60
+draft: false
 ---
 
 # How To Set Up A C++ Project
