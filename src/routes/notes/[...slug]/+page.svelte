@@ -1,4 +1,5 @@
 <script lang="ts">
+	import highlight from 'highlight.js';
 	import Head from '$lib/head/head.svelte';
 	import MarkdownPage from '$lib/markdown/markdown-page.svelte';
 	import Navbar from '$lib/navbar/navbar.svelte';
@@ -12,6 +13,7 @@
 		// hack for internal relative routes
 		// https://kit.svelte.dev/docs/link-options#data-sveltekit-reload
 		document.querySelectorAll('a').forEach((n) => n.setAttribute('rel', 'external'));
+		highlight.highlightAll();
 	});
 </script>
 

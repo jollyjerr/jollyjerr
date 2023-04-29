@@ -1,6 +1,7 @@
 <script>
 	import Socials from './socials.svelte';
 	import '../app.css';
+    import '../highlight.css';
 </script>
 
 <main class="min-h-screen overflow-x-hidden text-primary-1 font-common antialiased">
