@@ -25,7 +25,7 @@ for path in blog_paths:
         })
 
 note_names = [filename for (dirpath, dirnames, filenames)
-              in os.walk('./knowledge') for filename in filenames]
+              in os.walk('./knowledge') for filename in filenames if ".md" in filename]
 
 notes = list(map(lambda title: {'objectID': title, 'title': ' '.join(title.split('.md')[0].split("-"))}, filter(
     lambda title: title[0] != ".", note_names)))
@@ -33,4 +33,4 @@ notes = list(map(lambda title: {'objectID': title, 'title': ' '.join(title.split
 blogs_index.save_objects(blogs)
 notes_index.save_objects(notes)
 
-print('done! 🎉')
+print(f"Updated #{len(blogs)} blogs and #{len(note_names)} notes 🎉")
