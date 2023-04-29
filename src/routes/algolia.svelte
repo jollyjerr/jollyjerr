@@ -18,7 +18,10 @@
 		searchClient = algoliasearch('XHMYZ3V6CT', 'a9ba9e903d2ec7c98a6eb054283cccf3');
 
 		document.onkeydown = (event: KeyboardEvent) => {
-			if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+			if (event.key === 'Escape') {
+				query = '';
+				enabled = false;
+			} else if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
 				event.preventDefault();
 				query = '';
 				enabled = !enabled;
