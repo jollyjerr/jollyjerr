@@ -6,7 +6,7 @@
 </script>
 
 <main class="min-h-screen overflow-x-hidden text-primary-1 font-common antialiased">
-    <Algolia />
+	<Algolia />
 	<div class="container mx-auto lg:py-8 py-3 px-3">
 		<slot />
 	</div>
