@@ -15,3 +15,11 @@ export interface PostMetadata {
 	/** 'true' || 'false' */
 	draft?: string;
 }
+
+export interface AlgoliaBlog {
+	objectID: string;
+	title: string;
+	date: string;
+	tags: string[];
+	slug: string;
+}

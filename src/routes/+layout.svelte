@@ -1,6 +1,6 @@
 <script>
 	import Socials from './socials.svelte';
-	import Algolia from './algolia.svelte';
+	import Algolia from '$lib/algolia/algolia.svelte';
 	import '../app.css';
 	import '../highlight.css';
 </script>

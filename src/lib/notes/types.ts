@@ -16,3 +16,9 @@ export type Note = {
 	slug: string;
 	title: string;
 };
+
+export interface AlgoliaNote {
+	objectID: string;
+	title: string;
+	path: string;
+}
