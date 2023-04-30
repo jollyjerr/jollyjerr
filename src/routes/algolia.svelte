@@ -41,13 +41,13 @@
 
 {#if enabled}
 	<div
-		class="absolute flex min-h-full min-w-full bg-primary-8 bg-opacity-40 z-[900] items-center justify-center"
+		class="absolute z-[900] flex min-h-full min-w-full items-center justify-center bg-primary-8 bg-opacity-40"
 	>
-		<div class="bg-primary-7 w-full max-w-2xl p-6 rounded space-y-3">
+		<div class="w-full max-w-2xl space-y-3 rounded bg-primary-7 p-6">
 			<!-- svelte-ignore a11y-autofocus -- users will expect this -->
 			<input
 				type="text"
-				class="w-full bg-primary-7 rounded"
+				class="w-full rounded bg-primary-7"
 				placeholder="search..."
 				autofocus
 				bind:value={query}

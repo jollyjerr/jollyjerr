@@ -9,7 +9,7 @@
 </script>
 
 <article>
-	<div class="grid lg:grid-cols-6 space-y-6 lg:space-y-0 mb-10 gap-2">
+	<div class="mb-10 grid gap-2 space-y-6 lg:grid-cols-6 lg:space-y-0">
 		<section class="col-span-3 flex justify-center">
 			<FeaturedPost post={featuredPost} />
 		</section>

@@ -4,7 +4,7 @@ subtitle: C++ Project Setup and Tooling For JavaScript Devs
 date: 2023-03-18
 tags: c++
 featured: false
-image: https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWljcm9jaGlwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60
+image: https://ik.imagekit.io/jollyjerr/jtabb_dev/alexander-grey-_Y3IuVbPpmU-unsplash_XPnmG1IB3.jpg?updatedAt=1677382744166&tr=w-1080%2Ch-1080%2Cfo-auto
 draft: false
 ---
 
