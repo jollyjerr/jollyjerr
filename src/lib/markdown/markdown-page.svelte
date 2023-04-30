@@ -8,7 +8,7 @@
 
 <div class="space-y-6">
 	<CoverPhoto src={image} alt={title} />
-	<article class="prose prose-invert prose-lg mx-auto max-w-4xl prose-headings:text-primary-3">
+	<article class="prose prose-lg prose-invert mx-auto max-w-4xl prose-headings:text-primary-3">
 		{@html html}
 	</article>
 </div>

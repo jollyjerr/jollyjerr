@@ -3,9 +3,9 @@
 	export let alt: string;
 </script>
 
-<div class="absolute top-0 left-0 w-full -z-10">
+<div class="absolute left-0 top-0 -z-10 w-full">
 	<div class="relative">
-		<img class="absolute h-36 opacity-40 object-cover w-full" {src} {alt} />
-		<div class="absolute bg-gradient-to-t from-primary-8 to-transparent h-36 w-full" />
+		<img class="absolute h-36 w-full object-cover opacity-40" {src} {alt} />
+		<div class="to-transparent absolute h-36 w-full bg-gradient-to-t from-primary-8" />
 	</div>
 </div>

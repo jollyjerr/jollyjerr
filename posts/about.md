@@ -5,13 +5,14 @@ date: 2022-04-22
 tags: life
 featured: true
 image: https://ik.imagekit.io/jollyjerr/jtabb_dev/bio_1IlfPnvkGY?ik-sdk-version=javascript-1.4.3&updatedAt=1654130170565&tr=w-1080%2Ch-566%2Cfo-auto
+draft: false
 ---
 
 # About me
 
 I'm a full-stack engineer who loves building fantastic apps with great people. I harness the power of test-driven development combined with early user feedback and a growth mindset to solve problems with whatever tool is necessary.
 
-I grew up in small-town Buffalo, Wyoming, where I balanced multiple passions for science, engineering, and music. ![Climbing in Idaho](https://ik.imagekit.io/jollyjerr/jtabb_dev/climbing_R2mdWU1pJ.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1652395182898&tr=w-1080%2Ch-566%2Cfo-auto) While obtaining my degree in music theory and composition, I discovered computer science for the first time and became instantly hooked. My compositions during college focused on humanity's ability to overcome the climate crises using technology - a theme I have continued to pursue during my engineering career.
+I grew up in small-town Buffalo, Wyoming, where I balanced multiple passions for science, engineering, and music. ![Climbing in Idaho](https://ik.imagekit.io/jollyjerr/jtabb_dev/climbing_R2mdWU1pJ.jpg?updatedAt=1682817905193&tr=w-1080%2Ch-1080%2Cfo-auto) While obtaining my degree in music theory and composition, I discovered computer science for the first time and became instantly hooked. My compositions during college focused on humanity's ability to overcome the climate crises using technology - a theme I have continued to pursue during my engineering career.
 
 After three years of self-taught programming, I knew I needed to further my technical education. I went straight from my college graduation to the Flatiron School in Denver, Colorado, where I studied full-stack web engineering and built multiple platforms from scratch in node, python, and ruby. ![Teaching algorithms to fellow flatiron students](https://ik.imagekit.io/jollyjerr/jtabb_dev/IMG_20190918_124925_glQsGWOu2.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1652395478610&tr=w-1080%2Ch-566%2Cfo-auto)
 

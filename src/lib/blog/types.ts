@@ -12,5 +12,14 @@ export interface PostMetadata {
 	featured: string;
 	image: string;
 	slug: string;
-	draft?: boolean;
+	/** 'true' || 'false' */
+	draft?: string;
+}
+
+export interface AlgoliaBlog {
+	objectID: string;
+	title: string;
+	date: string;
+	tags: string[];
+	slug: string;
 }

@@ -11,22 +11,24 @@
 </svelte:head>
 
 {#if post}
-	<div class="lg:max-w-xl bg-primary-7 hover:bg-primary-6 rounded transform duration-200 w-full">
-		<a href={`/blog/${post.slug}`} class="block p-8">
+	<div
+		class="w-full transform rounded bg-primary-7 p-6 duration-200 hover:bg-primary-6 lg:max-w-xl"
+	>
+		<a href={`/blog/${post.slug}`}>
 			<img
 				src={post.image}
 				alt={post.title}
-				class="rounded aspect-square w-full object-cover drop-shadow-sm"
+				class="aspect-square w-full rounded object-cover drop-shadow-sm"
 			/>
-			<ul class="flex items-center gap-6 text-primary-4 font-bold py-4">
+			<ul class="flex items-center gap-6 py-4 font-bold text-primary-4">
 				{#each post.tags as tag}
 					<li>#{tag}</li>
 				{/each}
 			</ul>
-			<a class="block text-4xl font-bold transform duration-200" href={`/blog/${post.slug}`}
+			<a class="block transform text-4xl font-bold duration-200" href={`/blog/${post.slug}`}
 				>{post.title}</a
 			>
-			<p class="text-lg pt-2">{post.subtitle}</p>
+			<p class="pt-2 text-lg">{post.subtitle}</p>
 		</a>
 	</div>
 {/if}

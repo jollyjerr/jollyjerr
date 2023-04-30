@@ -19,7 +19,7 @@
 <svelte:window bind:innerWidth on:resize={handleResize} />
 
 <button
-	class="fixed lg:hidden right-3 top-3 z-20 bg-primary-5 bg-opacity-70 rounded p-2"
+	class="fixed right-3 top-3 z-20 rounded bg-primary-5 bg-opacity-70 p-2 lg:hidden"
 	on:click={toggleOpen}
 	title="Open navbar"
 >
@@ -37,9 +37,9 @@
 
 {#if open}
 	<section
-		class="fixed top-0 left-0 z-10 w-full h-full bg-gradient-to-bl from-primary-6 via-primary-6 to-transparent"
+		class="to-transparent fixed left-0 top-0 z-10 h-full w-full bg-gradient-to-bl from-primary-6 via-primary-6"
 	>
-		<ul class="flex flex-col pt-12 gap-2 items-end pr-24">
+		<ul class="flex flex-col items-end gap-2 pr-24 pt-12">
 			<CommonLinks {selected} />
 		</ul>
 	</section>

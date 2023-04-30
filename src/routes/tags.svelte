@@ -24,11 +24,11 @@
 	).slice(0, 8);
 </script>
 
-<h1 class="text-2xl font-bold p-6 rounded bg-primary-7">Search blogs by tag</h1>
-<ul class="flex flex-wrap gap-2 my-4">
+<h1 class="rounded bg-primary-7 p-6 text-2xl font-bold">Search blogs by tag</h1>
+<ul class="my-4 flex flex-wrap gap-2">
 	{#each allTags as tag}
 		<li
-			class={`p-4 rounded cursor-pointer hover:ring-1 active:ring-1 ring-primary-4 ${
+			class={`cursor-pointer rounded p-4 ring-primary-4 hover:ring-1 active:ring-1 ${
 				selectedTags.includes(tag) ? 'bg-primary-6' : 'bg-primary-7'
 			}`}
 			on:click={() => toggle(tag)}

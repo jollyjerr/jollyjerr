@@ -13,5 +13,6 @@
 <Head />
 <Navbar selected="blog" />
 <FeaturedBlogs {posts} />
-<div class="w-full h-1 bg-gradient-to-r from-primary-8 via-primary-2 to-primary-8 my-6" />
+<div class="my-6 h-1 w-full bg-gradient-to-r from-primary-8 via-primary-2 to-primary-8" />
+<div class="italic opacity-50">ctrl k to search</div>
 <!-- <Tags {posts} /> -->

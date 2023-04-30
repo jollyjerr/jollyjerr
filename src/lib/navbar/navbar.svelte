@@ -8,12 +8,12 @@
 	export let selected: Tab;
 </script>
 
-<nav class="mb-10 lg:text-left text-center inline-flex items-end w-full justify-between">
-	<div class="inline-flex items-end gap-2 pointer-events-none">
-		<img src={IconImg} alt="My emoji - A small 8 bit character" class="w-12 z-10" />
+<nav class="mb-10 inline-flex w-full items-end justify-between text-center lg:text-left">
+	<div class="pointer-events-none inline-flex items-end gap-2">
+		<img src={IconImg} alt="My emoji - A small 8 bit character" class="z-10 w-12" />
 		<a
 			href="/"
-			class="text-3xl font-bold pointer-events-auto hover:text-primary-2 transform duration-200"
+			class="pointer-events-auto transform text-3xl font-bold duration-200 hover:text-primary-2"
 			>{title}</a
 		>
 	</div>

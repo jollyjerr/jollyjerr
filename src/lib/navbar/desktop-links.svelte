@@ -4,6 +4,6 @@
 	export let selected: Tab;
 </script>
 
-<ul class="space-x-6 hidden lg:block mr-6">
+<ul class="mr-6 hidden space-x-6 lg:block">
 	<CommonLinks {selected} />
 </ul>
