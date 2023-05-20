@@ -1,5 +1,12 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
+	import { getHighlighter } from './highlight';
 	import CoverPhoto from './cover-photo.svelte';
+
+	onMount(() => {
+		getHighlighter().highlightAll();
+	});
 
 	export let image: string;
 	export let title: string;

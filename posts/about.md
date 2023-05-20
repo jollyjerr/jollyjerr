@@ -4,7 +4,7 @@ subtitle: Who is Jeremiah Tabb?
 date: 2022-04-22
 tags: life
 featured: true
-image: https://ik.imagekit.io/jollyjerr/jtabb_dev/bio_1IlfPnvkGY?ik-sdk-version=javascript-1.4.3&updatedAt=1654130170565&tr=w-1080%2Ch-566%2Cfo-auto
+image: https://ik.imagekit.io/jollyjerr/jtabb_dev/IMG_9806_iKi3-roSk.heif?updatedAt=1684560608057&tr=w-1080%2Ch-1080%2Cfo-auto
 draft: false
 ---
 
