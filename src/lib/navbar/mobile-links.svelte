@@ -19,7 +19,7 @@
 <svelte:window bind:innerWidth on:resize={handleResize} />
 
 <button
-	class="fixed right-3 top-3 z-20 rounded bg-primary-5 bg-opacity-70 p-2 lg:hidden"
+	class="rounded-sm fixed right-3 top-3 z-20 bg-primary-5 bg-opacity-70 p-2 lg:hidden"
 	on:click={toggleOpen}
 	title="Open navbar"
 >

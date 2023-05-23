@@ -6,11 +6,11 @@
 </script>
 
 <div class="w-full lg:max-w-xl">
-	<h1 class="w-full rounded bg-primary-7 py-4 text-center text-3xl font-bold">Latest Posts</h1>
+	<h1 class="rounded-sm w-full bg-primary-7 py-4 text-center text-3xl font-bold">Latest Posts</h1>
 	<ul class="w-full space-y-2 py-2">
 		{#each latestPosts as post}
 			<li
-				class="mx-auto max-w-2xl transform rounded bg-primary-7 p-6 duration-200 hover:bg-primary-6"
+				class="rounded-sm mx-auto max-w-2xl transform bg-primary-7 p-6 duration-200 hover:bg-primary-6"
 			>
 				<a href={`/blog/${post.slug}`}>
 					<div class="h-full">
