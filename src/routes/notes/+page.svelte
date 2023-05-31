@@ -14,25 +14,24 @@
 	let nodes = notes.nodes;
 	let canvas: HTMLCanvasElement;
 
-	const artist = new Artist({
-		data: notes,
-		style: {
-			nodeColor: colors.primary4,
-			linkColor: colors.primary6,
-			titleColor: colors.primary1,
-			activeLinkColor: colors.primary5,
-			activeNodeColor: colors.primary3
-		},
-		simulationConfig: {
-			chargeStrength: -175
-		}
-	});
-
-	artist.addEventListener('nodeClick', (node) => {
-		goto(`/notes/${getNodeSlug(node.id)}`);
-	});
-
 	onMount(() => {
+		const artist = new Artist({
+			data: notes,
+			style: {
+				nodeColor: colors.primary4,
+				linkColor: colors.primary6,
+				titleColor: colors.primary1,
+				activeLinkColor: colors.primary5,
+				activeNodeColor: colors.primary3
+			},
+			simulationConfig: {
+				chargeStrength: -175
+			}
+		});
+
+		artist.addEventListener('nodeClick', (node) => {
+			goto(`/notes/${getNodeSlug(node.id)}`);
+		});
 		artist.draw(canvas);
 	});
 

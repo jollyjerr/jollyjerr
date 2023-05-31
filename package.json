@@ -41,7 +41,7 @@
 		"vite": "^4.3.9"
 	},
 	"dependencies": {
-		"@mindgraph/draw": "0.5.0",
+		"@mindgraph/draw": "0.6.1",
 		"algoliasearch": "^4.17.1",
 		"highlight.js": "^11.8.0"
 	}
