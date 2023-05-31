@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { draw } from '@mindgraph/draw';
+	import { Artist } from '@mindgraph/draw';
 	import Head from '$lib/head/head.svelte';
 	import Navbar from '$lib/navbar/navbar.svelte';
 	import { goto } from '$app/navigation';
@@ -14,14 +14,9 @@
 	let nodes = notes.nodes;
 	let canvas: HTMLCanvasElement;
 
-	function getNodeSlug(id: string) {
-		return id.split(`${pathToNotes}/`)[1];
-	}
-
 	onMount(() => {
-		draw({
+		const artist = new Artist({
 			data: notes,
-			canvasElement: canvas,
 			style: {
 				nodeColor: colors.primary4,
 				linkColor: colors.primary6,
@@ -31,12 +26,18 @@
 			},
 			simulationConfig: {
 				chargeStrength: -175
-			},
-			onNodeClick: (node) => {
-				goto(`/notes/${getNodeSlug(node.id)}`);
 			}
 		});
+
+		artist.addEventListener('nodeClick', (node) => {
+			goto(`/notes/${getNodeSlug(node.id)}`);
+		});
+		artist.draw(canvas);
 	});
+
+	function getNodeSlug(id: string) {
+		return id.split(`${pathToNotes}/`)[1];
+	}
 </script>
 
 <Head title="Notes" />

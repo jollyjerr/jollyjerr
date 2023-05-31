@@ -12,13 +12,13 @@
 
 {#if post}
 	<div
-		class="rounded-sm w-full transform bg-primary-7 p-6 duration-200 hover:bg-primary-6 lg:max-w-xl"
+		class="rounded-sm w-full transform rounded bg-primary-7 p-6 duration-200 hover:bg-primary-6 lg:max-w-xl"
 	>
 		<a href={`/blog/${post.slug}`}>
 			<img
 				src={post.image}
 				alt={post.title}
-				class="rounded-sm aspect-square w-full object-cover drop-shadow-sm"
+				class="rounded-sm aspect-square w-full rounded object-cover drop-shadow-sm"
 			/>
 			<ul class="flex items-center gap-6 py-4 font-bold text-primary-4">
 				{#each post.tags as tag}

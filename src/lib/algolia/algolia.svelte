@@ -101,12 +101,12 @@
 		}}
 	>
 		<div
-			class="rounded-sm w-full max-w-2xl space-y-3 border border-primary-6 bg-primary-7 p-6 drop-shadow-md"
+			class="rounded-sm w-full max-w-2xl space-y-3 rounded border border-primary-6 bg-primary-7 p-6 drop-shadow-md"
 		>
 			<!-- svelte-ignore a11y-autofocus -- users will expect this -->
 			<input
 				type="text"
-				class="rounded-sm w-full bg-primary-7"
+				class="rounded-sm w-full rounded bg-primary-7"
 				placeholder="search..."
 				autofocus
 				bind:value={query}
