@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { afterNavigate, goto } from '$app/navigation';
+	import { afterNavigate } from '$app/navigation';
 	import algoliasearch, { type SearchClient } from 'algoliasearch';
 	import AlgoliaLogo from './algolia-logo.png';
 	import HitItem from './hit-item.svelte';
@@ -44,9 +44,10 @@
 			} else if (event.key === 'Enter' && focusedIdIndex >= 0) {
 				const selected = allHits[focusedIdIndex];
 				if ('slug' in selected) {
-					goto(`/blog/${selected.slug}`);
+					window.location.href = window.location.origin + `/blog/${selected.slug}`;
 				} else {
-					goto(`/notes/${(selected as unknown as { path: string }).path}`);
+					window.location.href =
+						window.location.origin + `/notes/${(selected as unknown as { path: string }).path}`;
 				}
 			}
 		};

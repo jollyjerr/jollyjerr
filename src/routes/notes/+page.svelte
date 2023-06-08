@@ -32,6 +32,7 @@
 		artist.addEventListener('nodeClick', (node) => {
 			goto(`/notes/${getNodeSlug(node.id)}`);
 		});
+
 		artist.draw(canvas);
 	});
 
