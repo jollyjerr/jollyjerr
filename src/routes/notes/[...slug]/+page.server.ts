@@ -5,6 +5,7 @@ import type { Note } from '$lib/notes/types';
 
 export const load: PageServerLoad = async ({ params: { slug } }) => {
 	const { html } = getNote(slug);
+
 	if (!html) {
 		throw error(404, 'Note not found');
 	}
