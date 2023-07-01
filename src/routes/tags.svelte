@@ -27,7 +27,9 @@
 <h1 class="rounded-sm rounded bg-primary-7 p-6 text-2xl font-bold">Search blogs by tag</h1>
 <ul class="my-4 flex flex-wrap gap-2">
 	{#each allTags as tag}
-		<li
+		<div
+			role="button"
+			tabindex="-1"
 			class={`rounded-sm cursor-pointer rounded p-4 ring-primary-4 hover:ring-1 active:ring-1 ${
 				selectedTags.includes(tag) ? 'bg-primary-6' : 'bg-primary-7'
 			}`}
@@ -35,7 +37,7 @@
 			on:keypress={() => toggle(tag)}
 		>
 			#{tag}
-		</li>
+		</div>
 	{/each}
 </ul>
 <ul>

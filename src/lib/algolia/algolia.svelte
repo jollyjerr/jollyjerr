@@ -82,8 +82,11 @@
 		searchClient
 			.multipleQueries(queryTemplate.map((t) => ({ ...t, query })))
 			.then(({ results }) => {
-				blogPosts = results[0].hits as unknown as AlgoliaBlog[];
-				notes = results[1].hits as unknown as AlgoliaNote[];
+				// TODO: algolia types suck here :(
+				const searchResults = results as unknown as { hits: (AlgoliaNote | AlgoliaBlog)[] }[];
+				blogPosts = searchResults[0].hits as AlgoliaBlog[];
+				notes = searchResults[1].hits as AlgoliaNote[];
+
 				allHits = [...blogPosts, ...notes];
 				if (focusedIdIndex > blogPosts.length + notes.length) {
 					focusedIdIndex = -1;
@@ -95,6 +98,8 @@
 
 {#if enabled}
 	<div
+		role="button"
+		tabindex="-1"
 		class="absolute z-[900] flex min-h-full min-w-full items-center justify-center bg-primary-8 bg-opacity-70"
 		on:click={() => toggleSearch()}
 		on:keyup={() => {
