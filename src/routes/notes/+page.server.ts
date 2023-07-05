@@ -1,9 +1,9 @@
 import type { PageServerLoad } from './$types';
 import { pathToNotes } from '$lib/notes/constants';
-import { readFromFileSystem } from '@mindgraph/read';
+import { FileSystem } from '@mindgraph/read';
 
 export const load: PageServerLoad = async () => {
-	const graph = await readFromFileSystem(pathToNotes);
+	const graph = await FileSystem.read({ path: pathToNotes });
 	return {
 		notes: graph
 	};
