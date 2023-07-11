@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MindGraph } from '@mindgraph/draw';
+	import { Graph } from '@notree/ui';
 	import Head from '$lib/head/head.svelte';
 	import Navbar from '$lib/navbar/navbar.svelte';
 	import { goto } from '$app/navigation';
@@ -15,7 +15,7 @@
 	let canvas: HTMLCanvasElement;
 
 	onMount(() => {
-		const mg = new MindGraph({
+		const graph = new Graph({
 			data: notes,
 			styles: {
 				nodeColor: colors.primary4,
@@ -31,11 +31,11 @@
 			canvas
 		});
 
-		mg.onClick((node) => {
+		graph.onClick((node) => {
 			goto(`/notes/${getNodeSlug(node.id)}`);
 		});
 
-		mg.draw();
+		graph.draw();
 	});
 
 	function getNodeSlug(id: string) {
