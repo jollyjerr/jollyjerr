@@ -4,6 +4,7 @@
 	import algoliasearch, { type SearchClient } from 'algoliasearch';
 	import AlgoliaLogo from './algolia-logo.png';
 	import HitItem from './hit-item.svelte';
+	import { searchOpen } from '$lib/store';
 	import type { AlgoliaBlog } from '$lib/blog/types';
 	import type { AlgoliaNote } from '$lib/notes/types';
 
@@ -12,8 +13,12 @@
 		{ indexName: 'notes', params: { hitsPerPage: 3 } }
 	] as const;
 
-	let searchClient: SearchClient;
 	let enabled = false;
+	searchOpen.subscribe((value) => {
+		enabled = value;
+	});
+
+	let searchClient: SearchClient;
 	let query = '';
 	let blogPosts: AlgoliaBlog[] = [];
 	let notes: AlgoliaNote[] = [];
@@ -55,7 +60,7 @@
 
 	function toggleSearch(to = false) {
 		query = '';
-		enabled = to;
+		searchOpen.update(() => to);
 		focusedIdIndex = -1;
 		focusedID = '';
 		if (to) {

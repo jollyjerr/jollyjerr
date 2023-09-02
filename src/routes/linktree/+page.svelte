@@ -12,7 +12,7 @@
 		src={image}
 		alt="A happy Jeremiah after climbing J-Crack in Lumpy"
 		style="border-radius: 50%;"
-		class="w-full max-w-[180px]"
+		class="aspect-square w-full max-w-[180px]"
 	/>
 	<h1 class="text-2xl font-bold text-primary-5">@jollyjerr</h1>
 	<ul class="w-full space-y-3">

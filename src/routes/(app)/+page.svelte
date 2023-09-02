@@ -13,5 +13,4 @@
 <Head />
 <Navbar selected="blog" />
 <FeaturedBlogs {posts} />
-<div class="italic opacity-50">ctrl k to search</div>
 <!-- <Tags {posts} /> -->
