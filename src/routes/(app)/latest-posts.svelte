@@ -1,30 +1,47 @@
 <script lang="ts">
+	import { safeFormat } from '$lib/date';
 	import type { PostMetadata } from '$lib/blog/types';
+	import { imageSizes, sizedImage } from '$lib/image';
 
 	export let posts: PostMetadata[];
-	const latestPosts = posts.filter((post) => post.featured !== 'true').slice(0, 5);
+	const latestPosts = posts
+		.filter((post) => post.featured !== 'true')
+		.slice(0, 3)
+		.map((p) => ({ ...p, image: sizedImage(p.image, imageSizes.sm) }));
 </script>
 
-<div class="w-full lg:max-w-xl">
-	<h1 class="rounded-sm w-full rounded bg-primary-7 py-4 text-center text-3xl font-bold">
-		Latest Posts
-	</h1>
-	<ul class="w-full space-y-2 py-2">
+<svelte:head>
+	{#each latestPosts as post}
+		<link rel="preload" as="image" href={post.image} />
+	{/each}
+</svelte:head>
+
+<div class="w-full">
+	<ul class="flex w-full flex-col gap-2 lg:px-16">
 		{#each latestPosts as post}
-			<li
-				class="rounded-sm mx-auto max-w-2xl transform rounded bg-primary-7 p-6 duration-200 hover:bg-primary-6"
-			>
-				<a href={`/blog/${post.slug}`}>
-					<div class="h-full">
-						<a href={`/blog/${post.slug}`} class="text-2xl font-bold">{post.title}</a>
-						<p class="text-lg">{post.subtitle}</p>
-						<ul class="flex gap-2 text-primary-4">
-							{#each post.tags as tag}
-								<li class="text-sm">#{tag}</li>
-							{/each}
-						</ul>
-					</div>
-				</a>
+			<li class="grid grid-cols-2 gap-3 border-b border-b-primary-6 py-4">
+				<div class="flex w-full justify-center">
+					<a href={`/blog/${post.slug}`}>
+						<img
+							src={post.image}
+							alt={post.subtitle}
+							class="rounded-xs aspect-square w-52 rounded object-cover"
+						/>
+					</a>
+				</div>
+				<div>
+					<ul class="flex text-primary-4">
+						{#each post.tags as tag}
+							<li class="text-sm">#{tag}</li>
+						{/each}
+					</ul>
+					<a
+						href={`/blog/${post.slug}`}
+						class="text-2xl font-bold hover:text-primary-4 hover:underline">{post.title}</a
+					>
+					<p class="opacity-80">{post.subtitle}</p>
+					<p class="text-sm opacity-40">{safeFormat(post.date)}</p>
+				</div>
 			</li>
 		{/each}
 	</ul>

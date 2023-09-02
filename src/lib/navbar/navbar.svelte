@@ -10,7 +10,16 @@
 
 <nav class="mb-10 inline-flex w-full items-end justify-between text-center lg:text-left">
 	<div class="pointer-events-none inline-flex items-end gap-2">
-		<img src={IconImg} alt="My emoji - A small 8 bit character" class="z-10 w-12" />
+		<img
+			src={IconImg}
+			alt="My emoji - A small 8 bit character"
+			class="z-10"
+			width={48}
+			height={48}
+		/>
+		<span class="text-3xl font-bold italic opacity-75">
+			{' / '}
+		</span>
 		<a
 			href={selected === 'blog' ? '/' : `/${selected}`}
 			class="pointer-events-auto transform text-3xl font-bold duration-200 hover:text-primary-2"

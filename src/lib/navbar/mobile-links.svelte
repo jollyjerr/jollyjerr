@@ -39,8 +39,8 @@
 	<section
 		class="to-transparent fixed left-0 top-0 z-10 h-full w-full bg-gradient-to-bl from-primary-6 via-primary-6"
 	>
-		<ul class="flex flex-col items-end gap-2 pr-24 pt-12">
+		<div class="flex flex-col items-end gap-2 pr-24 pt-12">
 			<CommonLinks {selected} />
-		</ul>
+		</div>
 	</section>
 {/if}

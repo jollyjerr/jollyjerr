@@ -9,11 +9,11 @@
 </script>
 
 <article>
-	<div class="mb-10 grid gap-2 space-y-6 lg:grid-cols-6 lg:space-y-0">
-		<section class="col-span-3 flex justify-center">
+	<div class="grid lg:grid-cols-6">
+		<section class="col-span-3 border-b border-b-primary-6 pb-4 lg:border-b-0">
 			<FeaturedPost post={featuredPost} />
 		</section>
-		<section class="col-span-3 flex justify-center">
+		<section class="col-span-3">
 			<LatestPosts {posts} />
 		</section>
 	</div>

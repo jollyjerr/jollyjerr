@@ -4,6 +4,7 @@
 	import algoliasearch, { type SearchClient } from 'algoliasearch';
 	import AlgoliaLogo from './algolia-logo.png';
 	import HitItem from './hit-item.svelte';
+	import { searchOpen } from '$lib/store';
 	import type { AlgoliaBlog } from '$lib/blog/types';
 	import type { AlgoliaNote } from '$lib/notes/types';
 
@@ -12,36 +13,45 @@
 		{ indexName: 'notes', params: { hitsPerPage: 3 } }
 	] as const;
 
-	let searchClient: SearchClient;
 	let enabled = false;
+	let searchClient: SearchClient;
 	let query = '';
 	let blogPosts: AlgoliaBlog[] = [];
 	let notes: AlgoliaNote[] = [];
 	let allHits: (AlgoliaNote | AlgoliaBlog)[] = [];
 
-	let focusedIdIndex = -1;
+	let focusedIdIndex: number | null = null;
 	let focusedID = '';
 	let keyHandled = false;
 
-	afterNavigate(() => toggleSearch());
+	searchOpen.subscribe((value) => {
+		handleSearchToggle(value);
+	});
+	afterNavigate(() => setSearchOpen());
 	onMount(() => {
 		searchClient = algoliasearch('XHMYZ3V6CT', 'a9ba9e903d2ec7c98a6eb054283cccf3');
 
 		document.onkeydown = (event: KeyboardEvent) => {
 			if (event.key === 'Escape' && enabled) {
-				toggleSearch();
+				setSearchOpen(false);
+				keyHandled = true;
+			} else if (enabled && (event.key === 'ArrowDown' || (event.ctrlKey && event.key === 'n'))) {
+				event.preventDefault();
+				nudgeFocus(true);
+				keyHandled = true;
+			} else if (enabled && (event.key === 'ArrowUp' || (event.ctrlKey && event.key === 'p'))) {
+				event.preventDefault();
+				nudgeFocus(false);
 				keyHandled = true;
 			} else if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
 				event.preventDefault();
-				toggleSearch(!enabled);
+				setSearchOpen(!enabled);
 				keyHandled = true;
-			} else if (event.key === 'ArrowDown' || (event.ctrlKey && event.key === 'n')) {
-				nudgeFocus(true);
-				keyHandled = true;
-			} else if (event.key === 'ArrowUp' || (event.ctrlKey && event.key === 'p')) {
-				nudgeFocus(false);
-				keyHandled = true;
-			} else if (event.key === 'Enter' && focusedIdIndex >= 0) {
+			} else if (
+				event.key === 'Enter' &&
+				typeof focusedIdIndex === 'number' &&
+				focusedIdIndex >= 0
+			) {
 				const selected = allHits[focusedIdIndex];
 				if ('slug' in selected) {
 					window.location.href = window.location.origin + `/blog/${selected.slug}`;
@@ -51,25 +61,51 @@
 				}
 			}
 		};
+
+		document.onkeyup = (event: KeyboardEvent) => {
+			if (enabled && event.ctrlKey) {
+				keyHandled = true;
+			}
+		};
 	});
 
-	function toggleSearch(to = false) {
+	function setSearchOpen(to = false) {
+		searchOpen.update(() => to);
+	}
+
+	function handleSearchToggle(to = false) {
 		query = '';
 		enabled = to;
-		focusedIdIndex = -1;
+		focusedIdIndex = null;
 		focusedID = '';
 		if (to) {
 			search();
 		}
 	}
 
-	function nudgeFocus(down: boolean) {
-		focusedIdIndex += down ? 1 : -1;
-		if (focusedIdIndex > allHits.length) {
-			focusedIdIndex--;
-		} else if (focusedIdIndex < -1) {
-			focusedIdIndex++;
+	function nudgeFocus(moveDown: boolean) {
+		const moveUp = !moveDown;
+
+		if (
+			(focusedIdIndex === null && moveUp) ||
+			(focusedIdIndex === allHits.length - 1 && moveDown) ||
+			(focusedIdIndex === 0 && moveUp)
+		) {
+			return;
 		}
+
+		if (moveDown && focusedIdIndex == null) {
+			focusedIdIndex = 0;
+		} else {
+			if (focusedIdIndex === null) return;
+
+			focusedIdIndex += moveDown ? 1 : -1;
+			if (focusedIdIndex >= allHits.length) {
+				focusedIdIndex = allHits.length - 1;
+			}
+		}
+
+		if (focusedIdIndex === null) return;
 		focusedID = allHits[focusedIdIndex].objectID;
 	}
 
@@ -79,20 +115,22 @@
 			return;
 		}
 
-		searchClient
-			.multipleQueries(queryTemplate.map((t) => ({ ...t, query })))
-			.then(({ results }) => {
-				// TODO: algolia types suck here :(
-				const searchResults = results as unknown as { hits: (AlgoliaNote | AlgoliaBlog)[] }[];
-				blogPosts = searchResults[0].hits as AlgoliaBlog[];
-				notes = searchResults[1].hits as AlgoliaNote[];
+		try {
+			const { results } = await searchClient.multipleQueries(
+				queryTemplate.map((t) => ({ ...t, query }))
+			);
+			focusedIdIndex = null;
+			focusedID = '';
 
-				allHits = [...blogPosts, ...notes];
-				if (focusedIdIndex > blogPosts.length + notes.length) {
-					focusedIdIndex = -1;
-					focusedID = '';
-				}
-			});
+			// Algolia types suck here :(
+			const searchResults = results as unknown as { hits: (AlgoliaNote | AlgoliaBlog)[] }[];
+			blogPosts = searchResults[0].hits as AlgoliaBlog[];
+			notes = searchResults[1].hits as AlgoliaNote[];
+
+			allHits = [...blogPosts, ...notes];
+		} catch {
+			setSearchOpen(false);
+		}
 	}
 </script>
 
@@ -101,7 +139,7 @@
 		role="button"
 		tabindex="-1"
 		class="absolute z-[900] flex min-h-full min-w-full items-center justify-center bg-primary-8 bg-opacity-70"
-		on:click={() => toggleSearch()}
+		on:click={() => setSearchOpen()}
 		on:keyup={() => {
 			// use esc to close with keyboard
 		}}
@@ -117,6 +155,7 @@
 				autofocus
 				bind:value={query}
 				on:keyup={search}
+				id="search term"
 			/>
 			{#if blogPosts.length || notes.length}
 				<h2 class="text-2xl font-bold">Blogs</h2>
