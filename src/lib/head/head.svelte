@@ -3,7 +3,7 @@
 
 	export let image = SocialImg;
 	export let title = 'Jeremiah Tabb | Software Engineer';
-	export let description = 'Learn about stuff!';
+	export let description = 'Blog posts and notes about software, math, and everything else.';
 	export let url = 'https://jtabb.dev';
 </script>
 
@@ -19,11 +19,11 @@
 	<meta property="og:image" content={image} />
 	<meta property="og:image:alt" content={title} />
 	<meta property="og:description" content={description} />
-	<meta property="og:site_name" content="Jtabb.dev" />
+	<meta property="og:site_name" content="jtabb.dev" />
 	<meta property="og:locale" content="en_US" />
 	<meta name="twitter:card" content={description} />
-	<meta name="twitter:site" content="@jerrtabb" />
-	<meta name="twitter:creator" content="@jerrtabb" />
+	<meta name="twitter:site" content="@jolyjerr" />
+	<meta name="twitter:creator" content="@jolyjerr" />
 	<meta name="twitter:url" content={url} />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
