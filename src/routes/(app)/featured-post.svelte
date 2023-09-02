@@ -1,13 +1,16 @@
 <script lang="ts">
 	import { safeFormat } from '$lib/date';
+	import { sizedImage, imageSizes } from '$lib/image';
 	import type { PostMetadata } from '$lib/blog/types';
 
 	export let post: PostMetadata | undefined;
+
+	const sizedUrl = post ? sizedImage(post.image, imageSizes.lg) : undefined;
 </script>
 
 <svelte:head>
-	{#if post}
-		<link rel="preload" as="image" href={post.image} />
+	{#if sizedUrl}
+		<link rel="preload" as="image" href={sizedUrl} />
 	{/if}
 </svelte:head>
 
@@ -15,7 +18,7 @@
 	<div class="flex w-full flex-col">
 		<a href={`/blog/${post.slug}`}>
 			<img
-				src={post.image}
+				src={sizedUrl}
 				alt={post.title}
 				class="rounded-xs aspect-square max-h-96 w-full transform rounded object-cover"
 			/>

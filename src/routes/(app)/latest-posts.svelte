@@ -1,10 +1,20 @@
 <script lang="ts">
 	import { safeFormat } from '$lib/date';
 	import type { PostMetadata } from '$lib/blog/types';
+	import { imageSizes, sizedImage } from '$lib/image';
 
 	export let posts: PostMetadata[];
-	const latestPosts = posts.filter((post) => post.featured !== 'true').slice(0, 3);
+	const latestPosts = posts
+		.filter((post) => post.featured !== 'true')
+		.slice(0, 3)
+		.map((p) => ({ ...p, image: sizedImage(p.image, imageSizes.sm) }));
 </script>
+
+<svelte:head>
+	{#each latestPosts as post}
+		<link rel="preload" as="image" href={post.image} />
+	{/each}
+</svelte:head>
 
 <div class="w-full">
 	<ul class="flex w-full flex-col gap-2 lg:px-16">

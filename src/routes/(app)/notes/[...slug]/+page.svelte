@@ -19,6 +19,6 @@
 <Navbar selected="notes" title="Notes" />
 <MarkdownPage
 	title={note.title}
-	image="https://ik.imagekit.io/jollyjerr/jtabb_dev/climbing_R2mdWU1pJ.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1652395182898&tr=w-1080%2Ch-1080%2Cfo-auto"
+	image="https://ik.imagekit.io/jollyjerr/jtabb_dev/longspeak_3vFbwWTsS.jpg"
 	html={note.html}
 />
