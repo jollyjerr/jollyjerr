@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { safeFormat } from '$lib/date';
 	import type { PostMetadata } from '$lib/blog/types';
 
 	export let posts: PostMetadata[];
@@ -29,6 +30,7 @@
 						class="text-2xl font-bold hover:text-primary-4 hover:underline">{post.title}</a
 					>
 					<p class="opacity-80">{post.subtitle}</p>
+					<p class="text-sm opacity-40">{safeFormat(post.date)}</p>
 				</div>
 			</li>
 		{/each}

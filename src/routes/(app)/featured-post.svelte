@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { safeFormat } from '$lib/date';
 	import type { PostMetadata } from '$lib/blog/types';
 
 	export let post: PostMetadata | undefined;
@@ -30,5 +31,6 @@
 			>
 		</div>
 		<p class="pt-2 opacity-80">{post.subtitle}</p>
+		<p class="text-sm opacity-40">{safeFormat(post.date)}</p>
 	</div>
 {/if}
