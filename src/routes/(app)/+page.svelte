@@ -4,7 +4,6 @@
 
 	import type { PageData } from './$types';
 	import FeaturedBlogs from './featured-blogs.svelte';
-	// import Tags from './tags.svelte';
 
 	export let data: PageData;
 	export const posts = data.posts;
@@ -13,4 +12,3 @@
 <Head />
 <Navbar selected="blog" />
 <FeaturedBlogs {posts} />
-<!-- <Tags {posts} /> -->
