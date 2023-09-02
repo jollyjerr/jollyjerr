@@ -20,7 +20,7 @@
 		<a
 			href={selected === 'blog' ? '/' : `/${selected}`}
 			class="pointer-events-auto transform text-3xl font-bold duration-200 hover:text-primary-2"
-			>{title}</a
+			>/ {title}</a
 		>
 	</div>
 	<DesktopLinks {selected} />
