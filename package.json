@@ -43,6 +43,7 @@
 	"dependencies": {
 		"@notree/ui": "0.2.0",
 		"algoliasearch": "^4.19.1",
+		"date-fns": "^2.30.0",
 		"highlight.js": "^11.8.0"
 	}
 }

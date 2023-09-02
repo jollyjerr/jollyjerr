@@ -6,7 +6,6 @@
 </script>
 
 <div class="w-full">
-	<!-- <h1 class="text-end text-3xl font-bold">Latest Posts</h1> -->
 	<ul class="flex w-full flex-col gap-2 lg:px-16">
 		{#each latestPosts as post}
 			<li class="grid grid-cols-2 gap-3 border-b border-b-primary-6 py-4">
