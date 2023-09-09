@@ -10,4 +10,10 @@
 
 <Head title={post.metadata.title} description={post.metadata.subtitle} />
 <Navbar selected="blog" />
-<MarkdownPage title={post.metadata.title} image={post.metadata.image} html={post.html} />
+<MarkdownPage
+	title={post.metadata.title}
+	image={post.metadata.image}
+	html={post.html}
+	date={post.metadata.date}
+    tags={post.metadata.tags}
+/>

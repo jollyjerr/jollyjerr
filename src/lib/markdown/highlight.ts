@@ -8,6 +8,7 @@ import elixir from 'highlight.js/lib/languages/elixir';
 import cpp from 'highlight.js/lib/languages/cpp';
 import go from 'highlight.js/lib/languages/go';
 import css from 'highlight.js/lib/languages/css';
+import lua from 'highlight.js/lib/languages/lua';
 
 let hightlight: HLJSApi | undefined;
 
@@ -22,7 +23,8 @@ export function getHighlighter(): HLJSApi {
 		{ name: 'elixir', language: elixir },
 		{ name: 'cpp', language: cpp },
 		{ name: 'go', language: go },
-		{ name: 'css', language: css }
+		{ name: 'css', language: css },
+		{ name: 'lua', language: lua }
 	].forEach(({ name, language }) => {
 		hljsCore.registerLanguage(name, language);
 	});
