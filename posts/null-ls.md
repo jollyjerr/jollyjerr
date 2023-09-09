@@ -11,7 +11,7 @@ draft: false
 # null-ls is archived, what now?
 
 As of August 11th, 2023, the Neovim community lost a beloved plugin,
-[null-ls](./https://github.com/jose-elias-alvarez/null-ls.nvim/issues/1621).
+[null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim/issues/1621).
 
 If you are not familiar with null-ls, it was an incredible Neovim plugin that
 made it possible for non-[LSP](https://en.wikipedia.org/wiki/Language_Server_Protocol)
