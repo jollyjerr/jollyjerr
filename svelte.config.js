@@ -8,9 +8,9 @@ const config = {
 	}),
 	kit: {
 		adapter: adapter(),
-        prerender: {
-            entries: ["*", "/blog/uses"]
-        }
+		prerender: {
+			entries: ['*', '/blog/uses']
+		}
 	}
 };
 
