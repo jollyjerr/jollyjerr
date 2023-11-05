@@ -33,6 +33,7 @@
 	<article
 		class="prose prose-invert mx-auto max-w-4xl prose-img:aspect-video prose-img:object-cover"
 	>
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 		{@html html}
 	</article>
 </div>
