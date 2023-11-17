@@ -15,5 +15,5 @@
 	image={post.metadata.image}
 	html={post.html}
 	date={post.metadata.date}
-    tags={post.metadata.tags}
+	tags={post.metadata.tags}
 />
