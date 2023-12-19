@@ -4,7 +4,6 @@
 	export let image = SocialImg;
 	export let title = 'Jeremiah Tabb | Software Engineer';
 	export let description = 'Blog posts and notes about software, math, and everything else.';
-	export let url = 'https://jtabb.dev';
 </script>
 
 <svelte:head>
@@ -13,7 +12,6 @@
 	<meta name="description" content={description} />
 	<meta name="subject" content={title} />
 	<meta name="rating" content="General" />
-	<meta property="og:url" content={url} />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={title} />
 	<meta property="og:image" content={image} />
@@ -24,7 +22,6 @@
 	<meta name="twitter:card" content={description} />
 	<meta name="twitter:site" content="@jolyjerr" />
 	<meta name="twitter:creator" content="@jolyjerr" />
-	<meta name="twitter:url" content={url} />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={image} />
