@@ -22,7 +22,8 @@
 				linkColor: colors.primary6,
 				titleColor: colors.primary1,
 				activeLinkColor: colors.primary5,
-				activeNodeColor: colors.primary3
+				activeNodeColor: colors.primary3,
+                nodeScaleFactor: 0.67
 			},
 			simulationConfig: {
 				chargeStrength: -175,
@@ -48,6 +49,6 @@
 <Navbar selected="notes" title="Notes" />
 
 <!-- hack to get prerendering to work - TODO: do this another way -->
-{#each nodes as note}
-	<a href={`/notes/${getNodeSlug(note.id)}`} class="hidden">{note.name}</a>
+{#each Object.values( nodes ) as note}
+	<a href={`/notes/${getNodeSlug(note.id)}`} class="hidden">{note.title}</a>
 {/each}

@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@notree/ui':
-    specifier: 0.2.0
-    version: 0.2.0
+    specifier: ^0.3.0
+    version: 0.3.0
   algoliasearch:
     specifier: ^4.20.0
     version: 4.20.0
@@ -20,10 +20,10 @@ dependencies:
 
 devDependencies:
   '@notree/server':
-    specifier: 0.1.0
-    version: 0.1.0(axios@1.6.2)(octokit@2.1.0)
+    specifier: ^0.2.1
+    version: 0.2.1(axios@1.6.2)(octokit@2.1.0)
   '@sveltejs/adapter-auto':
-    specifier: 2.1.1
+    specifier: ^2.1.1
     version: 2.1.1(@sveltejs/kit@1.27.6)
   '@sveltejs/kit':
     specifier: 1.27.6
@@ -523,23 +523,23 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@notree/common@0.1.0:
-    resolution: {integrity: sha512-EQ2NE/oM+/NsbZb4Ku5Jz6JEaudwY6cVBgzieWImcf1bgPYLIxI9hMb1IkQlO/pYnc6QEpKid/rNhL4BhdS62A==}
+  /@notree/common@0.2.0:
+    resolution: {integrity: sha512-glUT9pnkqZf+XkcxgNKdi30A+z7uGhxVoJtkNT8H+18bP5aH/ZFdKIFfymFL2FS5j+A0YB5n4LmgulxUYKaEFw==}
     dev: true
 
-  /@notree/server@0.1.0(axios@1.6.2)(octokit@2.1.0):
-    resolution: {integrity: sha512-Lp9B9/qR/x/PI86N97FwnNV/iEhVIM6cYG3QsPB0++uPWEsu+7X4wKjUF4V5SiWn9SgoPdpVFWzyC4vV0iz+0A==}
+  /@notree/server@0.2.1(axios@1.6.2)(octokit@2.1.0):
+    resolution: {integrity: sha512-2aV5PxMw6hCoGVfioXXBnljkDHb1vwTtYDyk0GdGiKnuNqu7A94mMzQEXLzqWRM3VrhGugX7HOZo6G35qXnuxA==}
     peerDependencies:
       axios: ^1.4.0
       octokit: ^2.1.0
     dependencies:
-      '@notree/common': 0.1.0
+      '@notree/common': 0.2.0
       axios: 1.6.2
       octokit: 2.1.0
     dev: true
 
-  /@notree/ui@0.2.0:
-    resolution: {integrity: sha512-yW1u5TB+nrqY/qUvjlWlbEeJJNTmcmqWd5euJx1ilfDEiYG1539I/t1KPeAe2OrwS8s9P8dMIphIlWMIFfaa1w==}
+  /@notree/ui@0.3.0:
+    resolution: {integrity: sha512-ADvPUMMQ28NQ35aehs7oA1f1EUGsh9bWeWymnOGxYYuHO/JCCKOtoLuZDB8p4fBMc1VAxoQMv+Uczc1PuurOyw==}
     dependencies:
       d3-array: 3.2.4
       d3-force: 3.0.0
@@ -678,7 +678,7 @@ packages:
       '@octokit/core': 4.2.4
       '@octokit/oauth-authorization-url': 5.0.0
       '@octokit/oauth-methods': 2.0.6
-      '@types/aws-lambda': 8.10.126
+      '@types/aws-lambda': 8.10.130
       fromentries: 1.3.2
       universal-user-agent: 6.0.1
     transitivePeerDependencies:
@@ -906,8 +906,8 @@ packages:
       tailwindcss: 3.3.5
     dev: true
 
-  /@types/aws-lambda@8.10.126:
-    resolution: {integrity: sha512-5eh4ffLdGYgGYI1Xr6W5L4IVse4RR7L2ns5OVUXA52nW5GFapIcGMcCzHAIMMOdpcQs3aGVxbvFlJNZH6IpgEQ==}
+  /@types/aws-lambda@8.10.130:
+    resolution: {integrity: sha512-HxTfLeGvD1wTJqIGwcBCpNmHKenja+We1e0cuzeIDFfbEj3ixnlTInyPR/81zAe0Ss/Ip12rFK6XNeMLVucOSg==}
     dev: true
 
   /@types/btoa-lite@1.0.2:
@@ -2067,7 +2067,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.isstring: 4.0.1
       lodash.once: 4.1.1
-      ms: 2.1.3
+      ms: 2.1.2
       semver: 7.5.4
     dev: true
 
@@ -2259,10 +2259,6 @@ packages:
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
-    dev: true
-
-  /ms@2.1.3:
-    resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: true
 
   /mz@2.7.0:

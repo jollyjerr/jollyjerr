@@ -12,8 +12,8 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@notree/server": "0.1.0",
-		"@sveltejs/adapter-auto": "2.1.1",
+		"@notree/server": "^0.2.1",
+		"@sveltejs/adapter-auto": "^2.1.1",
 		"@sveltejs/kit": "1.27.6",
 		"@tailwindcss/forms": "^0.5.7",
 		"@tailwindcss/typography": "^0.5.10",
@@ -39,7 +39,7 @@
 		"vite": "^4.5.0"
 	},
 	"dependencies": {
-		"@notree/ui": "0.2.0",
+		"@notree/ui": "^0.3.0",
 		"algoliasearch": "^4.20.0",
 		"date-fns": "^2.30.0",
 		"highlight.js": "^11.9.0"
