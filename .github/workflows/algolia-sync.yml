@@ -1,17 +1,13 @@
 name: Algolia Sync
-
 on:
   push:
     branches: [main]
-
 env:
   ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
   ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
-
 jobs:
   run:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
         with:
