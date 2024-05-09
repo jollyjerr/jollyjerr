@@ -13,12 +13,12 @@
 			"href": "https://www.linkedin.com/in/jeremiahtabb/"
 		},
 		{
-			"title": "YouTube",
-			"href": "https://www.youtube.com/channel/UCqHFIUDlxvNGhaKBYPhjIBw"
-		},
-		{
 			"title": "Mountain Project",
 			"href": "https://www.mountainproject.com/user/200244605/jeremiah-tabb"
+		},
+		{
+			"title": "Strava",
+			"href": "https://www.strava.com/athletes/121228657"
 		},
 		{
 			"title": "IMDB",
@@ -29,52 +29,16 @@
 			"href": "https://leetcode.com/jollyjerr/"
 		},
 		{
-			"title": "Venmo",
-			"href": "https://account.venmo.com/u/Jeremiah-Tabb"
-		},
-		{
 			"title": "Twitch",
 			"href": "https://www.twitch.tv/jollyjerr"
-		},
-		{
-			"title": "Instagram",
-			"href": "https://www.instagram.com/jollyjerr/"
-		},
-		{
-			"title": "Threads",
-			"href": "https://www.threads.net/@jollyjerr"
 		},
 		{
 			"title": "Bandcamp",
 			"href": "https://jeremiahtabb.bandcamp.com/"
 		},
 		{
-			"title": "Soundcloud",
-			"href": "https://soundcloud.com/jeremiah-tabb-802138204"
-		},
-		{
-			"title": "Garmin Connect",
-			"href": "https://connect.garmin.com/modern/profile/827765ae-cca2-4010-ab47-57a7f2a9bcaf"
-		},
-		{
-			"title": "Strava",
-			"href": "https://www.strava.com/athletes/121228657"
-		},
-		{
-			"title": "Spotify",
-			"href": "https://open.spotify.com/user/22f4pnhsorekyrn5ldwmkp4ny"
-		},
-		{
 			"title": "Goodreads",
 			"href": "https://www.goodreads.com/user/show/149564991-jeremiah-tabb"
-		},
-		{
-			"title": "Facebook",
-			"href": "https://www.facebook.com/jeremiah.tabb.5/"
-		},
-		{
-			"title": "Mastadon",
-			"href": "https://mastodon.social/@jollyjerr"
 		},
 		{
 			"title": "Steam",
@@ -83,6 +47,10 @@
 		{
 			"title": "Discord",
 			"href": "http://discordapp.com/users/620805404053733377"
+		},
+		{
+			"title": "YouTube",
+			"href": "https://www.youtube.com/channel/UCqHFIUDlxvNGhaKBYPhjIBw"
 		}
 	]
 }
