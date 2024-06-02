@@ -9,7 +9,9 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"spellcheck": "cspell .",
+		"ci": "pnpm install && pnpm check && pnpm lint && pnpm spellcheck &&  pnpm build"
 	},
 	"devDependencies": {
 		"@notree/server": "^0.2.1",
@@ -37,7 +39,8 @@
 		"tailwindcss": "^3.4.1",
 		"tslib": "^2.6.2",
 		"typescript": "~5.4.3",
-		"vite": "^5.2.4"
+		"vite": "^5.2.4",
+		"cspell": "^8.8.3"
 	},
 	"dependencies": {
 		"@notree/ui": "^0.3.0",
