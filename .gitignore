@@ -10,3 +10,7 @@ node_modules
 .output
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+infrastructure/.terraform*
+infrastructure/*.tfstate
+infrastructure/*.tfstate.backup
