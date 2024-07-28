@@ -39,6 +39,6 @@ resource "cloudflare_pages_project" "jtabb" {
 
   build_config {
     build_command   = "pnpm build"
-    destination_dir = "public"
+    destination_dir = ".svelte-kit/cloudflare"
   }
 }
