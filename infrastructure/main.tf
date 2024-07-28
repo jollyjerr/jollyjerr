@@ -41,4 +41,19 @@ resource "cloudflare_pages_project" "jtabb" {
     build_command   = "pnpm build"
     destination_dir = ".svelte-kit/cloudflare"
   }
+
+  deployment_configs {
+    preview {
+      environment_variables = {
+        NODE_VERSION = "22.5.1"
+        PNPM_VERSION = "9.6.0"
+      }
+    }
+    production {
+      environment_variables = {
+        NODE_VERSION = "22.5.1"
+        PNPM_VERSION = "9.6.0"
+      }
+    }
+  }
 }
