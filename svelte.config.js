@@ -14,7 +14,7 @@ const config = {
 					'/',
 					'/_app/*',
 					'/favicon.png',
-					'robots.txt',
+					'/robots.txt',
 					'/social.jpg',
 					'/__data.json',
 					'/contact',
