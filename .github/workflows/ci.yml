@@ -35,7 +35,7 @@ jobs:
       - name: svelte-check
         run: pnpm check
       - name: lint
-        run: pnpm lint 
+        run: pnpm lint
       - name: spellcheck
         run: pnpm spellcheck
       - name: build
