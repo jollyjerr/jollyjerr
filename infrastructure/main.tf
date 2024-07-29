@@ -21,6 +21,11 @@ data "cloudflare_accounts" "jollyjerr" {
   name = "jollyjerr"
 }
 
+data "cloudflare_zone" "jtabbzone" {
+  name       = "jtabb.dev"
+  account_id = data.cloudflare_accounts.jollyjerr.accounts[0].id
+}
+
 resource "cloudflare_pages_project" "jtabb" {
   account_id        = data.cloudflare_accounts.jollyjerr.accounts[0].id
   name              = "jtabb"
@@ -56,4 +61,26 @@ resource "cloudflare_pages_project" "jtabb" {
       }
     }
   }
+}
+
+resource "cloudflare_pages_domain" "jtabbdomain" {
+  account_id   = data.cloudflare_accounts.jollyjerr.accounts[0].id
+  project_name = cloudflare_pages_project.jtabb.name
+  domain       = "jtabb.dev"
+}
+
+resource "cloudflare_record" "jtabbdns" {
+  zone_id = data.cloudflare_zone.jtabbzone.id
+  type    = "CNAME"
+  name    = "@"
+  value   = "jtabb.pages.dev"
+  proxied = true
+}
+
+resource "cloudflare_record" "jtabbwwwdns" {
+  zone_id = data.cloudflare_zone.jtabbzone.id
+  type    = "CNAME"
+  name    = "www"
+  value   = "jtabb.pages.dev"
+  proxied = true
 }
