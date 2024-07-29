@@ -6,12 +6,10 @@ node_modules
 .env
 .env.*
 !.env.example
-.vercel
 .output
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .tool-versions
 
 infrastructure/.terraform*
-infrastructure/*.tfstate
-infrastructure/*.tfstate.backup
+!infrastructure/.terraform.lock.hcl

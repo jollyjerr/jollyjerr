@@ -3,6 +3,7 @@
 	"version": "0.0.1-alpha",
 	"type": "module",
 	"scripts": {
+        "setup": "cp .tool-versions.example .tool-versions",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
