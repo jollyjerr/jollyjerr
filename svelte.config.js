@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-cloudflare';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -7,7 +7,23 @@ const config = {
 		postcss: true
 	}),
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			routes: {
+				include: ['/*'],
+				exclude: [
+					'/',
+					'/_app/*',
+					'/favicon.png',
+					'/robots.txt',
+					'/social.jpg',
+					'/__data.json',
+					'/contact',
+					'/linktree',
+					'/notes/*',
+					'/blog/*'
+				]
+			}
+		}),
 		prerender: {
 			entries: ['*', '/blog/uses']
 		}

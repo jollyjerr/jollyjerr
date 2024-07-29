@@ -1,4 +1,4 @@
-name: CI
+name: lint-test-build
 on:
   push:
     branches: [main]
@@ -8,28 +8,35 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Checkout submodules
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: checkout-submodules
         run: git submodule update --init --recursive
-      - name: Use Node.js
+      - name: setup-nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: 20
-      - uses: pnpm/action-setup@v2.0.1
-        name: Install pnpm
-        id: pnpm-install
+          node-version: 22
+      - name: setup-pnpm
+        uses: pnpm/action-setup@v2.0.1
         with:
-          version: 8
+          version: 9
           run_install: false
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: |
-          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+      - name: setup-pnpm-cache-dir
+        run: echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
       - uses: actions/cache@v3
-        name: Setup pnpm cache
+        name: setup-pnpm-cache
         with:
           path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-      - run: pnpm run ci
+      - name: install-deps
+        run: pnpm install --frozen-lockfile
+      - name: svelte-check
+        run: pnpm check
+      - name: lint
+        run: pnpm lint
+      - name: spellcheck
+        run: pnpm spellcheck
+      - name: build
+        run: pnpm build
