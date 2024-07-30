@@ -77,10 +77,50 @@ resource "cloudflare_record" "jtabbdns" {
   proxied = true
 }
 
-resource "cloudflare_record" "jtabbwwwdns" {
+resource "cloudflare_record" "wwwdns" {
   zone_id = data.cloudflare_zone.jtabbzone.id
   type    = "CNAME"
   name    = "www"
-  value   = "jtabb.pages.dev"
+  value   = "jtabb.dev"
   proxied = true
+}
+
+resource "cloudflare_list" "redirectwww" {
+  account_id = data.cloudflare_accounts.jollyjerr.accounts[0].id
+  name       = "redirectwww"
+  kind       = "redirect"
+
+  item {
+    value {
+      redirect {
+        source_url            = "www.jtabb.dev/"
+        target_url            = "https://jtabb.dev"
+        subpath_matching      = "enabled"
+        status_code           = 301
+        preserve_query_string = "enabled"
+        preserve_path_suffix  = "enabled"
+      }
+    }
+  }
+}
+
+resource "cloudflare_ruleset" "apply_www_redirect" {
+  account_id = data.cloudflare_accounts.jollyjerr.accounts[0].id
+  name       = "default"
+  phase      = "http_request_redirect"
+  kind       = "root"
+
+  rules {
+    action      = "redirect"
+    description = "apply_www_redirect"
+    enabled     = true
+    expression  = "http.request.full_uri in $redirectwww"
+
+    action_parameters {
+      from_list {
+        key  = "http.request.full_uri"
+        name = "redirectwww"
+      }
+    }
+  }
 }
