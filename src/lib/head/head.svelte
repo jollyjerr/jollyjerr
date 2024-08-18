@@ -19,11 +19,4 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:site_name" content="jtabb.dev" />
 	<meta property="og:locale" content="en_US" />
-	<meta name="twitter:card" content={description} />
-	<meta name="twitter:site" content="@jolyjerr" />
-	<meta name="twitter:creator" content="@jolyjerr" />
-	<meta name="twitter:title" content={title} />
-	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content={image} />
-	<meta name="twitter:image:alt" content={title} />
 </svelte:head>
