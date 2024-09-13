@@ -361,6 +361,14 @@
 		"yamas",
 		"yanja",
 		"ylogb",
-		"zazzen"
+		"zazzen",
+		"brushless",
+		"boxplot",
+		"quantiles",
+		"jaccard",
+		"minkowski",
+		"sumi",
+		"interpretability",
+		"stdev"
 	]
 }
