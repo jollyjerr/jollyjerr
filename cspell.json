@@ -369,6 +369,15 @@
 		"minkowski",
 		"sumi",
 		"interpretability",
-		"stdev"
+		"stdev",
+		"oltp",
+		"olap",
+		"numpy",
+		"timestep",
+		"asarray",
+		"lsensor",
+		"phir",
+		"holonomic",
+		"holonomy"
 	]
 }
