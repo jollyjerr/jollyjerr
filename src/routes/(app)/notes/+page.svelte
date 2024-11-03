@@ -16,7 +16,7 @@
 	let { data }: Props = $props();
 	let notes = data.notes;
 	let nodes = notes.nodes;
-	let canvas: HTMLCanvasElement = $state();
+	let canvas: HTMLCanvasElement = $state() as HTMLCanvasElement;
 
 	onMount(() => {
 		const graph = new Graph({

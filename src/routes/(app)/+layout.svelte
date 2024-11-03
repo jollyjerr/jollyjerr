@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
 	import Socials from './socials.svelte';
 	import Algolia from '$lib/algolia/algolia.svelte';
 	import '../../highlight.css';
+
 	interface Props {
 		children?: import('svelte').Snippet;
 	}

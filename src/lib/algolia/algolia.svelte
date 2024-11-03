@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
-	import algoliasearch, { type SearchClient } from 'algoliasearch';
+	import { algoliasearch, type Algoliasearch } from 'algoliasearch';
 	import AlgoliaLogo from './algolia-logo.png';
 	import HitItem from './hit-item.svelte';
 	import { searchOpen } from '$lib/store';
@@ -14,7 +14,7 @@
 	] as const;
 
 	let enabled = $state(false);
-	let searchClient: SearchClient;
+	let searchClient: Algoliasearch;
 	let query = $state('');
 	let blogPosts: AlgoliaBlog[] = $state([]);
 	let notes: AlgoliaNote[] = $state([]);

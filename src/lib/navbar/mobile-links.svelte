@@ -13,7 +13,7 @@
 	}
 
 	let innerWidth = $state(0);
-	
+
 	function handleResize() {
 		if (innerWidth > 1023) {
 			open = false;
@@ -24,6 +24,7 @@
 <svelte:window bind:innerWidth onresize={handleResize} />
 
 <button
+	aria-label="home"
 	class="rounded-sm fixed right-3 top-3 z-20 rounded bg-primary-5 bg-opacity-70 p-2 lg:hidden"
 	onclick={toggleOpen}
 	title="Open navbar"

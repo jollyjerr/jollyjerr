@@ -17,13 +17,7 @@
 		tags?: string[] | undefined;
 	}
 
-	let {
-		image,
-		title,
-		html,
-		date = undefined,
-		tags = undefined
-	}: Props = $props();
+	let { image, title, html, date = undefined, tags = undefined }: Props = $props();
 </script>
 
 <div class="space-y-6">
@@ -41,7 +35,7 @@
 		{/if}
 	</div>
 	<article
-		class="prose prose-invert mx-auto max-w-4xl prose-img:aspect-video prose-img:object-cover"
+		class="prose-img:aspect-video prose prose-invert mx-auto max-w-4xl prose-img:object-cover"
 	>
 		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 		{@html html}

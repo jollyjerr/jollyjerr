@@ -1,6 +1,11 @@
-module.exports = {
-	content: ['./src/**/*.{html,svelte,js,ts}'],
-	plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+import aspectRatio from '@tailwindcss/aspect-ratio';
+import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
+import type { Config } from 'tailwindcss';
+
+export default {
+	content: ['./src/**/*.{html,js,svelte,ts}'],
+	plugins: [typography, forms, aspectRatio],
 	theme: {
 		colors: {
 			primary: {
@@ -24,4 +29,4 @@ module.exports = {
 			DEFAULT: '12px'
 		}
 	}
-};
+} satisfies Config;

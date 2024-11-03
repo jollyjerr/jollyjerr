@@ -6,12 +6,7 @@
 		target?: '_blank' | '_self';
 	}
 
-	let {
-		title,
-		href,
-		selected,
-		target = '_self'
-	}: Props = $props();
+	let { title, href, selected, target = '_self' }: Props = $props();
 </script>
 
 <a
