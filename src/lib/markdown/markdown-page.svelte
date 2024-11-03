@@ -9,11 +9,21 @@
 		getHighlighter().highlightAll();
 	});
 
-	export let image: string;
-	export let title: string;
-	export let html: string;
-	export let date: string | undefined = undefined;
-	export let tags: string[] | undefined = undefined;
+	interface Props {
+		image: string;
+		title: string;
+		html: string;
+		date?: string | undefined;
+		tags?: string[] | undefined;
+	}
+
+	let {
+		image,
+		title,
+		html,
+		date = undefined,
+		tags = undefined
+	}: Props = $props();
 </script>
 
 <div class="space-y-6">

@@ -5,7 +5,11 @@
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 	const { note } = data;
 
 	onMount(() => {

@@ -9,10 +9,14 @@
 	import { onMount } from 'svelte';
 	import { pathToNotes } from '$lib/notes/constants';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 	let notes = data.notes;
 	let nodes = notes.nodes;
-	let canvas: HTMLCanvasElement;
+	let canvas: HTMLCanvasElement = $state();
 
 	onMount(() => {
 		const graph = new Graph({
@@ -45,7 +49,7 @@
 </script>
 
 <Head title="Notes" />
-<canvas bind:this={canvas} class="absolute left-0 top-0 h-full w-full" />
+<canvas bind:this={canvas} class="absolute left-0 top-0 h-full w-full"></canvas>
 <Navbar selected="notes" title="Notes" />
 
 <!-- hack to get prerendering to work - TODO: do this another way -->

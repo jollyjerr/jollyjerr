@@ -4,8 +4,12 @@
 	import DesktopLinks from './desktop-links.svelte';
 	import type { Tab } from './types';
 
-	export let title = 'Blog';
-	export let selected: Tab;
+	interface Props {
+		title?: string;
+		selected: Tab;
+	}
+
+	let { title = 'Blog', selected }: Props = $props();
 </script>
 
 <header>

@@ -13,15 +13,15 @@
 		{ indexName: 'notes', params: { hitsPerPage: 3 } }
 	] as const;
 
-	let enabled = false;
+	let enabled = $state(false);
 	let searchClient: SearchClient;
-	let query = '';
-	let blogPosts: AlgoliaBlog[] = [];
-	let notes: AlgoliaNote[] = [];
+	let query = $state('');
+	let blogPosts: AlgoliaBlog[] = $state([]);
+	let notes: AlgoliaNote[] = $state([]);
 	let allHits: (AlgoliaNote | AlgoliaBlog)[] = [];
 
 	let focusedIdIndex: number | null = null;
-	let focusedID = '';
+	let focusedID = $state('');
 	let keyHandled = false;
 
 	searchOpen.subscribe((value) => {
@@ -139,22 +139,22 @@
 		role="button"
 		tabindex="-1"
 		class="absolute z-[900] flex min-h-full min-w-full items-center justify-center bg-primary-8 bg-opacity-70"
-		on:click={() => setSearchOpen()}
-		on:keyup={() => {
+		onclick={() => setSearchOpen()}
+		onkeyup={() => {
 			// use esc to close with keyboard
 		}}
 	>
 		<div
 			class="rounded-sm w-full max-w-2xl space-y-3 rounded border border-primary-6 bg-primary-7 p-6 drop-shadow-md"
 		>
-			<!-- svelte-ignore a11y-autofocus -->
+			<!-- svelte-ignore a11y_autofocus -->
 			<input
 				type="text"
 				class="rounded-sm w-full rounded bg-primary-7"
 				placeholder="search..."
 				autofocus
 				bind:value={query}
-				on:keyup={search}
+				onkeyup={search}
 				id="search term"
 			/>
 			{#if blogPosts.length || notes.length}

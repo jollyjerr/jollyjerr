@@ -1,9 +1,13 @@
 <script>
 	import SocialImg from '$lib/head/social.jpg';
 
-	export let image = SocialImg;
-	export let title = 'Jeremiah Tabb | Software Engineer';
-	export let description = 'Blog posts and notes about software, math, and everything else.';
+	interface Props {
+		image?: any;
+		title?: string;
+		description?: string;
+	}
+
+	let { image = SocialImg, title = 'Jeremiah Tabb | Software Engineer', description = 'Blog posts and notes about software, math, and everything else.' }: Props = $props();
 </script>
 
 <svelte:head>

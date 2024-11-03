@@ -3,7 +3,11 @@
 	import type { PostMetadata } from '$lib/blog/types';
 	import { imageSizes, sizedImage } from '$lib/image';
 
-	export let posts: PostMetadata[];
+	interface Props {
+		posts: PostMetadata[];
+	}
+
+	let { posts }: Props = $props();
 	const latestPosts = posts
 		.filter((post) => post.featured !== 'true')
 		.slice(0, 3)

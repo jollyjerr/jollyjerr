@@ -1,7 +1,11 @@
 <script lang="ts">
-	export let href: string;
-	export let selected: boolean;
-	export let title: string;
+	interface Props {
+		href: string;
+		selected: boolean;
+		title: string;
+	}
+
+	let { href, selected, title }: Props = $props();
 </script>
 
 <a data-sveltekit-reload {href}>
