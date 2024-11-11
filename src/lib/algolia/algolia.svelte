@@ -14,15 +14,14 @@
 	] as const;
 
 	let enabled = $state(false);
-	let searchClient: Algoliasearch;
+	let searchClient: Algoliasearch | undefined = $state(undefined);
 	let query = $state('');
 	let blogPosts: AlgoliaBlog[] = $state([]);
 	let notes: AlgoliaNote[] = $state([]);
-	let allHits: (AlgoliaNote | AlgoliaBlog)[] = [];
-
-	let focusedIdIndex: number | null = null;
+	let allHits: (AlgoliaNote | AlgoliaBlog)[] = $state([]);
+	let focusedIdIndex: number | null = $state(null);
 	let focusedID = $state('');
-	let keyHandled = false;
+	let keyHandled = $state(false);
 
 	searchOpen.subscribe((value) => {
 		handleSearchToggle(value);
@@ -31,7 +30,10 @@
 	onMount(() => {
 		searchClient = algoliasearch('XHMYZ3V6CT', 'a9ba9e903d2ec7c98a6eb054283cccf3');
 
+		console.log('running on mount');
+
 		document.onkeydown = (event: KeyboardEvent) => {
+			console.log(event);
 			if (event.key === 'Escape' && enabled) {
 				setSearchOpen(false);
 				keyHandled = true;
@@ -70,10 +72,12 @@
 	});
 
 	function setSearchOpen(to = false) {
+		console.log('setSearchOpen:to', to);
 		searchOpen.update(() => to);
 	}
 
 	function handleSearchToggle(to = false) {
+        console.log('handleSearchToggle:to', to)
 		query = '';
 		enabled = to;
 		focusedIdIndex = null;
@@ -110,6 +114,7 @@
 	}
 
 	async function search() {
+        console.log('search', query);
 		if (keyHandled) {
 			keyHandled = false;
 			return;
