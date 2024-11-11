@@ -6,7 +6,7 @@ from algoliasearch.search.client import SearchClientSync
 from bs4 import BeautifulSoup
 from typing import List
 
-CONTENT_CHUNK_SIZE = 30
+CONTENT_CHUNK_SIZE = 10000
 BLOGS = 'blogs'
 NOTES = 'notes'
 
@@ -35,17 +35,6 @@ search_client = SearchClientSync(
     get_env('ALGOLIA_APPLICATION_ID'),
     get_env('ALGOLIA_API_KEY')
 )
-
-indexes = [BLOGS, NOTES]
-
-for index in indexes:
-    search_client.set_settings(
-        index_name=index,
-        index_settings={
-            'attributeForDistinct': 'title',
-            'distinct': True
-        }
-    )
 
 blogs = []
 for (path, filename) in walk_dir('./posts'):
