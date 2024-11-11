@@ -6,7 +6,7 @@ from algoliasearch.search.client import SearchClientSync
 from bs4 import BeautifulSoup
 from typing import List
 
-CONTENT_CHUNK_SIZE = 1000
+CONTENT_CHUNK_SIZE = 100
 BLOGS = 'blogs'
 NOTES = 'notes'
 
