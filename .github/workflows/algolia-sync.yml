@@ -1,7 +1,9 @@
 name: sync-algolia-index
 on:
   push:
-    branches: ['*']
+    branches: [main]
+  pull_request:
+    branches: [main]
 env:
   ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
   ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
