@@ -381,10 +381,10 @@
 		"holonomy",
 		"epipolar",
 		"epipole",
-        "xsubi",
-        "lxsubi",
-        "lhat",
-        "xsubn",
-        "lambdahat"
+		"xsubi",
+		"lxsubi",
+		"lhat",
+		"xsubn",
+		"lambdahat"
 	]
 }

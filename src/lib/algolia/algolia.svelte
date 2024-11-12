@@ -77,7 +77,7 @@
 	}
 
 	function handleSearchToggle(to = false) {
-        console.log('handleSearchToggle:to', to)
+		console.log('handleSearchToggle:to', to);
 		query = '';
 		enabled = to;
 		focusedIdIndex = null;
@@ -114,7 +114,7 @@
 	}
 
 	async function search() {
-        console.log('search', query);
+		console.log('search', query);
 		if (keyHandled) {
 			keyHandled = false;
 			return;

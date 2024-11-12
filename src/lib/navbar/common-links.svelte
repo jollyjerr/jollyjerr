@@ -1,6 +1,6 @@
 <script lang="ts">
 	import NavbarLink from './navbar-link.svelte';
-	import { searchOpen } from '$lib/store';
+	import { useSearch } from '$lib/store.svelte';
 	import type { Tab } from './types';
 
 	interface Props {
@@ -9,8 +9,9 @@
 
 	let { selected }: Props = $props();
 
+	const search = useSearch();
 	function toggleSearch() {
-		searchOpen.update((v) => !v);
+		search.setSearchOpen(!search.searchOpen());
 	}
 </script>
 
