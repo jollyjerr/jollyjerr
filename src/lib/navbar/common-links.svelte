@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { useSearch } from '$lib/search/api.svelte';
 	import NavbarLink from './navbar-link.svelte';
-	import { useSearch } from '$lib/store.svelte';
 	import type { Tab } from './types';
 
 	interface Props {
@@ -11,7 +11,7 @@
 
 	const search = useSearch();
 	function toggleSearch() {
-		search.setSearchOpen(!search.searchOpen());
+		search.setOpen(!search.open);
 	}
 </script>
 

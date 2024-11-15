@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Socials from './socials.svelte';
-	import Search from '$lib/algolia/search.svelte';
+	import Search from '$lib/search/search.svelte';
 	import '../../highlight.css';
 
 	interface Props {
