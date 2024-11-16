@@ -21,4 +21,5 @@ export interface AlgoliaNote {
 	objectID: string;
 	title: string;
 	path: string;
+    content: string;
 }
