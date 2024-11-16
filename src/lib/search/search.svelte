@@ -5,18 +5,31 @@
 	const search = useSearch();
 	const algolia_client = searchClient('XHMYZ3V6CT', 'a9ba9e903d2ec7c98a6eb054283cccf3');
 
-	let query = $state<string>();
+	let query = $state('');
+	let timeout = $state<number>();
+	let resultsPromise = $derived(fetchSearchResults());
 
-    // todo: turn this into async derived with debounce
-	async function requestHits() {
-		if (!query) return;
-
-		const results = await algolia_client.search({
-			requests: [{ indexName: 'blogs', query }, { indexName: 'notes', query }]
-		});
-
-        console.log(results);
+	function debounce(newValue: string) {
+		window.clearTimeout(timeout);
+		timeout = window.setTimeout(() => {
+			query = newValue;
+		}, 200);
 	}
+
+	async function fetchSearchResults() {
+		if (!query) return [];
+		const results = await algolia_client.search({
+			requests: [
+				{ indexName: 'blogs', query },
+				{ indexName: 'notes', query }
+			]
+		});
+		return results;
+	}
+
+	$effect(() => {
+		resultsPromise.then(console.log);
+	});
 </script>
 
 {#if search.open}
@@ -35,12 +48,14 @@
 			<!-- svelte-ignore a11y_autofocus -->
 			<input
 				type="text"
+				id="search term"
 				class="rounded-sm w-full rounded bg-primary-7"
 				placeholder="search..."
 				autofocus
-				bind:value={query}
-				onkeyup={requestHits}
-				id="search term"
+				onkeyup={({ target }) => {
+					// eslint-disable-next-line @typescript-eslint/no-explicit-any
+					debounce((target as any)?.value);
+				}}
 			/>
 			<!-- 	{#if blogPosts.length || notes.length} -->
 			<!-- 		<h2 class="text-2xl font-bold">Blogs</h2> -->
