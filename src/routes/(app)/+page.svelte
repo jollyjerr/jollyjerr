@@ -5,7 +5,11 @@
 	import type { PageData } from './$types';
 	import FeaturedBlogs from './featured-blogs.svelte';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 	export const posts = data.posts;
 </script>
 

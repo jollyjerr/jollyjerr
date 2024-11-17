@@ -3,7 +3,11 @@
 	import { sizedImage, imageSizes } from '$lib/image';
 	import type { PostMetadata } from '$lib/blog/types';
 
-	export let post: PostMetadata | undefined;
+	interface Props {
+		post: PostMetadata | undefined;
+	}
+
+	let { post }: Props = $props();
 
 	const sizedUrl = post ? sizedImage(post.image, imageSizes.lg) : undefined;
 </script>

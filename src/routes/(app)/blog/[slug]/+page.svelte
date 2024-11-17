@@ -4,7 +4,11 @@
 	import Navbar from '$lib/navbar/navbar.svelte';
 	import MarkdownPage from '$lib/markdown/markdown-page.svelte';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 	const { post } = data;
 </script>
 

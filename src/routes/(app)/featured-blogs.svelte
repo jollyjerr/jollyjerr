@@ -3,7 +3,11 @@
 	import FeaturedPost from './featured-post.svelte';
 	import LatestPosts from './latest-posts.svelte';
 
-	export let posts: PostMetadata[];
+	interface Props {
+		posts: PostMetadata[];
+	}
+
+	let { posts }: Props = $props();
 
 	const featuredPost = posts.find((post) => post.featured === 'true');
 </script>

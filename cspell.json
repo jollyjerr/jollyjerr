@@ -380,6 +380,13 @@
 		"holonomic",
 		"holonomy",
 		"epipolar",
-		"epipole"
+		"epipole",
+		"xsubi",
+		"lxsubi",
+		"lhat",
+		"xsubn",
+		"lambdahat",
+		"cramer",
+		"crlb"
 	]
 }

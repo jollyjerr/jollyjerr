@@ -1,8 +1,12 @@
 <script lang="ts">
-	export let title: string;
-	export let href: string;
-	export let selected: boolean;
-	export let target: '_blank' | '_self' = '_self';
+	interface Props {
+		title: string;
+		href: string;
+		selected: boolean;
+		target?: '_blank' | '_self';
+	}
+
+	let { title, href, selected, target = '_self' }: Props = $props();
 </script>
 
 <a

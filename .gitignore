@@ -13,3 +13,5 @@ vite.config.ts.timestamp-*
 
 infrastructure/.terraform*
 !infrastructure/.terraform.lock.hcl
+
+venv

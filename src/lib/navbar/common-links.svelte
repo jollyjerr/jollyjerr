@@ -1,16 +1,21 @@
 <script lang="ts">
+	import { useSearch } from '$lib/search/api.svelte';
 	import NavbarLink from './navbar-link.svelte';
-	import { searchOpen } from '$lib/store';
 	import type { Tab } from './types';
 
-	export let selected: Tab;
+	interface Props {
+		selected: Tab;
+	}
 
+	let { selected }: Props = $props();
+
+	const search = useSearch();
 	function toggleSearch() {
-		searchOpen.update((v) => !v);
+		search.setOpen(!search.open);
 	}
 </script>
 
 <NavbarLink selected={selected === 'blog'} title="blog" href="/" />
 <NavbarLink selected={selected === 'notes'} title="notes" href="/notes" />
 <NavbarLink selected={selected === 'contact'} title="contact" href="/contact" />
-<button on:click={toggleSearch} class="inline italic opacity-40">search</button>
+<button onclick={toggleSearch} class="inline italic opacity-40">search</button>

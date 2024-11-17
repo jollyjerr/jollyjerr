@@ -23,7 +23,7 @@
 		placeholder="message"
 		rows="10"
 		required
-	/>
+	></textarea>
 	<button
 		type="submit"
 		class="rounded-sm block rounded border-none bg-primary-3 p-3 text-primary-8 outline-none hover:bg-primary-2 focus-visible:ring-2 focus-visible:ring-primary-5 active:bg-primary-5"
