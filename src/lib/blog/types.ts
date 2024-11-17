@@ -23,4 +23,7 @@ export interface AlgoliaBlog {
 	tags: string[];
 	slug: string;
 	content: string;
+	_highlightResult: {
+		content: { value: string };
+	};
 }

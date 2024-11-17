@@ -31,9 +31,15 @@
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any -- algolia types are silly
 		})) as any as { results: [{ hits: AlgoliaBlog[] }, { hits: AlgoliaNote[] }] };
 
+		const record_count = 8;
+		const blog_count = 3;
+		const blog_slice = blogs.slice(0, blog_count);
+		const num_notes = record_count - blog_slice.length;
+		const note_slice = notes.slice(0, num_notes);
+
 		return {
-			blogs,
-			notes,
+			blogs: blog_slice,
+			notes: note_slice,
 			state: 'success'
 		};
 	}
@@ -104,31 +110,24 @@
 				>
 			</div>
 			{#await results_promise then { blogs, notes, state }}
-				<div class="">
+				<ul class="p-6">
 					{#if state !== 'idle'}
 						{#if blogs.length || notes.length}
 							{#if blogs.length}
-								<h2 class="text-2xl font-bold">Blogs</h2>
-								<ul>
-									{#each blogs as blog}
-										<HitItem href={`/blog/${blog.slug}`} title={blog.title} selected={false} />
-									{/each}
-								</ul>
-								<hr />
+								{#each blogs as blog}
+									<HitItem href={`/blog/${blog.slug}`} title={blog.title} selected={false} />
+								{/each}
 							{/if}
 							{#if notes.length}
-								<h2 class="text-xl font-bold">Notes</h2>
-								<ul>
-									{#each notes as note}
-										<HitItem href={`/notes/${note.path}`} title={note.title} selected={false} />
-									{/each}
-								</ul>
+								{#each notes as note}
+									<HitItem href={`/notes/${note.path}`} title={note.title} selected={false} />
+								{/each}
 							{/if}
 						{:else}
 							<h2 class="font-bold">No results</h2>
 						{/if}
 					{/if}
-				</div>
+				</ul>
 			{:catch}
 				<div
 					class="grid h-full w-full place-items-center pb-2 text-center text-danger text-opacity-80"

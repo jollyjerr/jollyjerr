@@ -22,4 +22,7 @@ export interface AlgoliaNote {
 	title: string;
 	path: string;
 	content: string;
+	_highlightResult: {
+		content: { value: string };
+	};
 }
