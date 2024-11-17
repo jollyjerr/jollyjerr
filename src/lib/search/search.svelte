@@ -64,7 +64,7 @@
 	}
 
 	function get_href(record: AlgoliaBlog | AlgoliaNote): string {
-		return is_algolia_blog(record) ? record.slug : record.path;
+		return is_algolia_blog(record) ? `/blog/${record.slug}` : `/notes/${record.path}`;
 	}
 
 	function nudge_focus_up() {
