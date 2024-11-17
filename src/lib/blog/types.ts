@@ -22,5 +22,5 @@ export interface AlgoliaBlog {
 	date: string;
 	tags: string[];
 	slug: string;
-    content: string;
+	content: string;
 }

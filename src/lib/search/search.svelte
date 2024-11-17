@@ -5,27 +5,21 @@
 	import type { AlgoliaBlog } from '$lib/blog/types';
 	import HitItem from './hit-item.svelte';
 	import AlgoliaLogo from './algolia-logo.png';
+	import MagnifyingGlass from './magnifying-glass.svg.svelte';
+	import { onMount } from 'svelte';
 
-	const search = useSearch();
-	const algolia_client = searchClient('XHMYZ3V6CT', 'a9ba9e903d2ec7c98a6eb054283cccf3');
-
-	let query = $state('');
-	let timeout = $state<number>();
-	let resultsPromise = $derived(fetchSearchResults());
-
-	function debounce(newValue: string) {
-		window.clearTimeout(timeout);
-		timeout = window.setTimeout(() => {
-			query = newValue;
-		}, 200);
-	}
-
-	async function fetchSearchResults(): Promise<{
+	interface SearchResults {
 		blogs: AlgoliaBlog[];
 		notes: AlgoliaNote[];
 		state: 'success' | 'idle';
-	}> {
-		if (!query) return { blogs: [], notes: [], state: 'idle' };
+	}
+
+	const search = useSearch();
+	const algolia_client = searchClient('XHMYZ3V6CT', 'a9ba9e903d2ec7c98a6eb054283cccf3');
+	const initial_results_state: SearchResults = { blogs: [], notes: [], state: 'idle' };
+
+	async function fetch_search_results(): Promise<SearchResults> {
+		if (!query) return initial_results_state;
 
 		const {
 			results: [{ hits: blogs }, { hits: notes }]
@@ -43,55 +37,107 @@
 			state: 'success'
 		};
 	}
+
+	let query = $state('');
+	let timeout = $state<number>();
+	let results_promise = $derived(fetch_search_results());
+
+	function debounced_set_query(event: KeyboardEvent) {
+		window.clearTimeout(timeout);
+		timeout = window.setTimeout(() => {
+			query = (event.target as HTMLInputElement).value;
+		}, 200);
+	}
+
+	function close_search_window() {
+		query = '';
+		search.setOpen(false);
+	}
+
+	onMount(() => {
+		document.onkeydown = (event: KeyboardEvent) => {
+			if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+				event.preventDefault();
+				search.setOpen(!search.open);
+			}
+
+			if (!search.open) return;
+
+			if (event.key === 'Escape') {
+				close_search_window();
+			}
+		};
+	});
+
+	$effect(() => {
+		results_promise.then(console.log);
+	});
 </script>
 
 {#if search.open}
 	<div
 		role="button"
 		tabindex="-1"
-		class="fixed z-[900] flex min-h-full min-w-full items-center justify-center bg-primary-8 bg-opacity-70"
-		onclick={() => search.setOpen(false)}
+		class="fixed z-[900] flex min-h-full min-w-full items-center justify-center bg-primary-8 bg-opacity-70 backdrop-blur-sm"
+		onclick={close_search_window}
 		onkeyup={() => {
 			// use esc to close with keyboard
 		}}
 	>
 		<div
-			class="rounded-sm w-full max-w-2xl space-y-3 rounded border border-primary-6 bg-primary-7 p-6 drop-shadow-md"
+			class="rounded-sm fixed h-full max-h-[32rem] w-full max-w-4xl rounded border border-primary-6 bg-primary-7 drop-shadow-md"
 		>
-			<!-- svelte-ignore a11y_autofocus -->
-			<input
-				type="text"
-				id="search term"
-				class="rounded-sm w-full rounded bg-primary-7"
-				placeholder="search..."
-				autofocus
-				onkeyup={({ target }) => {
-					// eslint-disable-next-line @typescript-eslint/no-explicit-any -- todo?
-					debounce((target as any)?.value);
-				}}
-			/>
-			{#await resultsPromise then { blogs, notes, state }}
-				{#if state !== 'idle'}
-					{#if blogs.length || notes.length}
-						<h2 class="text-2xl font-bold">Blogs</h2>
-						<ul>
-							{#each blogs as blog}
-								<HitItem href={`/blog/${blog.slug}`} title={blog.title} selected={false} />
-							{/each}
-						</ul>
-						<hr />
-						<h2 class="text-xl font-bold">Notes</h2>
-						<ul>
-							{#each notes as note}
-								<HitItem href={`/notes/${note.path}`} title={note.title} selected={false} />
-							{/each}
-						</ul>
-					{:else}
-						<h2 class="font-bold">No results</h2>
+			<div class="flex w-full items-center border-b border-primary-6 px-2 py-2">
+				<MagnifyingGlass />
+				<!-- svelte-ignore a11y_autofocus -->
+				<input
+					type="text"
+					id="search term"
+					class="w-full border-none bg-primary-7 outline-none focus:border-none focus:outline-none focus:ring-0"
+					placeholder="search..."
+					autofocus
+					onkeyup={debounced_set_query}
+				/>
+				<button
+					onclick={() => search.setOpen(false)}
+					class="grid place-items-center bg-primary-6 p-2 text-xs">esc</button
+				>
+			</div>
+			{#await results_promise then { blogs, notes, state }}
+				<div class="">
+					{#if state !== 'idle'}
+						{#if blogs.length || notes.length}
+							{#if blogs.length}
+								<h2 class="text-2xl font-bold">Blogs</h2>
+								<ul>
+									{#each blogs as blog}
+										<HitItem href={`/blog/${blog.slug}`} title={blog.title} selected={false} />
+									{/each}
+								</ul>
+								<hr />
+							{/if}
+							{#if notes.length}
+								<h2 class="text-xl font-bold">Notes</h2>
+								<ul>
+									{#each notes as note}
+										<HitItem href={`/notes/${note.path}`} title={note.title} selected={false} />
+									{/each}
+								</ul>
+							{/if}
+						{:else}
+							<h2 class="font-bold">No results</h2>
+						{/if}
 					{/if}
-				{/if}
+				</div>
+			{:catch}
+				<div
+					class="grid h-full w-full place-items-center pb-2 text-center text-danger text-opacity-80"
+				>
+					Unable to search :( <br /> Try again later!
+				</div>
 			{/await}
-			<div class="flex items-center justify-end gap-2">
+			<div class="absolute bottom-0 right-0 flex items-center justify-end gap-2 p-4">
+				Search by
 				<a
 					href="https://www.algolia.com/developers/?utm_content=powered_by&utm_source=jtabb.dev&utm_medium=referral"
 				>
