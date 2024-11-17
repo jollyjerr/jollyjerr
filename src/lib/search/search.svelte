@@ -3,20 +3,19 @@
 	import { useSearch } from '$lib/search/api.svelte';
 	import type { AlgoliaNote } from '$lib/notes/types';
 	import type { AlgoliaBlog } from '$lib/blog/types';
-	import HitItem from './hit-item.svelte';
 	import AlgoliaLogo from './algolia-logo.png';
 	import MagnifyingGlass from './magnifying-glass.svg.svelte';
 	import { onMount } from 'svelte';
 
 	interface SearchResults {
-		blogs: AlgoliaBlog[];
-		notes: AlgoliaNote[];
+		records: (AlgoliaNote | AlgoliaBlog)[];
 		state: 'success' | 'idle';
 	}
 
 	const search = useSearch();
 	const algolia_client = searchClient('XHMYZ3V6CT', 'a9ba9e903d2ec7c98a6eb054283cccf3');
-	const initial_results_state: SearchResults = { blogs: [], notes: [], state: 'idle' };
+	const initial_results_state: SearchResults = { records: [], state: 'idle' };
+	const max_result_count = 5;
 
 	async function fetch_search_results(): Promise<SearchResults> {
 		if (!query) return initial_results_state;
@@ -31,20 +30,19 @@
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any -- algolia types are silly
 		})) as any as { results: [{ hits: AlgoliaBlog[] }, { hits: AlgoliaNote[] }] };
 
-		const record_count = 8;
 		const blog_count = 3;
 		const blog_slice = blogs.slice(0, blog_count);
-		const num_notes = record_count - blog_slice.length;
+		const num_notes = max_result_count - blog_slice.length;
 		const note_slice = notes.slice(0, num_notes);
 
 		return {
-			blogs: blog_slice,
-			notes: note_slice,
+			records: [...blog_slice, ...note_slice],
 			state: 'success'
 		};
 	}
 
 	let query = $state('');
+	let focus_index = $state(-1);
 	let timeout = $state<number>();
 	let results_promise = $derived(fetch_search_results());
 
@@ -57,7 +55,28 @@
 
 	function close_search_window() {
 		query = '';
+		focus_index = -1;
 		search.setOpen(false);
+	}
+
+	function is_algolia_blog(record: AlgoliaBlog | AlgoliaNote): record is AlgoliaBlog {
+		return !!(record as AlgoliaBlog).slug;
+	}
+
+	function get_href(record: AlgoliaBlog | AlgoliaNote): string {
+		return is_algolia_blog(record) ? record.slug : record.path;
+	}
+
+	function nudge_focus_up() {
+		if (focus_index > -1) {
+			focus_index -= 1;
+		}
+	}
+
+	function nudge_focus_down() {
+		if (focus_index < max_result_count - 1) {
+			focus_index += 1;
+		}
 	}
 
 	onMount(() => {
@@ -71,12 +90,23 @@
 
 			if (event.key === 'Escape') {
 				close_search_window();
+			} else if (event.key === 'ArrowDown' || (event.ctrlKey && event.key === 'n')) {
+				event.preventDefault();
+				nudge_focus_down();
+			} else if (event.key === 'ArrowUp' || (event.ctrlKey && event.key === 'p')) {
+				event.preventDefault();
+				nudge_focus_up();
+			} else if (event.key === 'Enter' && focus_index >= 0) {
+				results_promise.then((results) => {
+					const selected = results.records[focus_index];
+					if (is_algolia_blog(selected)) {
+						window.location.href = window.location.origin + `/blog/${selected.slug}`;
+					} else {
+						window.location.href = window.location.origin + `/notes/${selected.path}`;
+					}
+				});
 			}
 		};
-	});
-
-	$effect(() => {
-		results_promise.then(console.log);
 	});
 </script>
 
@@ -91,7 +121,7 @@
 		}}
 	>
 		<div
-			class="rounded-sm fixed h-full max-h-[32rem] w-full max-w-4xl rounded border border-primary-6 bg-primary-7 drop-shadow-md"
+			class="rounded-sm fixed flex h-full max-h-[32rem] w-full max-w-4xl flex-col justify-between rounded border border-primary-6 bg-primary-7 drop-shadow-md"
 		>
 			<div class="flex w-full items-center border-b border-primary-6 px-2 py-2">
 				<MagnifyingGlass />
@@ -109,33 +139,44 @@
 					class="grid place-items-center bg-primary-6 p-2 text-xs">esc</button
 				>
 			</div>
-			{#await results_promise then { blogs, notes, state }}
-				<ul class="p-6">
-					{#if state !== 'idle'}
-						{#if blogs.length || notes.length}
-							{#if blogs.length}
-								{#each blogs as blog}
-									<HitItem href={`/blog/${blog.slug}`} title={blog.title} selected={false} />
+			<div class="flex-grow">
+				{#await results_promise then { records, state }}
+					<ul class="relative block w-full p-6">
+						{#if state !== 'idle'}
+							{#if records.length}
+								{#each records as record, i}
+									<a
+										data-sveltekit-reload
+										href={get_href(record)}
+										onmouseenter={() => {
+											focus_index = i;
+										}}
+									>
+										<li class={`w-full p-2 ${focus_index === i ? 'bg-primary-6' : ''}`}>
+											<h3>{record.title}</h3>
+											<p
+												class="prose prose-invert line-clamp-1 opacity-60 prose-em:bg-warning prose-em:not-italic"
+											>
+												<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+												{@html record._highlightResult.content.value}
+											</p>
+										</li>
+									</a>
 								{/each}
+							{:else}
+								<h2 class="font-bold">No results</h2>
 							{/if}
-							{#if notes.length}
-								{#each notes as note}
-									<HitItem href={`/notes/${note.path}`} title={note.title} selected={false} />
-								{/each}
-							{/if}
-						{:else}
-							<h2 class="font-bold">No results</h2>
 						{/if}
-					{/if}
-				</ul>
-			{:catch}
-				<div
-					class="grid h-full w-full place-items-center pb-2 text-center text-danger text-opacity-80"
-				>
-					Unable to search :( <br /> Try again later!
-				</div>
-			{/await}
-			<div class="absolute bottom-0 right-0 flex items-center justify-end gap-2 p-4">
+					</ul>
+				{:catch}
+					<div
+						class="grid h-full w-full place-items-center pb-2 text-center text-danger text-opacity-80"
+					>
+						Unable to search :( <br /> Try again later!
+					</div>
+				{/await}
+			</div>
+			<div class="absolute bottom-0 right-0 flex items-center gap-2 p-4">
 				Search by
 				<a
 					href="https://www.algolia.com/developers/?utm_content=powered_by&utm_source=jtabb.dev&utm_medium=referral"
