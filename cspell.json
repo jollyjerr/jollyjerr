@@ -387,6 +387,9 @@
 		"xsubn",
 		"lambdahat",
 		"cramer",
-		"crlb"
+		"crlb",
+		"chebyshev",
+		"pnorm",
+		"qnorm"
 	]
 }
