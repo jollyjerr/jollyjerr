@@ -13,7 +13,7 @@
 </script>
 
 <article class="border-b border-b-primary-6">
-	<div class="grid lg:grid-cols-6 mb-2">
+	<div class="mb-2 grid lg:grid-cols-6">
 		<section class="col-span-3 border-b border-b-primary-6 pb-4 lg:border-b-0">
 			<FeaturedPost post={featuredPost} />
 		</section>

@@ -27,8 +27,8 @@
 		}, {});
 	}
 
-	const groupedPosts = Object.entries(groupByYear(posts)).sort(([yeara], [yearb]) =>
-		yeara > yearb ? -1 : 1
+	const groupedPosts = Object.entries(groupByYear(posts)).sort(([year_a], [year_b]) =>
+		year_a > year_b ? -1 : 1
 	);
 </script>
 
@@ -45,7 +45,9 @@
 				{#each values as post}
 					<li class="flex items-center justify-between text-lg">
 						<div class="opacity-60">{safeFormat(post.date, 'at some point,').split(',')[0]}</div>
-						<a class="hover:underline hover:text-primary-4" href={`/blog/${post.slug}`}>{post.title}</a>
+						<a class="hover:text-primary-4 hover:underline" href={`/blog/${post.slug}`}
+							>{post.title}</a
+						>
 					</li>
 				{/each}
 			</ul>
