@@ -12,6 +12,8 @@
 		.filter((post) => post.featured !== 'true')
 		.slice(0, 3)
 		.map((p) => ({ ...p, image: sizedImage(p.image, imageSizes.sm) }));
+
+	const lastPost = latestPosts.length - 1;
 </script>
 
 <svelte:head>
@@ -22,8 +24,10 @@
 
 <div class="w-full">
 	<ul class="flex w-full flex-col gap-2 lg:px-16">
-		{#each latestPosts as post}
-			<li class="grid grid-cols-2 gap-3 border-b border-b-primary-6 py-4">
+		{#each latestPosts as post, i}
+			<li
+				class={`grid grid-cols-2 gap-3 py-4 ${i < lastPost ? 'border-b border-b-primary-6' : ''}`}
+			>
 				<div class="flex w-full justify-center">
 					<a href={`/blog/${post.slug}`}>
 						<img
