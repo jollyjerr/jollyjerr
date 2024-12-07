@@ -390,6 +390,7 @@
 		"crlb",
 		"chebyshev",
 		"pnorm",
-		"qnorm"
+		"qnorm",
+		"coberly"
 	]
 }
