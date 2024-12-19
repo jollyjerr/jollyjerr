@@ -74,9 +74,11 @@
 	}
 
 	function nudge_focus_down() {
-		if (focus_index < max_result_count - 1) {
-			focus_index += 1;
-		}
+		results_promise.then((l) => {
+			if (focus_index < l.records.length - 1) {
+				focus_index += 1;
+			}
+		});
 	}
 
 	onMount(() => {
@@ -108,6 +110,17 @@
 			}
 		};
 	});
+
+	// struggled to debug this quickly so using a hacky solution for now
+	$effect(() => {
+		if (search.open) {
+			let input: HTMLInputElement | null = null;
+			while (input === null) {
+				input = document.querySelector('#search_term')!;
+			}
+			input.focus();
+		}
+	});
 </script>
 
 {#if search.open}
@@ -125,13 +138,11 @@
 		>
 			<div class="flex w-full items-center border-b border-primary-6 px-2 py-2">
 				<MagnifyingGlass />
-				<!-- svelte-ignore a11y_autofocus -->
 				<input
 					type="text"
-					id="search term"
+					id="search_term"
 					class="w-full border-none bg-primary-7 outline-none focus:border-none focus:outline-none focus:ring-0"
 					placeholder="search..."
-					autofocus
 					onkeyup={debounced_set_query}
 				/>
 				<button
