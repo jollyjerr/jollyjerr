@@ -391,6 +391,9 @@
 		"chebyshev",
 		"pnorm",
 		"qnorm",
-		"coberly"
+		"coberly",
+		"collinearity",
+		"multicollinearity",
+		"softmax"
 	]
 }
