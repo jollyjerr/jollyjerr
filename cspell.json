@@ -394,6 +394,9 @@
 		"coberly",
 		"collinearity",
 		"multicollinearity",
-		"softmax"
+		"softmax",
+		"neyman",
+		"gini",
+		"qchisq"
 	]
 }
