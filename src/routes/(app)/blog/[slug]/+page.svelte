@@ -10,10 +10,16 @@
 
 	let { data }: Props = $props();
 	const { post } = data;
+
+	const selected = post.metadata.title === 'About me' ? 'about' : 'blog';
 </script>
 
-<Head title={post.metadata.title} description={post.metadata.subtitle} />
-<Navbar selected="blog" />
+<Head
+	title={post.metadata.title}
+	description={post.metadata.subtitle}
+	image={post.metadata.image}
+/>
+<Navbar {selected} />
 <MarkdownPage
 	title={post.metadata.title}
 	image={post.metadata.image}

@@ -397,6 +397,13 @@
 		"softmax",
 		"neyman",
 		"gini",
-		"qchisq"
+		"qchisq",
+		"glrt",
+		"wilks",
+		"majiarity",
+		"dunston",
+		"socio",
+		"ecto",
+		"exunitspan"
 	]
 }

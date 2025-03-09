@@ -3,7 +3,7 @@ title: About me
 subtitle: Who is Jeremiah Tabb?
 date: 2022-04-22
 tags: life
-featured: true
+featured: false
 image: https://ik.imagekit.io/jollyjerr/jtabb_dev/IMG_9806_iKi3-roSk.heif
 draft: false
 ---
