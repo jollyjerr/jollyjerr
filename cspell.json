@@ -400,6 +400,11 @@
 		"qchisq",
 		"glrt",
 		"wilks",
-		"sklearn"
+		"sklearn",
+		"majiarity",
+		"dunston",
+		"socio",
+		"ecto",
+		"exunitspan"
 	]
 }

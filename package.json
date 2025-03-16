@@ -15,6 +15,7 @@
 		"prepush": "pnpm install && pnpm check && pnpm lint && pnpm spellcheck && pnpm build"
 	},
 	"devDependencies": {
+		"@eslint/js": "^9.22.0",
 		"@notree/server": "^0.2.1",
 		"@sveltejs/adapter-cloudflare": "^4.7.4",
 		"@sveltejs/kit": "^2.7.4",

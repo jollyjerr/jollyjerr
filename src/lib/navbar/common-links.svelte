@@ -16,6 +16,7 @@
 </script>
 
 <NavbarLink selected={selected === 'blog'} title="blog" href="/" />
+<NavbarLink selected={selected === 'about'} title="about" href="/blog/about" />
 <NavbarLink selected={selected === 'notes'} title="notes" href="/notes" />
 <NavbarLink selected={selected === 'contact'} title="contact" href="/contact" />
 <button onclick={toggleSearch} class="inline italic opacity-40">search</button>
