@@ -397,6 +397,9 @@
 		"softmax",
 		"neyman",
 		"gini",
-		"qchisq"
+		"qchisq",
+		"glrt",
+		"wilks",
+		"sklearn"
 	]
 }
