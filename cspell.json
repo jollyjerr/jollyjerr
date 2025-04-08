@@ -405,6 +405,18 @@
 		"dunston",
 		"socio",
 		"ecto",
-		"exunitspan"
+		"exunitspan",
+		"dendrogram",
+		"eigen",
+		"linalg",
+		"itakura",
+		"saito",
+		"quadtree",
+		"repr",
+		"hypot",
+		"kwargs",
+		"npoints",
+		"matplotlib",
+		"bresenham"
 	]
 }
