@@ -417,6 +417,10 @@
 		"kwargs",
 		"npoints",
 		"matplotlib",
-		"bresenham"
+		"bresenham",
+		"autodiff",
+		"keras",
+		"nestrov",
+		"adadelta"
 	]
 }
