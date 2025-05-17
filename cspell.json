@@ -421,6 +421,9 @@
 		"autodiff",
 		"keras",
 		"nestrov",
-		"adadelta"
+		"adadelta",
+		"convolutional",
+		"bptt",
+		"lstm"
 	]
 }
