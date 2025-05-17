@@ -3,20 +3,4 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
-@theme {
-  --color-primary-1: #ffffff;
-  --color-primary-2: #67d0e5;
-  --color-primary-3: #34c0dc;
-  --color-primary-4: #01b0d3;
-  --color-primary-5: #018da9;
-  --color-primary-6: #01586a;
-  --color-primary-7: #00232a;
-  --color-primary-8: #001215;
-  --color-danger: #ff6666;
-  --color-warning: #ffb34d;
-  --color-success: #6cc6d;
-
-  --font-common: 'Arial', sans-serif;
-
-  --radius: 12px;
-}
+@custom-variant dark (&:where(.dark, .dark *));
