@@ -16,7 +16,7 @@
 	/>
 	<h1 class="text-primary-5 text-2xl font-bold">@jollyjerr</h1>
 	<ul class="w-full space-y-3">
-		{#each links as link}
+		{#each links as link (link.href)}
 			<a
 				class="bg-primary-7 hover:bg-primary-6 block w-full rounded p-3 text-center text-lg"
 				target="_blank"

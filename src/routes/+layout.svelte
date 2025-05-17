@@ -31,7 +31,7 @@
 	}
 </script>
 
-<main class="flex min-h-screen flex-col overflow-x-hidden">
+<main class="flex min-h-screen flex-col overflow-x-hidden pt-20">
 	<div class="flex-grow">
 		{@render children()}
 	</div>

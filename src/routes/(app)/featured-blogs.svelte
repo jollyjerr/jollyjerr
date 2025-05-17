@@ -17,8 +17,5 @@
 		<section class="border-b-primary-6 col-span-3 border-b pb-4 lg:border-b-0">
 			<FeaturedPost post={featuredPost} />
 		</section>
-		<section class="col-span-3">
-			<LatestPosts {posts} />
-		</section>
 	</div>
 </article>

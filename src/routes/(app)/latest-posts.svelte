@@ -28,15 +28,6 @@
 			<li
 				class={`grid grid-cols-2 gap-3 py-4 ${i < lastPost ? 'border-b-primary-6 border-b' : ''}`}
 			>
-				<div class="flex w-full justify-center">
-					<a href={`/blog/${post.slug}`}>
-						<img
-							src={post.image}
-							alt={post.subtitle}
-							class="aspect-square w-52 rounded rounded-xs object-cover"
-						/>
-					</a>
-				</div>
 				<div>
 					<ul class="text-primary-4 flex">
 						{#each post.tags as tag}

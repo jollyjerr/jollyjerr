@@ -14,26 +14,21 @@
 	const href = selected && ['blog', 'about'].includes(selected) ? '/' : `/${selected}`;
 </script>
 
-<header>
-	<nav class="mb-10 inline-flex w-full items-end justify-between text-center lg:text-left">
-		<div class="pointer-events-none inline-flex items-end gap-2">
-			<a href="/" class="pointer-events-auto z-10">
-				<img
-					src={IconImg}
-					alt="My emoji - A small 8 bit character"
-					class="z-10"
-					width={48}
-					height={48}
-				/>
+<header
+	class="fixed top-0 right-0 left-0 z-50 bg-neutral-50/80 backdrop-blur-md dark:bg-slate-950/80"
+>
+	<nav class="container mx-auto flex items-center justify-between px-4 py-4">
+		<div class="flex items-center space-x-1">
+			<a href="/" class="group flex items-center">
+				<img src={IconImg} alt="My emoji - A small 8 bit character" width={32} height={32} />
 			</a>
-			<span class="text-3xl font-bold italic opacity-75">
-				{' / '}
-			</span>
+			<div>/</div>
 			<a
+				class="group-hover:text-primary-2 ml-3 text-xl font-bold text-gray-800 transition-colors"
 				{href}
-				class="hover:text-primary-2 pointer-events-auto transform text-3xl font-bold duration-200"
-				>{title}</a
 			>
+				{title}
+			</a>
 		</div>
 		<DesktopLinks {selected} />
 		<MobileLinks {selected} />

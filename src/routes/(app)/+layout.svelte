@@ -3,15 +3,11 @@
 	import Search from '$lib/search/search.svelte';
 	import '../../highlight.css';
 
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
-
-	let { children }: Props = $props();
+	let { children } = $props();
 </script>
 
 <Search />
 <div class="container mx-auto px-3 py-3 lg:py-8">
-	{@render children?.()}
+	{@render children()}
 </div>
 <Socials />

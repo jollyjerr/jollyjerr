@@ -20,13 +20,6 @@
 
 {#if post}
 	<div class="flex w-full flex-col">
-		<a href={`/blog/${post.slug}`}>
-			<img
-				src={sizedUrl}
-				alt={post.title}
-				class="aspect-square max-h-96 w-full transform rounded rounded-xs object-cover"
-			/>
-		</a>
 		<ul class="text-primary-4 py-4">
 			{#each post.tags as tag}
 				<li>#{tag}</li>
