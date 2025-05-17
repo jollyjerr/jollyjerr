@@ -12,9 +12,9 @@
 	const featuredPost = posts.find((post) => post.featured === 'true');
 </script>
 
-<article class="border-b border-b-primary-6">
+<article class="border-b-primary-6 border-b">
 	<div class="mb-2 grid lg:grid-cols-6">
-		<section class="col-span-3 border-b border-b-primary-6 pb-4 lg:border-b-0">
+		<section class="border-b-primary-6 col-span-3 border-b pb-4 lg:border-b-0">
 			<FeaturedPost post={featuredPost} />
 		</section>
 		<section class="col-span-3">

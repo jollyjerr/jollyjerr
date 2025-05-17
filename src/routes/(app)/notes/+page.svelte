@@ -49,7 +49,7 @@
 </script>
 
 <Head title="Notes" />
-<canvas bind:this={canvas} class="absolute left-0 top-0 h-full w-full"></canvas>
+<canvas bind:this={canvas} class="absolute top-0 left-0 h-full w-full"></canvas>
 <Navbar selected="notes" title="Notes" />
 
 <!-- hack to get prerendering to work - TODO: do this another way -->

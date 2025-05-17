@@ -24,7 +24,7 @@
 	<CoverPhoto src={image} alt={title} />
 	<div>
 		{#if tags}
-			<ul class="flex text-primary-4">
+			<ul class="text-primary-4 flex">
 				{#each tags as tag}
 					<li class="text-sm">#{tag}</li>
 				{/each}
@@ -35,7 +35,7 @@
 		{/if}
 	</div>
 	<article
-		class="prose-img:aspect-video prose prose-invert mx-auto max-w-4xl prose-img:object-cover"
+		class="prose-img:aspect-video prose prose-invert prose-img:object-cover mx-auto max-w-4xl"
 	>
 		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 		{@html html}

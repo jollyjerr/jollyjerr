@@ -24,16 +24,16 @@
 			<img
 				src={sizedUrl}
 				alt={post.title}
-				class="rounded-xs aspect-square max-h-96 w-full transform rounded object-cover"
+				class="aspect-square max-h-96 w-full transform rounded rounded-xs object-cover"
 			/>
 		</a>
-		<ul class="py-4 text-primary-4">
+		<ul class="text-primary-4 py-4">
 			{#each post.tags as tag}
 				<li>#{tag}</li>
 			{/each}
 		</ul>
 		<div>
-			<a class="text-5xl font-bold hover:text-primary-4 hover:underline" href={`/blog/${post.slug}`}
+			<a class="hover:text-primary-4 text-5xl font-bold hover:underline" href={`/blog/${post.slug}`}
 				>{post.title}</a
 			>
 		</div>

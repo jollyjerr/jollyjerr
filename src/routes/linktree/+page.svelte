@@ -14,11 +14,11 @@
 		style="border-radius: 50%;"
 		class="aspect-square w-full max-w-[180px]"
 	/>
-	<h1 class="text-2xl font-bold text-primary-5">@jollyjerr</h1>
+	<h1 class="text-primary-5 text-2xl font-bold">@jollyjerr</h1>
 	<ul class="w-full space-y-3">
 		{#each links as link}
 			<a
-				class="block w-full rounded bg-primary-7 p-3 text-center text-lg hover:bg-primary-6"
+				class="bg-primary-7 hover:bg-primary-6 block w-full rounded p-3 text-center text-lg"
 				target="_blank"
 				href={link.href}
 			>

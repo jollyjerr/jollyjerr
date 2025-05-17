@@ -31,7 +31,7 @@
 			</span>
 			<a
 				{href}
-				class="pointer-events-auto transform text-3xl font-bold duration-200 hover:text-primary-2"
+				class="hover:text-primary-2 pointer-events-auto transform text-3xl font-bold duration-200"
 				>{title}</a
 			>
 		</div>

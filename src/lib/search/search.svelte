@@ -127,27 +127,27 @@
 	<div
 		role="button"
 		tabindex="-1"
-		class="fixed z-[900] flex min-h-full min-w-full items-center justify-center bg-primary-8 bg-opacity-70 backdrop-blur-sm"
+		class="bg-primary-8 bg-opacity-70 fixed z-[900] flex min-h-full min-w-full items-center justify-center backdrop-blur-sm"
 		onclick={close_search_window}
 		onkeyup={() => {
 			// use esc to close with keyboard
 		}}
 	>
 		<div
-			class="rounded-sm fixed flex h-full max-h-[32rem] w-full max-w-4xl flex-col justify-between rounded border border-primary-6 bg-primary-7 drop-shadow-md"
+			class="border-primary-6 bg-primary-7 fixed flex h-full max-h-[32rem] w-full max-w-4xl flex-col justify-between rounded rounded-sm border drop-shadow-md"
 		>
-			<div class="flex w-full items-center border-b border-primary-6 px-2 py-2">
+			<div class="border-primary-6 flex w-full items-center border-b px-2 py-2">
 				<MagnifyingGlass />
 				<input
 					type="text"
 					id="search_term"
-					class="w-full border-none bg-primary-7 outline-none focus:border-none focus:outline-none focus:ring-0"
+					class="bg-primary-7 w-full border-none outline-none focus:border-none focus:ring-0 focus:outline-none"
 					placeholder="search..."
 					onkeyup={debounced_set_query}
 				/>
 				<button
 					onclick={() => search.setOpen(false)}
-					class="grid place-items-center bg-primary-6 p-2 text-xs">esc</button
+					class="bg-primary-6 grid place-items-center p-2 text-xs">esc</button
 				>
 			</div>
 			<div class="flex-grow">
@@ -166,7 +166,7 @@
 										<li class={`w-full p-2 ${focus_index === i ? 'bg-primary-6' : ''}`}>
 											<h3>{record.title}</h3>
 											<p
-												class="prose prose-invert line-clamp-1 opacity-60 prose-em:bg-warning prose-em:not-italic"
+												class="prose prose-invert prose-em:bg-warning prose-em:not-italic line-clamp-1 opacity-60"
 											>
 												<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 												{@html record._highlightResult.content.value}
@@ -181,13 +181,13 @@
 					</ul>
 				{:catch}
 					<div
-						class="grid h-full w-full place-items-center pb-2 text-center text-danger text-opacity-80"
+						class="text-danger text-opacity-80 grid h-full w-full place-items-center pb-2 text-center"
 					>
 						Unable to search :( <br /> Try again later!
 					</div>
 				{/await}
 			</div>
-			<div class="absolute bottom-0 right-0 flex items-center gap-2 p-4">
+			<div class="absolute right-0 bottom-0 flex items-center gap-2 p-4">
 				Search by
 				<a
 					href="https://www.algolia.com/developers/?utm_content=powered_by&utm_source=jtabb.dev&utm_medium=referral"

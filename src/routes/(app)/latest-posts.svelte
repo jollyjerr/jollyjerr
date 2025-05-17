@@ -26,26 +26,26 @@
 	<ul class="flex w-full flex-col gap-2 lg:px-16">
 		{#each latestPosts as post, i}
 			<li
-				class={`grid grid-cols-2 gap-3 py-4 ${i < lastPost ? 'border-b border-b-primary-6' : ''}`}
+				class={`grid grid-cols-2 gap-3 py-4 ${i < lastPost ? 'border-b-primary-6 border-b' : ''}`}
 			>
 				<div class="flex w-full justify-center">
 					<a href={`/blog/${post.slug}`}>
 						<img
 							src={post.image}
 							alt={post.subtitle}
-							class="rounded-xs aspect-square w-52 rounded object-cover"
+							class="aspect-square w-52 rounded rounded-xs object-cover"
 						/>
 					</a>
 				</div>
 				<div>
-					<ul class="flex text-primary-4">
+					<ul class="text-primary-4 flex">
 						{#each post.tags as tag}
 							<li class="text-sm">#{tag}</li>
 						{/each}
 					</ul>
 					<a
 						href={`/blog/${post.slug}`}
-						class="text-2xl font-bold hover:text-primary-4 hover:underline">{post.title}</a
+						class="hover:text-primary-4 text-2xl font-bold hover:underline">{post.title}</a
 					>
 					<p class="opacity-80">{post.subtitle}</p>
 					<p class="text-sm opacity-40">{safeFormat(post.date)}</p>

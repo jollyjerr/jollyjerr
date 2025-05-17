@@ -9,6 +9,6 @@
 	let { children }: Props = $props();
 </script>
 
-<main class="min-h-screen overflow-x-hidden font-common text-primary-1 antialiased">
+<main class="font-common text-primary-1 min-h-screen overflow-x-hidden antialiased">
 	{@render children?.()}
 </main>
