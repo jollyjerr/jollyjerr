@@ -25,7 +25,7 @@
 
 <button
 	aria-label="home"
-	class="bg-primary-5 bg-opacity-70 fixed top-3 right-3 z-20 rounded rounded-sm p-2 lg:hidden"
+	class="bg-primary-5 bg-opacity-70 fixed top-3 right-3 z-20 rounded-sm p-2 lg:hidden"
 	onclick={toggleOpen}
 	title="Open navbar"
 >

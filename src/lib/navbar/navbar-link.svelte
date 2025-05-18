@@ -11,8 +11,13 @@
 
 <a
 	{target}
-	class={`relative z-10 text-3xl duration-200 focus-visible:underline lg:text-lg ${
-		selected ? 'text-primary-4' : 'hover:text-primary-2'
-	}`}
+	class={`
+    relative 
+    z-10 
+    text-3xl 
+    transition-colors 
+    duration-100
+    lg:text-lg
+    ${selected ? 'text-cyan-500 cursor-default' : 'not-dark:hover:text-black dark:hover:text-white'}`}
 	{href}>{title}</a
 >

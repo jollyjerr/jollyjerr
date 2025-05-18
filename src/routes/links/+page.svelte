@@ -1,9 +1,12 @@
 <script lang="ts">
 	import Head from '$lib/head/head.svelte';
+	import { imageSizes, sizedImage } from '$lib/image';
 	import { links } from './links.json';
 
-	const image =
-		'https://ik.imagekit.io/jollyjerr/jtabb_dev/IMG_9275_SlROuIxg1.jpg?updatedAt=1689525287506&tr=w-1080%2Ch-1080%2Cfo-auto';
+	const image = sizedImage(
+		'https://ik.imagekit.io/jollyjerr/jtabb_dev/IMG_9275_SlROuIxg1.jpg',
+		imageSizes.sm
+	);
 </script>
 
 <link rel="preload" href={image} as="image" />
@@ -21,22 +24,21 @@
 	<ul class="w-full space-y-3">
 		{#each links as link (link.href)}
 			<a
-				class="
-                    block
-                    w-full
-                    rounded-lg
-                    bg-neutral-100
-                    p-3
-                    text-center
-                    text-lg
-                    font-medium
-                    text-neutral-800
-                    shadow-sm
-                    transition-all
-                    duration-100
-                    hover:translate-y-[-4px]
-                    hover:bg-neutral-50
-                    hover:shadow-md"
+				class="block
+                       w-full
+                       rounded-lg
+                       bg-neutral-100
+                       p-3
+                       text-center
+                       text-lg
+                       font-medium
+                       text-neutral-800
+                       shadow-sm
+                       transition-all
+                       duration-100
+                       hover:translate-y-[-4px]
+                       hover:bg-neutral-50
+                       hover:shadow-md"
 				target="_blank"
 				href={link.href}
 			>

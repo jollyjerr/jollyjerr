@@ -15,7 +15,7 @@
 </script>
 
 <header
-	class="fixed top-0 right-0 left-0 z-50 bg-neutral-50/80 backdrop-blur-md dark:bg-slate-950/80"
+	class="fixed top-0 right-0 left-0 z-10 bg-neutral-50/80 backdrop-blur-md dark:bg-slate-950/80"
 >
 	<nav class="container mx-auto flex items-center justify-between px-4 py-4">
 		<div class="flex items-center space-x-1">
@@ -24,7 +24,13 @@
 			</a>
 			<div>/</div>
 			<a
-				class="group-hover:text-primary-2 ml-3 text-xl font-bold text-gray-800 transition-colors"
+				class="ml-3
+                       text-xl
+                       font-bold
+                       transition-colors
+                       duration-100
+                       not-dark:hover:text-black
+                       dark:hover:text-white"
 				{href}
 			>
 				{title}

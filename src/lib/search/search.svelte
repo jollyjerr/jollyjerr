@@ -134,7 +134,7 @@
 		}}
 	>
 		<div
-			class="border-primary-6 bg-primary-7 fixed flex h-full max-h-[32rem] w-full max-w-4xl flex-col justify-between rounded rounded-sm border drop-shadow-md"
+			class="border-primary-6 bg-primary-7 fixed flex h-full max-h-[32rem] w-full max-w-4xl flex-col justify-between rounded-sm border drop-shadow-md"
 		>
 			<div class="border-primary-6 flex w-full items-center border-b px-2 py-2">
 				<MagnifyingGlass />
@@ -155,7 +155,7 @@
 					<ul class="relative block w-full p-6">
 						{#if state !== 'idle'}
 							{#if records.length}
-								{#each records as record, i}
+								{#each records as record, i (record.title)}
 									<a
 										data-sveltekit-reload
 										href={get_href(record)}

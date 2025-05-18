@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
@@ -6,6 +6,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 html {
-  scrollbar-gutter: stable;
-  overflow-y: scroll;
+	scrollbar-gutter: stable;
+	overflow-y: scroll;
 }
