@@ -6,9 +6,9 @@
 	let { children } = $props();
 </script>
 
-<div class="relative flex flex-col h-full">
+<div class="relative flex h-full flex-col">
 	<Search />
-	<div class="mx-auto grow px-4">
+	<div class="container mx-auto w-full grow px-4">
 		{@render children()}
 	</div>
 	<Footer />
