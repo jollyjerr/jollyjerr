@@ -5,14 +5,13 @@
 	import Navbar from '$lib/navbar/navbar.svelte';
 
 	import type { PageData } from './$types';
-	import FeaturedBlogs from './featured-blogs.svelte';
 
 	interface Props {
 		data: PageData;
 	}
 
 	let { data }: Props = $props();
-	export const posts = data.posts;
+	const posts = data.posts;
 
 	function groupByYear(posts: PostMetadata[]) {
 		return posts.reduce<Record<string, PostMetadata[]>>((acc, article) => {
@@ -34,23 +33,34 @@
 
 <Head />
 <Navbar selected="blog" />
-<!-- <FeaturedBlogs {posts} /> -->
-<!---->
-<!-- <div class="grid w-full place-items-center py-8 lg:w-1/2"> -->
-<!-- 	<div class="w-full space-y-3"> -->
-<!-- 		<h3 class="text-3xl">All Posts</h3> -->
-<!-- 		{#each groupedPosts as [key, values]} -->
-<!-- 			<h4 class="text-xl">{key}</h4> -->
-<!-- 			<ul> -->
-<!-- 				{#each values as post} -->
-<!-- 					<li class="flex items-center justify-between text-lg"> -->
-<!-- 						<div class="opacity-60">{safeFormat(post.date, 'at some point,').split(',')[0]}</div> -->
-<!-- 						<a class="hover:text-primary-4 hover:underline" href={`/blog/${post.slug}`} -->
-<!-- 							>{post.title}</a -->
-<!-- 						> -->
-<!-- 					</li> -->
-<!-- 				{/each} -->
-<!-- 			</ul> -->
-<!-- 		{/each} -->
-<!-- 	</div> -->
-<!-- </div> -->
+
+<div class="flex justify-center px-4 py-12 sm:px-6 lg:px-8">
+	<div class="w-full max-w-3xl">
+		{#each groupedPosts as [year, postsInYear] (year)}
+			<section class="mb-14">
+				<h2 class="mb-6 border-b border-gray-200 pb-2 text-2xl font-semibold sm:text-3xl">
+					{year}
+				</h2>
+				<ul class="m-0 list-none p-0">
+					{#each postsInYear as post (post.slug)}
+						<li class="mb-4">
+							<a
+								href={`/blog/${post.slug}`}
+								class="group flex flex-col items-start justify-between transition-colors duration-200 sm:flex-row sm:items-baseline"
+							>
+								<span
+									class="mr-0 mb-1 min-w-[70px] text-base tabular-nums sm:mr-8 sm:mb-0 sm:min-w-[90px]"
+								>
+									{safeFormat(post.date, 'MMM D')}
+								</span>
+								<span class="flex-grow text-lg font-medium group-hover:underline sm:text-xl">
+									{post.title}
+								</span>
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</section>
+		{/each}
+	</div>
+</div>

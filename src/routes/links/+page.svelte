@@ -20,7 +20,7 @@
 			fetchpriority="high"
 		/>
 	</div>
-	<h1 class="text-3xl font-bold text-neutral-800">@jollyjerr</h1>
+	<h1 class="text-3xl font-bold text-neutral-800 dark:text-neutral-100">@jollyjerr</h1>
 	<ul class="w-full space-y-3">
 		{#each links as link (link.href)}
 			<a
@@ -38,7 +38,10 @@
                        duration-100
                        hover:translate-y-[-4px]
                        hover:bg-neutral-50
-                       hover:shadow-md"
+                       hover:shadow-md
+                       dark:bg-neutral-800
+                       dark:text-neutral-100
+                       dark:hover:bg-neutral-700"
 				target="_blank"
 				href={link.href}
 			>

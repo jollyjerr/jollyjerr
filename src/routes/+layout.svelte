@@ -4,6 +4,6 @@
 	let { children } = $props();
 </script>
 
-<main class="min-h-screen overflow-x-hidden pt-20">
+<main class="h-full overflow-x-hidden pt-20">
 	{@render children()}
 </main>
