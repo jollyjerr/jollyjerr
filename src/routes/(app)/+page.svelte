@@ -34,7 +34,7 @@
 <Head />
 <Navbar selected="blog" />
 
-<div class="flex justify-center px-4 py-12 sm:px-6 lg:px-8">
+<div class="flex justify-center px-4 sm:px-6 lg:px-8">
 	<div class="w-full max-w-3xl">
 		{#each groupedPosts as [year, postsInYear] (year)}
 			<section class="mb-14">
