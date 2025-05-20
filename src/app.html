@@ -1,14 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
 	<head>
 		<meta charset="utf-8" />
 
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+		<script>
+			document.documentElement.classList.toggle(
+				'dark',
+				localStorage.theme === 'dark' ||
+					(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			);
+		</script>
+
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover" class="bg-primary-8">
+
+	<body
+		data-sveltekit-preload-data="hover"
+		class="h-full bg-neutral-50 font-sans text-neutral-800 dark:bg-slate-950 dark:text-slate-200"
+	>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

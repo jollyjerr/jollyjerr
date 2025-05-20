@@ -2,7 +2,7 @@
 	"links": [
 		{
 			"title": "Blog",
-			"href": "https://jtabb.dev"
+			"href": "/"
 		},
 		{
 			"title": "GitHub",
@@ -10,7 +10,7 @@
 		},
 		{
 			"title": "LinkedIn",
-			"href": "https://www.linkedin.com/in/jeremiahtabb/"
+			"href": "https://www.linkedin.com/in/jeremiahtabb"
 		},
 		{
 			"title": "Mountain Project",
@@ -22,11 +22,11 @@
 		},
 		{
 			"title": "IMDB",
-			"href": "https://www.imdb.com/name/nm9467393/"
+			"href": "https://www.imdb.com/name/nm9467393"
 		},
 		{
 			"title": "Leetcode",
-			"href": "https://leetcode.com/jollyjerr/"
+			"href": "https://leetcode.com/jollyjerr"
 		},
 		{
 			"title": "Twitch",
@@ -34,7 +34,7 @@
 		},
 		{
 			"title": "Bandcamp",
-			"href": "https://jeremiahtabb.bandcamp.com/"
+			"href": "https://jeremiahtabb.bandcamp.com"
 		},
 		{
 			"title": "Goodreads",
@@ -42,7 +42,7 @@
 		},
 		{
 			"title": "Steam",
-			"href": "https://steamcommunity.com/profiles/76561199131542581/"
+			"href": "https://steamcommunity.com/profiles/76561199131542581"
 		},
 		{
 			"title": "Discord",

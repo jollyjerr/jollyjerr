@@ -1,14 +1,12 @@
 <script lang="ts">
+	import { useSearch } from '$lib/search/api.svelte';
 	import '../app.css';
-	import { type Snippet } from 'svelte';
 
-	interface Props {
-		children?: Snippet;
-	}
+	let { children } = $props();
 
-	let { children }: Props = $props();
+	const search = useSearch();
 </script>
 
-<main class="min-h-screen overflow-x-hidden font-common text-primary-1 antialiased">
-	{@render children?.()}
+<main class="h-full overflow-x-hidden" class:pt-20={!search.open}>
+	{@render children()}
 </main>
