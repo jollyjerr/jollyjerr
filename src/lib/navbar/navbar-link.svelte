@@ -18,6 +18,6 @@
     transition-colors 
     duration-100
     lg:text-lg
-    ${selected ? 'text-cyan-500 cursor-default' : 'not-dark:hover:text-black dark:hover:text-white'}`}
+    ${selected ? 'cursor-default text-cyan-500' : 'not-dark:hover:text-black dark:hover:text-white'}`}
 	{href}>{title}</a
 >

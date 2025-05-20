@@ -21,11 +21,12 @@
 		const graph = new Graph({
 			data: notes,
 			styles: {
-				// nodeColor: colors.primary4,
-				// linkColor: colors.primary6,
-				// titleColor: colors.primary1,
-				// activeLinkColor: colors.primary5,
-				// activeNodeColor: colors.primary3,
+				// todo: notree updates to handle theme switching
+				nodeColor: '#4A90E2',
+				linkColor: '#888888',
+				titleColor: '#333333',
+				activeLinkColor: '#FF6347',
+				activeNodeColor: '#7ED321',
 				nodeScaleFactor: 0.67
 			},
 			simulationConfig: {

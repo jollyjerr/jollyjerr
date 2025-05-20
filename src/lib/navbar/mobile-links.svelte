@@ -25,7 +25,7 @@
 
 <button
 	aria-label="home"
-	class="bg-primary-5 bg-opacity-70 fixed top-3 right-3 z-20 rounded-sm p-2 lg:hidden"
+	class="fixed top-3 right-3 z-20 p-2 lg:hidden"
 	onclick={toggleOpen}
 	title="Open navbar"
 >
@@ -43,7 +43,7 @@
 
 {#if open}
 	<section
-		class="from-primary-6 via-primary-6 fixed top-0 left-0 z-10 h-full w-full bg-gradient-to-bl to-transparent"
+		class="fixed top-0 left-0 z-10 h-full w-full bg-gradient-to-bl from-neutral-200 via-neutral-50 to-transparent dark:from-slate-950 dark:via-slate-900"
 	>
 		<div class="flex flex-col items-end gap-2 pt-12 pr-24">
 			<CommonLinks {selected} />

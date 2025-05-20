@@ -6,8 +6,8 @@
 	let { children } = $props();
 </script>
 
+<Search />
 <div class="relative flex h-full flex-col">
-	<Search />
 	<div class="container mx-auto w-full grow px-4">
 		{@render children()}
 	</div>

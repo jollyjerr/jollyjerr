@@ -29,7 +29,7 @@
 	});
 </script>
 
-<footer class="bg-transparent p-4 pt-8">
+<footer class="z-10 bg-transparent p-4 pt-8">
 	<div class="container mx-auto flex max-w-4xl items-center justify-between">
 		<div class="flex items-center space-x-4">
 			<a

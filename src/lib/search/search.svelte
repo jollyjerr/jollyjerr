@@ -127,32 +127,36 @@
 	<div
 		role="button"
 		tabindex="-1"
-		class="bg-primary-8 bg-opacity-70 fixed z-[900] flex min-h-full min-w-full items-center justify-center backdrop-blur-sm"
+		class="fixed inset-0 z-[900] flex items-center justify-center bg-black/20 backdrop-blur-sm dark:bg-black/40"
 		onclick={close_search_window}
 		onkeyup={() => {
 			// use esc to close with keyboard
 		}}
 	>
 		<div
-			class="border-primary-6 bg-primary-7 fixed flex h-full max-h-[32rem] w-full max-w-4xl flex-col justify-between rounded-sm border drop-shadow-md"
+			class="relative flex h-full max-h-[32rem] w-full max-w-4xl flex-col rounded-lg border border-neutral-200 bg-white shadow-xl dark:border-slate-700 dark:bg-slate-800"
 		>
-			<div class="border-primary-6 flex w-full items-center border-b px-2 py-2">
+			<div
+				class="flex w-full items-center border-b border-neutral-200 px-4 py-3 dark:border-slate-700"
+			>
 				<MagnifyingGlass />
 				<input
 					type="text"
 					id="search_term"
-					class="bg-primary-7 w-full border-none outline-none focus:border-none focus:ring-0 focus:outline-none"
-					placeholder="search..."
+					class="w-full border-none bg-transparent px-3 text-lg placeholder-neutral-400 outline-none focus:ring-0 dark:placeholder-slate-500"
+					placeholder="Search..."
 					onkeyup={debounced_set_query}
 				/>
 				<button
 					onclick={() => search.setOpen(false)}
-					class="bg-primary-6 grid place-items-center p-2 text-xs">esc</button
+					class="grid place-items-center rounded-md border border-neutral-300 px-2 py-1 text-xs text-neutral-600 dark:border-slate-600 dark:text-slate-400"
 				>
+					esc
+				</button>
 			</div>
-			<div class="flex-grow">
+			<div class="flex-grow overflow-y-auto">
 				{#await results_promise then { records, state }}
-					<ul class="relative block w-full p-6">
+					<ul class="relative block w-full py-2">
 						{#if state !== 'idle'}
 							{#if records.length}
 								{#each records as record, i (record.title)}
@@ -162,12 +166,15 @@
 										onmouseenter={() => {
 											focus_index = i;
 										}}
+										class="block"
 									>
-										<li class={`w-full p-2 ${focus_index === i ? 'bg-primary-6' : ''}`}>
-											<h3>{record.title}</h3>
-											<p
-												class="prose prose-invert prose-em:bg-warning prose-em:not-italic line-clamp-1 opacity-60"
-											>
+										<li
+											class={`mx-2 rounded-md px-4 py-2 hover:bg-neutral-100 dark:hover:bg-slate-700 ${focus_index === i ? 'bg-neutral-100 dark:bg-slate-700' : ''}`}
+										>
+											<h3 class="text-lg font-medium text-neutral-800 dark:text-slate-200">
+												{record.title}
+											</h3>
+											<p class="line-clamp-1 text-sm text-neutral-500 dark:text-slate-400">
 												<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 												{@html record._highlightResult.content.value}
 											</p>
@@ -175,24 +182,36 @@
 									</a>
 								{/each}
 							{:else}
-								<h2 class="font-bold">No results</h2>
+								<div class="p-6 text-center text-neutral-500 dark:text-slate-400">
+									<h2 class="text-xl font-medium">No results</h2>
+									<p class="mt-2 text-sm">Try a different search term.</p>
+								</div>
 							{/if}
+						{:else}
+							<div class="p-6 text-center text-neutral-500 dark:text-slate-400">
+								<p>Start typing to search...</p>
+							</div>
 						{/if}
 					</ul>
 				{:catch}
 					<div
-						class="text-danger text-opacity-80 grid h-full w-full place-items-center pb-2 text-center"
+						class="grid h-full w-full place-items-center px-6 py-12 text-center text-red-600 dark:text-red-400"
 					>
-						Unable to search :( <br /> Try again later!
+						<p class="text-lg font-medium">Unable to search :(</p>
+						<p class="mt-2 text-sm">Please try again later!</p>
 					</div>
 				{/await}
 			</div>
-			<div class="absolute right-0 bottom-0 flex items-center gap-2 p-4">
+			<div
+				class="flex items-center justify-end gap-2 border-t border-neutral-200 p-4 text-sm text-neutral-500 dark:border-slate-700 dark:text-slate-400"
+			>
 				Search by
 				<a
 					href="https://www.algolia.com/developers/?utm_content=powered_by&utm_source=jtabb.dev&utm_medium=referral"
+					target="_blank"
+					rel="noopener noreferrer"
 				>
-					<img class="w-24" src={AlgoliaLogo} alt="search powered by Algolia" />
+					<img class="w-20 not-dark:invert" src={AlgoliaLogo} alt="search powered by Algolia" />
 				</a>
 			</div>
 		</div>

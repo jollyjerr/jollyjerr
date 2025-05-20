@@ -424,6 +424,7 @@
 		"adadelta",
 		"convolutional",
 		"bptt",
-		"lstm"
+		"lstm",
+		"apriori"
 	]
 }
