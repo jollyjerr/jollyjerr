@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CommonLinks from './common-links.svelte';
 	import type { Tab } from './types';
+
 	interface Props {
 		selected: Tab;
 	}

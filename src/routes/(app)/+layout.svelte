@@ -1,17 +1,16 @@
 <script lang="ts">
-	import Socials from './socials.svelte';
+	import { useSearch } from '$lib/search/api.svelte';
 	import Search from '$lib/search/search.svelte';
 	import '../../highlight.css';
+	import Footer from './footer.svelte';
 
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
+	let { children } = $props();
 
-	let { children }: Props = $props();
+	const search = useSearch();
 </script>
 
 <Search />
-<div class="container mx-auto px-3 py-3 lg:py-8">
-	{@render children?.()}
-</div>
-<Socials />
+<main class="container mx-auto grow px-4" class:pt-20={!search.open}>
+	{@render children()}
+</main>
+<Footer />

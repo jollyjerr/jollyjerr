@@ -6,9 +6,21 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+		<script>
+			document.documentElement.classList.toggle(
+				'dark',
+				localStorage.theme === 'dark' ||
+					(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			);
+		</script>
+
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover" class="bg-primary-8">
+
+	<body
+		data-sveltekit-preload-data="hover"
+		class="flex min-h-dvh flex-col overflow-x-hidden bg-neutral-50 font-sans text-neutral-800 dark:bg-slate-950 dark:text-slate-200"
+	>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

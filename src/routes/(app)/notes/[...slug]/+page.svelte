@@ -21,8 +21,4 @@
 
 <Head title={note.title} description={`Learn about ${note.title}`} />
 <Navbar selected="notes" title="Notes" />
-<MarkdownPage
-	title={note.title}
-	image="https://ik.imagekit.io/jollyjerr/jtabb_dev/longspeak_3vFbwWTsS.jpg"
-	html={note.html}
-/>
+<MarkdownPage html={note.html} />
