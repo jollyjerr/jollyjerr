@@ -425,6 +425,7 @@
 		"convolutional",
 		"bptt",
 		"lstm",
-		"apriori"
+		"apriori",
+		"lamport"
 	]
 }
