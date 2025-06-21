@@ -427,6 +427,19 @@
 		"lstm",
 		"apriori",
 		"lamport",
-		"sose"
+		"sose",
+		"heapq",
+		"heappush",
+		"heappop",
+		"defaultdict",
+		"currentdist",
+		"newcost",
+		"qstart",
+		"qrand",
+		"qgoal",
+		"qnear",
+		"qnew",
+		"robo",
+		"webots"
 	]
 }
