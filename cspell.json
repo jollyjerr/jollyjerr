@@ -440,6 +440,8 @@
 		"qnear",
 		"qnew",
 		"robo",
-		"webots"
+		"webots",
+		"ncat",
+		"inspo"
 	]
 }
