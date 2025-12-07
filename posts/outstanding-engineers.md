@@ -4,8 +4,7 @@ subtitle: How did they become outstanding?
 date: 2023-02-25
 tags: career
 featured: false
-image: https://ik.imagekit.io/jollyjerr/jtabb_dev/IMG_8926_Afn53lYMU.jpg
-draft: true
+draft: false
 ---
 
 # Outstanding Engineers

@@ -1,4 +1,5 @@
 ---
 title: Why I Left Social Media
-draft: true
+date: 2024-05-14
+draft: false
 ---
