@@ -15,11 +15,11 @@ jobs:
       - name: setup-nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 25
       - name: setup-pnpm
         uses: pnpm/action-setup@v2.0.1
         with:
-          version: 9
+          version: 10.24.0
           run_install: false
       - name: setup-pnpm-cache-dir
         run: echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"

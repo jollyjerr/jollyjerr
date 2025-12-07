@@ -50,13 +50,13 @@ resource "cloudflare_pages_project" "jtabb" {
   deployment_configs {
     preview {
       environment_variables = {
-        NODE_VERSION = "22.5.1"
-        PNPM_VERSION = "9.6.0"
+        NODE_VERSION = "25.2.1"
+        PNPM_VERSION = "10.24.0"
       }
     }
     production {
       environment_variables = {
-        NODE_VERSION = "22.5.1"
+        NODE_VERSION = "25.2.1"
         PNPM_VERSION = "9.6.0"
       }
     }
