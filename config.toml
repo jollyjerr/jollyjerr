@@ -1,0 +1,7 @@
+base_url = "https://jtabb.dev"
+
+compile_sass = false
+build_search_index = true
+
+[markdown]
+highlight_code = true

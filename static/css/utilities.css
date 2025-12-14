@@ -1,0 +1,7 @@
+.flex {
+    display: flex;
+}
+
+.p-small {
+    padding: 0.5rem;
+}

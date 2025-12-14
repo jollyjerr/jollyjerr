@@ -1,0 +1,19 @@
+@import "reset.css";
+@import "variables.css";
+@import "utilities.css";
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    min-height: 100dvh;
+}
+
+a {
+    color: var(--accent);
+}
+
+pre,
+blockquote {
+    background: var(--muted);
+    border: 1px solid var(--border);
+}
