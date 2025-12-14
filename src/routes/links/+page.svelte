@@ -12,7 +12,7 @@
 <link rel="preload" href={image} as="image" />
 <Head title="Links | Jer Tabb" description="My entire online presence" {image} />
 <div class="m-auto flex w-full max-w-xl flex-col items-center space-y-6 px-2 py-12">
-	<div class="aspect-square h-[160px] w-[160px]">
+	<div class="aspect-square h-40 w-40">
 		<img
 			src={image}
 			alt="A happy Jeremiah after climbing J-Crack in Lumpy"
@@ -36,7 +36,7 @@
                        shadow-sm
                        transition-all
                        duration-100
-                       hover:translate-y-[-4px]
+                       hover:-translate-y-1
                        hover:bg-neutral-50
                        hover:shadow-md
                        dark:bg-neutral-800

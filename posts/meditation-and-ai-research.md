@@ -12,7 +12,7 @@ featured: false
 This past year I finished my masters degree in computer science.
 
 Naturally, in the year 2025, many courses I took focused on machine learning and artificial intelligence.
-I learned about statistical modeling, traditional machine learning, neural networks, and cutting edge 
+I learned about statistical modeling, traditional machine learning, neural networks, and cutting edge
 challenges like distributed training.
 
 During this time I have also been

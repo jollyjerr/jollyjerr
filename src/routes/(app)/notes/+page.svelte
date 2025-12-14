@@ -3,6 +3,7 @@
 	import Head from '$lib/head/head.svelte';
 	import Navbar from '$lib/navbar/navbar.svelte';
 	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
@@ -37,7 +38,7 @@
 		});
 
 		graph.onClick((node) => {
-			goto(`/notes/${getNodeSlug(node.id)}`);
+			goto(resolve(`/notes/${getNodeSlug(node.id)}`));
 		});
 
 		graph.draw();
@@ -54,5 +55,5 @@
 
 <!-- hack to get prerendering to work - TODO: do this another way -->
 {#each Object.values(nodes) as note (note.id)}
-	<a href={`/notes/${getNodeSlug(note.id)}`} class="hidden">{note.title}</a>
+	<a href={resolve(`/notes/${getNodeSlug(note.id)}`)} class="hidden">{note.title}</a>
 {/each}
