@@ -1,7 +1,28 @@
 base_url = "https://jtabb.dev"
 
+title = "Jer Tabb's Blog"
+description = "Blog posts and notes about software, math, and anything else."
+author = "Jer Tabb"
+
+default_language = "en"
+ignored_content = []
+ignored_static = []
+
 compile_sass = false
+minify_html = true
+hard_link_static = true
+generate_sitemap = true
+generate_robots_txt = true
+
 build_search_index = true
+generate_feeds = true
 
 [markdown]
 highlight_code = true
+highlight_theme = "gruvbox-dark"
+render_emoji = true
+external_links_class = "link-out"
+external_links_target_blank = true
+lazy_async_image = true
+bottom_footnotes = true
+insert_anchor_links = "left"
