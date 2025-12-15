@@ -1,4 +1,3 @@
 +++
-title = "what"
-description = "huh"
+transparent = true
 +++

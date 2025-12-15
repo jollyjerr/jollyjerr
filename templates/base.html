@@ -11,25 +11,13 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="{{ get_url(path="css/base_styles.css") | safe }}">
 
     <title>{{ config.title }}</title>
-
-    <script>
-        document.documentElement.classList.toggle(
-            'dark',
-            localStorage.theme === 'dark' ||
-            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        );
-    </script>
 </head>
 
 <body>
-    <header class="flex">
-        <img src="/favicon.svg" width="52" class="p-small" />
-        <h1>{{ current_path }}</h1>
-    </header>
+    <header></header>
     {% block content %} {% endblock content %}
 </body>
 

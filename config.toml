@@ -9,7 +9,7 @@ ignored_content = []
 ignored_static = []
 
 compile_sass = false
-minify_html = true
+minify_html = false
 hard_link_static = true
 generate_sitemap = true
 generate_robots_txt = true
