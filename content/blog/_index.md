@@ -1,3 +1,4 @@
 +++
-transparent = true
+title = "Blog"
+sort_by = "date"
 +++

@@ -1,7 +1,5 @@
 base_url = "https://jtabb.dev"
 
-title = "Jer Tabb's Blog"
-description = "Blog posts and notes about software, math, and anything else."
 author = "Jer Tabb"
 
 default_language = "en"
