@@ -1,6 +1,5 @@
 @import "reset.css";
 @import "variables.css";
-@import "utilities.css";
 
 body {
     background: var(--bg);
@@ -8,12 +7,37 @@ body {
     min-height: 100dvh;
 }
 
-a {
-    color: var(--accent);
+.contained {
+    max-width: 88em;
+    margin-inline: auto;
+    width: 100%;
 }
 
-pre,
-blockquote {
-    background: var(--muted);
-    border: 1px solid var(--border);
+.base-header {
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    line-height: 1;
+
+    & .logo-title {
+        display: flex;
+        align-items: flex-end;
+        font-size: x-large;
+    }
+
+    & .logo {
+        width: 35px;
+        padding-bottom: 2px;
+    }
+
+    & .navlinks-desktop {
+        display: flex;
+        gap: 1em;
+        font-size: large;
+        padding-right: 1em;
+    }
 }

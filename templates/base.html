@@ -2,23 +2,39 @@
 
 <html lang="en">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="apple-mobile-web-app-title" content="jtabb" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-title" content="jtabb" />
 
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="stylesheet" href="{{ get_url(path="css/base_styles.css") | safe }}">
+        <link rel="icon" type="image/png" href={{ get_url(path="/favicon-96x96.png") | safe  }} sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href={{ get_url(path="/favicon.svg") | safe }} />
+        <link rel="shortcut icon" href={{ get_url(path="/favicon.ico") | safe }} />
+        <link rel="apple-touch-icon" sizes="180x180" href={{ get_url(path="/apple-touch-icon.png") | safe }}/>
+        <link rel="stylesheet" href="{{ get_url(path="css/base_styles.css") | safe }}">
 
-    <title>{{ config.title }}</title>
-</head>
+        <title>{{ section.title }}</title>
+    </head>
 
-<body>
-    <header></header>
-    {% block content %} {% endblock content %}
-</body>
+    <body>
+        <header class="contained base-header">
+            <div class="logo-title">
+                <img src={{ get_url(path="/favicon.svg") | safe }} class="logo" />
+                <h1>
+                    / {{ section.extra.navname  }}
+                </h1>
+            </div>
+            <nav class="navlinks-desktop">
+                <a>about</a>
+                <a>contact</a>
+            </nav>
+        </header>
+
+        {% block content %}{% endblock content %}
+
+        <footer class="contained base-footer">
+
+        </footer>
+    </body>
 
 </html>
