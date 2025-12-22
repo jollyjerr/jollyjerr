@@ -1,0 +1,99 @@
+@import "reset.css";
+@import "variables.css";
+
+.dark {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+main {
+    flex-grow: 1;
+    padding-block: 2em;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+    opacity: 0.8;
+    color: var(--accent);
+}
+
+a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.contained {
+    max-width: 88em;
+    margin-inline: auto;
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+header,
+footer {
+    padding-top: 1.6em;
+    padding-bottom: 1.6em;
+}
+
+header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    line-height: 1;
+
+    & .logo-title {
+        display: flex;
+        align-items: flex-end;
+        font-size: x-large;
+    }
+
+    & .logo {
+        width: 35px;
+        padding-bottom: 2px;
+    }
+
+    & .navlinks-desktop {
+        display: flex;
+        gap: 1em;
+        font-size: large;
+        padding-right: 1em;
+    }
+}
+
+footer {
+    display: flex;
+    align-content: center;
+    gap: 1em;
+}
+
+#theme-toggle {
+    width: 18px;
+}
+
+#moon-icon {
+    display: none;
+}
+
+.dark #sun-icon {
+    display: none;
+}
+
+.dark #moon-icon {
+    display: block;
+}

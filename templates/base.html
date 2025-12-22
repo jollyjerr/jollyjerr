@@ -11,13 +11,15 @@
         <link rel="icon" type="image/svg+xml" href={{ get_url(path="/favicon.svg") | safe }} />
         <link rel="shortcut icon" href={{ get_url(path="/favicon.ico") | safe }} />
         <link rel="apple-touch-icon" sizes="180x180" href={{ get_url(path="/apple-touch-icon.png") | safe }}/>
-        <link rel="stylesheet" href="{{ get_url(path="css/base_styles.css") | safe }}">
+        <link rel="stylesheet" href="{{ get_url(path="css/base.css") | safe }}">
+
+        <script src="{{ get_url(path="js/init-theme.js") }}"></script>
 
         <title>{{ section.title }}</title>
     </head>
 
     <body>
-        <header class="contained base-header">
+        <header class="contained">
             <div class="logo-title">
                 <img src={{ get_url(path="/favicon.svg") | safe }} class="logo" />
                 <h1>
@@ -26,15 +28,29 @@
             </div>
             <nav class="navlinks-desktop">
                 <a>about</a>
-                <a>contact</a>
             </nav>
         </header>
 
-        {% block content %}{% endblock content %}
+        <main>
+            {% block content %}{% endblock content %}
+        </main>
 
-        <footer class="contained base-footer">
-
+        <footer class="contained">
+            <a>links</a>
+            <button
+                id="theme-toggle"
+                aria-label="Toggle theme"
+            >
+                <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m3.343-5.657L5.636 5.636m12.728 12.728L18.364 18.364M12 7a5 5 0 110 10 5 5 0 010-10z"/>
+                </svg>
+                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                </svg>
+            </button>
         </footer>
     </body>
 
 </html>
+
+<script src="{{ get_url(path="js/toggle-theme.js") }}"></script>

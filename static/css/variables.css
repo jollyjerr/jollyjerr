@@ -2,16 +2,16 @@
     color-scheme: light dark;
 
     --bg: oklch(98% 0.005 250);
-    --fg: oklch(20% 0.02 260);
-    --muted: oklch(88% 0.01 250);
-    --accent: oklch(65% 0.30 270);
-    --border: oklch(85% 0.015 250);
+    --fg: oklch(18% 0.025 260);
+    --muted: oklch(85% 0.015 250);
+    --accent: oklch(45% 0.20 290);
+    --border: oklch(90% 0.01 250);
+}
 
-    @media (prefers-color-scheme: dark) {
-        --bg: oklch(18% 0.015 260);
-        --fg: oklch(92% 0.02 250);
-        --muted: oklch(24% 0.02 260);
-        --accent: oklch(70% 0.28 270);
-        --border: oklch(30% 0.02 260);
-    }
+.dark {
+    --bg: oklch(15% 0.02 260);
+    --fg: oklch(92% 0.015 250);
+    --muted: oklch(35% 0.02 260);
+    --accent: oklch(75% 0.18 290);
+    --border: oklch(25% 0.015 260);
 }
