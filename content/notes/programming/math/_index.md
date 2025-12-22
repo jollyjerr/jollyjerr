@@ -1,5 +1,8 @@
 +++
 title = "Math"
-weight = 2
+description = "Notes about math."
+
+[extra]
+navname = "notes"
 +++
 

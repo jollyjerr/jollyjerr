@@ -1,6 +1,7 @@
 base_url = "https://jtabb.dev"
+author = "Jeremiah Tabb"
 
-author = "Jer Tabb"
+title = "Jeremiah Tabb | Software"
 
 default_language = "en"
 ignored_content = []

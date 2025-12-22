@@ -15,7 +15,15 @@
 
         <script src="{{ get_url(path="js/init-theme.js") }}"></script>
 
-        <title>{{ section.title }}</title>
+        <title>
+            {%- if page.title -%}
+                {{ page.title }}
+            {%- elif section.title -%}
+                {{ section.title }}
+            {%- else -%}
+                {{ config.title }}
+            {%- endif -%}
+        </title>
     </head>
 
     <body>
@@ -23,15 +31,23 @@
             <div class="logo-title">
                 <img src={{ get_url(path="/favicon.svg") | safe }} class="logo" />
                 <h1>
-                    / {{ section.extra.navname  }}
+                    / {{" "}}
+                    {%- if page.extra.navname -%}
+                        {{ page.extra.navname }}
+                    {%- elif section.extra.navname -%}
+                        {{ section.extra.navname }}
+                    {%- else -%}
+                        blog
+                    {%- endif -%}
                 </h1>
             </div>
             <nav class="navlinks-desktop">
                 <a>about</a>
+                <a>search</a>
             </nav>
         </header>
 
-        <main>
+        <main class="contained">
             {% block content %}{% endblock content %}
         </main>
 

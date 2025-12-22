@@ -1,27 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-
   {{ section.content | safe }}
 
-  <h2>Blogs</h2>
-  <ul>
-    {% set blogs = get_section(path="blog/_index.md") %}
-    {% for post in blogs.pages %}
-      <li>
-        <a href="{{ post.permalink }}">{{ post.title }}</a>
-        {% if post.date %} - {{ post.date | date(format="%Y-%m-%d") }}{% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+  <section class="home-section">
+    <h2>Highlights</h2>
+  </section>
 
-  <h2>Notes</h2>
-  <ul>
-    {% set notes = get_section(path="notes/_index.md") %}
-    {% for subsection_path in notes.subsections %}
-      {% set sub = get_section(path=subsection_path) %}
-      <li><a href="{{ sub.permalink }}">{{ sub.title | default(value="Untitled") }}</a></li>
-    {% endfor %}
-  </ul>
+  <section class="home-section">
+    <h2>Latest Blogs</h2>
+    <ul class="post-list">
+      {% set blogs = get_section(path="blog/_index.md") %}
+      {% for post in blogs.pages | slice(end=8) %}
+        <li class="post-item">
+          <time datetime="{{ post.date }}">{{ post.date | date(format="%Y-%m-%d") }}</time>
+          <a href="{{ post.permalink }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <p class="more-link"><a href="{{ blogs.permalink }}">All blogs →</a></p>
+  </section>
 
+  <section class="home-section">
+    <h2>Notes</h2>
+    <ul class="category-list">
+      {% set notes = get_section(path="notes/_index.md") %}
+      {% for subsection_path in notes.subsections %}
+        {% set sub = get_section(path=subsection_path) %}
+        <li>
+          <a href="{{ sub.permalink }}">{{ sub.title | default(value="Untitled") }}</a>
+          {% if sub.description %}
+            <span class="category-desc">{{ sub.description }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <p class="more-link"><a href="{{ notes.permalink }}">Explore all notes →</a></p>
+  </section>
 {% endblock content %}
