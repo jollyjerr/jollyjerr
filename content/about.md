@@ -1,11 +1,9 @@
----
-title: About me
-subtitle: Who is Jeremiah Tabb?
-date: 2022-04-22
-tags: life
-featured: false
-draft: false
----
++++
+title = "About me"
+description = "Who is Jeremiah Tabb?"
+date = "2022-04-22"
+draft = false
++++
 
 # About Me
 
