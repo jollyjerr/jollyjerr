@@ -29,7 +29,9 @@
     <body>
         <header class="contained">
             <div class="logo-title">
-                <img src={{ get_url(path="/favicon.svg") | safe }} class="logo" />
+                <a href="{{ get_url(path="/") }}">
+                    <img src={{ get_url(path="/favicon.svg") | safe }} class="logo" />
+                </a>
                 <h1>
                     / {{" "}}
                     {%- if page.extra.navname -%}

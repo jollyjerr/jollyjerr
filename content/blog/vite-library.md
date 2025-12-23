@@ -1,11 +1,13 @@
----
-title: Vite Library Mode
-subtitle: The best way to publish a typescript library
-date: 2023-02-25
-tags: typescript,web-development
-featured: false
-draft: false
----
++++
+title = "Vite Library Mode"
+description = "A great way to publish a TypeScript library"
+date = "2023-02-25"
+draft = false
+
+[extra]
+pinned = true
+tags = "tech,frontend,web,typescript"
++++
 
 # Vite Library Mode
 

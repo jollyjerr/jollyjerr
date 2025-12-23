@@ -18,7 +18,7 @@ generate_feeds = true
 
 [markdown]
 highlight_code = true
-highlight_theme = "gruvbox-dark"
+highlight_theme = "two-dark"
 render_emoji = true
 external_links_class = "link-out"
 external_links_target_blank = true

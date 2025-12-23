@@ -1,12 +1,13 @@
----
-title: What I use
-subtitle: Check out the tools and technology I use
-date: 2022-06-01
-tags: technology
-featured: false
-image: https://ik.imagekit.io/jollyjerr/jtabb_dev/Screenshot_2023-02-25_at_12.26.37_PM_wYb-gQDe4.png
-draft: false
----
++++
+title = "What I use"
+description = "Check out the tools and technology I use"
+date = "2022-06-01"
+draft = false
+
+[extra]
+pinned = false
+tags = "tech,advice"
++++
 
 # What I Use
 
