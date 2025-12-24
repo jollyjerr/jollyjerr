@@ -1,4 +1,4 @@
-- [] About me page
+- [x] About me page
 - [] Links page
 - [] Blogs list page
 - [] Blog taxonomies

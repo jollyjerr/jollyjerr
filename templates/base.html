@@ -43,10 +43,6 @@
                     {%- endif -%}
                 </h1>
             </div>
-            <nav class="navlinks-desktop">
-                <a href="{{ get_url(path="/about") }}">about</a>
-                <a>search</a>
-            </nav>
         </header>
 
         <main class="contained">
@@ -54,7 +50,10 @@
         </main>
 
         <footer class="contained">
+            <a href="{{ get_url(path="/") }}">home</a>
+            <a href="{{ get_url(path="/about") }}">about</a>
             <a href="{{ get_url(path="/links") }}">links</a>
+            <a href="{{ get_url(path="/search") }}">search</a>
             <button
                 id="theme-toggle"
                 aria-label="Toggle theme"
