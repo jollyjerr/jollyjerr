@@ -1,0 +1,17 @@
+- [] About me page
+- [] Links page
+- [] Blogs list page
+- [] Blog taxonomies
+- [] Blog show page finishing touches
+- [] Notes page
+- [] Note taxonomies
+- [] Note linked-by implementation
+- [] Note show page finishing touches
+- [] Taxonomy show page
+- [] Search page
+- [] Fix and finish all existing blogs
+- [] Fix and finish all existing notes
+- [] Spellcheck
+- [] Local and ci improvements
+- [] Infra
+- [] Image page for fun
