@@ -11,15 +11,15 @@ Trees can be presented in a lot of ways:
 
 ```ts
 interface Node<T> {
-	value: T;
-	children: Node<T>[];
+  value: T;
+  children: Node<T>[];
 }
 
 // Or in a binary tree
 interface Node<T> {
-	value: T;
-	right: Node<T>;
-	left: Node<T>;
+  value: T;
+  right: Node<T>;
+  left: Node<T>;
 }
 ```
 
@@ -35,22 +35,22 @@ Depth first traversals use a stack and preserve the shape of the traversal
 
 ```ts
 function dfs(head: BinaryNode<number>, needle: number): boolean {
-	return search(head, needle);
+  return search(head, needle);
 }
 
 // on a binary search tree
 function search(curr: BinaryNode<number> | null, needle: number): boolean {
-	if (!curr) {
-		return false;
-	}
-	if (curr.value === needle) {
-		return true;
-	}
+  if (!curr) {
+    return false;
+  }
+  if (curr.value === needle) {
+    return true;
+  }
 
-	if (curr.value < needle) {
-		return search(curr.right, needle);
-	}
-	return search(curr.left, needle);
+  if (curr.value < needle) {
+    return search(curr.right, needle);
+  }
+  return search(curr.left, needle);
 }
 ```
 
@@ -62,23 +62,23 @@ Visits each level of a tree at a time
 
 ```ts
 function bfs(head: BinaryNode<number>, needle: number): boolean {
-	const q = [head]; // <- this js arraylist makes the running time o(n^2), so use a real queue in actual programs
+  const q = [head]; // <- this js arraylist makes the running time o(n^2), so use a real queue in actual programs
 
-	while (q.length) {
-		const curr = q.shift();
-		if (!curr) {
-			continue;
-		}
+  while (q.length) {
+    const curr = q.shift();
+    if (!curr) {
+      continue;
+    }
 
-		if (curr.value === needle) {
-			return true;
-		}
+    if (curr.value === needle) {
+      return true;
+    }
 
-		q.push(curr.left);
-		q.push(curr.right);
-	}
+    q.push(curr.left);
+    q.push(curr.right);
+  }
 
-	return false;
+  return false;
 }
 ```
 

@@ -15,55 +15,55 @@ All operations are O(1):
 
 ```ts
 type Node<T> = {
-	value: T;
-	next?: Node<T>;
+  value: T;
+  next?: Node<T>;
 };
 
 export default class Queue<T> {
-	public length: number;
+  public length: number;
 
-	private head?: Node<T>;
-	private tail?: Node<T>;
+  private head?: Node<T>;
+  private tail?: Node<T>;
 
-	constructor() {
-		this.head = this.tail = undefined;
-		this.length = 0;
-	}
+  constructor() {
+    this.head = this.tail = undefined;
+    this.length = 0;
+  }
 
-	enqueue(item: T): void {
-		const node = { value: item };
-		this.length++;
+  enqueue(item: T): void {
+    const node = { value: item };
+    this.length++;
 
-		if (!this.tail) {
-			this.tail = this.head = node;
-			return;
-		}
+    if (!this.tail) {
+      this.tail = this.head = node;
+      return;
+    }
 
-		this.tail.next = node;
-		this.tail = node;
-	}
+    this.tail.next = node;
+    this.tail = node;
+  }
 
-	deque(): T | undefined {
-		if (!this.head) {
-			return undefined;
-		}
+  deque(): T | undefined {
+    if (!this.head) {
+      return undefined;
+    }
 
-		this.length--;
+    this.length--;
 
-		const head = this.head;
-		this.head = this.head.next;
+    const head = this.head;
+    this.head = this.head.next;
 
-		// free memory - not needed in Typescript but you get the idea
-		head.next = undefined;
-		if (this.length === 0) {
-			this.tail = undefined;
-		}
+    // free memory - not needed in Typescript but you get the idea
+    head.next = undefined;
+    if (this.length === 0) {
+      this.tail = undefined;
+    }
 
-		return head.value;
-	}
+    return head.value;
+  }
 
-	peek(): T | undefined {
-		return this.head?.value;
-	}
+  peek(): T | undefined {
+    return this.head?.value;
+  }
 }
 ```

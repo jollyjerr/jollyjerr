@@ -17,15 +17,15 @@ Runtime is O(N^2) reduced from `O(n(n+1)/2)`
 
 ```ts
 function bubbleSort(arr: number[]): void {
-	for (let i = 0; i < arr.length; i++) {
-		for (let j = 0; j < arr.length - 1 - i; j++) {
-			if (arr[j] > arr[j + 1]) {
-				const tmp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = tmp;
-			}
-		}
-	}
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        const tmp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = tmp;
+      }
+    }
+  }
 }
 ```
 
@@ -45,41 +45,41 @@ Normally written as two parts:
 
 ```ts
 function qs(arr: number[], lo: number, hi: number): void {
-	// base case
-	if (lo >= hi) {
-		return;
-	}
+  // base case
+  if (lo >= hi) {
+    return;
+  }
 
-	const pivotIdx = partition(arr, lo, hi);
+  const pivotIdx = partition(arr, lo, hi);
 
-	qs(arr, lo, pivotIdx - 1);
-	qs(arr, pivotIdx + 1, hi);
+  qs(arr, lo, pivotIdx - 1);
+  qs(arr, pivotIdx + 1, hi);
 }
 
 function partition(arr: number[], lo: number, hi: number): number {
-	const pivot = arr[hi]; // or whatever (normally midpoint)
+  const pivot = arr[hi]; // or whatever (normally midpoint)
 
-	let idx = lo - 1;
+  let idx = lo - 1;
 
-	for (let i = 0; i < hi; i++) {
-		if (arr[i] <= pivot) {
-			idx++;
+  for (let i = 0; i < hi; i++) {
+    if (arr[i] <= pivot) {
+      idx++;
 
-			const tmp = arr[i];
-			arr[i] = arr[idx];
-			arr[idx] = tmp;
-		}
-	}
+      const tmp = arr[i];
+      arr[i] = arr[idx];
+      arr[idx] = tmp;
+    }
+  }
 
-	// put pivot in middle (at the pivot index)
-	idx++;
-	arr[hi] = arr[idx];
-	arr[idx] = pivot;
+  // put pivot in middle (at the pivot index)
+  idx++;
+  arr[hi] = arr[idx];
+  arr[idx] = pivot;
 
-	return idx;
+  return idx;
 }
 
 function quickSort(arr: number[]) {
-	qs(arr, 0, arr.length - 1);
+  qs(arr, 0, arr.length - 1);
 }
 ```

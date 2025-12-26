@@ -14,9 +14,9 @@ Node is v8 server side. Node is single threaded
 ## Variables
 
 ```js
-let b = 'World'; // a mutable variable
-const c = '!'; // a constant
-var a = 'Hello'; // older "let", should generally be avoided
+let b = "World"; // a mutable variable
+const c = "!"; // a constant
+var a = "Hello"; // older "let", should generally be avoided
 
 // functions are first class
 function myFunction() {}
@@ -51,7 +51,7 @@ Callback functions are run after asynchronous code finishes…aka promises reso
  * a method placed on a function that calls the function
  * the first argument passed in is the new execution context (thisArg) */
 const addToThis = (anyNumber) => {
-	return this.num + anyNumber;
+  return this.num + anyNumber;
 };
 let obj = { num: 3 };
 addToThis.call(obj, 7); //=> 10

@@ -53,15 +53,15 @@ proven via the "cut property".
 // input: an undirected, connected, weighted graph G
 // output: T, the minimum spanning tree of G
 function prims(G) {
-	T = [];
-	// pick any node from G and add to T
-	for (j = 1; j < n - 1; j++) {
-		// let C be the set of edges with one endpoint in T and one endpoint
-		// outside of T
-		//
-		// let e be the minimum weight edge in C
-		//
-		// add e to T and add the endpoint of e not in T to T
-	}
+  T = [];
+  // pick any node from G and add to T
+  for (j = 1; j < n - 1; j++) {
+    // let C be the set of edges with one endpoint in T and one endpoint
+    // outside of T
+    //
+    // let e be the minimum weight edge in C
+    //
+    // add e to T and add the endpoint of e not in T to T
+  }
 }
 ```

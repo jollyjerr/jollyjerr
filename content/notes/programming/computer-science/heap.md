@@ -57,87 +57,87 @@ tree will always be logn
 
 ```ts
 class MinHeap {
-	public length: number;
-	private data: number[];
+  public length: number;
+  private data: number[];
 
-	constructor() {
-		this.data = [];
-		this.length = 0;
-	}
+  constructor() {
+    this.data = [];
+    this.length = 0;
+  }
 
-	insert(value: number): void {
-		this.data[this.length] = value;
-		this.heapifyUp(this.length);
+  insert(value: number): void {
+    this.data[this.length] = value;
+    this.heapifyUp(this.length);
 
-		this.length++;
-	}
+    this.length++;
+  }
 
-	delete(): number | undefined {
-		if (this.length <= 0) return undefined;
+  delete(): number | undefined {
+    if (this.length <= 0) return undefined;
 
-		const out = this.data[0];
-		this.length--;
+    const out = this.data[0];
+    this.length--;
 
-		if (this.length === 0) {
-			this.data = [];
-			return out;
-		}
+    if (this.length === 0) {
+      this.data = [];
+      return out;
+    }
 
-		this.data[0] = this.data[this.length];
-		this.heapifyDown(0);
-		return out;
-	}
+    this.data[0] = this.data[this.length];
+    this.heapifyDown(0);
+    return out;
+  }
 
-	private heapifyUp(idx: number): void {
-		if (idx === 0) return;
+  private heapifyUp(idx: number): void {
+    if (idx === 0) return;
 
-		const val = thid.data[idx];
+    const val = thid.data[idx];
 
-		const pidx = this.parent(idx);
-		const pval = this.data[pidx];
+    const pidx = this.parent(idx);
+    const pval = this.data[pidx];
 
-		if (pval > val) {
-			// swap
-			this.data[idx] = pval;
-			this.data[pidx] = val;
+    if (pval > val) {
+      // swap
+      this.data[idx] = pval;
+      this.data[pidx] = val;
 
-			this.heapifyUp(pidx);
-		}
-	}
+      this.heapifyUp(pidx);
+    }
+  }
 
-	private heapifyDown(idx: number): void {
-		const lidx = this.leftChild(idx);
-		const ridx = this.rightChild(idx);
+  private heapifyDown(idx: number): void {
+    const lidx = this.leftChild(idx);
+    const ridx = this.rightChild(idx);
 
-		if (idx >= this.length || lidx >= this.length) return;
+    if (idx >= this.length || lidx >= this.length) return;
 
-		const lval = this.data[lidx];
-		const rval = this.data[ridx];
-		const val = this.data[idx];
+    const lval = this.data[lidx];
+    const rval = this.data[ridx];
+    const val = this.data[idx];
 
-		if (lval > rval && val > rval) {
-			this.data[idx] = rval;
-			this.data[ridx] = val;
+    if (lval > rval && val > rval) {
+      this.data[idx] = rval;
+      this.data[ridx] = val;
 
-			this.heapifyDown(ridx);
-		} else if (rval > lval && val > lval) {
-			this.data[idx] = lval;
-			this.data[lidx] = val;
+      this.heapifyDown(ridx);
+    } else if (rval > lval && val > lval) {
+      this.data[idx] = lval;
+      this.data[lidx] = val;
 
-			this.heapifyDown(lidx);
-		}
-	}
+      this.heapifyDown(lidx);
+    }
+  }
 
-	private parent(idx: number): number {
-		return Math.floor((idx - 1) / 2);
-	}
+  private parent(idx: number): number {
+    return Math.floor((idx - 1) / 2);
+  }
 
-	private leftChild(idx: number): number {
-		return idx * 2 + 1;
-	}
+  private leftChild(idx: number): number {
+    return idx * 2 + 1;
+  }
 
-	private rightChild(idx: number): number {
-		return idx * 2 + 2;
-	}
+  private rightChild(idx: number): number {
+    return idx * 2 + 2;
+  }
 }
 ```

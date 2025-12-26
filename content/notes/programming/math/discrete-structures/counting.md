@@ -67,8 +67,8 @@ of this counting procedure is show in code below.
 
 ```js
 function p(options, length, depth = 0, result = 1) {
-	if (depth === length) return result;
-	return p(options - 1, length, depth + 1, result * options);
+  if (depth === length) return result;
+  return p(options - 1, length, depth + 1, result * options);
 }
 ```
 
@@ -105,16 +105,16 @@ Where n is the number of elements and r is the subset size.
 
 ```js
 function choose(n, r) {
-	const factorial = (a) => {
-		let result = 1;
-		do {
-			result *= a;
-			a--;
-		} while (a > 1);
-		return result;
-	};
+  const factorial = (a) => {
+    let result = 1;
+    do {
+      result *= a;
+      a--;
+    } while (a > 1);
+    return result;
+  };
 
-	return factorial(n) / (factorial(r) * factorial(n - r));
+  return factorial(n) / (factorial(r) * factorial(n - r));
 }
 ```
 

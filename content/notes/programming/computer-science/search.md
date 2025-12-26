@@ -9,12 +9,12 @@ O(N), walk array looking at each element and compare to desired element
 
 ```ts
 function linearSearch(haystack: number[], needle: number): boolean {
-	for (let i = 0; i < haystack.length; i++) {
-		if (haystack[i] === needle) {
-			return true;
-		}
-	}
-	return false;
+  for (let i = 0; i < haystack.length; i++) {
+    if (haystack[i] === needle) {
+      return true;
+    }
+  }
+  return false;
 }
 ```
 
@@ -28,23 +28,23 @@ Keep low inclusive and high exclusive to avoid off by one errors
 
 ```ts
 function binarySearch(heystack: number[], needle: number): boolean {
-	let lo = 0;
-	let hi = heystack.length;
+  let lo = 0;
+  let hi = heystack.length;
 
-	do {
-		const mid = Math.foor(lo + (hi - lo) / 2);
-		const value = haystack[mid];
+  do {
+    const mid = Math.foor(lo + (hi - lo) / 2);
+    const value = haystack[mid];
 
-		if (value === needle) {
-			return true;
-		} else if (value > needle) {
-			hi = mid;
-		} else {
-			lo = mid + 1;
-		}
-	} while (lo < hi);
+    if (value === needle) {
+      return true;
+    } else if (value > needle) {
+      hi = mid;
+    } else {
+      lo = mid + 1;
+    }
+  } while (lo < hi);
 
-	return false;
+  return false;
 }
 ```
 
@@ -58,23 +58,23 @@ O(sqrt(N)) algorithm is possible by jumping sqrt(N) until the ball breaks and th
 
 ```ts
 function twoCrystalBalls(breaks: number[]): number {
-	const jumpLength = Math.floor(Math.sqrt(breaks.length));
+  const jumpLength = Math.floor(Math.sqrt(breaks.length));
 
-	let i = jumpLength;
-	for (; i < breaks.length; i += jumpLength) {
-		if (breaks[i]) {
-			break;
-		}
-	}
+  let i = jumpLength;
+  for (; i < breaks.length; i += jumpLength) {
+    if (breaks[i]) {
+      break;
+    }
+  }
 
-	i -= jumpLength;
+  i -= jumpLength;
 
-	for (let j = 0; j < jumpLength && i < breaks.length; j++, i++) {
-		if (breaks[i]) {
-			return i;
-		}
-	}
+  for (let j = 0; j < jumpLength && i < breaks.length; j++, i++) {
+    if (breaks[i]) {
+      return i;
+    }
+  }
 
-	return -1;
+  return -1;
 }
 ```
