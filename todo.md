@@ -1,5 +1,5 @@
 - [x] About me page
-- [] Links page
+- [x] Links page
 - [] Blogs list page
 - [] Blog taxonomies
 - [] Blog show page finishing touches
@@ -13,5 +13,7 @@
 - [] Fix and finish all existing notes
 - [] Spellcheck
 - [] Local and ci improvements
-- [] Infra
 - [] Image page for fun
+- [] Analytics https://www.goatcounter.com/
+- [] Infra
+- [] Ship

@@ -1,0 +1,60 @@
+{
+	"links": [
+		{
+			"title": "Blog",
+			"href": "/"
+		},
+        {
+            "title": "Photo Gallery",
+            "href": "/photos"
+        },
+		{
+			"title": "GitHub",
+			"href": "https://github.com/jollyjerr"
+		},
+		{
+			"title": "LinkedIn",
+			"href": "https://www.linkedin.com/in/jeremiahtabb"
+		},
+		{
+			"title": "Mountain Project",
+			"href": "https://www.mountainproject.com/user/200244605/jeremiah-tabb"
+		},
+		{
+			"title": "Strava",
+			"href": "https://www.strava.com/athletes/121228657"
+		},
+		{
+			"title": "IMDB",
+			"href": "https://www.imdb.com/name/nm9467393"
+		},
+		{
+			"title": "Leetcode",
+			"href": "https://leetcode.com/jollyjerr"
+		},
+		{
+			"title": "Twitch",
+			"href": "https://www.twitch.tv/jollyjerr"
+		},
+		{
+			"title": "Bandcamp",
+			"href": "https://jeremiahtabb.bandcamp.com"
+		},
+		{
+			"title": "Goodreads",
+			"href": "https://www.goodreads.com/user/show/149564991-jeremiah-tabb"
+		},
+		{
+			"title": "Steam",
+			"href": "https://steamcommunity.com/profiles/76561199131542581"
+		},
+		{
+			"title": "Discord",
+			"href": "http://discordapp.com/users/620805404053733377"
+		},
+		{
+			"title": "YouTube",
+			"href": "https://www.youtube.com/channel/UCqHFIUDlxvNGhaKBYPhjIBw"
+		}
+	]
+}

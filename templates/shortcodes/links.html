@@ -1,0 +1,14 @@
+<ul class="links-list">
+  {% set data = load_data(path="data/links.json", format="json") %}
+  {% for link in data.links %}
+    <li>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="{{ link.href }}"
+      >
+        {{ link.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

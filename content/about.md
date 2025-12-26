@@ -2,6 +2,9 @@
 title = "About me"
 date = "2022-04-22"
 draft = false
+
+[extra]
+navname = "about"
 +++
 
 # About Me
