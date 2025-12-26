@@ -211,6 +211,14 @@ article {
         padding-left: 1.5em;
     }
 
+    & ul {
+        list-style: disc outside;
+    }
+
+    & ol {
+        list-style: decimal outside;
+    }
+
     & li {
         margin-block: 0.4em;
     }
@@ -349,4 +357,14 @@ html {
 .pagination {
     display: flex;
     gap: 1em;
+}
+
+.post-tags {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    max-width: 48em;
+    margin-inline: auto;
+    font-weight: bold;
+    width: 100%;
 }

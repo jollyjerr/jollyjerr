@@ -4,4 +4,16 @@
   <article>
     {{ page.content | safe }}
   </article>
+  {%- if page.taxonomies.tags %}
+    <ul class="post-tags" aria-label="Tags">
+      <h2>Tags:</h2>
+      {% for tag in page.taxonomies.tags %}
+        <li>
+          <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">
+            #{{ tag }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {%- endif -%}
 {% endblock content %}

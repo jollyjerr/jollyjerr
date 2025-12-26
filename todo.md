@@ -2,7 +2,7 @@
 - [x] Links page
 - [x] Blogs list page
 - [x] Blog taxonomies
-- [] Blog show page finishing touches
+- [x] Blog show page finishing touches
 - [] Notes page
 - [] Note linked-by implementation
 - [] Note show page finishing touches
