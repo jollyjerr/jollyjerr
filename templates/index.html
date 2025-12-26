@@ -2,7 +2,9 @@
 
 {% block content %}
   {{ section.content | safe }}
+
   {% set blogs = get_section(path="blog/_index.md") %}
+  {% set notes = get_section(path="notes/_index.md") %}
 
   <section class="home-section">
     <h2>Highlights</h2>
@@ -34,13 +36,13 @@
   <section class="home-section">
     <h2>Notes</h2>
     <ul class="category-list">
-      {% set notes = get_section(path="notes/_index.md") %}
       {% for subsection_path in notes.subsections %}
         {% set sub = get_section(path=subsection_path) %}
         <li>
-          <a href="{{ sub.permalink }}">{{ sub.title | default(value="Untitled") }}</a>
+          <a href="{{ sub.permalink }}">{{ sub.title }}</a>
         </li>
       {% endfor %}
     </ul>
+    <p class="more-link"><a href="{{ notes.permalink }}">All notes →</a></p>
   </section>
 {% endblock content %}
