@@ -347,6 +347,7 @@ html {
     flex-direction: column;
     width: 100%;
     align-content: center;
+    list-style: none;
 
     & a {
         display: block;
