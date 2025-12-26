@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+  {% set blogs = get_section(path="blog/_index.md") %}
+  <ul class="post-list">
+    {% for post in paginator.pages %}
+      <li class="post-item">
+        <time datetime="{{ post.date }}">{{ post.date | date(format="%Y-%m-%d") }}</time>
+        <a href="{{ post.permalink }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% if paginator.previous or paginator.next %}
+    <nav class="pagination">
+      {% if paginator.previous %}
+        <a href="{{ paginator.previous }}" class="previous">← Previous</a>
+      {% endif %}
+      {% if paginator.next %}
+        <a href="{{ paginator.next }}" class="next">Next →</a>
+      {% endif %}
+
+      <span>
+        Page {{ paginator.current_index }} of {{ paginator.number_pagers }}
+      </span>
+    </nav>
+  {% endif %}
+{% endblock content %}

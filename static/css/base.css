@@ -324,6 +324,10 @@ html {
     background: var(--accent);
 }
 
+#profile {
+    max-width: 18em;
+}
+
 #avatar {
     aspect-ratio: 1/1;
     max-width: 12em;
@@ -340,4 +344,9 @@ html {
         display: block;
         text-align: center;
     }
+}
+
+.pagination {
+    display: flex;
+    gap: 1em;
 }

@@ -1,6 +1,6 @@
 - [x] About me page
 - [x] Links page
-- [] Blogs list page
+- [x] Blogs list page
 - [] Blog taxonomies
 - [] Blog show page finishing touches
 - [] Notes page
