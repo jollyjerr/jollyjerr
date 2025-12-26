@@ -1,4 +1,8 @@
 +++
+title = "Computing, Ethics, and Society"
+
+[extra]
+navname = "notes"
 +++
 
 # Computing, Ethics, and Society

@@ -1,5 +1,8 @@
 +++
 title = "Yoga"
+
+[extra]
+navname = "notes"
 +++
 
 # Yoga

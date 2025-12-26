@@ -1,4 +1,8 @@
 +++
+title = "linux"
+
+[extra]
+navname = "notes"
 +++
 
 # Linux

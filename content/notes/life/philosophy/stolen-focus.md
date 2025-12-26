@@ -1,4 +1,8 @@
 +++
+title = "Stolen Focus"
+
+[extra]
+navname = "notes"
 +++
 
 # Stolen Focus: Why you can't pay attention and how to think deeply again

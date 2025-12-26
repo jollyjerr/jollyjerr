@@ -1,4 +1,8 @@
 +++
+title = "Essentialism"
+
+[extra]
+navname = "notes"
 +++
 
 # Essentialism - Greg McKeown

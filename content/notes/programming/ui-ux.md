@@ -1,4 +1,8 @@
 +++
+title = "Fundamentals of design"
+
+[extra]
+navname = "notes"
 +++
 
 ## Fundamentals of design

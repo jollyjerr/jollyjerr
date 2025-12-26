@@ -1,4 +1,8 @@
 +++
+title = "Kundalini"
+
+[extra]
+navname = "notes"
 +++
 
 # Kundalini

@@ -1,4 +1,8 @@
 +++
+title = "History of Meditation"
+
+[extra]
+navname = "notes"
 +++
 
 # History of meditation

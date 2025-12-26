@@ -1,4 +1,8 @@
 +++
+title = "Vim"
+
+[extra]
+navname = "notes"
 +++
 
 # Vim

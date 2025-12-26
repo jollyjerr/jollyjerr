@@ -1,4 +1,8 @@
 +++
+title = "General"
+
+[extra]
+navname = "notes"
 +++
 
 # Veganism

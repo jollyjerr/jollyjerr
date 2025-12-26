@@ -1,4 +1,8 @@
 +++
+title = "CSS"
+
+[extra]
+navname = "notes"
 +++
 
 # CSS

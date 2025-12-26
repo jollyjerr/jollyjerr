@@ -1,6 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
+  {% if page.path is starting_with("/notes") %}
+    <nav aria-label="Breadcrumb" class="breadcrumbs">
+      <ol>
+        {% for ancestor_path in page.ancestors | slice(start=1) %}
+          {% set ancestor = get_section(path=ancestor_path) %}
+          <li>
+            <a href="{{ ancestor.permalink }}">
+              {{ ancestor.title
+              | default(
+              value=ancestor_path
+              | split(pat="/")
+              | last
+              | replace(from="-", to=" ")
+              | title
+              )
+              }}
+            </a>
+            /
+          </li>
+        {% endfor %}
+      </ol>
+    </nav>
+  {% endif %}
   <article>
     {{ page.content | safe }}
   </article>

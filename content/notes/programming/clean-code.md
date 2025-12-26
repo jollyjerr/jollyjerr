@@ -1,4 +1,8 @@
 +++
+title = "Clean Code"
+
+[extra]
+navname = "notes"
 +++
 
 # Clean Code

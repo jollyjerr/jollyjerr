@@ -1,4 +1,8 @@
 +++
+title = "Better Never To Have Been"
+
+[extra]
+navname = "notes"
 +++
 
 # Better Never To Have Been

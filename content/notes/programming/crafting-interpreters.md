@@ -1,4 +1,8 @@
 +++
+title = "Crafting Interpreters"
+
+[extra]
+navname = "notes"
 +++
 
 # Crafting Interpreters

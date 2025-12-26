@@ -1,4 +1,8 @@
 +++
+title = "Animal Liberation"
+
+[extra]
+navname = "notes"
 +++
 
 # Animal Liberation

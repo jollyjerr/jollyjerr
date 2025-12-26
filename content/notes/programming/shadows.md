@@ -1,4 +1,8 @@
 +++
+title = "shadows"
+
+[extra]
+navname = "notes"
 +++
 
 # Shadows

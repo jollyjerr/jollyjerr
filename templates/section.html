@@ -1,4 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <div class="home-section">
+
+    <nav aria-label="Breadcrumb" class="breadcrumbs">
+      <ol>
+        {% set crumbs = section.ancestors | slice(start=1) %}
+        {% if crumbs | length > 0 %}
+          {% for ancestor_path in crumbs %}
+            {% set ancestor = get_section(path=ancestor_path) %}
+            <li>
+              <a href="{{ ancestor.permalink }}">
+                {{ ancestor.title
+                | default(
+                value=ancestor_path
+                | split(pat="/")
+                | last
+                | replace(from="-", to=" ")
+                | title
+                )
+                }}
+              </a>
+            </li>
+            /
+          {% endfor %}
+        {% else %}
+          <li class="breadcrumb-placeholder" aria-hidden="true">&nbsp;</li>
+        {% endif %}
+      </ol>
+
+      <h1 aria-current="page">{{ section.title }}</h1>
+    </nav>
+
+    <section class="home-section">
+      <ul class="category-list">
+        {% for sub_path in section.subsections %}
+          {% set sub = get_section(path=sub_path) %}
+          <li>
+            <a href="{{ sub.permalink }}">{{ sub.title | default(value=sub_path | split(pat="/") | last | replace(from="-", to=" ") | title) }}</a>
+          </li>
+        {% endfor %}
+        {% for page in section.pages  %}
+          <li class="post-item">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
 {% endblock content %}

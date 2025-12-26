@@ -99,12 +99,18 @@ footer {
 
 .home-section {
     margin-bottom: 4em;
-}
 
-.home-section h2 {
-    margin-bottom: 1em;
-    font-size: 1.4rem;
-    opacity: 0.9;
+    & h1 {
+        font-size: x-large;
+        font-weight: bold;
+        margin-bottom: 1em;
+    }
+
+    & h2 {
+        margin-bottom: 1em;
+        font-size: 1.4rem;
+        opacity: 0.9;
+    }
 }
 
 .post-list .post-item {
@@ -143,6 +149,7 @@ footer {
 
 .category-list a:hover {
     color: var(--accent);
+    text-decoration: underline;
 }
 
 .category-desc {
@@ -368,4 +375,14 @@ html {
     margin-inline: auto;
     font-weight: bold;
     width: 100%;
+}
+
+.breadcrumbs {
+    align-content: center;
+
+    & ol {
+        display: flex;
+        gap: 0.3em;
+        align-content: center;
+    }
 }

@@ -1,4 +1,8 @@
 +++
+title = "Clean Architecture"
+
+[extra]
+navname = "notes"
 +++
 
 # Clean Architecture

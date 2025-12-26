@@ -1,4 +1,8 @@
 +++
+title = "Complexity !== Complicated"
+
+[extra]
+navname = "notes"
 +++
 
 # Complexity !== complicated

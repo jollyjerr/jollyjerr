@@ -1,4 +1,8 @@
 +++
+title = "Ethical Hacking on the Network"
+
+[extra]
+navname = "notes"
 +++
 
 # Ethical Hacking on the Network

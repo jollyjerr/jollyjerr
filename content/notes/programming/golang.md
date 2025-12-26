@@ -1,4 +1,8 @@
 +++
+title = "Go"
+
+[extra]
+navname = "notes"
 +++
 
 # Go
