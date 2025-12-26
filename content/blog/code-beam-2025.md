@@ -1,12 +1,15 @@
----
-title: Code BEAM America
-subtitle: What I learned
-date: 2025-03-07
-tags: elixir
-image: https://ik.imagekit.io/jollyjerr/jtabb_dev/cbalogo_z6-wvC-vR.avif
-draft: false
-featured: true
----
++++
+title = "Code BEAM America"
+subtitle = "What I learned"
+date = "2025-03-07"
+draft = false
+
+[taxonomies]
+tags = ["tech", "elixir"]
+
+[extra]
+pinned = false
++++
 
 # What I Learned At Code BEAM America
 

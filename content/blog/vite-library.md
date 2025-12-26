@@ -4,9 +4,11 @@ description = "A great way to publish a TypeScript library"
 date = "2023-02-25"
 draft = false
 
+[taxonomies]
+tags = ["tech", "frontend", "web", "typescript"]
+
 [extra]
 pinned = true
-tags = "tech,frontend,web,typescript"
 +++
 
 # Vite Library Mode

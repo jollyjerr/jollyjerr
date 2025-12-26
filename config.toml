@@ -1,4 +1,5 @@
 base_url = "https://jtabb.dev"
+title = "Jeremiah Tabb | Software"
 author = "Jeremiah Tabb"
 
 default_language = "en"
@@ -13,6 +14,10 @@ generate_robots_txt = true
 
 build_search_index = true
 generate_feeds = true
+
+taxonomies = [
+    { name = "tags", feed = true }
+]
 
 [markdown]
 highlight_code = true

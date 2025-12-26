@@ -4,9 +4,11 @@ description = "Check out the tools and technology I use"
 date = "2022-06-01"
 draft = false
 
+[taxonomies]
+tags = ["tech", "products"]
+
 [extra]
 pinned = false
-tags = "tech,advice"
 +++
 
 # What I Use

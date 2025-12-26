@@ -4,9 +4,11 @@ description = "My top five lists"
 date = "2023-02-26"
 draft = false
 
+[taxonomies]
+tags = ["life"]
+
 [extra]
 pinned = false
-tags = "life"
 +++
 
 # Top Five

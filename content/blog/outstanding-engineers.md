@@ -1,11 +1,15 @@
----
-title: Outstanding Engineers
-subtitle: How did they become outstanding?
-date: 2023-02-25
-tags: career
-featured: false
-draft: false
----
++++
+title = "Outstanding Engineers"
+subtitle = "How did they become outstanding?"
+date = "2023-02-25"
+draft = false
+
+[taxonomies]
+tags = ["career"]
+
+[extra]
+pinned = false
++++
 
 # Outstanding Engineers
 

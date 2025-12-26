@@ -1,11 +1,15 @@
----
-title: Meditation and AI Research
-subtitle: Thinking about how we think
-date: 2025-11-30
-tags: ai,llm,meditation
-draft: false
-featured: false
----
++++
+title = "Meditation and AI Research"
+subtitle = "Thinking about how we think"
+date = "2025-11-30"
+draft = false
+
+[taxonomies]
+tags = ["tech", "life"]
+
+[extra]
+pinned = false
++++
 
 # Meditation and AI Research
 

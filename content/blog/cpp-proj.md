@@ -1,12 +1,15 @@
----
-title: How To Set Up A C++ Project
-subtitle: C++ Project Setup and Tooling For JavaScript Devs
-date: 2023-03-18
-tags: c++
-featured: false
-image: https://ik.imagekit.io/jollyjerr/jtabb_dev/IMG_1212_IA1defdsD.jpg
-draft: false
----
++++
+title = "How To Set Up A C++ Project"
+subtitle = "C++ Project Setup and Tooling For JavaScript Devs"
+date = "2023-03-18"
+draft = false
+
+[taxonomies]
+tags = ["tech"]
+
+[extra]
+pinned = true
++++
 
 # How To Set Up A C++ Project
 

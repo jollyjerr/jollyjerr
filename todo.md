@@ -1,13 +1,12 @@
 - [x] About me page
 - [x] Links page
 - [x] Blogs list page
-- [] Blog taxonomies
+- [x] Blog taxonomies
 - [] Blog show page finishing touches
 - [] Notes page
-- [] Note taxonomies
 - [] Note linked-by implementation
 - [] Note show page finishing touches
-- [] Taxonomy show page
+- [x] Taxonomy show page
 - [] Search page
 - [] Fix and finish all existing blogs
 - [] Fix and finish all existing notes

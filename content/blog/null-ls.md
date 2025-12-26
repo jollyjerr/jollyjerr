@@ -1,11 +1,15 @@
----
-title: null-ls Is Archived, What Now?
-subtitle: The best path forward for neovim configurations
-date: 2023-09-08
-tags: nvim
-featured: false
-draft: false
----
++++
+title = "null-ls Is Archived, What Now?"
+subtitle = "The best path forward for neovim configurations"
+date = "2023-09-08"
+draft = false
+
+[taxonomies]
+tags = ["tech"]
+
+[extra]
+pinned = true
++++
 
 # null-ls is archived, what now?
 
