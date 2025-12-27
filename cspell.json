@@ -3,6 +3,7 @@
   "version": "0.2",
   "useGitignore": true,
   "words": [
+    "goatcounter",
     "navname",
     "elasticlunr",
     "abnf",

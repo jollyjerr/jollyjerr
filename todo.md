@@ -10,9 +10,9 @@
 - [x] Search page
 - [x] Spellcheck
 - [x] Local and ci improvements
-- [] Image page for fun
-- [] Analytics https://www.goatcounter.com/
-- [] Infra
-- [] Ship
+- [x] Image page for fun
+- [x] Analytics https://www.goatcounter.com/
 - [] Fix and finish all existing blogs
 - [] Fix and finish all existing notes
+- [] Infra
+- [] Ship
