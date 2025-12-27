@@ -3,16 +3,16 @@
 - [x] Blogs list page
 - [x] Blog taxonomies
 - [x] Blog show page finishing touches
-- [] Notes page
-- [] Note linked-by implementation
-- [] Note show page finishing touches
+- [x] Notes page
+- [x] Note linked-by implementation
+- [x] Note show page finishing touches
 - [x] Taxonomy show page
-- [] Search page
-- [] Fix and finish all existing blogs
-- [] Fix and finish all existing notes
-- [] Spellcheck
-- [] Local and ci improvements
+- [x] Search page
+- [x] Spellcheck
+- [x] Local and ci improvements
 - [] Image page for fun
 - [] Analytics https://www.goatcounter.com/
 - [] Infra
 - [] Ship
+- [] Fix and finish all existing blogs
+- [] Fix and finish all existing notes
