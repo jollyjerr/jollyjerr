@@ -407,3 +407,27 @@ html {
     margin-bottom: 2em;
   }
 }
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  margin-block: 3em;
+
+  & img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5em;
+  }
+
+  & a {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .photo-gallery {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+  }
+}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {{section.content | safe}}
+
+  <div class="photo-gallery">
+    {% for asset in section.assets -%}
+      {% if asset is matching("[.](jpg|png)$") %}
+        {% set image = resize_image(path=asset, width=800, height=800, op="fill") %}
+        <a href="{{ get_url(path=asset) }}" target="_blank">
+          <img src="{{ image.url }}" />
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endblock content %}
