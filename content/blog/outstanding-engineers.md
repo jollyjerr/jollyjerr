@@ -2,7 +2,7 @@
 title = "Outstanding Engineers"
 subtitle = "How did they become outstanding?"
 date = "2023-02-25"
-draft = false
+draft = true
 
 [taxonomies]
 tags = ["career"]

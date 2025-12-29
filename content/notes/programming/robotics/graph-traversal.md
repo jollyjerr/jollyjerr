@@ -1,4 +1,8 @@
 +++
+title = "Graph Traversal"
+
+[extra]
+navname = "notes"
 +++
 
 # Graph Traversal

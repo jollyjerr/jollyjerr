@@ -1,4 +1,8 @@
 +++
+title = "Virtual Networking"
+
+[extra]
+navname = "notes"
 +++
 
 # Virtual Networking

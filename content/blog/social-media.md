@@ -1,7 +1,7 @@
 +++
 title = "Why I Left Social Media"
 date = "2024-05-14"
-draft = false
+draft = true
 
 [taxonomies]
 tags = ["life"]

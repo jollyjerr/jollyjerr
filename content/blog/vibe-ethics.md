@@ -2,7 +2,7 @@
 title = "The Vibes of Ethics"
 description = "Why is good ethical behavior giving boomer"
 date = "2025-05-22"
-draft = false
+draft = true
 
 [taxonomies]
 tags = ["tech", "ethics"]

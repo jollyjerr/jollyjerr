@@ -1,4 +1,8 @@
 +++
+title = "Trig Identities"
+
+[extra]
+navname = "notes"
 +++
 
 ## Trig identities

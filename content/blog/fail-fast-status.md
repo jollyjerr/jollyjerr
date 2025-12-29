@@ -1,7 +1,7 @@
 +++
 title = "The Two Status Codes of a Fail Fast Mentality"
 date = "2024-05-14"
-draft = false
+draft = true
 
 [taxonomies]
 tags = ["tech", "backend", "web", "elixir"]

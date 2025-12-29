@@ -7,7 +7,7 @@
   {% set notes = get_section(path="notes/_index.md") %}
 
   <section class="home-section">
-    <h2>Highlights</h2>
+    <h2>Popular</h2>
     <ul class="post-list">
       {% for post in blogs.pages %}
         {% if post.extra.pinned %}
@@ -21,7 +21,7 @@
   </section>
 
   <section class="home-section">
-    <h2>Latest Blogs</h2>
+    <h2>Latest</h2>
     <ul class="post-list">
       {% for post in blogs.pages | slice(end=8) %}
         <li class="post-item">

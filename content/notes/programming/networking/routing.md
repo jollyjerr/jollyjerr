@@ -1,4 +1,8 @@
 +++
+title = "Routing"
+
+[extra]
+navname = "notes"
 +++
 
 # Routing

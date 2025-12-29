@@ -1,4 +1,8 @@
 +++
+title = "Trajectory"
+
+[extra]
+navname = "notes"
 +++
 
 # Trajectory

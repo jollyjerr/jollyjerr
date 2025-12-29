@@ -1,4 +1,8 @@
 +++
+title = "Behavior Trees"
+
+[extra]
+navname = "notes"
 +++
 
 # Behavior Trees

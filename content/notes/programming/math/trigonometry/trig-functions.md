@@ -1,4 +1,8 @@
 +++
+title = "Trig Functions"
+
+[extra]
+navname = "notes"
 +++
 
 There are six trig functions which all describe relationships on a right triangle (for now)

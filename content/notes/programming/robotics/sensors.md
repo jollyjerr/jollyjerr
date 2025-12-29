@@ -1,4 +1,8 @@
 +++
+title = "Sensors and Actuators"
+
+[extra]
+navname = "notes"
 +++
 
 # Sensors and Actuators

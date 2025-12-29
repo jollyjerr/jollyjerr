@@ -1,4 +1,8 @@
 +++
+title = "Randomized Planning"
+
+[extra]
+navname = "notes"
 +++
 
 # Randomized Planning

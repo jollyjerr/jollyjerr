@@ -1,4 +1,8 @@
 +++
+title = "Nmap"
+
+[extra]
+navname = "notes"
 +++
 
 # Nmap

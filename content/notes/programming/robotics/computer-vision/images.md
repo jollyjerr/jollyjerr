@@ -1,4 +1,8 @@
 +++
+title = "Images"
+
+[extra]
+navname = "notes"
 +++
 
 # Images

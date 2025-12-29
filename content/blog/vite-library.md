@@ -2,7 +2,7 @@
 title = "Vite Library Mode"
 description = "A great way to publish a TypeScript library"
 date = "2023-02-25"
-draft = false
+draft = true
 
 [taxonomies]
 tags = ["tech", "frontend", "web", "typescript"]

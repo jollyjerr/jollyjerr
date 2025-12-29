@@ -1,4 +1,8 @@
 +++
+title = "Network Security"
+
+[extra]
+navname = "notes"
 +++
 
 # Network Security

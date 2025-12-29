@@ -1,4 +1,8 @@
 +++
+title = "Reactive Behavior and State Machines"
+
+[extra]
+navname = "notes"
 +++
 
 # Reactive Behavior and State Machines

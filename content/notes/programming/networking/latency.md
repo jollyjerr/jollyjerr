@@ -1,4 +1,8 @@
 +++
+title = "Network Performance"
+
+[extra]
+navname = "notes"
 +++
 
 # Performance of network traffic

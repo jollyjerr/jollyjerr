@@ -1,4 +1,8 @@
 +++
+title = "Degrees of Freedom"
+
+[extra]
+navname = "notes"
 +++
 
 # Coordinate System and Degrees of freedom
