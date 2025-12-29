@@ -46,6 +46,19 @@ resource "cloudflare_pages_project" "jtabb" {
     build_command   = "zola build"
     destination_dir = "public"
   }
+
+  deployment_configs {
+    preview {
+      environment_variables = {
+        ZOLA_VERSION = "0.21.0"
+      }
+    }
+    production {
+      environment_variables = {
+        ZOLA_VERSION = "0.21.0"
+      }
+    }
+  }
 }
 
 resource "cloudflare_pages_domain" "jtabbdomain" {
