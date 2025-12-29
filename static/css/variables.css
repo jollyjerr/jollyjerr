@@ -1,0 +1,17 @@
+:root {
+  color-scheme: light dark;
+
+  --bg: oklch(98% 0.005 250);
+  --fg: oklch(18% 0.025 260);
+  --muted: oklch(85% 0.015 250);
+  --accent: oklch(45% 0.2 290);
+  --border: oklch(90% 0.01 250);
+}
+
+.dark {
+  --bg: oklch(15% 0.02 260);
+  --fg: oklch(92% 0.015 250);
+  --muted: oklch(35% 0.02 260);
+  --accent: oklch(75% 0.18 290);
+  --border: oklch(25% 0.015 260);
+}

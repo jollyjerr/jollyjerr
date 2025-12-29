@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="home-section">
+    <p class="more-link"><a href="{{ get_url(path="/tags") }}"><- all tags</a></p>
+      <h2>{{ taxonomy.name | capitalize }}: {{ term.name | capitalize }}</h2>
+
+      <ul class="post-list">
+        {% for page in term.pages %}
+          <li class="post-item">
+            <time datetime="{{ page.date }}">{{ page.date | date(format="%Y-%m-%d") }}</time>
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+{% endblock content %}

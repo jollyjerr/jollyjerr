@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-title" content="jtabb" />
+
+        <link rel="icon" type="image/png" href={{ get_url(path="/favicon-96x96.png") | safe  }} sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href={{ get_url(path="/favicon.svg") | safe }} />
+        <link rel="shortcut icon" href={{ get_url(path="/favicon.ico") | safe }} />
+        <link rel="apple-touch-icon" sizes="180x180" href={{ get_url(path="/apple-touch-icon.png") | safe }}/>
+        <link rel="stylesheet" href="{{ get_url(path="css/base.css") | safe }}">
+
+        <script data-goatcounter="https://jollyjerr.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+        <script src="{{ get_url(path="js/init-theme.js") }}"></script>
+
+        <title>
+            {%- if page.title -%}
+                {{ page.title }}
+            {%- elif section.title -%}
+                {{ section.title }}
+            {%- else -%}
+                {{ config.title }}
+            {%- endif -%}
+        </title>
+    </head>
+
+    <body>
+        <header class="contained">
+            <div class="logo-title">
+                <a href="{{ get_url(path="/") }}">
+                    <img src={{ get_url(path="/favicon.svg") | safe }} class="logo" />
+                </a>
+                <h1>
+                    / {{" "}}
+                    {%- if page.extra.navname -%}
+                        {{ page.extra.navname }}
+                    {%- elif section.extra.navname -%}
+                        {{ section.extra.navname }}
+                    {%- else -%}
+                        blog
+                    {%- endif -%}
+                </h1>
+            </div>
+        </header>
+
+        <main class="contained">
+            {% block content %}{% endblock content %}
+        </main>
+
+        <footer class="contained">
+            <a href="{{ get_url(path="/") }}">home</a>
+            <a href="{{ get_url(path="/about") }}">about</a>
+            <a href="{{ get_url(path="/links") }}">links</a>
+            <a href="{{ get_url(path="/search") }}">search</a>
+            <button
+                id="theme-toggle"
+                aria-label="Toggle theme"
+            >
+                <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m3.343-5.657L5.636 5.636m12.728 12.728L18.364 18.364M12 7a5 5 0 110 10 5 5 0 010-10z"/>
+                </svg>
+                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                </svg>
+            </button>
+        </footer>
+    </body>
+
+</html>
+
+<script src="{{ get_url(path="js/toggle-theme.js") }}"></script>

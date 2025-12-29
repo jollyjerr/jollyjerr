@@ -1,0 +1,30 @@
+base_url = "https://jtabb.dev"
+title = "Jeremiah Tabb | Software"
+author = "Jeremiah Tabb"
+
+default_language = "en"
+ignored_content = []
+ignored_static = []
+
+compile_sass = false
+minify_html = false
+hard_link_static = true
+generate_sitemap = true
+generate_robots_txt = true
+
+build_search_index = true
+generate_feeds = true
+
+taxonomies = [
+    { name = "tags", feed = true }
+]
+
+[markdown]
+highlight_code = true
+highlight_theme = "two-dark"
+render_emoji = true
+external_links_class = "link-out"
+external_links_target_blank = true
+lazy_async_image = true
+bottom_footnotes = true
+insert_anchor_links = "left"

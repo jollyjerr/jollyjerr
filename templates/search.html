@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <script src="{{ get_url(path="/elasticlunr.min.js") }}"></script>
+  <script src="{{ get_url(path="/search_index.en.js") }}"></script>
+  <script src="{{ get_url(path="js/search.js") }}"></script>
+
+  <div class="search-section">
+    <input
+      type="text"
+      id="search-input"
+      placeholder="Type to search..."
+      autocomplete="off"
+      autofocus
+    />
+
+    <div id="search-results"></div>
+  </div>
+{% endblock content %}
+
