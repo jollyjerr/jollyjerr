@@ -6,32 +6,75 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="apple-mobile-web-app-title" content="jtabb" />
+        <meta name="theme-color" content="#1f2028" />
+        <meta name="subject" content="jtabb.dev" />
+        <meta name="rating" content="General" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://jtabb.dev/apple-touch-icon.png" />
+        <meta property="og:image:alt" content="jtabb.dev logo" />
+        <meta property="og:site_name" content="jtabb.dev" />
+        <meta property="og:locale" content="en_US" />
+        {%- if page.title -%}
+            <title>{{ page.title }}</title>
+            <meta property="og:title" content="{{ page.title }}" />
+        {%- elif section.title -%}
+            <title>{{ section.title }}</title>
+            <meta property="og:title" content="{{ section.title }}" />
+        {%- else -%}
+            <title>{{ config.title }}</title>
+            <meta property="og:title" content="{{ config.title }}" />
+        {%- endif -%}
+        {%- if page.description -%}
+            <meta name="description" content="{{ page.description }}"/>
+            <meta property="og:description" content="{{ page.description }}" />
+        {%- elif section.description -%}
+            <meta name="description" content="{{ section.description }}"/>
+            <meta property="og:description" content="{{ section.description }}" />
+        {%- else -%}
+            <meta name="description" content="{{ config.description }}"/>
+            <meta property="og:description" content="{{ config.description }}" />
+        {%- endif -%}
 
+        <link rel="stylesheet" href="{{ get_url(path="css/base.css") | safe }}">
+        <style>
+            :root{color-scheme:light dark;--bg:oklch(98% .005 250);--fg:oklch(18% .025 260);--muted:oklch(85% .015 250);--accent:oklch(45% .2 290);--border:oklch(90% .01 250)}.dark{--bg:oklch(15% .02 260);--fg:oklch(92% .015 250);--muted:oklch(35% .02 260);--accent:oklch(75% .18 290);--border:oklch(25% .015 260)}
+            *,:after,:before,::backdrop,::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:--theme(--default-font-family,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji");font-feature-settings:--theme(--default-font-feature-settings,normal);font-variation-settings:--theme(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:--theme(--default-mono-font-family,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace);font-feature-settings:--theme(--default-mono-font-feature-settings,normal);font-variation-settings:--theme(--default-mono-font-variation-settings,normal);font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}:-moz-focusring{outline:auto}progress{vertical-align:baseline}summary{display:list-item}ol,ul,menu{list-style:none}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;}button,input,select,optgroup,textarea,::file-selector-button{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}:where(select:is([multiple],[size])) optgroup{font-weight:bolder}:where(select:is([multiple],[size])) optgroup option{padding-inline-start:20px}::file-selector-button{margin-inline-end:4px}::placeholder{opacity:1}@supports (not ((-webkit-appearance:-apple-pay-button))) or (contain-intrinsic-size:1px){::placeholder{color:color-mix(in oklab,currentcolor 50%,transparent)}}textarea{resize:vertical}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field{padding-block:0}::-webkit-calendar-picker-indicator{line-height:1}:-moz-ui-invalid{box-shadow:none}button,input:where([type=button],[type=reset],[type=submit]),::file-selector-button{appearance:button}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[hidden]:where(:not([hidden=until-found])){display:none!important}
+        </style>
+
+        <link rel="preconnect" href="https://gc.zgo.at">
+        <link rel="preload" href="{{ get_url(path="/favicon-96x96.png") | safe }}" as="image" fetchpriority="high">
         <link rel="icon" type="image/png" href={{ get_url(path="/favicon-96x96.png") | safe  }} sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href={{ get_url(path="/favicon.svg") | safe }} />
         <link rel="shortcut icon" href={{ get_url(path="/favicon.ico") | safe }} />
         <link rel="apple-touch-icon" sizes="180x180" href={{ get_url(path="/apple-touch-icon.png") | safe }}/>
-        <link rel="stylesheet" href="{{ get_url(path="css/base.css") | safe }}">
+        <link rel="preload" href="{{ get_url(path="js/toggle-theme.js") }}" as="script">
 
+        <script>
+            (function initTheme() {
+                const savedTheme = localStorage.getItem("theme");
+
+                if (savedTheme === "dark") {
+                    document.documentElement.classList.add("dark");
+                } else if (savedTheme === "light") {
+                    document.documentElement.classList.remove("dark");
+                } else {
+                    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                        document.documentElement.classList.add("dark");
+                    }
+                }
+            })();
+        </script>
+        <script src="{{ get_url(path="js/toggle-theme.js") }}" defer></script>
         <script data-goatcounter="https://jollyjerr.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-        <script src="{{ get_url(path="js/init-theme.js") }}"></script>
-
-        <title>
-            {%- if page.title -%}
-                {{ page.title }}
-            {%- elif section.title -%}
-                {{ section.title }}
-            {%- else -%}
-                {{ config.title }}
-            {%- endif -%}
-        </title>
     </head>
 
     <body>
         <header class="contained">
             <div class="logo-title">
-                <a href="{{ get_url(path="/") }}">
-                    <img src={{ get_url(path="/favicon.svg") | safe }} class="logo" />
+                <a href="{{ get_url(path="/") }}" aria-label="Navigate home">
+                    <img width="35" height="35" alt="8Bit style character"
+                         src="{{ get_url(path="/favicon-96x96.png") | safe }}"
+                         class="logo" />
                 </a>
                 <h1>
                     / {{" "}}
@@ -71,4 +114,3 @@
 
 </html>
 
-<script src="{{ get_url(path="js/toggle-theme.js") }}"></script>

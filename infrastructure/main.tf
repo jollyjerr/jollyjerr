@@ -43,7 +43,7 @@ resource "cloudflare_pages_project" "jtabb" {
   }
 
   build_config {
-    build_command   = "zola build"
+    build_command   = "infrastructure/build.sh"
     destination_dir = "public"
   }
 
@@ -51,11 +51,13 @@ resource "cloudflare_pages_project" "jtabb" {
     preview {
       environment_variables = {
         ZOLA_VERSION = "0.21.0"
+        UNSTABLE_PRE_BUILD = "asdf plugin add zola https://github.com/salasrod/asdf-zola && asdf install zola latest && asdf global zola latest"
       }
     }
     production {
       environment_variables = {
         ZOLA_VERSION = "0.21.0"
+        UNSTABLE_PRE_BUILD = "asdf plugin add zola https://github.com/salasrod/asdf-zola && asdf install zola latest && asdf global zola latest"
       }
     }
   }

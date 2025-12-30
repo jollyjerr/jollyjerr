@@ -1,6 +1,3 @@
-@import "reset.css";
-@import "variables.css";
-
 .dark {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -63,7 +60,6 @@ header {
   }
 
   & .logo {
-    width: 35px;
     padding-bottom: 2px;
   }
 }
