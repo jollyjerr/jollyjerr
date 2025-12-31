@@ -1,0 +1,863 @@
+:root {
+  color-scheme: light dark;
+  --bg: oklch(98% 0.005 250);
+  --fg: oklch(18% 0.025 260);
+  --muted: oklch(85% 0.015 250);
+  --accent: oklch(45% 0.2 290);
+  --border: oklch(90% 0.01 250);
+}
+
+.dark {
+  --bg: oklch(15% 0.02 260);
+  --fg: oklch(92% 0.015 250);
+  --muted: oklch(35% 0.02 260);
+  --accent: oklch(75% 0.18 290);
+  --border: oklch(25% 0.015 260);
+}
+
+/*
+  1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+  2. Remove default margins and padding
+  3. Reset all borders.
+*/
+
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  box-sizing: border-box; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 2 */
+  border: 0 solid; /* 3 */
+}
+
+/*
+  1. Use a consistent sensible line-height in all browsers.
+  2. Prevent adjustments of font size after orientation changes in iOS.
+  3. Use a more readable tab size.
+  4. Use the user's configured `sans` font-family by default.
+  5. Use the user's configured `sans` font-feature-settings by default.
+  6. Use the user's configured `sans` font-variation-settings by default.
+  7. Disable tap highlights on iOS.
+*/
+
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  tab-size: 4; /* 3 */
+  font-family: --theme(
+    --default-font-family,
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji"
+  ); /* 4 */
+  font-feature-settings: --theme(
+    --default-font-feature-settings,
+    normal
+  ); /* 5 */
+  font-variation-settings: --theme(
+    --default-font-variation-settings,
+    normal
+  ); /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+
+/*
+  1. Add the correct height in Firefox.
+  2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+  3. Reset the default border style to a 1px solid border.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+  Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/*
+  Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+  Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+}
+
+/*
+  Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+  1. Use the user's configured `mono` font-family by default.
+  2. Use the user's configured `mono` font-feature-settings by default.
+  3. Use the user's configured `mono` font-variation-settings by default.
+  4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: --theme(
+    --default-mono-font-family,
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace
+  ); /* 1 */
+  font-feature-settings: --theme(
+    --default-mono-font-feature-settings,
+    normal
+  ); /* 2 */
+  font-variation-settings: --theme(
+    --default-mono-font-variation-settings,
+    normal
+  ); /* 3 */
+  font-size: 1em; /* 4 */
+}
+
+/*
+  Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+  Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+  1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+  2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+  3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+  Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+  Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+  Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+  Make lists unstyled by default.
+*/
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/*
+  1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+  2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+      This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+  Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+  1. Inherit font styles in all browsers.
+  2. Remove border radius in all browsers.
+  3. Remove background color in all browsers.
+  4. Ensure consistent opacity for disabled states in all browsers.
+*/
+
+button,
+input,
+select,
+optgroup,
+textarea,
+::file-selector-button {
+  font: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  border-radius: 0; /* 2 */
+  background-color: transparent; /* 3 */
+  opacity: 1; /* 4 */
+}
+
+/*
+  Restore default font weight.
+*/
+
+:where(select:is([multiple], [size])) optgroup {
+  font-weight: bolder;
+}
+
+/*
+  Restore indentation.
+*/
+
+:where(select:is([multiple], [size])) optgroup option {
+  padding-inline-start: 20px;
+}
+
+/*
+  Restore space after button.
+*/
+
+::file-selector-button {
+  margin-inline-end: 4px;
+}
+
+/*
+  Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+*/
+
+::placeholder {
+  opacity: 1;
+}
+
+/*
+  Set the default placeholder color to a semi-transparent version of the current text color in browsers that do not
+  crash when using `color-mix(…)` with `currentcolor`. (https://github.com/tailwindlabs/tailwindcss/issues/17194)
+*/
+
+@supports (not (-webkit-appearance: -apple-pay-button)) /* Not Safari */ or
+  (contain-intrinsic-size: 1px) /* Safari 17+ */ {
+  ::placeholder {
+    color: color-mix(in oklab, currentcolor 50%, transparent);
+  }
+}
+
+/*
+  Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+  Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+  1. Ensure date/time inputs have the same height when empty in iOS Safari.
+  2. Ensure text alignment can be changed on date/time inputs in iOS Safari.
+*/
+
+::-webkit-date-and-time-value {
+  min-height: 1lh; /* 1 */
+  text-align: inherit; /* 2 */
+}
+
+/*
+  Prevent height from changing on date/time inputs in macOS Safari when the input is set to `display: block`.
+*/
+
+::-webkit-datetime-edit {
+  display: inline-flex;
+}
+
+/*
+  Remove excess padding from pseudo-elements in date/time inputs to ensure consistent height across browsers.
+*/
+
+::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+::-webkit-datetime-edit,
+::-webkit-datetime-edit-year-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-minute-field,
+::-webkit-datetime-edit-second-field,
+::-webkit-datetime-edit-millisecond-field,
+::-webkit-datetime-edit-meridiem-field {
+  padding-block: 0;
+}
+
+/*
+  Center dropdown marker shown on inputs with paired `<datalist>`s in Chrome. (https://github.com/tailwindlabs/tailwindcss/issues/18499)
+*/
+
+::-webkit-calendar-picker-indicator {
+  line-height: 1;
+}
+
+/*
+  Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+  Correct the inability to style the border radius in iOS Safari.
+*/
+
+button,
+input:where([type="button"], [type="reset"], [type="submit"]),
+::file-selector-button {
+  appearance: button;
+}
+
+/*
+  Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+  Make elements with the HTML hidden attribute stay hidden by default.
+*/
+
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none !important;
+}
+
+.dark {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+main {
+  flex-grow: 1;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+  opacity: 0.8;
+  color: var(--accent);
+}
+
+a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.contained {
+  max-width: 88em;
+  margin-inline: auto;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+header,
+footer {
+  padding-top: 1.6em;
+  padding-bottom: 1.6em;
+}
+
+header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  line-height: 1;
+
+  & .logo-title {
+    display: flex;
+    align-items: flex-end;
+    font-size: x-large;
+  }
+
+  & .logo {
+    padding-bottom: 2px;
+  }
+}
+
+.logo-title {
+  & a {
+    opacity: 1;
+    color: inherit;
+  }
+}
+
+footer {
+  display: flex;
+  align-content: center;
+  gap: 1em;
+}
+
+#theme-toggle {
+  width: 18px;
+}
+
+#moon-icon {
+  display: none;
+}
+
+.dark #sun-icon {
+  display: none;
+}
+
+.dark #moon-icon {
+  display: block;
+}
+
+.home-section {
+  margin-bottom: 4em;
+
+  & h1 {
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+
+  & h2 {
+    margin-bottom: 1em;
+    font-size: 1.4rem;
+    opacity: 0.9;
+  }
+}
+
+.post-list .post-item {
+  margin-bottom: 0.8em;
+}
+
+.post-list .post-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--fg);
+  text-decoration: none;
+  padding: 0.2em 0;
+}
+
+.post-list .post-link:hover {
+  color: var(--accent);
+}
+
+.post-list .post-link:hover .post-title {
+  text-decoration: underline;
+}
+
+.post-list .post-title {
+  flex: 1;
+  font-size: 1.05em;
+}
+
+.post-list .post-date {
+  flex-shrink: 0;
+  margin-left: 1em;
+  font-size: 0.9em;
+  opacity: 0.65;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.category-list li {
+  margin-bottom: 0.8em;
+}
+
+.category-list a {
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.category-list a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.category-desc {
+  display: block;
+  font-size: 0.9em;
+  opacity: 0.7;
+  margin-top: 0.2em;
+  margin-left: 1em;
+}
+
+.more-link {
+  margin-top: 1.5em;
+  font-size: 0.95em;
+}
+
+.more-link a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.more-link a:hover {
+  text-decoration: underline;
+}
+
+article {
+  max-width: 48em;
+  margin-inline: auto;
+  line-height: 1.7;
+  font-size: 1.1rem;
+
+  & h1 {
+    font-size: 2rem;
+    margin-block: 0em 0.8em;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  & h2 {
+    font-size: 1.6rem;
+    margin-block: 2em 0.8em;
+    font-weight: 600;
+    scroll-margin-top: 2em;
+  }
+
+  & h3 {
+    font-size: 1.35rem;
+    margin-block: 1.8em 0.6em;
+    font-weight: 600;
+  }
+
+  & h4,
+  & h5,
+  & h6 {
+    font-size: 1.15rem;
+    margin-block: 1.6em 0.5em;
+    font-weight: 600;
+  }
+
+  & p {
+    margin-block: 1.2em;
+  }
+
+  & ul,
+  & ol {
+    margin-block: 1.2em;
+    padding-left: 1.5em;
+  }
+
+  & ul {
+    list-style: disc outside;
+  }
+
+  & ol {
+    list-style: decimal outside;
+  }
+
+  & li {
+    margin-block: 0.4em;
+  }
+
+  & blockquote {
+    margin-block: 1.8em;
+    padding-left: 1.5em;
+    border-left: 4px solid var(--accent);
+    opacity: 0.9;
+    font-style: italic;
+  }
+
+  & hr {
+    margin-block: 3em;
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+
+  & img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5em;
+    margin-block: 2em;
+    display: block;
+    margin-inline: auto;
+  }
+
+  & figure {
+    margin-block: 2.5em;
+  }
+
+  & figcaption {
+    text-align: center;
+    font-size: 0.95em;
+    opacity: 0.8;
+    margin-top: 0.8em;
+  }
+
+  & a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  & a:hover {
+    opacity: 0.8;
+  }
+
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: 2em;
+  }
+
+  & th,
+  & td {
+    padding: 0.8em 1em;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  & th {
+    font-weight: 600;
+    background: var(--muted);
+  }
+}
+
+.zola-anchor {
+  transition: opacity 0.2s ease;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+article pre {
+  max-width: 100%;
+  padding: 1em;
+  border-radius: 0.5em;
+  overflow-x: auto;
+  background: var(--muted);
+  margin-block: 1.5em;
+  white-space: pre;
+  tab-size: 4;
+}
+
+article pre code {
+  display: block;
+  white-space: inherit;
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+#profile {
+  max-width: 18em;
+}
+
+#avatar {
+  aspect-ratio: 1/1;
+  max-width: 12em;
+  border-radius: 100%;
+}
+
+.links-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: center;
+  list-style: none;
+
+  & a {
+    display: block;
+    text-align: center;
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 1em;
+}
+
+.post-tags {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  max-width: 48em;
+  margin-inline: auto;
+  font-weight: bold;
+  width: 100%;
+}
+
+.breadcrumbs {
+  align-content: center;
+
+  & ol {
+    display: flex;
+    gap: 0.3em;
+    align-content: center;
+  }
+}
+
+.search-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+
+  & input {
+    width: 100%;
+    max-width: 40em;
+    padding: 0.6em;
+    border-style: solid;
+    border-color: var(--border);
+    border-width: 2px;
+    border-radius: 0.4em;
+    margin-bottom: 2em;
+  }
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  margin-block: 3em;
+
+  & img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5em;
+  }
+
+  & a {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .photo-gallery {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+  }
+}

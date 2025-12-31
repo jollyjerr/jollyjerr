@@ -12,8 +12,12 @@
       {% for post in blogs.pages %}
         {% if post.extra.pinned %}
           <li class="post-item">
-            <time datetime="{{ post.date }}">{{ post.date | date(format="%Y-%m-%d") }}</time>
-            <a href="{{ post.permalink }}">{{ post.title }}</a>
+            <a href="{{ post.permalink }}" class="post-link">
+              <span class="post-title">{{ post.title }}</span>
+              <time datetime="{{ post.date }}" class="post-date">
+                {{ post.date | date(format="%B %-d, %Y") }}
+              </time>
+            </a>
           </li>
         {% endif %}
       {% endfor %}
@@ -25,8 +29,12 @@
     <ul class="post-list">
       {% for post in blogs.pages | slice(end=8) %}
         <li class="post-item">
-          <time datetime="{{ post.date }}">{{ post.date | date(format="%Y-%m-%d") }}</time>
-          <a href="{{ post.permalink }}">{{ post.title }}</a>
+          <a href="{{ post.permalink }}" class="post-link">
+            <span class="post-title">{{ post.title }}</span>
+            <time datetime="{{ post.date }}" class="post-date">
+              {{ post.date | date(format="%B %-d, %Y") }}
+            </time>
+          </a>
         </li>
       {% endfor %}
     </ul>

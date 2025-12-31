@@ -1,17 +1,20 @@
 setup:
   brew install zola
   pip install djhtml
-  npm install -g prettier cspell
+  npm install -g prettier cspell lightningcss-cli
 
 dev:
   zola serve
 
-build:
+build: buildcss
   zola build
+
+buildcss:
+  lightningcss --minify --targets "> 0.5%, last 2 versions, not dead" static/css/styles.css -o static/style.min.css
 
 format:
     djhtml $(find templates -type f -name '*.html')
-    prettier --write "**/*.{md,css,json}"
+    prettier --write "**/*.{md,json}"
 
 spellcheck:
     cspell --no-progress --show-suggestions --show-context "**/*.{md,html}"

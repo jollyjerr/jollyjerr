@@ -6,8 +6,10 @@
 
     <ul class="post-list">
       {% for term in terms %}
-        <li>
-          <a href="{{ term.permalink }}">{{ term.name }}</a>
+        <li class="post-item">
+          <a class="post-link" href="{{ term.permalink }}">
+            <span class="post-title">{{ term.name }}</span>
+          </a>
         </li>
       {% endfor %}
     </ul>
