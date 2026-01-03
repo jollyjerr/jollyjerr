@@ -13,7 +13,7 @@
         {% if post.extra.pinned %}
           <li class="post-item">
             <a href="{{ post.permalink }}" class="post-link">
-              <span class="post-title">{{ post.title }}</span>
+              <div class="post-title">{{ post.title }}</div>
               <time datetime="{{ post.date }}" class="post-date">
                 {{ post.date | date(format="%B %-d, %Y") }}
               </time>
@@ -30,7 +30,7 @@
       {% for post in blogs.pages | slice(end=8) %}
         <li class="post-item">
           <a href="{{ post.permalink }}" class="post-link">
-            <span class="post-title">{{ post.title }}</span>
+            <div class="post-title">{{ post.title }}</div>
             <time datetime="{{ post.date }}" class="post-date">
               {{ post.date | date(format="%B %-d, %Y") }}
             </time>

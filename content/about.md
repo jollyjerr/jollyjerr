@@ -1,6 +1,6 @@
 +++
 title = "About me"
-date = "2022-04-22"
+date = "2026-01-01"
 draft = false
 
 [extra]

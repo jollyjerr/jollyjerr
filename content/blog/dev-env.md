@@ -17,7 +17,7 @@ pinned = false
 
 As a programmer you spend **thousands** of hours at the computer.
 
-You have one life, you are spending a significant portion of it writing **JavaScript**, *and* you still don't take the time to hand craft a personalized local development environment?
+You have one life, you are spending a significant portion of it writing **JavaScript**, _and_ you still don't take the time to hand craft a personalized local development environment?
 
 This could save you years of your life. And if you are a young programmer just getting started, a proper development environment that fits your style is an investment that will compound your skills fast.
 
