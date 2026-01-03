@@ -539,6 +539,7 @@ footer {
 .post-list .post-link {
   display: flex;
   justify-content: space-between;
+  max-width: 36em;
   align-items: baseline;
   color: var(--fg);
   text-decoration: none;
