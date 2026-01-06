@@ -3,7 +3,7 @@ setup:
   pip install djhtml
   npm install -g prettier cspell lightningcss-cli
 
-dev:
+dev: buildcss
   zola serve
 
 build: buildcss
@@ -15,6 +15,7 @@ buildcss:
 format:
     djhtml $(find templates -type f -name '*.html')
     prettier --write "**/*.{md,json}"
+    prettier --write "static/css/styles.css"
 
 spellcheck:
     cspell --no-progress --show-suggestions --show-context "**/*.{md,html}"

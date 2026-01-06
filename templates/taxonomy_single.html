@@ -2,14 +2,14 @@
 
 {% block content %}
   <section class="home-section">
-    <p class="more-link"><a href="{{ get_url(path="/tags") }}">← all tags</a></p>
+    <p class="all-tags"><a href="{{ get_url(path="/tags") }}">← all tags</a></p>
     <h2>{{ taxonomy.name | capitalize }}: {{ term.name | capitalize }}</h2>
 
     <ul class="post-list">
       {% for page in term.pages %}
         <li class="post-item">
           <a href="{{ page.permalink }}" class="post-link">
-            <span class="post-title">{{ page.title }}</span>
+            <div class="post-title">{{ page.title }}</div>
             <time datetime="{{ page.date }}" class="post-date">
               {{ page.date | date(format="%B %-d, %Y") }}
             </time>

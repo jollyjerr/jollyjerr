@@ -32,8 +32,8 @@
       <h1 aria-current="page">{{ section.title }}</h1>
     </nav>
 
-    <section class="home-section">
-      <ul class="category-list">
+    <section>
+      <ul>
         {% for sub_path in section.subsections %}
           {% set sub = get_section(path=sub_path) %}
           <li>
@@ -41,7 +41,7 @@
           </li>
         {% endfor %}
         {% for page in section.pages  %}
-          <li class="post-item">
+          <li>
             <a href="{{ page.permalink }}">{{ page.title }}</a>
           </li>
         {% endfor %}

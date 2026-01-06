@@ -35,6 +35,7 @@
             <meta property="og:description" content="{{ config.description }}" />
         {%- endif -%}
 
+        {# <link rel="stylesheet" href="/css/styles.css" /> #}
         <style>
             {{ load_data(path="style.min.css", required=true) | safe }}
         </style>
@@ -66,32 +67,8 @@
         <script data-goatcounter="https://jollyjerr.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     </head>
 
-    <body>
-        <header class="contained">
-            <div class="logo-title">
-                <a href="{{ get_url(path="/") }}" aria-label="Navigate home">
-                    <img width="35" height="35" alt="8Bit style character"
-                         src="{{ get_url(path="/logo.webp") | safe }}"
-                         class="logo" />
-                </a>
-                <h1>
-                    / {{" "}}
-                    {%- if page.extra.navname -%}
-                        {{ page.extra.navname }}
-                    {%- elif section.extra.navname -%}
-                        {{ section.extra.navname }}
-                    {%- else -%}
-                        blog
-                    {%- endif -%}
-                </h1>
-            </div>
-        </header>
-
-        <main class="contained">
-            {% block content %}{% endblock content %}
-        </main>
-
-        <footer class="contained">
+    <body class="contained">
+        <header>
             <a href="{{ get_url(path="/") }}">home</a>
             <a href="{{ get_url(path="/about") }}">about</a>
             <a href="{{ get_url(path="/links") }}">links</a>
@@ -107,7 +84,10 @@
                     <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
                 </svg>
             </button>
-        </footer>
+        </header>
+        <main>
+            {% block content %}{% endblock content %}
+        </main>
     </body>
 
 </html>

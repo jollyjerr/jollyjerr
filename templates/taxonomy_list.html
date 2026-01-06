@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <section class="home-section">
+  <section class="taxonomy">
     <h2>{{ taxonomy.name | capitalize }}</h2>
 
-    <ul class="post-list">
+    <ul>
       {% for term in terms %}
-        <li class="post-item">
-          <a class="post-link" href="{{ term.permalink }}">
-            <span class="post-title">{{ term.name }}</span>
+        <li>
+          <a href="{{ term.permalink }}">
+            <span>{{ term.name }}</span>
           </a>
         </li>
       {% endfor %}
