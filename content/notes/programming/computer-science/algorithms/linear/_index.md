@@ -1,4 +1,5 @@
 +++
+title = "Linear Programming"
 +++
 
 # Linear Programming
@@ -23,11 +24,3 @@ constraints: [
     0 <= x1, x2, x3 <= 1
 ] of length m
 ```
-
-## Topics
-
-- [cake sharing problem](./cake-sharing.md)
-- [solving linear programs](./solving.md)
-- [network flow problems](./network-flow.md)
-- [geometry](./geometry.md)
-- [integer](./integer.md)

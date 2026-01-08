@@ -1,8 +1,5 @@
 +++
 title = "Selfish"
-
-[extra]
-navname = "notes"
 +++
 
 # Selfish

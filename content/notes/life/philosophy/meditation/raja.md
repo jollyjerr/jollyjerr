@@ -1,8 +1,5 @@
 +++
 title = "Raja"
-
-[extra]
-navname = "notes"
 +++
 
 # Raja

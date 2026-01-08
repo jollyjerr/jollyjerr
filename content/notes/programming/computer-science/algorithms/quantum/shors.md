@@ -1,4 +1,5 @@
 +++
+title = "Shor's Algorithm"
 +++
 
 # Shor's Algorithm

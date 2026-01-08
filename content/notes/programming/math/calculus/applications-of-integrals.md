@@ -1,4 +1,5 @@
 +++
+title = "Applications of Integrals"
 +++
 
 # Applications of Integrals

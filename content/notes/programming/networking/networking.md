@@ -1,8 +1,5 @@
 +++
 title = "Networking"
-
-[extra]
-navname = "notes"
 +++
 
 # Networking

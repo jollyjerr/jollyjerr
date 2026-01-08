@@ -1,4 +1,5 @@
 +++
+title = "Axioms of Probability"
 +++
 
 # Axioms of probability

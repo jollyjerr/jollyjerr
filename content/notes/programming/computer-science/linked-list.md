@@ -1,4 +1,5 @@
 +++
+title = "Linked List"
 +++
 
 # Linked List

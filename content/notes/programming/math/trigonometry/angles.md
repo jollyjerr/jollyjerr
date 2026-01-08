@@ -1,4 +1,5 @@
 +++
+title = "Angles"
 +++
 
 An angle is the result of two rays meeting at a vertex.

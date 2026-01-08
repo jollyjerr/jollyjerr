@@ -1,8 +1,5 @@
 +++
 title = "IP Link"
-
-[extra]
-navname = "notes"
 +++
 
 # Linux Network Device Configuration (IP Link)

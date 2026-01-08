@@ -1,4 +1,5 @@
 +++
+title = "Generative Models"
 +++
 
 # Generative Models

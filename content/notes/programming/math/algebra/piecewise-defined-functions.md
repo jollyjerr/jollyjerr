@@ -1,4 +1,5 @@
 +++
+title = "Piecewise Defined Functions"
 +++
 
 A piecewise defined function is just a fancy name for an some if statements that check the domain and run different operations depending on the domain.

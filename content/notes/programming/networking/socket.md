@@ -1,8 +1,5 @@
 +++
 title = "Socket Programming"
-
-[extra]
-navname = "notes"
 +++
 
 # Socket Programming

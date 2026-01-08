@@ -1,8 +1,5 @@
 +++
 title = "Linking"
-
-[extra]
-navname = "notes"
 +++
 
 # Linking

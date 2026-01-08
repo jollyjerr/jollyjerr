@@ -1,4 +1,5 @@
 +++
+title = "Greedy Algorithms"
 +++
 
 # Greedy Algorithms
@@ -32,8 +33,3 @@ optimal solution if minimizing for the number of coins **if you use normal US
 coin denominations** up to 50
 
 Also see: https://cs.uwaterloo.ca/~shallit/Papers/change2.pdf
-
-## Topics
-
-- [greedy interval scheduling](./scheduling.md)
-- [huffman codes](./huffman-codes.md)

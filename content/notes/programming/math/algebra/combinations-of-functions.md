@@ -1,4 +1,5 @@
 +++
+title = "Combinations of Functions"
 +++
 
 Functions can be operated on following the [order of operations](./operations.md) just like

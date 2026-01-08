@@ -1,4 +1,5 @@
 +++
+title = "Operations"
 +++
 
 - Associative property: `(a+b)+c = a+(b+c)`

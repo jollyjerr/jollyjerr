@@ -1,8 +1,5 @@
 +++
 title = "WebRTC"
-
-[extra]
-navname = "notes"
 +++
 
 # WebRTC

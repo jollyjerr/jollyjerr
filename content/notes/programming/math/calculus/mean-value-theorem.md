@@ -1,4 +1,5 @@
 +++
+title = "Mean Value Theorem"
 +++
 
 # Mean Value Theorem

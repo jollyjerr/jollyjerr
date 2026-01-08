@@ -1,8 +1,5 @@
 +++
 title = "Continuous Delivery"
-
-[extra]
-navname = "notes"
 +++
 
 # Continuous Delivery

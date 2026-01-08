@@ -1,4 +1,5 @@
 +++
+title = "Systems of Two Equations"
 +++
 
 You can solve systems of two equations in three ways:

@@ -1,4 +1,5 @@
 +++
+title = "Quantum Algorithms"
 +++
 
 # Quantum
@@ -8,8 +9,3 @@ made negligibly small probability - especially if you repeat the algorithm.
 
 Quantum algorithms have solved some NP problems in polynomial time, but never an NP
 complete problem - it is an open question if this relationship will hold.
-
-## Topics
-
-- [grover's search](./grovers-search.md)
-- [shor's Algorithm](./shors.md)

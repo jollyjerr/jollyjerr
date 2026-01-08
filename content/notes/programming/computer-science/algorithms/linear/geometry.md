@@ -1,4 +1,5 @@
 +++
+title = "Geometry of Linear Programs"
 +++
 
 # Geometry of linear programs

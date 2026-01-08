@@ -1,4 +1,5 @@
 +++
+title = "Predicates and Quantifiers"
 +++
 
 # Predicates and quantifiers

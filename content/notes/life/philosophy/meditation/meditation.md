@@ -1,8 +1,5 @@
 +++
 title = "Meditation"
-
-[extra]
-navname = "notes"
 +++
 
 # Meditation

@@ -1,4 +1,5 @@
 +++
+title = "Propositional Logic"
 +++
 
 # Propositional Logic

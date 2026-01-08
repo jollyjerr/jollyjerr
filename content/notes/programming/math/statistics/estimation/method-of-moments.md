@@ -1,4 +1,5 @@
 +++
+title = "Method of Moments Estimators"
 +++
 
 # Method of moments estimators

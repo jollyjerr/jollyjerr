@@ -1,4 +1,5 @@
 +++
+title = "Recurrences for Divide and Conquer Algorithms"
 +++
 
 # Recurrences for divide and conquer algorithms

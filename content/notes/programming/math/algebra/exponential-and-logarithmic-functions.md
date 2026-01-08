@@ -1,4 +1,5 @@
 +++
+title = "Exponential and Logarithmic Functions"
 +++
 
 ## Properties of exponential functions

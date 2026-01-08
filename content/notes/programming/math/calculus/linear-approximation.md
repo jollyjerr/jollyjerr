@@ -1,4 +1,5 @@
 +++
+title = "Linear Approximation"
 +++
 
 # Linear Approximation

@@ -1,4 +1,5 @@
 +++
+title = "Factoring"
 +++
 
 Factoring is the act of "un-[distributing](./operations.md)" EX: `6 = 3 * 2` (factored out a 3, 2 is left over)

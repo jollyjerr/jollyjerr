@@ -1,4 +1,5 @@
 +++
+title = "Machine Learning"
 +++
 
 # Machine Learning
@@ -37,29 +38,6 @@ Other:
 
 - Data generation
 - Feature selection
-
-## Topics
-
-### Supervised
-
-- [linear regression](./linear-regression.md)
-- [logistic regression](./logistic-regression.md)
-- [KNN](./knn.md)
-- [decision tree](./decision-tree.md)
-- [ensemble method](./ensemble.md)
-- [support vector machine](./svm.md)
-- Bayes classifier
-- [generative models](./generative-models.md)
-
-### Unsupervised
-
-- [principal component analysis](./pca.md)
-- [clustering](./clustering.md)
-- [recommender systems](./recommender.md)
-
-### Neural Networks
-
-- [deep learning](./deep-learning.md)
 
 ## Books
 

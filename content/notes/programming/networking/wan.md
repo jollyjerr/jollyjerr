@@ -1,8 +1,5 @@
 +++
 title = "WAN"
-
-[extra]
-navname = "notes"
 +++
 
 # WAN

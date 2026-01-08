@@ -1,4 +1,5 @@
 +++
+title = "Transformations of Distributions"
 +++
 
 # Transformations of distributions

@@ -1,8 +1,5 @@
 +++
 title = "Kubernetes Networking"
-
-[extra]
-navname = "notes"
 +++
 
 # Kubernetes Networking

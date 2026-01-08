@@ -1,4 +1,5 @@
 +++
+title = "Ratio Proportions"
 +++
 
 You can solve ratio and proportion problems with cross multiplication

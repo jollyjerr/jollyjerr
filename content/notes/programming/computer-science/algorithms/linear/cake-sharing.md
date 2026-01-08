@@ -1,4 +1,5 @@
 +++
+title = "Cake Sharing Problem"
 +++
 
 # Cake Sharing Problem

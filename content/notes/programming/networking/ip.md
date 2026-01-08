@@ -1,8 +1,5 @@
 +++
 title = "Internet Protocol"
-
-[extra]
-navname = "notes"
 +++
 
 # Internet Protocol

@@ -1,4 +1,5 @@
 +++
+title = "Fundamentals of Software Architecture for Big Data"
 +++
 
 # Fundamentals of software architecture for big data
@@ -45,10 +46,3 @@ unique complexity.
 
 Nothing has moved the needle of productivity by an order of magnitude in the
 last decade.
-
-## Topics
-
-- [testing](./testing.md)
-- [no silver bullet](./no-silver-bullet.md)
-- [application continuum](./application-continuum.md)
-- [service availability](./service-availability.md)

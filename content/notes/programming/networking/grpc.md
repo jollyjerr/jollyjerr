@@ -1,8 +1,5 @@
 +++
 title = "GRPC"
-
-[extra]
-navname = "notes"
 +++
 
 # GRPC

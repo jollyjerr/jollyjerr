@@ -1,4 +1,5 @@
 +++
+title = "Huffman Codes"
 +++
 
 # Huffman Codes

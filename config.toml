@@ -1,5 +1,6 @@
 base_url = "https://jtabb.dev"
 title = "Jeremiah Tabb | Software"
+description = "Notes about software and anything else."
 author = "Jeremiah Tabb"
 
 default_language = "en"

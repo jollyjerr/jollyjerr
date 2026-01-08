@@ -1,4 +1,5 @@
 +++
+title = "Dynamic Programming"
 +++
 
 # Dynamic programming
@@ -80,9 +81,3 @@ global problem. For example, if in knapsack you have a tipping point where
 taking over L items results in a change to the value of all items.
 
 current_optimal + solution_so_far != optimal
-
-## Topics
-
-- [coin changing problem](./coin-changing.md)
-- [knapsack problem](./knapsack.md)
-- [longest common subsequence](./common-subsequence.md)

@@ -1,8 +1,5 @@
 +++
 title = "Transport"
-
-[extra]
-navname = "notes"
 +++
 
 # Transport

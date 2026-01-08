@@ -1,4 +1,5 @@
 +++
+title = "Common Graphs"
 +++
 
 ### Parallel/Perpendicular lines

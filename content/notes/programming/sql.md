@@ -1,8 +1,5 @@
 +++
 title = "sql"
-
-[extra]
-navname = "notes"
 +++
 
 # SQL

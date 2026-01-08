@@ -1,4 +1,5 @@
 +++
+title = "Equations"
 +++
 
 - Expressions: just statements `abc + c^3 + ab` solve for a=2,b=-1,c-3

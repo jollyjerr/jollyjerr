@@ -1,8 +1,5 @@
 +++
 title = "Javascript"
-
-[extra]
-navname = "notes"
 +++
 
 # Javascript

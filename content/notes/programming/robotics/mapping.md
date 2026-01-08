@@ -1,8 +1,5 @@
 +++
 title = "Mapping"
-
-[extra]
-navname = "notes"
 +++
 
 # Mapping

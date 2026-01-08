@@ -1,4 +1,5 @@
 +++
+title = "Grammar of Graphics"
 +++
 
 # Grammar of graphics

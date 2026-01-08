@@ -1,8 +1,5 @@
 +++
 title = "Transmission Control Protocol"
-
-[extra]
-navname = "notes"
 +++
 
 # Transmission Control Protocol

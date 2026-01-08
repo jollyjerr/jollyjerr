@@ -1,4 +1,5 @@
 +++
+title = "Reasoning"
 +++
 
 # Logical reasoning

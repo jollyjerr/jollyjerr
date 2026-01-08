@@ -1,8 +1,5 @@
 +++
 title = "Software Defined Networking"
-
-[extra]
-navname = "notes"
 +++
 
 # Software Defined Networking

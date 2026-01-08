@@ -1,4 +1,5 @@
 +++
+title = "Hypothesis Testing Patterns"
 +++
 
 # Patterns

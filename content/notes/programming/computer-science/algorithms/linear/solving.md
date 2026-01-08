@@ -1,4 +1,5 @@
 +++
+title = "Solving Linear Programs"
 +++
 
 # Solving linear programs

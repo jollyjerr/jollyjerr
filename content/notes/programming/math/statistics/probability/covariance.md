@@ -1,4 +1,5 @@
 +++
+title = "Covariance and Correlation"
 +++
 
 # Covariance and Correlation

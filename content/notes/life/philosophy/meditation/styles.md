@@ -1,8 +1,5 @@
 +++
 title = "Meditative Styles"
-
-[extra]
-navname = "notes"
 +++
 
 # Meditative Styles

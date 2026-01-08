@@ -1,4 +1,5 @@
 +++
+title = "Random Variables"
 +++
 
 # Random Variables

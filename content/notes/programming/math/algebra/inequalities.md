@@ -1,4 +1,5 @@
 +++
+title = "Inequalities"
 +++
 
 Equations are equal, inequalities are unequal

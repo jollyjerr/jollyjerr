@@ -1,4 +1,5 @@
 +++
+title = "Ensemble Methods"
 +++
 
 # Ensemble Methods

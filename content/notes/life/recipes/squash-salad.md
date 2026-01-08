@@ -1,8 +1,5 @@
 +++
 title = "Squash and Cabbage Kale Salad"
-
-[extra]
-navname = "notes"
 +++
 
 # Squash and cabbage kale salad

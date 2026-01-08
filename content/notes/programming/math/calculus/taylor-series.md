@@ -1,4 +1,5 @@
 +++
+title = "Taylor Series"
 +++
 
 # Taylor Series

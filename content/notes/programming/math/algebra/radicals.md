@@ -1,4 +1,5 @@
 +++
+title = "Radicals"
 +++
 
 - Powers of negative bases

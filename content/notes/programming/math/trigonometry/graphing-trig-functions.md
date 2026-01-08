@@ -1,4 +1,5 @@
 +++
+title = "Graphing Trig Functions"
 +++
 
 # Graphing trig functions

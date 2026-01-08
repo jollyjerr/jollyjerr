@@ -1,8 +1,5 @@
 +++
 title = "Unit Circle"
-
-[extra]
-navname = "notes"
 +++
 
 # Unit Circle

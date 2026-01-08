@@ -1,4 +1,5 @@
 +++
+title = "Single Server"
 +++
 
 # Single Server

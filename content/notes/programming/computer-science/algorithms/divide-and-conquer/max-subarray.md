@@ -1,4 +1,5 @@
 +++
+title = "Max Subarray Problem"
 +++
 
 # Max subarray problem

@@ -1,4 +1,5 @@
 +++
+title = "Parametric Curves"
 +++
 
 # Parametric curves

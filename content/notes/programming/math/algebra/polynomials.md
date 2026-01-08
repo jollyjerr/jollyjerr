@@ -1,4 +1,5 @@
 +++
+title = "Polynomials"
 +++
 
 The sum of multiple power terms, EX: `(-3x^4 + x^2)` leading term = -3x^4 so degree = 4

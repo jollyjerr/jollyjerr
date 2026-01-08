@@ -1,8 +1,5 @@
 +++
 title = "Curried Red Lentils"
-
-[extra]
-navname = "notes"
 +++
 
 # Curried Red Lentils

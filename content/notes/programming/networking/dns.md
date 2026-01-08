@@ -1,8 +1,5 @@
 +++
 title = "DNS"
-
-[extra]
-navname = "notes"
 +++
 
 # Domain Name System

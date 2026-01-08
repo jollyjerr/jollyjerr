@@ -1,4 +1,5 @@
 +++
+title = "Like Terms"
 +++
 
 Addition/Subtraction: `2x+x-3x+5x = 5x`

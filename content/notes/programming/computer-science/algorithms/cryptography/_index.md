@@ -1,4 +1,5 @@
 +++
+title = "Cryptography"
 +++
 
 # Cryptography
@@ -32,7 +33,3 @@ with their private key.
 
 On the messages, Alice adds a signature that is encrypted with her private key
 so Bob can decrypt with her public key and identify that it is Alice.
-
-## Topics
-
-- [rsa](./rsa.md)

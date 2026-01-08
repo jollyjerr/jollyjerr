@@ -1,4 +1,5 @@
 +++
+title = "Theory of Computation"
 +++
 
 # Theory Of Computation

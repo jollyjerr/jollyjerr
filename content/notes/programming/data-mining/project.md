@@ -1,4 +1,5 @@
 +++
+title = "Data Mining Project"
 +++
 
 # Project

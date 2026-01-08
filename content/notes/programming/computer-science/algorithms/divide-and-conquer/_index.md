@@ -1,4 +1,5 @@
 +++
+title = "Divide and Conquer"
 +++
 
 # Divide and Conquer
@@ -22,10 +23,3 @@ any of the steps.
 In math, a recurrence is an equation that describes a function in terms of it's
 value on other, typically smaller, arguments. In CS we use recurrences to
 describe the running time of divide and conquer algorithms.
-
-## Topics
-
-- [max subarray problem](./max-subarray.md)
-- [karatsuba's multiplication](./karatsuba.md)
-- [recurrences](./recurrences.md)
-- [fast fourier transforms](./fast-fourier-transforms.md)

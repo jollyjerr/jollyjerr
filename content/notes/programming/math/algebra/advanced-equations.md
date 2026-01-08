@@ -1,4 +1,5 @@
 +++
+title = "Advanced Equations"
 +++
 
 Some common equations you see all over the place:

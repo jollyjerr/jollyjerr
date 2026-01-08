@@ -1,4 +1,5 @@
 +++
+title = "Law of Sin and Cosine"
 +++
 
 # The law of sines and law of cosines

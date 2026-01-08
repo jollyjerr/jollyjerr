@@ -1,4 +1,5 @@
 +++
+title = "Analytic Geometry"
 +++
 
 # Analytic Geometry

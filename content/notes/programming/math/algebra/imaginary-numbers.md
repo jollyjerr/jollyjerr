@@ -1,4 +1,5 @@
 +++
+title = "Imaginary Numbers"
 +++
 
 `i = sqt(-1)` and `i^2 = -1`

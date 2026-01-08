@@ -1,4 +1,5 @@
 +++
+title = "Sample Distributions"
 +++
 
 # Sample Distributions

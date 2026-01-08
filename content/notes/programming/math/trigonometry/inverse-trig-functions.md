@@ -1,4 +1,5 @@
 +++
+title = "Inverse Trig Functions"
 +++
 
 ## Inverse trig relations

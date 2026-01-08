@@ -1,4 +1,5 @@
 +++
+title = "Functions"
 +++
 
 See [functions](../discrete-structures/functions.md)

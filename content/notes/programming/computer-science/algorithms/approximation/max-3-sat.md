@@ -1,4 +1,5 @@
 +++
+title = "Maximum Satisfiability Problem"
 +++
 
 # Maximum Satisfiability Problem

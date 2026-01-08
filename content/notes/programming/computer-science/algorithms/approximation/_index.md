@@ -1,4 +1,5 @@
 +++
+title = "Approximation Algorithms"
 +++
 
 # Approximation Algorithms
@@ -53,10 +54,3 @@ this means the approximation is bounded by 2 over the optimum.
 
 You can do even better if you sort the jobs from largest to smallest before
 running the greedy scheduler. This bounds the difference from optimum by `3/2`.
-
-## Topics
-
-- [vertex cover](./vertex-cover.md)
-- [maximum satisfiability](./max-3-sat.md)
-- [traveling salesperson problem](./tsp.md)
-- [fully polynomial time approximation](./fully-polynomial.md)

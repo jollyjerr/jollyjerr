@@ -1,4 +1,5 @@
 +++
+title = "Slope"
 +++
 
 Slope = the change in y / the change in x

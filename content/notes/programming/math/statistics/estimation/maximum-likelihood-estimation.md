@@ -1,4 +1,5 @@
 +++
+title = "Maximum Likelihood Estimation"
 +++
 
 # Maximum Likelihood Estimation

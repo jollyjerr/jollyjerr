@@ -1,4 +1,5 @@
 +++
+title = "Vertex Cover"
 +++
 
 # Vertex Cover

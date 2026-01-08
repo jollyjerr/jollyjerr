@@ -1,8 +1,5 @@
 +++
 title = "HTTP"
-
-[extra]
-navname = "notes"
 +++
 
 # HTTP

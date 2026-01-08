@@ -1,8 +1,5 @@
 +++
 title = "Multi View Geometry"
-
-[extra]
-navname = "notes"
 +++
 
 # Multi View Geometry
