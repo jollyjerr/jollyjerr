@@ -21,11 +21,12 @@ taxonomies = [
 ]
 
 [markdown]
-highlight_code = true
-highlight_theme = "two-dark"
 render_emoji = true
 external_links_class = "link-out"
 external_links_target_blank = true
 lazy_async_image = true
 bottom_footnotes = true
 insert_anchor_links = "left"
+
+[markdown.highlighting]
+theme = "github-dark-dimmed"
