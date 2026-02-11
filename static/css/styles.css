@@ -641,6 +641,7 @@ html {
 
   & ol {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.3em;
     align-content: center;
     margin-bottom: 0.2em;

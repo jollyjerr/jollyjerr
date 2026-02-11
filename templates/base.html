@@ -35,10 +35,13 @@
             <meta property="og:description" content="{{ config.description }}" />
         {%- endif -%}
 
-        {# <link rel="stylesheet" href="/css/styles.css" /> #}
-        <style>
-            {{ load_data(path="style.min.css", required=true) | safe }}
-        </style>
+        {% if config.mode == "serve" %}
+            <link rel="stylesheet" href="/css/styles.css" />
+        {% else %}
+            <style>
+                {{ load_data(path="/style.min.css", required=true) | safe }}
+            </style>
+        {% endif %}
 
         <link rel="preconnect" href="https://gc.zgo.at">
 
