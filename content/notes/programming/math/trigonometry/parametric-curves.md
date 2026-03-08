@@ -32,7 +32,7 @@ t      x=t^2       y=t-2
 sketch these points and use arrows to show the direction of the curve as t increases
 ```
 
-[parabolas](../algebra/common-graphs.md)
+[parabolas](../algebra/common-graphs)
 
 ### From curve to equation
 

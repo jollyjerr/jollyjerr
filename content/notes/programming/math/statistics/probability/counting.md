@@ -4,7 +4,7 @@ title = "Counting"
 
 # Counting
 
-See also [counting in mathematics](../../discrete-structures/counting.md).
+See also [counting in mathematics](../../discrete-structures/counting).
 
 If a sample space S has N single events, and if each of these events is equally
 likely to occur, then we need only count the number of events to find the

@@ -8,7 +8,7 @@ title = "Asymptotic Analysis"
 
 A mathematical function can be Big O of another function if it is bounded above (less than) by that function after a certain point and multiplied by a constant C (AKA less than or equal to)
 
-Just have to [prove](../../math/discrete-structures/proofs.md) that one constant (C) works
+Just have to [prove](../../math/discrete-structures/proofs) that one constant (C) works
 
 ```
 T(N) is O(F(N)) if and only if C * F(N) is forevermore above T(N) after N * x (the crossing point)

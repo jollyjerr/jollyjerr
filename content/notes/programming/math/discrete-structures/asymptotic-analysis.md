@@ -4,7 +4,7 @@ title = "Asymptotic Analysis"
 
 # Asymptotic Analysis
 
-See existing notes [here](../../programming/computer-science/asymptotic-analysis.md)
+See existing notes [here](../../programming/computer-science/asymptotic-analysis)
 
 Analysis happens primarily for computer algorithms but you you need to know if a
 function is big O of another function in an abstract sense. Basically, is the

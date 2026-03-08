@@ -143,7 +143,7 @@ Without loss of generality, assume that x is even. Then x = 2k for some integer 
 ## Induction
 
 Induction is a proof technique especially helpful for proving statements about
-elements in a [sequence](./sequence.md). It can also be used when proving facts
+elements in a [sequence](../sequence). It can also be used when proving facts
 about lists of other mathematical objects like sets - even if those lists are
 infinitely long.
 

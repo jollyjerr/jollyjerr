@@ -10,7 +10,7 @@ remember `sqt(ab) = sqt(a) * sqt(b)`
 
 #### Rationalize complex denominators
 
-Use the [conjugate method](./radicals.md)
+Use the [conjugate method](../radicals)
 
 ```
 2 + 3i / 4 - 2i

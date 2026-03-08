@@ -4,7 +4,7 @@ title = "Trees"
 
 # Trees
 
-Expanding on the idea of [linked lists](./linked-list.md), trees start at a root node and descend
+Expanding on the idea of [linked lists](../linked-list), trees start at a root node and descend
 some height (distance to farthest child). Trees can be balanced or not (all children at same depth). They can have cycles or not.
 They can be sorted or not (typically combined with binary trees).
 

@@ -4,9 +4,9 @@ title = "Stack"
 
 # Stack
 
-A specific implementation of a singly [linked list](./linked-list.md) where you only add or remove from the head. (first in last out)
+A specific implementation of a singly [linked list](../linked-list) where you only add or remove from the head. (first in last out)
 
-Implemented very similarly to a [queue](./queue.md).
+Implemented very similarly to a [queue](../queue).
 
 ```ts
 type Node<T> = {

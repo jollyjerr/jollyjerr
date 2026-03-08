@@ -136,7 +136,7 @@ variable.
 This happens when you are finding the probability that some n things will fail
 before one succeeds.
 
-Recall [geometric series](./../../calculus/series.md).
+Recall [geometric series](../../../calculus/series).
 
 ```
 P(X=1) = p

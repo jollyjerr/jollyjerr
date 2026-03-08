@@ -6,7 +6,7 @@ title = "Rational Functions"
 f(x) = (x^2 + 2x - 7)/(x - 2)
 ```
 
-You can simplify with [long division of polynomials](./polynomials.md)
+You can simplify with [long division of polynomials](../polynomials)
 
 You can also simplify with cancellation
 
@@ -21,7 +21,7 @@ Same as normal fractions - find a common denominator and add or subtract the num
 #### Multiplication
 
 Factor out both sides and use cancellation to simplify the equation. If you cancel a factor in the
-denominator that limits the [domain](./functions.md) of one of the functions, you need to explicitly provide that
+denominator that limits the [domain](../functions) of one of the functions, you need to explicitly provide that
 limitation in your simplified form because it limits the domain of the product.
 
 ```

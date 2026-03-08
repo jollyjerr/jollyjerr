@@ -54,7 +54,7 @@ B has the value of 4 at x = 2 while A approaches more and more closely to 4 at x
 
 In this example A had a point discontinuity at x = 2 and we showed algebraically that this discontinuity is removable and therefore not a vertical asymptote.
 
-This could also be a [piecewise defined function](../algebra/piecewise-defined-functions.md):
+This could also be a [piecewise defined function](../algebra/piecewise-defined-functions):
 
 ```
 f(x) = {
@@ -149,7 +149,7 @@ lim log(x) == log(5)
 x->5
 ```
 
-If you are working with an absolute value function, try [rewriting it as a piecewise defined function](../algebra/piecewise-defined-functions.md)
+If you are working with an absolute value function, try [rewriting it as a piecewise defined function](../algebra/piecewise-defined-functions)
 and solving from there.
 
 ### Factoring
@@ -173,7 +173,7 @@ x+4
 
 ### Conjugate Method
 
-If presented with a fraction that does not factor, the [conjugate](../algebra/radicals.md) method may be a good approach.
+If presented with a fraction that does not factor, the [conjugate](../algebra/radicals) method may be a good approach.
 
 Conjugate = irrational side of fraction, flip the expressions _between_ each term.
 
@@ -198,7 +198,7 @@ _Hot Tip_ If you find a limit `0/0` that is indeterminate form and does not mean
 ## Pythagorean Identity
 
 If you are solving a limit that uses pythagorean functions and you reach indeterminate form (0/0), you can substitute
-[trig identities](../trigonometry/trig-identities.md) to try and cancel out terms and work the problem.
+[trig identities](../trigonometry/trig-identities) to try and cancel out terms and work the problem.
 
 A common pattern for this is to use a Pythagorean identity and then use diff of squares to reach a common factor
 
@@ -304,7 +304,7 @@ Another challenge can be signs. If the degree you chose in this process is even 
 
 #### L Hopitals rule
 
-If f and g are [differentiable](./differentiation.md) and the limit is indeterminate of the form `0/0`
+If f and g are [differentiable](../differentiation) and the limit is indeterminate of the form `0/0`
 or `inf/inf`, then:
 
 ```
@@ -325,7 +325,7 @@ limx->inf e^x/2
 
 ## Factorials
 
-To find the limit of a [factorial](../algebra/factorials.md), keep in mind that
+To find the limit of a [factorial](../algebra/factorials), keep in mind that
 factorials get supah mega big really fast.
 
 ```

@@ -6,7 +6,7 @@ title = "Applications of Integrals"
 
 ## Work
 
-One of the main applications of [integration](./integration.md) in engineering and physics is
+One of the main applications of [integration](../integration) in engineering and physics is
 computing work.
 
 `work = force * distance` if the force is constant. Special case of:

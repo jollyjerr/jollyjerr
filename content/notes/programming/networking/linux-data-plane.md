@@ -38,7 +38,7 @@ arp
 Netlink is a protocol for user space utilities to interact with the kernel data
 plane.
 
-Based on berkeley [sockets](./socket.md).
+Based on berkeley [sockets](../socket).
 
 Each application is a client - servers run in kernel. Supports multicast.
 

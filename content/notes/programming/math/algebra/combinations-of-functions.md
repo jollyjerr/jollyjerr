@@ -2,7 +2,7 @@
 title = "Combinations of Functions"
 +++
 
-Functions can be operated on following the [order of operations](./operations.md) just like
+Functions can be operated on following the [order of operations](../operations) just like
 numbers and variables
 
 ```

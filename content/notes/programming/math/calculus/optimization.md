@@ -25,7 +25,7 @@ f'(x) = 1 - 1/x
 1 - 1/x = undefined <-- a critical point exists at x = 0
 ```
 
-Keep in mind the [zero product property](../algebra/equations.md) when solving
+Keep in mind the [zero product property](../algebra/equations) when solving
 for critical points, it comes up a lot.
 
 ## First Derivative Test
@@ -72,7 +72,7 @@ The points where a function's concavity changes are called "inflection points".
 Places where the second derivative is 0 or undefined might be an inflection
 point. (similar to how it might be a critical point with first derivative).
 
-1. set the second derivative > 0 and < 0 in two [inequalities](../algebra/inequalities.md)
+1. set the second derivative > 0 and < 0 in two [inequalities](../algebra/inequalities)
    and solve for x to get where you are concave up and concave down.
 2. find critical points on the second derivative and compare them to your
    concavity to deduce true inflection points.

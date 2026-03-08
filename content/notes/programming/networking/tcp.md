@@ -75,4 +75,4 @@ make it to the destination the TCP layer cannot provide p2 and p3 until p1 is
 retransmitted.
 
 If your application can handle out-of-order delivery and packet loss it is
-likely better served by [UDP](./udp.md) to avoid head of line blocking.
+likely better served by [UDP](../udp) to avoid head of line blocking.

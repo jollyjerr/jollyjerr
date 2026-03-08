@@ -18,7 +18,7 @@ Standard form: `y = ax^2 + bx + c` axis of symmetry is -b/2a
 
 Vertex form: `y = a(x-h)^2 + k` vertex is located at (h,k)
 
-To convert standard to vertex, [complete the square](./factoring.md). To convert vertex to standard, expand the square.
+To convert standard to vertex, [complete the square](../factoring). To convert vertex to standard, expand the square.
 
 ### Circles
 

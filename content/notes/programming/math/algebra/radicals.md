@@ -50,7 +50,7 @@ sqt2/2
 
 - Conjugate method
 
-If your denominator is an irrational [polynomial](./polynomials.md), you can multiply the fraction by it's _conjugate_.
+If your denominator is an irrational [polynomial](../polynomials), you can multiply the fraction by it's _conjugate_.
 
 ```
 3/(5 - sqt3) = (3/(5-sqt3)) * ((5+sqt3)/(5+sqt3))

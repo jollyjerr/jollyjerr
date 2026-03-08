@@ -2,7 +2,7 @@
 title = "Functions"
 +++
 
-See [functions](../discrete-structures/functions.md)
+See [functions](../discrete-structures/functions)
 
 In a function, every input value of x outputs a single value for y
 

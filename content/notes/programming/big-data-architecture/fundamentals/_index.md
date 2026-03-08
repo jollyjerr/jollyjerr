@@ -39,7 +39,7 @@ Flow of work, fast feedback loops, culture of experimentation and ownership
 
 # There's no silver bullet
 
-[no silver bullet](./no-silver-bullet.md)
+[no silver bullet](../no-silver-bullet)
 
 Software is not Ford cars, the essence is not duplicated and each project has
 unique complexity.

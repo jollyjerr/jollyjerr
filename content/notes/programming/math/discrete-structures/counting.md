@@ -45,7 +45,7 @@ must start with a digit?
 
 ## Bijection rule
 
-If there is a [bijection](./functions.md) from one set to another then the sets
+If there is a [bijection](../functions) from one set to another then the sets
 have the same cardinality. So if you can show there is a bijection then counting
 an easy set can find the count to a difficult set.
 

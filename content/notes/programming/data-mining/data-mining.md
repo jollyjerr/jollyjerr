@@ -84,9 +84,9 @@ Changes over time with periodical patterns.
 A data mining pipeline exists to take data and turn it into knowledge to be used
 in an application.
 
-1. [Data understanding](./data-understanding.md)
-2. [Data preprocessing](./data-preprocessing.md)
-3. [Data warehousing](./data-warehousing.md)
+1. [Data understanding](../data-understanding)
+2. [Data preprocessing](../data-preprocessing)
+3. [Data warehousing](../data-warehousing)
 4. Data modeling
 5. Pattern evaluation (also performance evaluation of the model)
 
@@ -102,8 +102,8 @@ in an application.
 - Anomaly Detection
 - Trend Analysis
 
-[outlier analysis](./outlier-analysis.md)
-[complex data types](./complex-data-types.md)
+[outlier analysis](../outlier-analysis)
+[complex data types](../complex-data-types)
 
 ### FPA
 

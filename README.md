@@ -4,4 +4,3 @@ I am a programmer interested in distributed systems, cross-platform apps, machin
 I also [climb rocks](https://www.mountainproject.com/user/200244605/jeremiah-tabb) and [blog](https://www.jtabb.dev/).
 
 > [Learn More](https://jtabb.dev/links)
-

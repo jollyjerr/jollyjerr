@@ -9,7 +9,7 @@ TCP/IP. UDP is also referred to as null protocol.
 
 The specification is [here](https://www.ietf.org/rfc/rfc768.txt)
 
-Domain Name System (DNS) and [webRTC](./web-rtc.md) both use UDP.
+Domain Name System (DNS) and [webRTC](../web-rtc) both use UDP.
 
 ## Datagram
 

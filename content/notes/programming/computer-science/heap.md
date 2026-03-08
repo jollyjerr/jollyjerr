@@ -4,7 +4,7 @@ title = "Heap"
 
 # Heap (priority queue)
 
-A type of [tree](./trees.md) that maintain a weak ordering
+A type of [tree](../trees) that maintain a weak ordering
 
 Fill in each node from left to right and maintain the heap property (weak ordering to max or min)
 

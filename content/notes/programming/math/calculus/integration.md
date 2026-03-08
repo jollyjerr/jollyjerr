@@ -23,7 +23,7 @@ The function F(x) is known as the anti derivative of f(x)
 
 ## Indefinite Integrals
 
-When you find anti-derivatives you just use the existing [differentiation rules](./differentiation.md)
+When you find anti-derivatives you just use the existing [differentiation rules](../differentiation)
 but in reverse.
 
 example: f(x) = 2x has a family of anti derivatives F(x) = x^2 + C
@@ -433,7 +433,7 @@ FOIL it out
 You can do the same thing with tan and sec using `tan^2(x) + 1 = sec^2(x)`
 
 If none of the trig statements are raised to an odd power, you can use double
-angle identities. Found [here](../trigonometry/trig-identities.md). It's common
+angle identities. Found [here](../trigonometry/trig-identities). It's common
 you need to use it more than once when solving the problem.
 
 ## Trig substitution

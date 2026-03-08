@@ -124,12 +124,12 @@ Can also be notated with a horizontal line above the set name.
 
 ## The Cartesian Product
 
-It is possible to multiply two [sets](./sets.md) and produce a new set, the **Cartesian Product**
+It is possible to multiply two [sets](../sets) and produce a new set, the **Cartesian Product**
 
 A cartesian product of two sets, A and B, is another set, denoted as A x B,
 and defined as `A x B = {(a,b): a ∈ A, b ∈ B}`
 
-Notice the [tuple](./tuple.md) in this definition
+Notice the [tuple](../tuple) in this definition
 
 You can also have ordered triples `(x,y,z)` etc...
 
@@ -152,7 +152,7 @@ A = {0,1}, A^2 = {00, 01, 10, 11}
 
 ## Logical operators
 
-Sets follow the same laws as [propositions](./propositions.md) but with set symbols:
+Sets follow the same laws as [propositions](../propositions) but with set symbols:
 
 ¬ == ⎻ (complement)
 ∧ == ∩

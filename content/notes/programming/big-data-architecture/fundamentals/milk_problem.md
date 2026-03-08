@@ -4,7 +4,7 @@ title = "The Milk Problem"
 
 # The Milk Problem
 
-Just a thought experiment for the [cap theorem](../patterns/cap.md)
+Just a thought experiment for the [cap theorem](../patterns/cap)
 
 If you ask a grocery store if they have milk, would you rather wait for a
 response or get an immediate response that might be incorrect?

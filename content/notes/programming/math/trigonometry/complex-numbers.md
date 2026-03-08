@@ -4,7 +4,7 @@ title = "Complex Numbers"
 
 # Complex numbers
 
-Recall the properties of [imaginary numbers](../algebra/imaginary-numbers.md)
+Recall the properties of [imaginary numbers](../algebra/imaginary-numbers)
 
 ### Rectangular form
 
@@ -42,7 +42,7 @@ Add and subtract complex numbers by separating the imaginary parts
 30 + 12i
 ```
 
-Multiply and divide complex numbers like [polynomials](../algebra/polynomials.md)
+Multiply and divide complex numbers like [polynomials](../algebra/polynomials)
 FOIL, and multiply by the conjugate if you need to.
 
 Division: multiply the numerator and denominator by the conjugate.

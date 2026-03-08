@@ -15,8 +15,8 @@ The sum of multiple power terms, EX: `(-3x^4 + x^2)` leading term = -3x^4 so deg
 
 ## Multiplication
 
-Use the [Distributive property](./operations.md) then combine like terms
-In multi variable, remember the rules of [like terms](./like-terms.md)
+Use the [Distributive property](../operations) then combine like terms
+In multi variable, remember the rules of [like terms](../like-terms)
 
 ## Division
 

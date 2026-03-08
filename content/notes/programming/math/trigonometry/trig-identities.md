@@ -31,7 +31,7 @@ cotx = cosx/sinx
 
 #### Quotient identities
 
-If you define a right triangle in the [unit circle](./unit-circle.md) (radius = 1)
+If you define a right triangle in the [unit circle](../unit-circle) (radius = 1)
 you can easily find the **quotient identities**
 
 ```

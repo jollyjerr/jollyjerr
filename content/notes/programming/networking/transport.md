@@ -80,7 +80,7 @@ Each side, the sender and receiver need to store state (what has been
 sent/received and ACKed)
 
 Three way handshake is in place to establish allocation of these state tracking
-resources. See [tcp](./tcp.md) for handshake process.
+resources. See [tcp](../tcp) for handshake process.
 
 #### Congestion Control
 

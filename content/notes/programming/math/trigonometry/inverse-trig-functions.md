@@ -10,7 +10,7 @@ For `sin(𝜭) = x` the inverse is `sin(x) = 𝜭`
 
 > y is the angle whose sine is x
 
-These inverses are called inverse trig _relations_ because they do not have the properties of [functions](../algebra/functions.md)
+These inverses are called inverse trig _relations_ because they do not have the properties of [functions](../algebra/functions)
 
 When solving an inverse trig relation it's best to be clear that all coterminal angles
 to the solution are also solutions. So, because `sin(pi/2) = 1`, the inverse would actually

@@ -4,7 +4,7 @@ title = "Behavior Trees"
 
 # Behavior Trees
 
-Behavior trees are less formal than [finite state machines](./state-machines.md), they are more of a software engineering tool that expands on finite state machines.
+Behavior trees are less formal than [finite state machines](../state-machines), they are more of a software engineering tool that expands on finite state machines.
 
 They are setup like a tree, the root node is the highest level goal and you
 traverse leafs.

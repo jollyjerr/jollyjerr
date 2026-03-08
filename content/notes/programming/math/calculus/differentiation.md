@@ -4,7 +4,7 @@ title = "Differentiation"
 
 # Differentiation
 
-You can always use the [ formal or alternate definition of a derivative ](./derivatives.md) to find
+You can always use the [ formal or alternate definition of a derivative ](../derivatives) to find
 a functions derivative, but some types of functions have easier methods.
 
 ## Explicit (normal) differentiation
@@ -57,7 +57,7 @@ cot(x)' = csc^2(x)
 
 ### Inverse trig functions
 
-It's helpful to review [the rules and notation of inverse trig relations and functions](../trigonometry/inverse-trig-functions.md).
+It's helpful to review [the rules and notation of inverse trig relations and functions](../trigonometry/inverse-trig-functions).
 
 Proving these definitions is pretty involved so I'm not going to put it here.
 
@@ -88,7 +88,7 @@ f'(x) = [u'(x)v(x) - u(x)v'(x)] / [(v(x))^2]
 
 ### The Chain Rule (compositions of functions)
 
-You can use the chain rule to find derivatives for [compositions of functions](../algebra/combinations-of-functions.md)
+You can use the chain rule to find derivatives for [compositions of functions](../algebra/combinations-of-functions)
 
 ```
 Suppose a(x) = (f°g)(x) = f(g(x)) where f and g are both differentiable
@@ -117,7 +117,7 @@ Written in chain rule form
 
 ### Natural Logarithm and Exponential
 
-Keep in mind the [properties of logarithms](../algebra/exponential-and-logarithmic-functions.md)
+Keep in mind the [properties of logarithms](../algebra/exponential-and-logarithmic-functions)
 
 ```
 ln'(x) = 1/x

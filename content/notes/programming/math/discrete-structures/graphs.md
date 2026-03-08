@@ -4,7 +4,7 @@ title = "Graphs"
 
 # Graphs
 
-Graphs are a data structure that come from [binary relations](./sets.md).
+Graphs are a data structure that come from [binary relations](../sets).
 
 Vertices (nodes) are connected by edges (links). Ex: the edge (u,v) connects node u
 to v. u is the tail and v is the head.

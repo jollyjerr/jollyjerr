@@ -32,7 +32,7 @@ function bubbleSort(arr: number[]): void {
 
 ## Quicksort
 
-Quicksort takes advantage of [recursion](./recursion.md) and sorts an array in place.
+Quicksort takes advantage of [recursion](../recursion) and sorts an array in place.
 
 Pick a pivot, walk the array and put everything less than pivot to the left of the pivot and everything greater than the pivot behind it.
 Repeat tho process for the left of pivot and right of pivot - all the way down.

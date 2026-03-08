@@ -7,7 +7,7 @@ title = "Vertex Cover"
 Choose a subset of vertices that covers the graph (every edge touches one
 selected vertex). Goal is smallest cardinality of subset.
 
-As discussed in [linear programming](../linear/linear.md), this problem is np-complete.
+As discussed in [linear programming](../linear/linear), this problem is np-complete.
 
 However, an optimal factor 2 approximation is achievable:
 

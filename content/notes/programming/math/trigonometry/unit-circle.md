@@ -79,7 +79,7 @@ a = x + n(2pi)
 If solving an equation for the set of all solutions, every coterminal angle is included in the set
 
 These full solutions are expressed in [set-builder
-notation](../discrete-structures/sets.md)
+notation](../discrete-structures/sets)
 
 ```
 sin𝜭 = 0
@@ -110,7 +110,7 @@ Because reference angles are the same in each quadrant, you can use that symmetr
 
 ## Even-odd identities
 
-Remember that [functions can be even, odd, or neither](../algebra/functions.md)
+Remember that [functions can be even, odd, or neither](../algebra/functions)
 
 `cos(-𝜭) = cos𝜭` , so cosine is even
 
@@ -135,4 +135,4 @@ Drawing it all out helps a lot
 
 Keep in mind `a^2 + b^2 = c^2` and all angles add up to 180
 
-Also keep in mind the [trig functions](./trig-functions.md)
+Also keep in mind the [trig functions](../trig-functions)

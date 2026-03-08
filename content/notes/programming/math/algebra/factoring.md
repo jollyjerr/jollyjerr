@@ -2,7 +2,7 @@
 title = "Factoring"
 +++
 
-Factoring is the act of "un-[distributing](./operations.md)" EX: `6 = 3 * 2` (factored out a 3, 2 is left over)
+Factoring is the act of "un-[distributing](../operations)" EX: `6 = 3 * 2` (factored out a 3, 2 is left over)
 
 There are multiple **factoring methods** depending on what you are presented with.
 
@@ -26,7 +26,7 @@ x^2 - 6x - 16 // Find the factors of -16 that sum to -6
 (x-8)(x+2)
 ```
 
-You can check your work by [multiplying](./polynomials.md) the polynomials
+You can check your work by [multiplying](../polynomials) the polynomials
 
 - with coefficients
 

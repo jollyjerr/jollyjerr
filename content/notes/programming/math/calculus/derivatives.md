@@ -6,7 +6,7 @@ title = "Derivatives"
 
 Derivatives are used to calculate instantaneous rate of change
 
-A derivative is a [limit](./limits.md)
+A derivative is a [limit](../limits)
 
 ```
 lim                change in distance / change in time
@@ -167,7 +167,7 @@ but must be continuous if it is differentiable.
 You can use the derivative to obtain the exact function of a tangent line at any
 point.
 
-Recall the point slope form of an [equation of a line](../algebra/slope.md)
+Recall the point slope form of an [equation of a line](../algebra/slope)
 
 ```
 y - y1 = m(x - x1)

@@ -4,7 +4,7 @@ title = "Taylor Series"
 
 # Taylor Series
 
-The Taylor series of a function f(x) is a certain [power series](./series.md) that equals f(x).
+The Taylor series of a function f(x) is a certain [power series](../series) that equals f(x).
 
 The purpose is to take a function that is not a polynomial and express it as a
 series - which is like an infinite polynomial.
@@ -182,7 +182,7 @@ original function.
 
 ## Functions of Complex Numbers
 
-[complex numbers](../trigonometry/complex-numbers.md) are related to normal
+[complex numbers](../trigonometry/complex-numbers) are related to normal
 functions, and become useful, when we use Taylor series to break apart a
 function and plug in complex numbers.
 

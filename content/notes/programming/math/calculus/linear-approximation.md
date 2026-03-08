@@ -26,7 +26,7 @@ These questions are phrased as "find the linearization of f(x) = sinx at x = 0"
 
 Linearization is a better approximation when the original function is closer to
 a straight line. You can determine concavity by taking a functions second
-[derivative](./derivatives.md). If f''(x) is close to 0 at point a, then the
+[derivative](../derivatives). If f''(x) is close to 0 at point a, then the
 linearization will be a more accurate approximation for the original function
 for points around a.
 

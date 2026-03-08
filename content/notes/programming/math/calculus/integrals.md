@@ -6,7 +6,7 @@ title = "Integrals"
 
 ## Intuition
 
-The [derivative](./derivatives.md) is taking a distance
+The [derivative](../derivatives) is taking a distance
 function (position) and calculating it's velocity over time. Integration is the process of taking a
 velocity function and deducing the distance traveled. Hence the nickname
 "anti-derivative"
@@ -185,7 +185,7 @@ add them if they result in numbers. If any is inf, the whole thing diverges.
 
 ### Factorials
 
-You can write [factorials](../algebra/factorials.md) as an integral with this
+You can write [factorials](../algebra/factorials) as an integral with this
 formula:
 
 ```

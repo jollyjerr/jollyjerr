@@ -50,7 +50,7 @@ connection is represented with a 0.
 
 ## Search
 
-All [trees](./trees.md) are graphs, so just use DFS or BFS.
+All [trees](../trees) are graphs, so just use DFS or BFS.
 
 BFS on adjacency matrix:
 

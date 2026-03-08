@@ -4,7 +4,7 @@ title = "Queue"
 
 # Queue
 
-A specific implementation of a [linked list](./linked-list.md).
+A specific implementation of a [linked list](../linked-list).
 
 A FIFO structure (first in, first out)
 

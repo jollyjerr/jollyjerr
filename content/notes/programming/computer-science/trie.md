@@ -12,7 +12,7 @@ Root node has nothing, and then link together full words as children of the prec
 letter. On the last letter of a word, add an `isWord: true` or some sort of signal.
 
 If someone types a letter, lookup all options down the branch of the tree that starts with
-the letter they typed [DFS or BFS](./trees.md) and then traverse down the branches
+the letter they typed [DFS or BFS](../trees) and then traverse down the branches
 as they type more letters.
 
 You can also score the nodes as users select options so that over time the high score options
