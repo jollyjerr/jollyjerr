@@ -1,6 +1,6 @@
 +++
 title = "null-ls Is Archived, What Now?"
-subtitle = "The best path forward for neovim configurations"
+description = "The best path forward for neovim configurations"
 date = "2023-09-08"
 draft = false
 

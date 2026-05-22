@@ -1,6 +1,6 @@
 +++
 title = "Meditation and AI Research"
-subtitle = "Thinking about how we think"
+description = "Thinking about how we think"
 date = "2025-11-30"
 draft = true
 

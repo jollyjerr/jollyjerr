@@ -1,6 +1,6 @@
 +++
 title = "Code BEAM America"
-subtitle = "What I learned"
+description = "What I learned"
 date = "2025-03-07"
 draft = false
 

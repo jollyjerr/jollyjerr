@@ -18,7 +18,7 @@
               )
               }}
             </a>
-            /
+            <span aria-hidden="true">/</span>
           </li>
         {% endfor %}
       </ol>
@@ -30,18 +30,20 @@
         {{ page.date | date(format="%B %d, %Y") }}
       </time>
     {% endif %}
+    {% if page.description %}
+      <p class="post-subtitle">{{ page.description }}</p>
+    {% endif %}
     {{ page.content | safe }}
   </article>
   {%- if page.taxonomies.tags %}
-    <ul class="post-tags" aria-label="Tags">
-      <h2>Tags:</h2>
-      {% for tag in page.taxonomies.tags %}
-        <li>
-          <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">
-            #{{ tag }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+    <nav class="post-tags" aria-label="Tags">
+      <ul>
+        {% for tag in page.taxonomies.tags %}
+          <li>
+            <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">#{{ tag }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
   {%- endif -%}
 {% endblock content %}

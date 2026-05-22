@@ -10,7 +10,7 @@ build: buildcss
   zola build
 
 buildcss:
-  lightningcss --minify --targets "> 0.5%, last 2 versions, not dead" static/css/styles.css -o static/style.min.css
+  npx lightningcss-cli --minify --targets "> 0.5%, last 2 versions, not dead" static/css/styles.css -o static/style.min.css
 
 format:
     djhtml $(find templates -type f -name '*.html')

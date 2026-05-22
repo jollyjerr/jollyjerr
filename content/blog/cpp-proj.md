@@ -1,6 +1,6 @@
 +++
 title = "How To Set Up A C++ Project"
-subtitle = "C++ Project Setup and Tooling For JavaScript Devs"
+description = "C++ Project Setup and Tooling For JavaScript Devs"
 date = "2023-03-18"
 draft = false
 

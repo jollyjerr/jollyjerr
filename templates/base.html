@@ -92,6 +92,10 @@
         <main>
             {% block content %}{% endblock content %}
         </main>
+        <footer class="contained">
+            <a href="/atom.xml">subscribe via atom</a>
+            <span>&copy; {{ now() | date(format="%Y") }}</span>
+        </footer>
     </body>
 
 </html>

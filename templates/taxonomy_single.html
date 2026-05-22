@@ -1,9 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <section class="home-section">
-    <p class="all-tags"><a href="{{ get_url(path="/tags") }}">← all tags</a></p>
-    <h2>{{ taxonomy.name | capitalize }}: {{ term.name | capitalize }}</h2>
+  <div class="home-section">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li>
+          <a href="{{ get_url(path="/tags") }}">Tags</a>
+          <span aria-hidden="true">/</span>
+        </li>
+      </ol>
+      <h1 aria-current="page">{{ term.name | capitalize }}</h1>
+    </nav>
 
     <ul class="post-list">
       {% for page in term.pages %}
@@ -15,8 +22,7 @@
             </time>
           </a>
         </li>
-
       {% endfor %}
     </ul>
-  </section>
+  </div>
 {% endblock content %}

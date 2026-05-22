@@ -6,34 +6,30 @@
     <nav aria-label="Breadcrumb" class="breadcrumbs">
       <ol>
         {% set crumbs = section.ancestors | slice(start=1) %}
-        {% if crumbs | length > 0 %}
-          {% for ancestor_path in crumbs %}
-            {% set ancestor = get_section(path=ancestor_path) %}
-            <li>
-              <a href="{{ ancestor.permalink }}">
-                {{ ancestor.title
-                | default(
-                value=ancestor_path
-                | split(pat="/")
-                | last
-                | replace(from="-", to=" ")
-                | title
-                )
-                }}
-              </a>
-            </li>
-            /
-          {% endfor %}
-        {% else %}
-          <li class="breadcrumb-placeholder" aria-hidden="true">&nbsp;</li>
-        {% endif %}
+        {% for ancestor_path in crumbs %}
+          {% set ancestor = get_section(path=ancestor_path) %}
+          <li>
+            <a href="{{ ancestor.permalink }}">
+              {{ ancestor.title
+              | default(
+              value=ancestor_path
+              | split(pat="/")
+              | last
+              | replace(from="-", to=" ")
+              | title
+              )
+              }}
+            </a>
+            <span aria-hidden="true">/</span>
+          </li>
+        {% endfor %}
       </ol>
 
       <h1 aria-current="page">{{ section.title }}</h1>
     </nav>
 
     <section>
-      <ul>
+      <ul class="category-list">
         {% for sub_path in section.subsections %}
           {% set sub = get_section(path=sub_path) %}
           <li>

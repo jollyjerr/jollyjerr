@@ -1,6 +1,6 @@
 +++
 title = "Crafting Your Perfect Development Environment: A Personalized Guide"
-subtitle = "Learn to identify your unique dev style and build a local setup that maximizes productivity."
+description = "Learn to identify your unique dev style and build a local setup that maximizes productivity."
 date = "2026-01-02"
 draft = true
 

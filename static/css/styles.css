@@ -5,8 +5,7 @@
 *,
 ::after,
 ::before,
-::backdrop,
-::file-selector-button {
+::backdrop {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -118,10 +117,6 @@ table {
   outline: auto;
 }
 
-progress {
-  vertical-align: baseline;
-}
-
 summary {
   display: list-item;
 }
@@ -151,11 +146,7 @@ video {
 }
 
 button,
-input,
-select,
-optgroup,
-textarea,
-::file-selector-button {
+input {
   font: inherit;
   font-feature-settings: inherit;
   font-variation-settings: inherit;
@@ -164,18 +155,6 @@ textarea,
   border-radius: 0;
   background-color: transparent;
   opacity: 1;
-}
-
-:where(select:is([multiple], [size])) optgroup {
-  font-weight: bolder;
-}
-
-:where(select:is([multiple], [size])) optgroup option {
-  padding-inline-start: 20px;
-}
-
-::file-selector-button {
-  margin-inline-end: 4px;
 }
 
 ::placeholder {
@@ -189,56 +168,13 @@ textarea,
   }
 }
 
-textarea {
-  resize: vertical;
-}
-
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-::-webkit-date-and-time-value {
-  min-height: 1lh;
-  text-align: inherit;
-}
-
-::-webkit-datetime-edit {
-  display: inline-flex;
-}
-
-::-webkit-datetime-edit-fields-wrapper {
-  padding: 0;
-}
-
-::-webkit-datetime-edit,
-::-webkit-datetime-edit-year-field,
-::-webkit-datetime-edit-month-field,
-::-webkit-datetime-edit-day-field,
-::-webkit-datetime-edit-hour-field,
-::-webkit-datetime-edit-minute-field,
-::-webkit-datetime-edit-second-field,
-::-webkit-datetime-edit-millisecond-field,
-::-webkit-datetime-edit-meridiem-field {
-  padding-block: 0;
-}
-
-::-webkit-calendar-picker-indicator {
-  line-height: 1;
-}
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
 button,
-input:where([type="button"], [type="reset"], [type="submit"]),
-::file-selector-button {
+input:where([type="button"], [type="reset"], [type="submit"]) {
   appearance: button;
-}
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
 }
 
 [hidden]:where(:not([hidden="until-found"])) {
@@ -335,12 +271,15 @@ header {
 }
 
 .home-section {
-  margin-bottom: 1em;
+  margin-bottom: 2.5em;
 
   & h2 {
-    font-size: 1.3rem;
+    font-size: 0.72rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.55;
+    margin-bottom: 0.8rem;
   }
 }
 
@@ -379,7 +318,7 @@ main .home-section:last-child {
 }
 
 .post-list .post-title {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 500;
   margin-bottom: 0.35rem;
 }
@@ -405,21 +344,9 @@ main .home-section:last-child {
   text-decoration: underline;
 }
 
-.category-desc {
-  display: block;
-  font-size: 0.9em;
-  opacity: 0.7;
-  margin-top: 0.2em;
-  margin-left: 1em;
-}
-
 .more-link {
   font-size: 0.95em;
   padding: 0.8rem 0;
-}
-
-.all-tags {
-  margin-bottom: 1em;
 }
 
 article {
@@ -578,6 +505,8 @@ article pre code {
 
 html {
   overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted) transparent;
 }
 
 ::-webkit-scrollbar {
@@ -626,13 +555,17 @@ html {
 }
 
 .post-tags {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
   max-width: 48em;
   margin-inline: auto;
-  font-weight: bold;
   width: 100%;
+  margin-top: 2em;
+
+  & ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    font-weight: bold;
+  }
 }
 
 .breadcrumbs {
@@ -649,16 +582,6 @@ html {
 
   & h1 {
     font-size: 1.3rem;
-  }
-}
-
-.taxonomy {
-  & h2 {
-    margin-bottom: 0.2rem;
-    font-size: 1.3rem;
-  }
-  & a {
-    margin-bottom: 0.2rem;
   }
 }
 
@@ -702,4 +625,30 @@ html {
     grid-template-columns: 1fr;
     gap: 1.5em;
   }
+}
+
+footer {
+  margin-top: 4em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.75;
+}
+
+.post-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  margin-bottom: 1.5em;
+}
+
+article .link-out::after {
+  content: " \2197";
+  font-size: 0.75em;
+  opacity: 0.6;
+}
+
+.breadcrumbs li span[aria-hidden] {
+  margin-left: 0.3em;
+  opacity: 0.5;
 }

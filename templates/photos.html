@@ -8,7 +8,7 @@
     {% for asset in section.assets -%}
       {% if asset is matching("[.](jpg|png)$") %}
         {% set image = resize_image(path=asset, width=800, height=800, op="fill") %}
-        <a href="{{ get_url(path=asset) }}" target="_blank">
+        <a href="{{ get_url(path=asset) }}" target="_blank" rel="noopener noreferrer">
           <img src="{{ image.url }}" />
         </a>
       {% endif %}

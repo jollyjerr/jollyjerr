@@ -1,6 +1,6 @@
 +++
 title = "Outstanding Engineers"
-subtitle = "How did they become outstanding?"
+description = "How did they become outstanding?"
 date = "2023-02-25"
 draft = true
 
