@@ -26,7 +26,7 @@ that guides the robot to the goal node of a weighted graph.
 
 In navigation, the preferred algorithm to completely traverse a graph is
 Breadth-First Search. BFS uses a queue, as apposed to DFS which uses a stack,
-therefor the **first** path to a target node that is found **will be the
+therefore the **first** path to a target node that is found **will be the
 shortest path**.
 
 ```py
