@@ -50,14 +50,14 @@ resource "cloudflare_pages_project" "jtabb" {
   deployment_configs {
     preview {
       environment_variables = {
-        ZOLA_VERSION = "0.21.0"
-        UNSTABLE_PRE_BUILD = "asdf plugin add zola https://github.com/salasrod/asdf-zola && asdf install zola latest && asdf global zola latest"
+        ZOLA_VERSION = "0.22.1"
+        UNSTABLE_PRE_BUILD = "asdf plugin add zola https://github.com/salasrod/asdf-zola || true && asdf install zola 0.22.1 && asdf global zola 0.22.1"
       }
     }
     production {
       environment_variables = {
-        ZOLA_VERSION = "0.21.0"
-        UNSTABLE_PRE_BUILD = "asdf plugin add zola https://github.com/salasrod/asdf-zola && asdf install zola latest && asdf global zola latest"
+        ZOLA_VERSION = "0.22.1"
+        UNSTABLE_PRE_BUILD = "asdf plugin add zola https://github.com/salasrod/asdf-zola || true && asdf install zola 0.22.1 && asdf global zola 0.22.1"
       }
     }
   }
